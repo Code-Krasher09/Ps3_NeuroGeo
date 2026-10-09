@@ -89,18 +89,31 @@ From `visit_gps_points.csv`, for each visit $v$, extract:
 
 ---
 
+## 4.5. Address Understanding & Entity Normalization
+
+Address parsing transforms raw multilingual text into structured spatial entities with strict verification safeguards:
+- **Unicode NFKC & Script Normalization**: Preserves native Kannada (`\u0C80`–`\u0CFF`) and Devanagari (`\u0900`–`\u097F`) alongside Latin tokens.
+- **Conservative Postal PIN Parsing & Validation**: Scans 6-digit postal PINs after masking house and unit numbers. Validates PINs against `localities.csv` within the known `town_id`. Performs conservative single-digit repair only when an unambiguous town-valid match exists. Conflicting PINs trigger abstention.
+- **PIN-Assisted Locality Disambiguation**: Where explicit locality text is ambiguous, town-compatible PINs provide candidate tie-breaking and restricted locality fallback. A locality is never selected from PIN alone, and no coordinates are fabricated.
+- **Bidirectional Street Normalization**: Standardizes street ordinal variations and abbreviations into canonical street keys.
+- **Locality-Bounded POI Anchoring**: Within the resolved locality disc ($r \le 800\text{m}$), landmarks map to physical POIs under the Zero-Duplicate Locality Invariant.
+
+---
+
 ## 5. Candidate Generation Engine: $\mathcal{C}(a)$
 
-For any target address $a$, generate up to 5 spatial candidates:
+For any target address $a$, generate up to 5 spatial candidates ($C_1 \dots C_5$):
 
 ```
-Candidate Set C(a)
+Candidate Set C(a) (Consolidated Production Pipeline: C1–C5)
 ├── C1: Commercial Baseline Prior (baseline_geocodes.csv)
 ├── C2: Doorstep Dwell Medoid (if Path A: Visited)
 ├── C3: POI Anchor Coordinate (if landmark resolved)
 ├── C4: Hierarchically Scoped Neighbor Street Centroid (Path B: Cold Start)
 └── C5: Locality Geometric Centroid (localities.csv fallback)
 ```
+
+> **Candidate Set Scope & Historical Exclusions**: The production candidate pipeline is strictly bounded to Candidates $C_1$ through $C_5$. An experimental Candidate $C_6$ (Town-Scoped Landmark Hypothesis) was evaluated on validation data, but showed 0 incremental benefit (0 wins, 0 losses, 0 selections) and added complexity; it is excluded from the final system architecture.
 
 ### Mathematical Definitions of Candidates:
 - **Candidate $C_1$ (Commercial Baseline)**: $C_1 = (\text{geocoder\_x}, \text{geocoder\_y})$ directly from `baseline_geocodes.csv`.
@@ -175,8 +188,10 @@ The confidence radius $R$ is calibrated to target approximately 90% empirical co
        return float(np.quantile(global_residuals, 0.90))
    ```
 
-4. **Coverage Target**:
-   Assign $R_a = \text{get\_calibrated\_radius}(\text{Tier}(a))$. The radius is calibrated to target approximately 90% empirical coverage on held-out data.
+4. **Coverage Target & Production Method**:
+   Assign $R_a = \text{get\_calibrated\_radius}(\text{Tier}(a))$. The implemented production method is **Evidence-Tier Empirical Quantile Calibration**, targeting approximately 90% empirical coverage on held-out data.
+
+> **Future Research Reservation**: Geometry-aware local-region confidence calibration has been formulated as proposed future research, but is not implemented or evaluated in this submission. The production engine relies strictly on the evidence-tier empirical quantile calibration specified above.
 
 ---
 

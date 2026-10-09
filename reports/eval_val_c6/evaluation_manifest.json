@@ -1,0 +1,61 @@
+{
+  "timestamp_utc": "2026-10-09T12:24:37.327503+00:00",
+  "evaluator": "scripts/evaluate_validation.py",
+  "evaluation_scope": "validation_split_only",
+  "sample_count": 19,
+  "splits_guarantee": {
+    "validation_address_ids": [
+      "AD000267",
+      "AD000291",
+      "AD000328",
+      "AD000525",
+      "AD000561",
+      "AD000681",
+      "AD000774",
+      "AD000962",
+      "AD001012",
+      "AD001315",
+      "AD001382",
+      "AD001586",
+      "AD001734",
+      "AD001791",
+      "AD001802",
+      "AD001963",
+      "AD002262",
+      "AD002284",
+      "AD002536"
+    ],
+    "train_address_count": 66,
+    "train_re_evaluated": false,
+    "test_address_count": 15,
+    "test_split_touched": false,
+    "test_split_evaluated": false
+  },
+  "inputs_loaded": {
+    "addresses_csv": "D:\\OpenIIT '26\\data\\shared\\addresses.csv",
+    "surveyed_addresses_csv": "D:\\OpenIIT '26\\data\\ps3_geocoder\\surveyed_addresses.csv",
+    "splits_csv": "D:\\OpenIIT '26\\data\\shared\\splits.csv",
+    "localities_csv": "D:\\OpenIIT '26\\data\\ps3_geocoder\\localities.csv",
+    "landmarks_poi_csv": "D:\\OpenIIT '26\\data\\ps3_geocoder\\landmarks_poi.csv",
+    "baseline_geocodes_csv": "D:\\OpenIIT '26\\data\\ps3_geocoder\\baseline_geocodes.csv",
+    "address_doorstep_medoids_parquet": "D:\\OpenIIT '26\\reports\\metrics\\address_doorstep_medoids.parquet",
+    "visit_features_parquet": "D:\\OpenIIT '26\\reports\\metrics\\visit_features.parquet",
+    "reranker_weights_json": "D:\\OpenIIT '26\\reports\\metrics\\reranker_weights.json",
+    "calibration_quantiles_json": "D:\\OpenIIT '26\\reports\\metrics\\calibration_quantiles.json",
+    "phase4_predictions_csv": "D:\\OpenIIT '26\\reports\\metrics\\phase4_predictions.csv"
+  },
+  "leakage_guarantees": [
+    "Test split addresses were never loaded for evaluation, scoring, or metric computation.",
+    "Reranker weights and calibration quantiles were frozen from baseline and not refitted.",
+    "Surveyed ground truth coordinates were isolated from candidate generation and feature extraction.",
+    "Target address field visits were never consumed by candidate C6."
+  ],
+  "output_directory": "D:\\OpenIIT '26\\reports\\eval_val_c6",
+  "output_files": [
+    "validation_predictions.csv",
+    "validation_metrics_summary.json",
+    "validation_paired_comparison.csv",
+    "validation_candidate_diagnostics.csv",
+    "evaluation_manifest.json"
+  ]
+}

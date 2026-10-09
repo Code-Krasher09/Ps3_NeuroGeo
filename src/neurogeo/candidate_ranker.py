@@ -28,6 +28,20 @@ def compute_euclidean_distance(x1: float, y1: float, x2: float, y2: float) -> fl
     return float(math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2))
 
 
+def _val(obj: Any, key: str, default: Any = None) -> Any:
+    """Helper to extract attribute or key from dict, Series, or object."""
+    if obj is None:
+        return default
+    if isinstance(obj, dict):
+        return obj.get(key, default)
+    if isinstance(obj, pd.Series):
+        val = obj.get(key, default)
+        return default if pd.isna(val) else val
+    if hasattr(obj, key):
+        return getattr(obj, key, default)
+    return default
+
+
 def generate_candidates(
     address_id: str,
     baseline_row: Optional[Union[Dict[str, Any], pd.Series]] = None,
@@ -39,25 +53,12 @@ def generate_candidates(
     fit_scope: str = "production_all",
     is_held_out: bool = False,
 ) -> List[SpatialCandidate]:
-    """Generate up to 5 spatial candidates (C1-C5) according to PS3_MODEL_SPEC.md.
+    """Generate spatial candidates (C1-C5) according to PS3_MODEL_SPEC.md.
     
     Zero coordinate fabrication: If evidence is missing, available = False and coordinates = None.
     Zero leakage: If is_held_out is True, C2 is strictly unavailable.
     """
     candidates: List[SpatialCandidate] = []
-
-    # Helper to get dict values
-    def _val(obj: Any, key: str, default: Any = None) -> Any:
-        if obj is None:
-            return default
-        if isinstance(obj, dict):
-            return obj.get(key, default)
-        if isinstance(obj, pd.Series):
-            val = obj.get(key, default)
-            return default if pd.isna(val) else val
-        if hasattr(obj, key):
-            return getattr(obj, key, default)
-        return default
 
     # ==========================================
     # C1: Commercial Baseline Prior
@@ -361,6 +362,7 @@ def extract_candidate_features(
     if "C5" in agreed:
         # Locality resolution match
         text_scores.append(0.70)
+
 
     text_match = float(max(text_scores)) if text_scores else 0.50
     text_match = max(0.0, min(1.0, text_match))

@@ -61,6 +61,7 @@ PHASE 5: Packaging, Demo Notebook & Executive Deck
 - **Inputs**: `addresses.csv`, `landmarks_poi.csv`, `localities.csv`.
 - **Outputs**: `parsed_addresses.parquet`.
 - **Tests & Assertions**:
+  - Parser must support conservative postal PIN extraction and PIN-assisted locality disambiguation.
   - Parser must recognize localities in $\ge 65\%$ of in-scope addresses.
   - Parser must extract street tokens in $\ge 55\%$ of in-scope addresses.
   - Structural Invariant: POI Resolver must yield **0 duplicate POIs per type** when scoped by resolved `locality_id`.
@@ -84,7 +85,7 @@ PHASE 5: Packaging, Demo Notebook & Executive Deck
 ---
 
 ### Phase 4: Candidate Reranker & Quantile Calibrator (`src/candidate_ranker.py`, `src/calibrator.py`, `src/navigator.py`)
-- **Objective**: Generate 5 spatial candidates, score them via linear utility, calibrate confidence radius $R$, and synthesize turn directions.
+- **Objective**: Generate 5 spatial candidates (C1–C5), score them via linear utility, calibrate confidence radius $R$ via evidence-tier empirical quantiles, and synthesize turn directions.
 - **Inputs**: `parsed_addresses.parquet`, `street_centroids.parquet`, `visit_features.parquet`, `baseline_geocodes.csv`.
 - **Outputs**: Full NeuroGeo-Field predictions (`predictions_benchmark.json`).
 - **Tests & Assertions**:

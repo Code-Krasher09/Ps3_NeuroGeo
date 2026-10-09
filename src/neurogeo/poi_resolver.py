@@ -4,7 +4,7 @@ Authority: PS3_FINAL_ARCHITECTURE.md Section 2, PS3_DATA_CONTRACT.md Section 2 (
 and PS3_MODEL_SPEC.md Section 5 (Candidate C3).
 """
 
-from typing import Dict, List, Optional, Set, Tuple
+from typing import Any, Dict, List, Optional, Set, Tuple
 import math
 import re
 import pandas as pd
@@ -34,7 +34,7 @@ def _compute_poi_locality_assignments(
     Returns:
         dict mapping poi_id -> (locality_id, distance_m)
     """
-    cache_key = f"{len(df_pois)}_{len(df_localities)}"
+    cache_key = f"{len(df_pois)}_{len(df_localities)}_{id(df_pois)}_{id(df_localities)}"
     if cache_key in _POI_LOCALITY_CACHE:
         return _POI_LOCALITY_CACHE[cache_key]
         
@@ -71,11 +71,11 @@ PRECOMPUTED_ALIASES: Dict[str, List[Tuple[str, str, Set[str]]]] = {
     for lm_type, patterns in LANDMARK_PATTERNS.items()
 }
 
-_POI_RECORDS_CACHE: Dict[int, List[dict]] = {}
+_POI_RECORDS_CACHE: Dict[Tuple[int, int], List[dict]] = {}
 
 
 def _get_poi_records(df_pois: pd.DataFrame) -> List[dict]:
-    k = len(df_pois)
+    k = (len(df_pois), id(df_pois))
     if k in _POI_RECORDS_CACHE:
         return _POI_RECORDS_CACHE[k]
     records = []

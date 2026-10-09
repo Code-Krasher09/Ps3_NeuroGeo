@@ -1,0 +1,347 @@
+{
+  "timestamp_utc": "2026-10-09T12:24:37.319956+00:00",
+  "evaluation_scope": "validation_split_only_n19",
+  "sample_size": 19,
+  "visited_count": 14,
+  "cold_start_count": 5,
+  "conditions": {
+    "condition_0_baseline": {
+      "overall": {
+        "sample_count": 19,
+        "median_error_m": 21.1,
+        "mean_error_m": 442.96,
+        "p90_error_m": 260.16,
+        "pct_within_100m": {
+          "pct": 73.68,
+          "numerator": 14,
+          "denominator": 19
+        },
+        "pct_within_500m": {
+          "pct": 94.74,
+          "numerator": 18,
+          "denominator": 19
+        },
+        "empirical_coverage": {
+          "pct": 94.74,
+          "numerator": 18,
+          "denominator": 19
+        },
+        "status_tier_counts": {
+          "DOORSTEP_VERIFIED": 13,
+          "LOCALITY_BOUNDED": 3,
+          "STREET_RESOLVED": 3
+        },
+        "candidate_selection_counts": {
+          "C2": 13,
+          "C5": 2,
+          "C1": 2,
+          "C3": 1,
+          "C4": 1
+        }
+      },
+      "visited": {
+        "sample_count": 14,
+        "median_error_m": 9.91,
+        "mean_error_m": 529.93,
+        "p90_error_m": 60.33,
+        "pct_within_100m": {
+          "pct": 92.86,
+          "numerator": 13,
+          "denominator": 14
+        },
+        "pct_within_500m": {
+          "pct": 92.86,
+          "numerator": 13,
+          "denominator": 14
+        },
+        "empirical_coverage": {
+          "pct": 92.86,
+          "numerator": 13,
+          "denominator": 14
+        },
+        "status_tier_counts": {
+          "DOORSTEP_VERIFIED": 13,
+          "LOCALITY_BOUNDED": 1
+        },
+        "candidate_selection_counts": {
+          "C2": 13,
+          "C4": 1
+        }
+      },
+      "cold_start": {
+        "sample_count": 5,
+        "median_error_m": 195.62,
+        "mean_error_m": 199.44,
+        "p90_error_m": 347.39,
+        "pct_within_100m": {
+          "pct": 20.0,
+          "numerator": 1,
+          "denominator": 5
+        },
+        "pct_within_500m": {
+          "pct": 100.0,
+          "numerator": 5,
+          "denominator": 5
+        },
+        "empirical_coverage": {
+          "pct": 100.0,
+          "numerator": 5,
+          "denominator": 5
+        },
+        "status_tier_counts": {
+          "LOCALITY_BOUNDED": 2,
+          "STREET_RESOLVED": 3
+        },
+        "candidate_selection_counts": {
+          "C5": 2,
+          "C1": 2,
+          "C3": 1
+        }
+      }
+    },
+    "condition_1_stage1_only": {
+      "overall": {
+        "sample_count": 19,
+        "median_error_m": 21.1,
+        "mean_error_m": 417.05,
+        "p90_error_m": 160.72,
+        "pct_within_100m": {
+          "pct": 84.21,
+          "numerator": 16,
+          "denominator": 19
+        },
+        "pct_within_500m": {
+          "pct": 94.74,
+          "numerator": 18,
+          "denominator": 19
+        },
+        "empirical_coverage": {
+          "pct": 94.74,
+          "numerator": 18,
+          "denominator": 19
+        },
+        "status_tier_counts": {
+          "DOORSTEP_VERIFIED": 13,
+          "STREET_RESOLVED": 5,
+          "LOCALITY_BOUNDED": 1
+        },
+        "candidate_selection_counts": {
+          "C2": 13,
+          "C3": 4,
+          "C1": 1,
+          "C4": 1
+        }
+      },
+      "visited": {
+        "sample_count": 14,
+        "median_error_m": 9.91,
+        "mean_error_m": 529.93,
+        "p90_error_m": 60.33,
+        "pct_within_100m": {
+          "pct": 92.86,
+          "numerator": 13,
+          "denominator": 14
+        },
+        "pct_within_500m": {
+          "pct": 92.86,
+          "numerator": 13,
+          "denominator": 14
+        },
+        "empirical_coverage": {
+          "pct": 92.86,
+          "numerator": 13,
+          "denominator": 14
+        },
+        "status_tier_counts": {
+          "DOORSTEP_VERIFIED": 13,
+          "LOCALITY_BOUNDED": 1
+        },
+        "candidate_selection_counts": {
+          "C2": 13,
+          "C4": 1
+        }
+      },
+      "cold_start": {
+        "sample_count": 5,
+        "median_error_m": 93.72,
+        "mean_error_m": 100.96,
+        "p90_error_m": 178.17,
+        "pct_within_100m": {
+          "pct": 60.0,
+          "numerator": 3,
+          "denominator": 5
+        },
+        "pct_within_500m": {
+          "pct": 100.0,
+          "numerator": 5,
+          "denominator": 5
+        },
+        "empirical_coverage": {
+          "pct": 100.0,
+          "numerator": 5,
+          "denominator": 5
+        },
+        "status_tier_counts": {
+          "STREET_RESOLVED": 5
+        },
+        "candidate_selection_counts": {
+          "C3": 4,
+          "C1": 1
+        }
+      }
+    },
+    "condition_2_stage1_plus_c6": {
+      "overall": {
+        "sample_count": 19,
+        "median_error_m": 21.1,
+        "mean_error_m": 417.05,
+        "p90_error_m": 160.72,
+        "pct_within_100m": {
+          "pct": 84.21,
+          "numerator": 16,
+          "denominator": 19
+        },
+        "pct_within_500m": {
+          "pct": 94.74,
+          "numerator": 18,
+          "denominator": 19
+        },
+        "empirical_coverage": {
+          "pct": 94.74,
+          "numerator": 18,
+          "denominator": 19
+        },
+        "status_tier_counts": {
+          "DOORSTEP_VERIFIED": 13,
+          "STREET_RESOLVED": 5,
+          "LOCALITY_BOUNDED": 1
+        },
+        "candidate_selection_counts": {
+          "C2": 13,
+          "C3": 4,
+          "C1": 1,
+          "C4": 1
+        }
+      },
+      "visited": {
+        "sample_count": 14,
+        "median_error_m": 9.91,
+        "mean_error_m": 529.93,
+        "p90_error_m": 60.33,
+        "pct_within_100m": {
+          "pct": 92.86,
+          "numerator": 13,
+          "denominator": 14
+        },
+        "pct_within_500m": {
+          "pct": 92.86,
+          "numerator": 13,
+          "denominator": 14
+        },
+        "empirical_coverage": {
+          "pct": 92.86,
+          "numerator": 13,
+          "denominator": 14
+        },
+        "status_tier_counts": {
+          "DOORSTEP_VERIFIED": 13,
+          "LOCALITY_BOUNDED": 1
+        },
+        "candidate_selection_counts": {
+          "C2": 13,
+          "C4": 1
+        }
+      },
+      "cold_start": {
+        "sample_count": 5,
+        "median_error_m": 93.72,
+        "mean_error_m": 100.96,
+        "p90_error_m": 178.17,
+        "pct_within_100m": {
+          "pct": 60.0,
+          "numerator": 3,
+          "denominator": 5
+        },
+        "pct_within_500m": {
+          "pct": 100.0,
+          "numerator": 5,
+          "denominator": 5
+        },
+        "empirical_coverage": {
+          "pct": 100.0,
+          "numerator": 5,
+          "denominator": 5
+        },
+        "status_tier_counts": {
+          "STREET_RESOLVED": 5
+        },
+        "candidate_selection_counts": {
+          "C3": 4,
+          "C1": 1
+        }
+      }
+    }
+  },
+  "paired_comparisons": {
+    "condition_1_vs_condition_0": {
+      "sample_count": 19,
+      "wins": {
+        "count": 3,
+        "pct": 15.79,
+        "denominator": 19
+      },
+      "losses": {
+        "count": 0,
+        "pct": 0.0,
+        "denominator": 19
+      },
+      "ties": {
+        "count": 16,
+        "pct": 84.21,
+        "denominator": 19
+      },
+      "mean_delta_m": -25.92,
+      "median_delta_m": 0.0
+    },
+    "condition_2_vs_condition_1": {
+      "sample_count": 19,
+      "wins": {
+        "count": 0,
+        "pct": 0.0,
+        "denominator": 19
+      },
+      "losses": {
+        "count": 0,
+        "pct": 0.0,
+        "denominator": 19
+      },
+      "ties": {
+        "count": 19,
+        "pct": 100.0,
+        "denominator": 19
+      },
+      "mean_delta_m": 0.0,
+      "median_delta_m": 0.0
+    },
+    "condition_2_vs_condition_0": {
+      "sample_count": 19,
+      "wins": {
+        "count": 3,
+        "pct": 15.79,
+        "denominator": 19
+      },
+      "losses": {
+        "count": 0,
+        "pct": 0.0,
+        "denominator": 19
+      },
+      "ties": {
+        "count": 16,
+        "pct": 84.21,
+        "denominator": 19
+      },
+      "mean_delta_m": -25.92,
+      "median_delta_m": 0.0
+    }
+  }
+}

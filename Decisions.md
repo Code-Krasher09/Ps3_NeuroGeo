@@ -243,4 +243,25 @@ This document maintains an immutable, chronological register of engineering, alg
   5. Strictly enforced the Packaging Boundary: zero modification to candidate generation, reranker weights, calibration mathematics, navigation logic, evaluation splits, benchmark predictions, or source datasets. Zero introduction of Phase 6+ logic (no web apps, no external geocoders, no LLMs, no online learning).
 - **Reason & Intuition**: An exemplary engineering submission must be immediately accessible and transparent to competition evaluators. Programmatic notebook generation and end-to-end execution validation guarantee that all artifacts execute reliably without missing dependency crashes while preserving the integrity of frozen modeling decisions.
 
+---
+
+## 7. Submission Consolidation Decisions
+
+### Decision 6.1: Submission Consolidation — Integrated PIN Parsing, C1–C5 Candidate Pipeline, and Entity-Contract Alignment
+- **Action**:
+  1. **Standardized PIN Extraction and Disambiguation**: Formalized postal PIN parsing (`extract_and_normalize_pincode`) and PIN-assisted locality disambiguation (`resolve_locality`) as native components of `src/neurogeo/address_parser.py`. The parser performs house/unit number pre-masking, six-digit postal pattern extraction, town-compatibility validation against `localities.csv`, and conservative single-digit repair only when an unambiguous town-valid assignment exists. Conflicting PINs trigger abstention, and localities are never assigned from PIN alone.
+  2. **Frozen C1–C5 Candidate Architecture**: Finalized the active spatial candidate set strictly as Candidates $C_1$ through $C_5$:
+     - $C_1$: Commercial baseline prior
+     - $C_2$: Sanitized direct visit medoid
+     - $C_3$: Locality-bounded physical POI catalog anchor
+     - $C_4$: Hierarchical street neighbor weighted centroid
+     - $C_5$: Locality polygon centroid
+  3. **Exclusion of Candidate C6 (Town-Scoped Landmark Hypotheses)**: Formally excluded Candidate $C_6$ from the submission architecture and removed all production code, wiring, and tests across `poi_resolver.py`, `candidate_ranker.py`, `calibrator.py`, `navigator.py`, `schemas.py`, and `run_phase4.py`.
+     - *Empirical Evaluation Record*: During controlled validation evaluation on the 19 validation split addresses, Candidate $C_6$ produced exactly **0 wins, 0 losses, and 0 candidate selections**. It introduced resolver complexity without providing incremental spatial accuracy over $C_3$ and $C_4$. Historical experiment logs honestly preserve that $C_6$ was prototyped, rigorously evaluated, and definitively rejected.
+  4. **Entity-Contract Alignment in Phase 4**: Corrected the column selection (`ent_cols`) in `scripts/run_phase4.py` to pass all parsed address entity attributes—specifically `poi_resolution_status` and `locality_resolution_status`—into `df_benchmark` and downstream candidate feature extraction for both training and inference.
+     - *Causal Attribution*: Baseline `run_phase4.py` previously omitted `poi_resolution_status` from `ent_cols`, causing Candidate $C_3$ to default to `"unresolved"` (capping its `TextMatch` score at 0.65 instead of the intended 0.90/0.95). In the validation audit, supplying the complete entity dictionary allowed $C_3$ to receive its true score, yielding 3 validation improvements (`AD000525`, `AD001315`, `AD002536`). This was caused by restoring the intended POI resolution status to $C_3$, **not** by PIN normalization.
+  5. **Evidence-Tier Quantile Calibration Retained**: Preserved the empirical quantile calibration method across status tiers (`DOORSTEP_VERIFIED`, `STREET_RESOLVED`, `LOCALITY_BOUNDED`, `BASELINE_FALLBACK`).
+  6. **Future Work Reservation**: Explicitly recorded that geometry-aware local-region confidence calibration is proposed future work and has not been implemented or evaluated in this submission.
+- **Reason & Intuition**: Under strict submission constraints, architectural clarity, code hygiene, and strict schema contract alignment are paramount. Eliminating redundant candidate hypotheses reduces maintenance burden while fixing the entity-contract ensures production inference matches the intended mathematical specification.
+
 

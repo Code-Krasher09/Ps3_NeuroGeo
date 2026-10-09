@@ -28,6 +28,7 @@ We explicitly reject continuous coordinate regression with neural networks ($(x,
 ┌────────────────────────────────────────────────────────┐
 │ 1. Address Understanding & Entity Resolution          │
 │    • Script normalization (Kannada / Devanagari)       │
+│    • Postal PIN parsing & assisted disambiguation      │
 │    • Locality, Street, Landmark, Preposition NER       │
 │    • Locality-bounded POI disambiguation               │
 └──────────────────────────┬─────────────────────────────┘
@@ -142,3 +143,4 @@ Every prediction returns an atomic schema containing:
 2. **No Neural Graph Networks (GNNs)**: Graph knowledge transfer uses sparse bipartite adjacency propagation (NetworkX / SciPy); neural message passing is out of scope.
 3. **No Unconstrained Online Learning**: The spatial knowledge base updates in versioned, integrity-gated batch cycles, never mutating production coordinates on single raw check-ins.
 4. **No Generative LLM Navigation**: Navigation text is synthesized via deterministic templates to guarantee sub-millisecond offline execution and zero hallucinations.
+5. **No Speculative Local-Region Calibration**: Geometry-aware local-region confidence calibration is designated as proposed future research. The production engine relies strictly on empirical evidence-tier quantile calibration derived from held-out SCV residuals.

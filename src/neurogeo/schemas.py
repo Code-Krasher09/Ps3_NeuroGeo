@@ -36,6 +36,9 @@ class ParsedAddressEntity:
     poi_resolution_status: str = "unresolved"       # 'resolved', 'unresolved', 'ambiguous'
     normalized_text: str = ""
     residual_text: str = ""
+    pincode_raw: Optional[str] = None
+    pincode_resolved: Optional[int] = None
+    pincode_status: str = "missing"  # 'exact', 'normalized', 'incompatible_town', 'conflicting', 'unresolved', 'missing'
 
 
 @dataclass(frozen=True)
@@ -90,7 +93,7 @@ class SpatialCandidate:
     
     Authority: PS3_FINAL_ARCHITECTURE.md and PS3_MODEL_SPEC.md.
     """
-    candidate_id: str                # e.g., 'C1_baseline', 'C2_visit', 'C3_poi', 'C4_street', 'C5_locality'
+    candidate_id: str                # e.g., 'AD0001::C1', 'AD0001::C2', 'AD0001::C3', 'AD0001::C4', 'AD0001::C5'
     x: Optional[float]
     y: Optional[float]
     source_type: str = ""

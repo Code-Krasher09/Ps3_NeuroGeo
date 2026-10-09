@@ -6,6 +6,7 @@ Authority: PS3_FINAL_ARCHITECTURE.md, PS3_MODEL_SPEC.md, and PS3_EVALUATION_AND_
 import math
 from typing import Dict, List
 import numpy as np
+import pandas as pd
 import pytest
 
 from neurogeo.candidate_ranker import (
@@ -19,7 +20,19 @@ from neurogeo.candidate_ranker import (
     compute_euclidean_distance,
 )
 from neurogeo.schemas import ParsedAddressEntity, SpatialCandidate
-from neurogeo.config import DEFAULT_CONFIG
+from neurogeo.config import DEFAULT_CONFIG, PATHS
+
+
+@pytest.fixture
+def df_pois():
+    """Load official landmarks reference table."""
+    return pd.read_csv(PATHS.landmarks_poi_csv)
+
+
+@pytest.fixture
+def df_localities():
+    """Load official localities reference table."""
+    return pd.read_csv(PATHS.localities_csv)
 
 
 # -------------------------------------------------------------
@@ -349,3 +362,123 @@ def test_no_fabricated_coordinates():
         assert c.available is False
         assert c.x is None
         assert c.y is None
+
+
+# -------------------------------------------------------------
+
+# -------------------------------------------------------------
+# Submission Consolidation Tests: C1-C5 Pipeline & Contract Fix
+# -------------------------------------------------------------
+
+def test_c1_c5_candidate_generation_and_c6_absence():
+    """Verify generate_candidates strictly produces C1-C5 and never produces C6."""
+    cands = generate_candidates(
+        address_id="AD0001",
+        baseline_row={"geocoder_x": 100.0, "geocoder_y": 200.0, "precision": "rooftop"},
+        medoid_row={"medoid_x": 102.0, "medoid_y": 202.0, "sample_count": 3},
+        poi_row={"x": 105.0, "y": 205.0, "poi_id": "LM0001", "name": "Test POI"},
+        c4_result={"available": True, "x": 101.0, "y": 201.0, "neighbor_count": 4},
+        locality_row={"locality_id": "T1-L01", "locality_name": "Test Loc", "centroid_x": 150.0, "centroid_y": 250.0},
+        parsed_entity={"poi_resolution_status": "resolved", "spatial_relation": "near"},
+    )
+    cand_types = [c.candidate_type for c in cands]
+    assert set(cand_types) == {"C1", "C2", "C3", "C4", "C5"}
+    assert "C6" not in cand_types
+    for c in cands:
+        assert c.candidate_type != "C6"
+        assert not c.candidate_id.endswith("::C6")
+
+
+def test_c3_scoring_with_resolved_vs_unresolved_status():
+    """Verify Candidate C3 text_match feature with resolved vs unresolved POI statuses.
+
+    Fixes the entity-contract inconsistency where missing poi_resolution_status
+    caused C3 to be penalized at 0.65 instead of receiving 0.90 (or 0.95 with relation).
+    """
+    c3_cand = SpatialCandidate(
+        candidate_id="AD0001::C3",
+        candidate_type="C3",
+        x=100.0,
+        y=200.0,
+        available=True,
+        source_type="physical_poi",
+        evidence_metadata={"poi_id": "LM0001"},
+    )
+
+    # 1. Resolved POI without spatial relation -> 0.90
+    feat_resolved = extract_candidate_features(
+        candidate=c3_cand,
+        parsed_entity={"poi_resolution_status": "resolved"},
+    )
+    assert feat_resolved["TextMatch"] == 0.90
+
+    # 2. Resolved POI with relational modifier ('opposite') -> 0.95
+    feat_rel = extract_candidate_features(
+        candidate=c3_cand,
+        parsed_entity={"poi_resolution_status": "resolved", "spatial_relation": "opposite"},
+    )
+    assert feat_rel["TextMatch"] == 0.95
+
+    # 3. Unresolved POI status -> 0.65
+    feat_unresolved = extract_candidate_features(
+        candidate=c3_cand,
+        parsed_entity={"poi_resolution_status": "unresolved"},
+    )
+    assert feat_unresolved["TextMatch"] == 0.65
+
+    # 4. Missing poi_resolution_status (the baseline contract bug) -> defaults to 0.65
+    feat_omitted = extract_candidate_features(
+        candidate=c3_cand,
+        parsed_entity={"landmark_poi_id": "LM0001"},
+    )
+    assert feat_omitted["TextMatch"] == 0.65
+
+    # 5. ParsedAddressEntity dataclass instance with resolved status -> 0.90
+    pe_obj = ParsedAddressEntity(
+        address_id="AD0001",
+        town_id="T1",
+        landmark_poi_id="LM0001",
+        poi_resolution_status="resolved",
+    )
+    feat_dataclass = extract_candidate_features(
+        candidate=c3_cand,
+        parsed_entity=pe_obj,
+    )
+    assert feat_dataclass["TextMatch"] == 0.90
+
+
+def test_phase4_entity_contract_preserves_resolution_status():
+    """Verify the Phase 4 entity contract passes poi_resolution_status into candidate scoring."""
+    import pandas as pd
+    from neurogeo.schemas import ParsedAddressEntity
+
+    # Synthetic entity DataFrame matching address_entities.parquet schema
+    df_addr_ent = pd.DataFrame([{
+        "address_id": "AD0001",
+        "account_id": "ACC001",
+        "town_id": "T1",
+        "locality_id_resolved": "T1-L01",
+        "locality_resolution_status": "resolved",
+        "street_normalized": "1st Main",
+        "landmark_poi_id": "LM0001",
+        "poi_resolution_status": "resolved",
+        "spatial_relation": "near",
+    }])
+
+    # Contract used in run_phase4.py
+    ent_cols = [c for c in df_addr_ent.columns if c not in ("surveyed_x", "surveyed_y")]
+    assert "poi_resolution_status" in ent_cols
+    assert "locality_resolution_status" in ent_cols
+
+    row_dict = df_addr_ent[ent_cols].iloc[0].to_dict()
+    assert row_dict["poi_resolution_status"] == "resolved"
+
+    c3_cand = SpatialCandidate(
+        candidate_id="AD0001::C3",
+        candidate_type="C3",
+        x=500.0,
+        y=500.0,
+        available=True,
+    )
+    feats = extract_candidate_features(c3_cand, parsed_entity=row_dict)
+    assert feats["TextMatch"] == 0.95  # 0.90 + 0.05 for 'near'

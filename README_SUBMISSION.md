@@ -99,10 +99,11 @@ Addresses mix English, native scripts (Kannada `\u0C80`–`\u0CFF`, Devanagari `
 
 NeuroGeo-Field implements a deterministic, non-destructive address parser (`src/neurogeo/address_parser.py`):
 1. **Unicode NFKC Normalization**: Preserves native Indic characters alongside Latin loan tokens without destructive phonetic Romanization.
-2. **Town-Scoped Locality Resolution**: Evaluates localities strictly within the address's `town_id` using length-prioritized substring matching and character 3-gram Jaccard matching ($\ge 0.65$ threshold). Resolves **88.8%** of addresses.
-3. **Bidirectional Street Normalization**: Standardizes word order and abbreviations (e.g., *"D Block, 5th Road"* and *"Blk D, Rd 5"* both normalize to `block d, 5th road`). Normalizes **78.2%** of addresses.
-4. **The Zero-Duplicate Locality Invariant**: Within any single locality bounding disc ($r \le 800\text{m}$), every landmark category is strictly unique ($\le 1$ POI per category). Once locality is resolved, landmark disambiguation is mathematically deterministic ($duplicate = 0$).
-5. **Zero Coordinate Offsets**: Relational prepositions (*"behind"*, *"opposite"*) are stored purely as semantic evidence. Candidate $C_3$ retains exact physical POI catalog coordinates from `landmarks_poi.csv` without fabricating arbitrary heuristic vector displacements.
+2. **Postal PIN Parsing & Assisted Locality Disambiguation**: Scans 6-digit postal PINs with house/unit number pre-masking, validates against `localities.csv` directory data, and enables conservative single-digit repair only when an unambiguous town-valid assignment exists. Disambiguates candidate localities without ever selecting a locality from PIN alone or fabricating coordinates.
+3. **Town-Scoped Locality Resolution**: Evaluates localities strictly within the address's `town_id` using length-prioritized substring matching and character 3-gram Jaccard matching ($\ge 0.65$ threshold). Resolves **88.8%** of addresses.
+4. **Bidirectional Street Normalization**: Standardizes word order and abbreviations (e.g., *"D Block, 5th Road"* and *"Blk D, Rd 5"* both normalize to `block d, 5th road`). Normalizes **78.2%** of addresses.
+5. **The Zero-Duplicate Locality Invariant**: Within any single locality bounding disc ($r \le 800\text{m}$), every landmark category is strictly unique ($\le 1$ POI per category). Once locality is resolved, landmark disambiguation is mathematically deterministic ($duplicate = 0$).
+6. **Zero Coordinate Offsets**: Relational prepositions (*"behind"*, *"opposite"*) are stored purely as semantic evidence. Candidate $C_3$ retains exact physical POI catalog coordinates from `landmarks_poi.csv` without fabricating arbitrary heuristic vector displacements.
 
 ---
 
@@ -173,6 +174,8 @@ Status tiers reflect the nature of supporting physical evidence, not an infallib
 - **`STREET_RESOLVED`**: Communicates street-level neighbor consensus, not guaranteed street-level accuracy. Final doorstep location must be verified locally.
 - **`LOCALITY_BOUNDED`**: Communicates a coarse locality polygon centroid estimate (~560m empirical P90 radius). Individual premises are unverified.
 - **`BASELINE_FALLBACK`**: Communicates weak evidence and reliance on the commercial geocoder prior (~983m empirical P90 radius).
+
+> **Future Work Note**: Geometry-aware local-region confidence calibration has been formulated as proposed future research, but is not implemented or evaluated in this submission. The production system relies exclusively on the verified Evidence-Tier Empirical Quantile Calibration detailed above.
 
 ---
 
@@ -439,7 +442,7 @@ Or open in Jupyter:
 │       ├── schemas.py                # Pydantic/dataclass schema definitions
 │       ├── spatial_graph.py          # Hierarchical spatial graph & centroids
 │       └── trajectory_miner.py       # GPS trajectory physics & dwell medoids
-├── tests/                            # Automated test suite (129 unit & regression tests)
+├── tests/                            # Automated test suite (150 unit & regression tests)
 │   ├── test_address_parser.py
 │   ├── test_calibrator.py
 │   ├── test_candidate_ranker.py
@@ -449,7 +452,8 @@ Or open in Jupyter:
 │   ├── test_poi_resolver.py
 │   ├── test_sanitizer.py
 │   ├── test_spatial_graph.py
-│   └── test_trajectory.py
+│   ├── test_trajectory.py
+│   └── test_validation_evaluator.py
 ├── Decisions.md                      # Chronological architectural decision register
 ├── PS3_DATA_CONTRACT.md              # Frozen data contract
 ├── PS3_EVALUATION_AND_LEAKAGE_CONTRACT.md # Frozen evaluation and leakage contract

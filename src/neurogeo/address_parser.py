@@ -383,14 +383,259 @@ def extract_landmark_and_relation(
     return (found_landmark_raw, found_relation, found_type_hint)
 
 
+def extract_all_landmarks_and_relations(
+    text: str,
+    town_id: Optional[str] = None,
+    df_localities: Optional[pd.DataFrame] = None,
+) -> List[Tuple[str, str, Optional[str]]]:
+    """Extract all distinct landmark textual mentions, their types, and associated spatial relations.
+
+    Returns a list of tuples: (matched_text, landmark_type, spatial_relation).
+    Excludes landmark pattern matches that are merely substrings of recognized locality names
+    (e.g., 'park' inside 'Green Park Layout').
+    """
+    if not text:
+        return []
+
+    norm_text = normalize_script(text)
+
+    # Identify locality spans to exclude false positives (e.g. 'park' in 'Green Park Layout')
+    loc_spans: List[Tuple[int, int]] = []
+    if df_localities is not None:
+        loc_df = df_localities[df_localities["town_id"] == town_id] if town_id else df_localities
+        for loc_name in loc_df["locality_name"]:
+            ln_norm = normalize_script(str(loc_name))
+            if ln_norm and ln_norm in norm_text:
+                for m in re.finditer(re.escape(ln_norm), norm_text):
+                    loc_spans.append((m.start(), m.end()))
+
+    # Find relation spans
+    rel_spans: List[Tuple[int, int, str]] = []
+    for rel_key, phrases in RELATION_PATTERNS.items():
+        for phrase in phrases:
+            pat = r"\b" + re.escape(phrase) + r"\b" if re.match(r"^[a-zA-Z0-9]+$", phrase) else re.escape(phrase)
+            for m in re.finditer(pat, norm_text, flags=re.IGNORECASE):
+                rel_spans.append((m.start(), m.end(), rel_key))
+            if phrase in text:
+                for m in re.finditer(re.escape(phrase), text):
+                    rel_spans.append((m.start(), m.end(), rel_key))
+
+    raw_matches: List[Tuple[int, int, str, str]] = []
+    for lm_type, patterns in LANDMARK_PATTERNS.items():
+        for pat in patterns:
+            pattern_regex = r"\b" + re.escape(pat) + r"\b" if re.match(r"^[a-zA-Z0-9\s]+$", pat) else re.escape(pat)
+            for m in re.finditer(pattern_regex, norm_text, flags=re.IGNORECASE):
+                span = (m.start(), m.end())
+                if any(ls[0] <= span[0] and span[1] <= ls[1] for ls in loc_spans):
+                    continue
+                raw_matches.append((span[0], span[1], m.group(0), lm_type))
+            if pat in text:
+                for m in re.finditer(re.escape(pat), text):
+                    span = (m.start(), m.end())
+                    if any(ls[0] <= span[0] and span[1] <= ls[1] for ls in loc_spans):
+                        continue
+                    raw_matches.append((span[0], span[1], m.group(0), lm_type))
+
+    if not raw_matches:
+        return []
+
+    # Deduplicate overlapping spans: keep longer match
+    raw_matches.sort(key=lambda x: (x[0], -(x[1] - x[0])))
+    filtered: List[Tuple[int, int, str, str]] = []
+    for m in raw_matches:
+        s, e, m_text, ltype = m
+        if any(not (e <= fs[0] or s >= fs[1]) for fs in filtered):
+            continue
+        filtered.append(m)
+
+    # Associate nearest spatial relation
+    results: List[Tuple[str, str, Optional[str]]] = []
+    for s, e, m_text, ltype in filtered:
+        best_rel = None
+        min_dist = float("inf")
+        for rs, re_pos, rkey in rel_spans:
+            dist = min(abs(s - re_pos), abs(rs - e))
+            if dist < min_dist and dist <= 30:
+                min_dist = dist
+                best_rel = rkey
+        results.append((m_text, ltype, best_rel))
+
+    return results
+
+
+# ---------------------------------------------------------------------------
+# PIN Code Extraction & Normalization
+# ---------------------------------------------------------------------------
+
+_TOWN_PINCODES_CACHE: Dict[int, Tuple[Dict[str, Set[int]], Dict[int, str]]] = {}
+
+
+def _get_gazetteer_pincodes(df_localities: pd.DataFrame) -> Tuple[Dict[str, Set[int]], Dict[int, str]]:
+    """Cache and return mapping of town_id -> valid PINs and PIN -> town_id."""
+    cache_key = len(df_localities)
+    if cache_key in _TOWN_PINCODES_CACHE:
+        return _TOWN_PINCODES_CACHE[cache_key]
+    town_pins: Dict[str, Set[int]] = {}
+    pin_to_town: Dict[int, str] = {}
+    for _, row in df_localities.iterrows():
+        t = str(row["town_id"])
+        p = int(row["pincode"])
+        town_pins.setdefault(t, set()).add(p)
+        pin_to_town[p] = t
+    _TOWN_PINCODES_CACHE[cache_key] = (town_pins, pin_to_town)
+    return town_pins, pin_to_town
+
+
+def extract_and_normalize_pincode(
+    address_text: str,
+    town_id: str,
+    df_localities: pd.DataFrame,
+) -> Tuple[Optional[str], Optional[int], str]:
+    """Extract and deterministically normalize PIN code from address text.
+
+    Returns:
+        (pincode_raw, pincode_resolved, pincode_status)
+        where pincode_status is one of:
+            - 'exact': 6-digit PIN code matching the locality gazetteer for town_id.
+            - 'normalized': malformed PIN normalized via documented deterministic
+              rules (keypad stutter deduplication or interior dropped zero) matching town_id.
+            - 'incompatible_town': PIN is valid in the gazetteer but belongs to a different town.
+            - 'conflicting': multiple distinct valid PIN codes found in address text.
+            - 'unresolved': candidate numeric token found but cannot be unambiguously resolved.
+            - 'missing': no candidate PIN token found in text.
+    """
+    if not address_text or not isinstance(address_text, str):
+        return (None, None, "missing")
+
+    town_pins_map, pin_to_town_map = _get_gazetteer_pincodes(df_localities)
+    valid_town_pins = town_pins_map.get(town_id, set())
+
+    # Exclude house number span if present to avoid misidentifying 5-digit house numbers as PINs
+    house_str = extract_house(address_text)
+    text_for_pin = unicodedata.normalize("NFKC", address_text)
+    if house_str:
+        norm_house = unicodedata.normalize("NFKC", house_str)
+        if norm_house:
+            text_for_pin = re.sub(re.escape(norm_house), " " * len(norm_house), text_for_pin, count=1, flags=re.IGNORECASE)
+
+    # Search for all 5 to 7 digit tokens
+    tokens = re.findall(r"\b\d{5,7}\b", text_for_pin)
+    if not tokens:
+        return (None, None, "missing")
+
+    # 1. Evaluate 6-digit candidate tokens first
+    six_digit_tokens = [t for t in tokens if len(t) == 6]
+    if six_digit_tokens:
+        valid_town_matches = []
+        incompatible_town_matches = []
+        unknown_six = []
+
+        for t in six_digit_tokens:
+            val = int(t)
+            if val in valid_town_pins:
+                valid_town_matches.append((t, val))
+            elif val in pin_to_town_map:
+                incompatible_town_matches.append((t, val, pin_to_town_map[val]))
+            else:
+                unknown_six.append((t, val))
+
+        if valid_town_matches:
+            distinct_pins = set(val for _, val in valid_town_matches)
+            if len(distinct_pins) > 1:
+                raw_str = ", ".join(t for t, _ in valid_town_matches)
+                return (raw_str, None, "conflicting")
+            elif incompatible_town_matches:
+                raw_str = ", ".join([t for t, _ in valid_town_matches] + [t for t, _, _ in incompatible_town_matches])
+                return (raw_str, None, "conflicting")
+            else:
+                raw_str = valid_town_matches[0][0]
+                return (raw_str, valid_town_matches[0][1], "exact")
+
+        if incompatible_town_matches:
+            raw_str = incompatible_town_matches[0][0]
+            return (raw_str, None, "incompatible_town")
+
+        raw_str = unknown_six[0][0]
+        return (raw_str, None, "unresolved")
+
+    # 2. Evaluate 7-digit and 5-digit tokens for documented normalization
+    normalized_candidates = []
+    has_incompatible_repair = False
+    incompatible_raw = None
+
+    for t in tokens:
+        if len(t) == 7:
+            # Keypad stutter: collapse adjacent duplicate digits
+            stutter_candidates = set()
+            for i in range(len(t) - 1):
+                if t[i] == t[i + 1]:
+                    collapsed = t[:i] + t[i + 1:]
+                    val = int(collapsed)
+                    if val in valid_town_pins:
+                        stutter_candidates.add(val)
+            if len(stutter_candidates) == 1:
+                normalized_candidates.append((t, list(stutter_candidates)[0]))
+            elif len(stutter_candidates) > 1:
+                return (t, None, "unresolved")
+            else:
+                # Check if it collapses to another town's PIN
+                other_stutter = set()
+                for i in range(len(t) - 1):
+                    if t[i] == t[i + 1]:
+                        collapsed = t[:i] + t[i + 1:]
+                        val = int(collapsed)
+                        if val in pin_to_town_map:
+                            other_stutter.add(val)
+                if other_stutter:
+                    has_incompatible_repair = True
+                    incompatible_raw = t
+
+        elif len(t) == 5:
+            # Interior dropped zero: insert interior '0'
+            zero_candidates = set()
+            for i in range(1, len(t)):
+                inserted = t[:i] + "0" + t[i:]
+                val = int(inserted)
+                if val in valid_town_pins:
+                    zero_candidates.add(val)
+            if len(zero_candidates) == 1:
+                normalized_candidates.append((t, list(zero_candidates)[0]))
+            elif len(zero_candidates) > 1:
+                return (t, None, "unresolved")
+            else:
+                # Check if inserting 0 matches another town's PIN
+                other_zero = set()
+                for i in range(1, len(t)):
+                    inserted = t[:i] + "0" + t[i:]
+                    val = int(inserted)
+                    if val in pin_to_town_map:
+                        other_zero.add(val)
+                if other_zero:
+                    has_incompatible_repair = True
+                    incompatible_raw = t
+
+    if normalized_candidates:
+        distinct_norm = set(val for _, val in normalized_candidates)
+        if len(distinct_norm) > 1:
+            raw_str = ", ".join(t for t, _ in normalized_candidates)
+            return (raw_str, None, "conflicting")
+        return (normalized_candidates[0][0], normalized_candidates[0][1], "normalized")
+
+    if has_incompatible_repair and incompatible_raw:
+        return (incompatible_raw, None, "incompatible_town")
+
+    raw_str = tokens[0]
+    return (raw_str, None, "unresolved")
+
+
 # ---------------------------------------------------------------------------
 # Locality Resolution (Town-Scoped)
 # ---------------------------------------------------------------------------
 
-_TOWN_LOCALITIES_CACHE: Dict[Tuple[str, int], List[Tuple[str, str, str, List[str], int]]] = {}
+_TOWN_LOCALITIES_CACHE: Dict[Tuple[str, int], List[Tuple[str, str, str, List[str], int, int]]] = {}
 
 
-def _get_town_localities(town_id: str, df_localities: pd.DataFrame) -> List[Tuple[str, str, str, List[str], int]]:
+def _get_town_localities(town_id: str, df_localities: pd.DataFrame) -> List[Tuple[str, str, str, List[str], int, int]]:
     cache_key = (town_id, len(df_localities))
     if cache_key in _TOWN_LOCALITIES_CACHE:
         return _TOWN_LOCALITIES_CACHE[cache_key]
@@ -401,7 +646,8 @@ def _get_town_localities(town_id: str, df_localities: pd.DataFrame) -> List[Tupl
         loc_name = str(row["locality_name"])
         loc_norm = normalize_script(loc_name)
         loc_words = loc_norm.split()
-        result.append((loc_id, loc_name, loc_norm, loc_words, len(loc_words)))
+        loc_pin = int(row["pincode"])
+        result.append((loc_id, loc_name, loc_norm, loc_words, len(loc_words), loc_pin))
     _TOWN_LOCALITIES_CACHE[cache_key] = result
     return result
 
@@ -412,9 +658,16 @@ def resolve_locality(
     df_localities: pd.DataFrame,
     fuzzy_threshold: float = 0.65,
     ambiguity_margin: float = 0.05,
+    pincode_resolved: Optional[int] = None,
+    pin_assisted_threshold: float = 0.55,
 ) -> Tuple[Optional[str], Optional[str], str, float]:
     """Resolve locality mention to a unique locality_id scoped strictly by town_id.
     
+    Preserves existing town-scoped locality matching as primary evidence.
+    When ordinary matching fails (unresolved) or is ambiguous, and a valid town-compatible
+    pincode_resolved is provided, applies conservative fuzzy matching within the
+    PIN-restricted candidate pool. A PIN code by itself never selects an arbitrary locality.
+
     Returns:
         (locality_id_resolved, locality_name_raw, status, confidence)
         status is 'resolved', 'ambiguous', or 'unresolved'.
@@ -426,13 +679,20 @@ def resolve_locality(
     if not town_loc_entries:
         return (None, None, "unresolved", 0.0)
         
+    resolved_pin_int: Optional[int] = None
+    if pincode_resolved is not None:
+        try:
+            resolved_pin_int = int(pincode_resolved)
+        except (ValueError, TypeError):
+            resolved_pin_int = None
+
     norm_addr = normalize_script(address_text)
     
     # 1. Exact substring match on normalized names
     exact_candidates = []
-    for loc_id, loc_name, loc_norm, _, _ in town_loc_entries:
+    for loc_id, loc_name, loc_norm, _, _, loc_pin in town_loc_entries:
         if loc_norm in norm_addr:
-            exact_candidates.append((loc_id, loc_name, len(loc_norm)))
+            exact_candidates.append((loc_id, loc_name, len(loc_norm), loc_pin))
             
     if exact_candidates:
         # Sort by length descending (longer, more specific names win)
@@ -441,14 +701,18 @@ def resolve_locality(
         # Check if there's a tie between two distinct names of the same length
         ties = [c for c in exact_candidates if c[2] == top[2]]
         if len(ties) > 1 and ties[0][0] != ties[1][0]:
+            if resolved_pin_int is not None:
+                pin_ties = [c for c in ties if c[3] == resolved_pin_int]
+                if len(pin_ties) == 1:
+                    return (pin_ties[0][0], pin_ties[0][1], "resolved", 1.0)
             return (None, top[1], "ambiguous", 0.90)
         return (top[0], top[1], "resolved", 1.0)
         
-    # 2. Windowed character n-gram fuzzy matching
+    # 2. Windowed character n-gram fuzzy matching across entire town
     words = re.findall(r"[a-z0-9]+", norm_addr)
     scored_candidates = []
     
-    for loc_id, loc_name, loc_norm, loc_words, window_size in town_loc_entries:
+    for loc_id, loc_name, loc_norm, loc_words, window_size, loc_pin in town_loc_entries:
         best_sim = 0.0
         best_window = ""
         
@@ -464,7 +728,7 @@ def resolve_locality(
                     best_window = window_str
                     
         if best_sim >= fuzzy_threshold:
-            scored_candidates.append((loc_id, loc_name, best_sim, best_window))
+            scored_candidates.append((loc_id, loc_name, best_sim, best_window, loc_pin))
             
     if scored_candidates:
         # Sort by similarity score descending
@@ -472,15 +736,55 @@ def resolve_locality(
         top_cand = scored_candidates[0]
         
         # Check for ambiguity: if runner-up is within ambiguity_margin
+        is_ambiguous = False
         if len(scored_candidates) > 1:
             runner_up = scored_candidates[1]
             if abs(top_cand[2] - runner_up[2]) < ambiguity_margin and top_cand[0] != runner_up[0]:
-                return (None, top_cand[3], "ambiguous", round(top_cand[2], 3))
-                
-        return (top_cand[0], top_cand[3], "resolved", round(top_cand[2], 3))
-        
-    return (None, None, "unresolved", 0.0)
+                is_ambiguous = True
 
+        if not is_ambiguous:
+            return (top_cand[0], top_cand[3], "resolved", round(top_cand[2], 3))
+        else:
+            # Ambiguous under full-town matching; attempt PIN-based disambiguation
+            if resolved_pin_int is not None:
+                pin_matched = [c for c in scored_candidates if c[4] == resolved_pin_int]
+                if pin_matched:
+                    p_top = pin_matched[0]
+                    p_tied = [c for c in pin_matched[1:] if abs(p_top[2] - c[2]) < ambiguity_margin and c[0] != p_top[0]]
+                    if not p_tied:
+                        return (p_top[0], p_top[3], "resolved", round(p_top[2], 3))
+            return (None, top_cand[3], "ambiguous", round(top_cand[2], 3))
+
+    # 3. PIN-Assisted Recovery (when ordinary town-wide matching is unresolved)
+    if resolved_pin_int is not None:
+        pin_pool = [e for e in town_loc_entries if e[5] == resolved_pin_int]
+        if pin_pool and words:
+            pin_scored = []
+            for loc_id, loc_name, loc_norm, loc_words, window_size, _ in pin_pool:
+                best_sim = 0.0
+                best_window = ""
+                for w_len in (window_size, window_size + 1):
+                    if w_len > len(words):
+                        continue
+                    for i in range(len(words) - w_len + 1):
+                        window_str = " ".join(words[i:i+w_len])
+                        sim = ngram_similarity(window_str, loc_norm)
+                        if sim > best_sim:
+                            best_sim = sim
+                            best_window = window_str
+                if best_sim >= pin_assisted_threshold:
+                    pin_scored.append((loc_id, loc_name, best_sim, best_window))
+
+            if pin_scored:
+                pin_scored.sort(key=lambda x: x[2], reverse=True)
+                top_p = pin_scored[0]
+                if len(pin_scored) > 1:
+                    runner_up_p = pin_scored[1]
+                    if abs(top_p[2] - runner_up_p[2]) < ambiguity_margin and top_p[0] != runner_up_p[0]:
+                        return (None, top_p[3], "ambiguous", round(top_p[2], 3))
+                return (top_p[0], top_p[3], "resolved", round(top_p[2], 3))
+                
+    return (None, None, "unresolved", 0.0)
 
 
 # ---------------------------------------------------------------------------
@@ -505,19 +809,27 @@ def parse_address(
     script_detected, is_multilingual = detect_script(address_text)
     norm_text = normalize_script(address_text)
     
+    # 0. PIN extraction & normalization
+    pin_raw, pin_resolved, pin_status = extract_and_normalize_pincode(
+        address_text=address_text,
+        town_id=town_id,
+        df_localities=df_localities,
+    )
+
     # 1. House extraction
     house_raw = extract_house(address_text)
     
     # 2. Street extraction
     street_raw, street_norm = extract_street(address_text, town_id)
     
-    # 3. Locality resolution
+    # 3. Locality resolution (using pin_resolved to assist if needed)
     loc_id, loc_name_raw, loc_status, loc_conf = resolve_locality(
         address_text=address_text,
         town_id=town_id,
         df_localities=df_localities,
         fuzzy_threshold=cfg.locality_fuzzy_threshold,
         ambiguity_margin=cfg.ambiguity_score_margin,
+        pincode_resolved=pin_resolved,
     )
     
     # 4. Landmark and relation extraction
@@ -561,7 +873,7 @@ def parse_address(
     
     # 7. Compute residual text (what was not recognized as an entity)
     res_text = norm_text
-    for ent in [house_raw, street_raw, loc_name_raw, lm_raw]:
+    for ent in [house_raw, street_raw, loc_name_raw, lm_raw, pin_raw]:
         if ent:
             res_text = re.sub(re.escape(normalize_script(ent)), "", res_text, count=1)
     res_text = re.sub(r"[\s,;]+", " ", res_text).strip()
@@ -584,6 +896,9 @@ def parse_address(
         poi_resolution_status=poi_status,
         normalized_text=norm_text,
         residual_text=res_text,
+        pincode_raw=pin_raw,
+        pincode_resolved=pin_resolved,
+        pincode_status=pin_status,
     )
 
 

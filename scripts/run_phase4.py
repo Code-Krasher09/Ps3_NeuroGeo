@@ -102,15 +102,21 @@ def main() -> None:
     # -------------------------------------------------------------
     print("\n[Step 3/6] Fitting deterministic linear reranker weights on Train split (N=66)...")
     # Identify splits for surveyed benchmark
+    # Maintainable parsed-entity contract: pass all parsed entity attributes
+    # (including poi_resolution_status and locality_resolution_status) into df_benchmark
+    # so candidate scoring in both training and inference has full entity context
+    ent_cols = [c for c in df_addr_ent.columns if c not in ("surveyed_x", "surveyed_y")]
     df_benchmark = df_surv.merge(
-        df_addr_ent[[
-            "address_id", "account_id", "town_id", "locality_id_resolved",
-            "street_normalized", "landmark_poi_id", "spatial_relation",
-            "locality_name_raw", "landmark_raw",
-        ]],
+        df_addr_ent[ent_cols],
         on="address_id",
         how="left",
     )
+    if "address_text" not in df_benchmark.columns:
+        df_benchmark = df_benchmark.merge(
+            df_raw_addr[["address_id", "address_text"]],
+            on="address_id",
+            how="left",
+        )
     df_benchmark = df_benchmark.merge(df_splits, on="account_id", how="left")
 
     train_mask = df_benchmark["split"] == "train"
