@@ -1,7 +1,7 @@
 {
   "phase": 1,
   "phase_name": "Operational Visit Sanitizer & Trajectory Miner",
-  "timestamp_seconds": 26.48,
+  "timestamp_seconds": 21.79,
   "dataset_statistics": {
     "total_visits": 5578,
     "unique_addresses_visited": 1477,

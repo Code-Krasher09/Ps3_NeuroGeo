@@ -64,5 +64,5 @@
     "reports/metrics/loso_results.csv",
     "reports/metrics/phase3_spatial_graph_summary.json"
   ],
-  "execution_time_seconds": 7.93
+  "execution_time_seconds": 6.85
 }
