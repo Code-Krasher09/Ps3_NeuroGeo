@@ -10,11 +10,11 @@
     "mixed": 262
   },
   "locality_resolution": {
-    "resolved_count": 2557,
-    "resolved_percentage": 88.78,
+    "resolved_count": 2576,
+    "resolved_percentage": 89.44,
     "target_percentage": 65.0,
     "ambiguous_count": 0,
-    "unresolved_count": 323,
+    "unresolved_count": 304,
     "status": "PASS"
   },
   "street_extraction": {
@@ -26,12 +26,12 @@
   "landmark_poi_resolution": {
     "landmarks_detected_count": 1896,
     "landmarks_detected_percentage": 65.83,
-    "poi_resolved_count": 1204,
-    "poi_resolved_percentage": 41.81,
-    "poi_ambiguous_count": 210,
-    "poi_ambiguous_percentage": 7.29,
-    "poi_unresolved_count": 1466,
-    "poi_unresolved_percentage": 50.9,
+    "poi_resolved_count": 1211,
+    "poi_resolved_percentage": 42.05,
+    "poi_ambiguous_count": 201,
+    "poi_ambiguous_percentage": 6.98,
+    "poi_unresolved_count": 1468,
+    "poi_unresolved_percentage": 50.97,
     "zero_duplicate_invariant": "VERIFIED (max duplicates per locality = 0)"
   },
   "relational_phrases": {
@@ -44,5 +44,5 @@
       "beside": 88
     }
   },
-  "execution_time_seconds": 7.53
+  "execution_time_seconds": 4.54
 }

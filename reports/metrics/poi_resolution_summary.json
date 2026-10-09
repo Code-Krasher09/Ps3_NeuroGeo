@@ -6,9 +6,9 @@
   "zero_duplicate_locality_invariant": true,
   "max_poi_per_type_within_locality": 1,
   "resolution_statistics": {
-    "resolved": 1204,
-    "ambiguous": 210,
-    "unresolved": 1466
+    "resolved": 1211,
+    "ambiguous": 201,
+    "unresolved": 1468
   },
   "spatial_offset_policy": "NO_DISPLACEMENT_APPLIED (C3 = physical POI catalog coordinate)"
 }

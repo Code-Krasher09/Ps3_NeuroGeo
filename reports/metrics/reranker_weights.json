@@ -4,10 +4,10 @@
   "source_data_scope": "data/shared/splits.csv (train split N=66)",
   "weights": {
     "w_text": 5.0,
-    "w_visit": 4.2454,
+    "w_visit": 4.2412,
     "w_neigh": 1.5,
-    "w_base": 0.3307,
-    "w_neg": 1.0276
+    "w_base": 0.3303,
+    "w_neg": 1.0264
   },
   "feature_definitions": {
     "TextMatch": "Token and entity compatibility in [0, 1]",
@@ -18,7 +18,7 @@
   },
   "sample_count": 66,
   "pairwise_comparisons": 220,
-  "loss": 83.9647,
+  "loss": 83.9748,
   "convergence": true,
   "method": "deterministic_pairwise_utility_ranking",
   "random_state": 42

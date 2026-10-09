@@ -7,12 +7,12 @@
       986.3,
       2772.6
     ],
-    "confidence_radius_m": 609.14,
+    "confidence_radius_m": 602.56,
     "calibration_tier": "LOCALITY_BOUNDED",
-    "calibration_sample_count": 318,
+    "calibration_sample_count": 319,
     "calibration_fallback_level": "candidate_p90",
     "score": 3.501,
-    "score_margin": 0.6703,
+    "score_margin": 0.6707,
     "evidence_sources": [
       "locality_centroid"
     ],
@@ -21,7 +21,7 @@
       "Confidence radius calibrated via candidate-wise empirical P90 (C5)"
     ],
     "negative_evidence": [],
-    "caution": "Locality-level centroid; uncertainty radius ~609 m.",
+    "caution": "Locality-level centroid; uncertainty radius ~603 m.",
     "provenance": {
       "fit_scope": "benchmark_train",
       "evaluation_scope": "eval_test",
@@ -32,7 +32,7 @@
       "calibration_method": "candidate_p90",
       "calibration_fallback_reason": "landmark_unresolved"
     },
-    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 609 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location represents the locality centroid for neighborhood 'Azad Mohalla' as direct visits were unavailable."
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 603 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location represents the locality centroid for neighborhood 'Azad Mohalla' as direct visits were unavailable."
   },
   {
     "address_id": "AD000251",
@@ -44,10 +44,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 6.5883,
-    "score_margin": 2.9872,
+    "score": 6.5867,
+    "score_margin": 2.9857,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -78,12 +78,12 @@
       -409.93,
       3213.59
     ],
-    "confidence_radius_m": 731.26,
+    "confidence_radius_m": 725.5,
     "calibration_tier": "STREET_RESOLVED",
-    "calibration_sample_count": 262,
+    "calibration_sample_count": 265,
     "calibration_fallback_level": "candidate_p90",
     "score": 4.501,
-    "score_margin": 0.7768,
+    "score_margin": 0.7771,
     "evidence_sources": [
       "spatial_neighbor_graph"
     ],
@@ -104,7 +104,7 @@
       "calibration_method": "candidate_p90",
       "calibration_fallback_reason": "landmark_unresolved"
     },
-    "explanation": "Prediction is STREET_RESOLVED with an estimated 731 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 726 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
   },
   {
     "address_id": "AD002501",
@@ -116,10 +116,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 5.6581,
-    "score_margin": 0.9081,
+    "score": 5.6575,
+    "score_margin": 0.9075,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -148,12 +148,12 @@
       1097.3,
       2655.1
     ],
-    "confidence_radius_m": 1003.12,
+    "confidence_radius_m": 979.4,
     "calibration_tier": "STREET_RESOLVED",
-    "calibration_sample_count": 561,
+    "calibration_sample_count": 563,
     "calibration_fallback_level": "candidate_specific_geom",
     "score": 4.7523,
-    "score_margin": 0.1763,
+    "score_margin": 0.1764,
     "evidence_sources": [
       "physical_poi"
     ],
@@ -177,7 +177,7 @@
       "nearest_unmentioned_poi_id": "LM0173",
       "nearest_unmentioned_distance_m": 174.94
     },
-    "explanation": "Prediction is STREET_RESOLVED with an estimated 1003 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 979 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
   },
   {
     "address_id": "AD003071",
@@ -187,12 +187,12 @@
       -668.5,
       -3901.1
     ],
-    "confidence_radius_m": 1653.77,
+    "confidence_radius_m": 1654.98,
     "calibration_tier": "STREET_RESOLVED",
-    "calibration_sample_count": 287,
+    "calibration_sample_count": 281,
     "calibration_fallback_level": "candidate_p90",
-    "score": 4.5807,
-    "score_margin": 4.5807,
+    "score": 4.5803,
+    "score_margin": 4.5803,
     "evidence_sources": [
       "commercial_baseline"
     ],
@@ -213,7 +213,7 @@
       "calibration_method": "candidate_p90",
       "calibration_fallback_reason": "landmark_ambiguous"
     },
-    "explanation": "Prediction is STREET_RESOLVED with an estimated 1654 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 1655 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
   },
   {
     "address_id": "AD000322",
@@ -225,10 +225,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 6.2291,
-    "score_margin": 1.4864,
+    "score": 6.2279,
+    "score_margin": 1.4855,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -257,12 +257,12 @@
       -2068.5,
       1404.2
     ],
-    "confidence_radius_m": 1653.77,
+    "confidence_radius_m": 1654.98,
     "calibration_tier": "BASELINE_FALLBACK",
-    "calibration_sample_count": 287,
+    "calibration_sample_count": 281,
     "calibration_fallback_level": "candidate_p90",
-    "score": 1.3307,
-    "score_margin": 1.3307,
+    "score": 1.3303,
+    "score_margin": 1.3303,
     "evidence_sources": [
       "commercial_baseline"
     ],
@@ -282,7 +282,7 @@
       "calibration_method": "candidate_p90",
       "calibration_fallback_reason": "landmark_unresolved"
     },
-    "explanation": "Prediction is BASELINE_FALLBACK with an estimated 1654 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location falls back to commercial baseline geocoding due to absence of verified field check-ins or street clusters."
+    "explanation": "Prediction is BASELINE_FALLBACK with an estimated 1655 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location falls back to commercial baseline geocoding due to absence of verified field check-ins or street clusters."
   },
   {
     "address_id": "AD001987",
@@ -292,12 +292,12 @@
       1517.4,
       -1353.2
     ],
-    "confidence_radius_m": 1653.77,
+    "confidence_radius_m": 1654.98,
     "calibration_tier": "BASELINE_FALLBACK",
-    "calibration_sample_count": 287,
+    "calibration_sample_count": 281,
     "calibration_fallback_level": "candidate_p90",
-    "score": 1.3307,
-    "score_margin": 1.3307,
+    "score": 1.3303,
+    "score_margin": 1.3303,
     "evidence_sources": [
       "commercial_baseline"
     ],
@@ -317,7 +317,7 @@
       "calibration_method": "candidate_p90",
       "calibration_fallback_reason": "landmark_ambiguous"
     },
-    "explanation": "Prediction is BASELINE_FALLBACK with an estimated 1654 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location falls back to commercial baseline geocoding due to absence of verified field check-ins or street clusters."
+    "explanation": "Prediction is BASELINE_FALLBACK with an estimated 1655 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location falls back to commercial baseline geocoding due to absence of verified field check-ins or street clusters."
   },
   {
     "address_id": "AD002707",
@@ -329,10 +329,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 7.4008,
-    "score_margin": 6.0701,
+    "score": 7.3984,
+    "score_margin": 6.0681,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -361,12 +361,12 @@
       -1390.5,
       326.1
     ],
-    "confidence_radius_m": 1537.31,
+    "confidence_radius_m": 1500.96,
     "calibration_tier": "STREET_RESOLVED",
-    "calibration_sample_count": 561,
+    "calibration_sample_count": 563,
     "calibration_fallback_level": "candidate_specific_geom",
     "score": 4.7607,
-    "score_margin": 0.18,
+    "score_margin": 0.1804,
     "evidence_sources": [
       "physical_poi"
     ],
@@ -390,7 +390,7 @@
       "nearest_unmentioned_poi_id": "LM0037",
       "nearest_unmentioned_distance_m": 268.1
     },
-    "explanation": "Prediction is STREET_RESOLVED with an estimated 1537 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 1501 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
   },
   {
     "address_id": "AD002740",
@@ -400,12 +400,12 @@
       -2863.9,
       1096.5
     ],
-    "confidence_radius_m": 609.14,
+    "confidence_radius_m": 602.56,
     "calibration_tier": "LOCALITY_BOUNDED",
-    "calibration_sample_count": 318,
+    "calibration_sample_count": 319,
     "calibration_fallback_level": "candidate_p90",
     "score": 3.5288,
-    "score_margin": 0.6981,
+    "score_margin": 0.6985,
     "evidence_sources": [
       "locality_centroid"
     ],
@@ -414,7 +414,7 @@
       "Confidence radius calibrated via candidate-wise empirical P90 (C5)"
     ],
     "negative_evidence": [],
-    "caution": "Locality-level centroid; uncertainty radius ~609 m.",
+    "caution": "Locality-level centroid; uncertainty radius ~603 m.",
     "provenance": {
       "fit_scope": "benchmark_train",
       "evaluation_scope": "train_all",
@@ -425,7 +425,7 @@
       "calibration_method": "candidate_p90",
       "calibration_fallback_reason": "landmark_unresolved"
     },
-    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 609 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location represents the locality centroid for neighborhood 'Vinayaka Nagar' as direct visits were unavailable."
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 603 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location represents the locality centroid for neighborhood 'Vinayaka Nagar' as direct visits were unavailable."
   },
   {
     "address_id": "AD000683",
@@ -435,12 +435,12 @@
       290.7,
       2335.2
     ],
-    "confidence_radius_m": 609.14,
+    "confidence_radius_m": 602.56,
     "calibration_tier": "LOCALITY_BOUNDED",
-    "calibration_sample_count": 318,
+    "calibration_sample_count": 319,
     "calibration_fallback_level": "candidate_p90",
-    "score": 3.5559,
-    "score_margin": 0.7252,
+    "score": 3.5558,
+    "score_margin": 0.7255,
     "evidence_sources": [
       "locality_centroid"
     ],
@@ -449,7 +449,7 @@
       "Confidence radius calibrated via candidate-wise empirical P90 (C5)"
     ],
     "negative_evidence": [],
-    "caution": "Locality-level centroid; uncertainty radius ~609 m.",
+    "caution": "Locality-level centroid; uncertainty radius ~603 m.",
     "provenance": {
       "fit_scope": "benchmark_train",
       "evaluation_scope": "train_all",
@@ -460,7 +460,7 @@
       "calibration_method": "candidate_p90",
       "calibration_fallback_reason": "landmark_unresolved"
     },
-    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 609 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location represents the locality centroid for neighborhood 'Anjaneya Badavane' as direct visits were unavailable."
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 603 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location represents the locality centroid for neighborhood 'Anjaneya Badavane' as direct visits were unavailable."
   },
   {
     "address_id": "AD003078",
@@ -470,12 +470,12 @@
       2844.3,
       775.5
     ],
-    "confidence_radius_m": 1017.34,
+    "confidence_radius_m": 993.29,
     "calibration_tier": "STREET_RESOLVED",
-    "calibration_sample_count": 561,
+    "calibration_sample_count": 563,
     "calibration_fallback_level": "candidate_specific_geom",
-    "score": 4.7888,
-    "score_margin": 1.104,
+    "score": 4.7887,
+    "score_margin": 1.1042,
     "evidence_sources": [
       "physical_poi"
     ],
@@ -499,7 +499,7 @@
       "nearest_unmentioned_poi_id": "LM0159",
       "nearest_unmentioned_distance_m": 177.42
     },
-    "explanation": "Prediction is STREET_RESOLVED with an estimated 1017 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 993 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
   },
   {
     "address_id": "AD002284",
@@ -511,10 +511,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 6.5201,
-    "score_margin": 1.9394,
+    "score": 6.5186,
+    "score_margin": 1.9383,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -543,12 +543,12 @@
       1537.3,
       -1398.4
     ],
-    "confidence_radius_m": 1653.77,
+    "confidence_radius_m": 1654.98,
     "calibration_tier": "BASELINE_FALLBACK",
-    "calibration_sample_count": 287,
+    "calibration_sample_count": 281,
     "calibration_fallback_level": "candidate_p90",
-    "score": 1.3307,
-    "score_margin": 1.3307,
+    "score": 1.3303,
+    "score_margin": 1.3303,
     "evidence_sources": [
       "commercial_baseline"
     ],
@@ -570,7 +570,7 @@
       "calibration_method": "candidate_p90",
       "calibration_fallback_reason": "landmark_unresolved"
     },
-    "explanation": "Prediction is BASELINE_FALLBACK with an estimated 1654 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location falls back to commercial baseline geocoding due to absence of verified field check-ins or street clusters."
+    "explanation": "Prediction is BASELINE_FALLBACK with an estimated 1655 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location falls back to commercial baseline geocoding due to absence of verified field check-ins or street clusters."
   },
   {
     "address_id": "AD002889",
@@ -582,10 +582,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 5.867,
-    "score_margin": 1.778,
+    "score": 5.8663,
+    "score_margin": 1.7769,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -617,12 +617,12 @@
       2450.4,
       1996.0
     ],
-    "confidence_radius_m": 370.65,
+    "confidence_radius_m": 361.89,
     "calibration_tier": "STREET_RESOLVED",
-    "calibration_sample_count": 561,
+    "calibration_sample_count": 563,
     "calibration_fallback_level": "candidate_specific_geom",
     "score": 4.7557,
-    "score_margin": 1.0972,
+    "score_margin": 1.0974,
     "evidence_sources": [
       "physical_poi"
     ],
@@ -646,7 +646,7 @@
       "nearest_unmentioned_poi_id": "LM0142",
       "nearest_unmentioned_distance_m": 64.64
     },
-    "explanation": "Prediction is STREET_RESOLVED with an estimated 371 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 362 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
   },
   {
     "address_id": "AD002279",
@@ -656,12 +656,12 @@
       -880.5,
       -1288.3
     ],
-    "confidence_radius_m": 1910.26,
+    "confidence_radius_m": 1865.08,
     "calibration_tier": "STREET_RESOLVED",
-    "calibration_sample_count": 561,
+    "calibration_sample_count": 563,
     "calibration_fallback_level": "candidate_specific_geom",
     "score": 4.7511,
-    "score_margin": 0.1704,
+    "score_margin": 0.1708,
     "evidence_sources": [
       "physical_poi"
     ],
@@ -685,7 +685,7 @@
       "nearest_unmentioned_poi_id": "LM0100",
       "nearest_unmentioned_distance_m": 333.14
     },
-    "explanation": "Prediction is STREET_RESOLVED with an estimated 1910 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 1865 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
   },
   {
     "address_id": "AD000962",
@@ -697,10 +697,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 6.6048,
-    "score_margin": 2.9945,
+    "score": 6.6032,
+    "score_margin": 2.993,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -731,9 +731,9 @@
       644.8,
       -3711.4
     ],
-    "confidence_radius_m": 1111.38,
+    "confidence_radius_m": 1085.1,
     "calibration_tier": "STREET_RESOLVED",
-    "calibration_sample_count": 561,
+    "calibration_sample_count": 563,
     "calibration_fallback_level": "candidate_specific_geom",
     "score": 4.75,
     "score_margin": 1.2229,
@@ -760,7 +760,7 @@
       "nearest_unmentioned_poi_id": "LM0323",
       "nearest_unmentioned_distance_m": 193.82
     },
-    "explanation": "Prediction is STREET_RESOLVED with an estimated 1111 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 1085 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
   },
   {
     "address_id": "AD002555",
@@ -772,10 +772,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 8.2986,
-    "score_margin": 4.5711,
+    "score": 8.2953,
+    "score_margin": 4.5681,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -804,9 +804,9 @@
       -3155.2,
       823.8
     ],
-    "confidence_radius_m": 2078.96,
+    "confidence_radius_m": 2029.79,
     "calibration_tier": "STREET_RESOLVED",
-    "calibration_sample_count": 561,
+    "calibration_sample_count": 563,
     "calibration_fallback_level": "candidate_specific_geom",
     "score": 4.7501,
     "score_margin": 1.2298,
@@ -833,7 +833,7 @@
       "nearest_unmentioned_poi_id": "LM0008",
       "nearest_unmentioned_distance_m": 362.56
     },
-    "explanation": "Prediction is STREET_RESOLVED with an estimated 2079 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 2030 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
   },
   {
     "address_id": "AD000236",
@@ -845,10 +845,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 6.0596,
-    "score_margin": 1.5218,
+    "score": 6.0585,
+    "score_margin": 1.5208,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -879,10 +879,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 8.4936,
-    "score_margin": 3.6986,
+    "score": 8.4901,
+    "score_margin": 3.6951,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -915,10 +915,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 5.6878,
-    "score_margin": 3.0643,
+    "score": 5.6871,
+    "score_margin": 3.0626,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -951,10 +951,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 5.6354,
-    "score_margin": 2.0161,
+    "score": 5.6348,
+    "score_margin": 2.0156,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -985,12 +985,12 @@
       -310.8,
       990.8
     ],
-    "confidence_radius_m": 1136.1,
+    "confidence_radius_m": 1109.23,
     "calibration_tier": "STREET_RESOLVED",
-    "calibration_sample_count": 561,
+    "calibration_sample_count": 563,
     "calibration_fallback_level": "candidate_specific_geom",
     "score": 4.75,
-    "score_margin": 1.0634,
+    "score_margin": 1.0636,
     "evidence_sources": [
       "physical_poi"
     ],
@@ -1014,7 +1014,7 @@
       "nearest_unmentioned_poi_id": "LM0214",
       "nearest_unmentioned_distance_m": 198.13
     },
-    "explanation": "Prediction is STREET_RESOLVED with an estimated 1136 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 1109 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
   },
   {
     "address_id": "AD002868",
@@ -1024,12 +1024,12 @@
       -232.8,
       -956.2
     ],
-    "confidence_radius_m": 978.35,
+    "confidence_radius_m": 955.22,
     "calibration_tier": "STREET_RESOLVED",
-    "calibration_sample_count": 561,
+    "calibration_sample_count": 563,
     "calibration_fallback_level": "candidate_specific_geom",
     "score": 4.75,
-    "score_margin": 1.0272,
+    "score_margin": 1.0275,
     "evidence_sources": [
       "physical_poi"
     ],
@@ -1053,7 +1053,7 @@
       "nearest_unmentioned_poi_id": "LM0103",
       "nearest_unmentioned_distance_m": 170.62
     },
-    "explanation": "Prediction is STREET_RESOLVED with an estimated 978 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 955 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
   },
   {
     "address_id": "AD001963",
@@ -1065,10 +1065,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 8.7126,
-    "score_margin": 4.2126,
+    "score": 8.7089,
+    "score_margin": 4.2089,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -1097,9 +1097,9 @@
       -347.0,
       -84.0
     ],
-    "confidence_radius_m": 1045.33,
+    "confidence_radius_m": 1020.61,
     "calibration_tier": "STREET_RESOLVED",
-    "calibration_sample_count": 561,
+    "calibration_sample_count": 563,
     "calibration_fallback_level": "candidate_specific_geom",
     "score": 4.75,
     "score_margin": 0.25,
@@ -1126,7 +1126,7 @@
       "nearest_unmentioned_poi_id": "LM0185",
       "nearest_unmentioned_distance_m": 182.3
     },
-    "explanation": "Prediction is STREET_RESOLVED with an estimated 1045 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 1021 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
   },
   {
     "address_id": "AD000071",
@@ -1136,12 +1136,12 @@
       778.1,
       -3852.1
     ],
-    "confidence_radius_m": 1111.38,
+    "confidence_radius_m": 1085.1,
     "calibration_tier": "STREET_RESOLVED",
-    "calibration_sample_count": 561,
+    "calibration_sample_count": 563,
     "calibration_fallback_level": "candidate_specific_geom",
-    "score": 4.9173,
-    "score_margin": 0.3366,
+    "score": 4.9171,
+    "score_margin": 0.3368,
     "evidence_sources": [
       "physical_poi"
     ],
@@ -1165,7 +1165,7 @@
       "nearest_unmentioned_poi_id": "LM0316",
       "nearest_unmentioned_distance_m": 193.82
     },
-    "explanation": "Prediction is STREET_RESOLVED with an estimated 1111 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 1085 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
   },
   {
     "address_id": "AD001711",
@@ -1175,12 +1175,12 @@
       665.2,
       -3094.2
     ],
-    "confidence_radius_m": 609.14,
+    "confidence_radius_m": 602.56,
     "calibration_tier": "LOCALITY_BOUNDED",
-    "calibration_sample_count": 318,
+    "calibration_sample_count": 319,
     "calibration_fallback_level": "candidate_p90",
-    "score": 3.6417,
-    "score_margin": 0.811,
+    "score": 3.6415,
+    "score_margin": 0.8112,
     "evidence_sources": [
       "locality_centroid"
     ],
@@ -1189,7 +1189,7 @@
       "Confidence radius calibrated via candidate-wise empirical P90 (C5)"
     ],
     "negative_evidence": [],
-    "caution": "Locality-level centroid; uncertainty radius ~609 m.",
+    "caution": "Locality-level centroid; uncertainty radius ~603 m.",
     "provenance": {
       "fit_scope": "benchmark_train",
       "evaluation_scope": "train_all",
@@ -1200,7 +1200,7 @@
       "calibration_method": "candidate_p90",
       "calibration_fallback_reason": "landmark_unresolved"
     },
-    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 609 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location represents the locality centroid for neighborhood 'Gandhi Nagar' as direct visits were unavailable."
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 603 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location represents the locality centroid for neighborhood 'Gandhi Nagar' as direct visits were unavailable."
   },
   {
     "address_id": "AD001315",
@@ -1210,9 +1210,9 @@
       -3155.2,
       823.8
     ],
-    "confidence_radius_m": 2078.96,
+    "confidence_radius_m": 2029.79,
     "calibration_tier": "STREET_RESOLVED",
-    "calibration_sample_count": 561,
+    "calibration_sample_count": 563,
     "calibration_fallback_level": "candidate_specific_geom",
     "score": 4.75,
     "score_margin": 1.2361,
@@ -1239,7 +1239,7 @@
       "nearest_unmentioned_poi_id": "LM0008",
       "nearest_unmentioned_distance_m": 362.56
     },
-    "explanation": "Prediction is STREET_RESOLVED with an estimated 2079 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 2030 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
   },
   {
     "address_id": "AD003113",
@@ -1249,12 +1249,12 @@
       -1122.4,
       327.5
     ],
-    "confidence_radius_m": 1537.31,
+    "confidence_radius_m": 1500.96,
     "calibration_tier": "STREET_RESOLVED",
-    "calibration_sample_count": 561,
+    "calibration_sample_count": 563,
     "calibration_fallback_level": "candidate_specific_geom",
-    "score": 5.0333,
-    "score_margin": 1.4573,
+    "score": 5.0329,
+    "score_margin": 1.457,
     "evidence_sources": [
       "physical_poi"
     ],
@@ -1278,7 +1278,7 @@
       "nearest_unmentioned_poi_id": "LM0040",
       "nearest_unmentioned_distance_m": 268.1
     },
-    "explanation": "Prediction is STREET_RESOLVED with an estimated 1537 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 1501 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
   },
   {
     "address_id": "AD001802",
@@ -1290,10 +1290,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 8.2428,
-    "score_margin": 2.9521,
+    "score": 8.2395,
+    "score_margin": 2.9494,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -1324,10 +1324,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 7.9109,
-    "score_margin": 3.1607,
+    "score": 7.908,
+    "score_margin": 3.1578,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -1360,10 +1360,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 7.0066,
-    "score_margin": 2.2437,
+    "score": 7.0047,
+    "score_margin": 2.2419,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -1396,10 +1396,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 8.9423,
-    "score_margin": 4.4417,
+    "score": 8.9384,
+    "score_margin": 4.4378,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -1430,10 +1430,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 6.4842,
-    "score_margin": 1.7335,
+    "score": 6.4827,
+    "score_margin": 1.732,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -1464,12 +1464,12 @@
       260.2,
       -163.8
     ],
-    "confidence_radius_m": 1653.77,
+    "confidence_radius_m": 1654.98,
     "calibration_tier": "BASELINE_FALLBACK",
-    "calibration_sample_count": 287,
+    "calibration_sample_count": 281,
     "calibration_fallback_level": "candidate_p90",
-    "score": 1.3307,
-    "score_margin": 1.3307,
+    "score": 1.3303,
+    "score_margin": 1.3303,
     "evidence_sources": [
       "commercial_baseline"
     ],
@@ -1491,7 +1491,7 @@
       "calibration_method": "candidate_p90",
       "calibration_fallback_reason": "landmark_ambiguous"
     },
-    "explanation": "Prediction is BASELINE_FALLBACK with an estimated 1654 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location falls back to commercial baseline geocoding due to absence of verified field check-ins or street clusters."
+    "explanation": "Prediction is BASELINE_FALLBACK with an estimated 1655 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location falls back to commercial baseline geocoding due to absence of verified field check-ins or street clusters."
   },
   {
     "address_id": "AD001586",
@@ -1503,10 +1503,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 7.3497,
-    "score_margin": 2.5796,
+    "score": 7.3473,
+    "score_margin": 2.5772,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -1537,10 +1537,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 7.633,
-    "score_margin": 6.3023,
+    "score": 7.6304,
+    "score_margin": 6.3001,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -1571,11 +1571,11 @@
       1097.3,
       2655.1
     ],
-    "confidence_radius_m": 1003.12,
+    "confidence_radius_m": 979.4,
     "calibration_tier": "STREET_RESOLVED",
-    "calibration_sample_count": 561,
+    "calibration_sample_count": 563,
     "calibration_fallback_level": "candidate_specific_geom",
-    "score": 4.876,
+    "score": 4.8759,
     "score_margin": 1.3453,
     "evidence_sources": [
       "physical_poi"
@@ -1600,7 +1600,7 @@
       "nearest_unmentioned_poi_id": "LM0173",
       "nearest_unmentioned_distance_m": 174.94
     },
-    "explanation": "Prediction is STREET_RESOLVED with an estimated 1003 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 979 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
   },
   {
     "address_id": "AD001971",
@@ -1612,10 +1612,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 6.4607,
-    "score_margin": 2.9535,
+    "score": 6.4592,
+    "score_margin": 2.952,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -1646,12 +1646,12 @@
       2843.8,
       757.1
     ],
-    "confidence_radius_m": 1707.96,
+    "confidence_radius_m": 1667.57,
     "calibration_tier": "STREET_RESOLVED",
-    "calibration_sample_count": 561,
+    "calibration_sample_count": 563,
     "calibration_fallback_level": "candidate_specific_geom",
-    "score": 5.039,
-    "score_margin": 0.4583,
+    "score": 5.0387,
+    "score_margin": 0.4584,
     "evidence_sources": [
       "physical_poi"
     ],
@@ -1675,7 +1675,7 @@
       "nearest_unmentioned_poi_id": "LM0071",
       "nearest_unmentioned_distance_m": 297.86
     },
-    "explanation": "Prediction is STREET_RESOLVED with an estimated 1708 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 1668 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
   },
   {
     "address_id": "AD000525",
@@ -1685,11 +1685,11 @@
       -764.5,
       -471.1
     ],
-    "confidence_radius_m": 1428.42,
+    "confidence_radius_m": 1394.64,
     "calibration_tier": "STREET_RESOLVED",
-    "calibration_sample_count": 561,
+    "calibration_sample_count": 563,
     "calibration_fallback_level": "candidate_specific_geom",
-    "score": 4.9531,
+    "score": 4.9529,
     "score_margin": 1.2366,
     "evidence_sources": [
       "physical_poi"
@@ -1714,7 +1714,7 @@
       "nearest_unmentioned_poi_id": "LM0239",
       "nearest_unmentioned_distance_m": 249.11
     },
-    "explanation": "Prediction is STREET_RESOLVED with an estimated 1428 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 1395 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
   },
   {
     "address_id": "AD001128",
@@ -1726,10 +1726,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 6.1874,
-    "score_margin": 1.4372,
+    "score": 6.1863,
+    "score_margin": 1.4361,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -1762,10 +1762,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 7.2513,
-    "score_margin": 3.5473,
+    "score": 7.2491,
+    "score_margin": 3.5454,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -1794,12 +1794,12 @@
       3653.7,
       367.3
     ],
-    "confidence_radius_m": 609.14,
+    "confidence_radius_m": 602.56,
     "calibration_tier": "LOCALITY_BOUNDED",
-    "calibration_sample_count": 318,
+    "calibration_sample_count": 319,
     "calibration_fallback_level": "candidate_p90",
     "score": 3.5063,
-    "score_margin": 0.6756,
+    "score_margin": 0.676,
     "evidence_sources": [
       "locality_centroid"
     ],
@@ -1808,7 +1808,7 @@
       "Confidence radius calibrated via candidate-wise empirical P90 (C5)"
     ],
     "negative_evidence": [],
-    "caution": "Locality-level centroid; uncertainty radius ~609 m.",
+    "caution": "Locality-level centroid; uncertainty radius ~603 m.",
     "provenance": {
       "fit_scope": "benchmark_train",
       "evaluation_scope": "train_all",
@@ -1819,7 +1819,7 @@
       "calibration_method": "candidate_p90",
       "calibration_fallback_reason": "landmark_unresolved"
     },
-    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 609 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location represents the locality centroid for neighborhood 'Lakeview Phase 2' as direct visits were unavailable."
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 603 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location represents the locality centroid for neighborhood 'Lakeview Phase 2' as direct visits were unavailable."
   },
   {
     "address_id": "AD001999",
@@ -1829,12 +1829,12 @@
       -2221.9,
       1115.3
     ],
-    "confidence_radius_m": 1653.77,
+    "confidence_radius_m": 1654.98,
     "calibration_tier": "BASELINE_FALLBACK",
-    "calibration_sample_count": 287,
+    "calibration_sample_count": 281,
     "calibration_fallback_level": "candidate_p90",
-    "score": 1.3307,
-    "score_margin": 1.3307,
+    "score": 1.3303,
+    "score_margin": 1.3303,
     "evidence_sources": [
       "commercial_baseline"
     ],
@@ -1854,7 +1854,7 @@
       "calibration_method": "candidate_p90",
       "calibration_fallback_reason": "landmark_ambiguous"
     },
-    "explanation": "Prediction is BASELINE_FALLBACK with an estimated 1654 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location falls back to commercial baseline geocoding due to absence of verified field check-ins or street clusters."
+    "explanation": "Prediction is BASELINE_FALLBACK with an estimated 1655 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location falls back to commercial baseline geocoding due to absence of verified field check-ins or street clusters."
   },
   {
     "address_id": "AD000815",
@@ -1866,10 +1866,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 6.2446,
-    "score_margin": 1.6639,
+    "score": 6.2433,
+    "score_margin": 1.663,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -1898,12 +1898,12 @@
       -1112.2,
       -1888.2
     ],
-    "confidence_radius_m": 609.14,
+    "confidence_radius_m": 602.56,
     "calibration_tier": "LOCALITY_BOUNDED",
-    "calibration_sample_count": 318,
+    "calibration_sample_count": 319,
     "calibration_fallback_level": "candidate_p90",
-    "score": 3.6228,
-    "score_margin": 0.7921,
+    "score": 3.6227,
+    "score_margin": 0.7924,
     "evidence_sources": [
       "locality_centroid"
     ],
@@ -1912,7 +1912,7 @@
       "Confidence radius calibrated via candidate-wise empirical P90 (C5)"
     ],
     "negative_evidence": [],
-    "caution": "Locality-level centroid; uncertainty radius ~609 m.",
+    "caution": "Locality-level centroid; uncertainty radius ~603 m.",
     "provenance": {
       "fit_scope": "benchmark_train",
       "evaluation_scope": "train_all",
@@ -1923,7 +1923,7 @@
       "calibration_method": "candidate_p90",
       "calibration_fallback_reason": "landmark_unresolved"
     },
-    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 609 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location represents the locality centroid for neighborhood 'Defence Colony' as direct visits were unavailable."
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 603 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location represents the locality centroid for neighborhood 'Defence Colony' as direct visits were unavailable."
   },
   {
     "address_id": "AD002260",
@@ -1935,10 +1935,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 6.3038,
-    "score_margin": 1.5533,
+    "score": 6.3025,
+    "score_margin": 1.552,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -1969,10 +1969,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 7.298,
-    "score_margin": 0.4516,
+    "score": 7.2958,
+    "score_margin": 0.4515,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -2005,10 +2005,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 6.4986,
-    "score_margin": 1.8411,
+    "score": 6.4971,
+    "score_margin": 1.8398,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -2037,12 +2037,12 @@
       -2333.0,
       -3.2
     ],
-    "confidence_radius_m": 1653.77,
+    "confidence_radius_m": 1654.98,
     "calibration_tier": "STREET_RESOLVED",
-    "calibration_sample_count": 287,
+    "calibration_sample_count": 281,
     "calibration_fallback_level": "candidate_p90",
-    "score": 4.5807,
-    "score_margin": 1.0804,
+    "score": 4.5803,
+    "score_margin": 1.08,
     "evidence_sources": [
       "commercial_baseline"
     ],
@@ -2063,7 +2063,7 @@
       "calibration_method": "candidate_p90",
       "calibration_fallback_reason": "landmark_unresolved"
     },
-    "explanation": "Prediction is STREET_RESOLVED with an estimated 1654 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 1655 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
   },
   {
     "address_id": "AD001900",
@@ -2075,10 +2075,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 6.6237,
-    "score_margin": 2.284,
+    "score": 6.6222,
+    "score_margin": 2.2821,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -2110,12 +2110,12 @@
       -3766.2,
       -883.9
     ],
-    "confidence_radius_m": 609.14,
+    "confidence_radius_m": 602.56,
     "calibration_tier": "LOCALITY_BOUNDED",
-    "calibration_sample_count": 318,
+    "calibration_sample_count": 319,
     "calibration_fallback_level": "candidate_p90",
-    "score": 3.5836,
-    "score_margin": 0.7529,
+    "score": 3.5835,
+    "score_margin": 0.7532,
     "evidence_sources": [
       "locality_centroid"
     ],
@@ -2124,7 +2124,7 @@
       "Confidence radius calibrated via candidate-wise empirical P90 (C5)"
     ],
     "negative_evidence": [],
-    "caution": "Locality-level centroid; uncertainty radius ~609 m.",
+    "caution": "Locality-level centroid; uncertainty radius ~603 m.",
     "provenance": {
       "fit_scope": "benchmark_train",
       "evaluation_scope": "train_all",
@@ -2135,7 +2135,7 @@
       "calibration_method": "candidate_p90",
       "calibration_fallback_reason": "landmark_unresolved"
     },
-    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 609 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location represents the locality centroid for neighborhood 'Green Park Layout' as direct visits were unavailable."
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 603 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location represents the locality centroid for neighborhood 'Green Park Layout' as direct visits were unavailable."
   },
   {
     "address_id": "AD000681",
@@ -2145,12 +2145,12 @@
       185.2,
       1825.7
     ],
-    "confidence_radius_m": 1653.77,
+    "confidence_radius_m": 1654.98,
     "calibration_tier": "STREET_RESOLVED",
-    "calibration_sample_count": 287,
+    "calibration_sample_count": 281,
     "calibration_fallback_level": "candidate_p90",
-    "score": 5.3307,
-    "score_margin": 1.8306,
+    "score": 5.3303,
+    "score_margin": 1.8302,
     "evidence_sources": [
       "commercial_baseline"
     ],
@@ -2171,7 +2171,7 @@
       "calibration_method": "candidate_p90",
       "calibration_fallback_reason": "landmark_unresolved"
     },
-    "explanation": "Prediction is STREET_RESOLVED with an estimated 1654 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 1655 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
   },
   {
     "address_id": "AD002660",
@@ -2181,11 +2181,11 @@
       -2350.3,
       -2317.5
     ],
-    "confidence_radius_m": 1082.02,
+    "confidence_radius_m": 1056.44,
     "calibration_tier": "STREET_RESOLVED",
-    "calibration_sample_count": 561,
+    "calibration_sample_count": 563,
     "calibration_fallback_level": "candidate_specific_geom",
-    "score": 4.9002,
+    "score": 4.9,
     "score_margin": 1.1824,
     "evidence_sources": [
       "physical_poi"
@@ -2210,7 +2210,7 @@
       "nearest_unmentioned_poi_id": "LM0079",
       "nearest_unmentioned_distance_m": 188.7
     },
-    "explanation": "Prediction is STREET_RESOLVED with an estimated 1082 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 1056 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
   },
   {
     "address_id": "AD001129",
@@ -2220,12 +2220,12 @@
       -707.4,
       3230.6
     ],
-    "confidence_radius_m": 1653.77,
+    "confidence_radius_m": 1654.98,
     "calibration_tier": "STREET_RESOLVED",
-    "calibration_sample_count": 287,
+    "calibration_sample_count": 281,
     "calibration_fallback_level": "candidate_p90",
-    "score": 4.5807,
-    "score_margin": 1.0684,
+    "score": 4.5803,
+    "score_margin": 1.068,
     "evidence_sources": [
       "commercial_baseline"
     ],
@@ -2246,7 +2246,7 @@
       "calibration_method": "candidate_p90",
       "calibration_fallback_reason": "landmark_unresolved"
     },
-    "explanation": "Prediction is STREET_RESOLVED with an estimated 1654 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 1655 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
   },
   {
     "address_id": "AD000605",
@@ -2258,10 +2258,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 6.4054,
-    "score_margin": 1.828,
+    "score": 6.404,
+    "score_margin": 1.8345,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -2290,12 +2290,12 @@
       3136.2,
       572.7
     ],
-    "confidence_radius_m": 731.26,
+    "confidence_radius_m": 725.5,
     "calibration_tier": "LOCALITY_BOUNDED",
-    "calibration_sample_count": 262,
+    "calibration_sample_count": 265,
     "calibration_fallback_level": "candidate_p90",
-    "score": 4.5948,
-    "score_margin": 0.8637,
+    "score": 4.5947,
+    "score_margin": 0.8639,
     "evidence_sources": [
       "spatial_neighbor_graph"
     ],
@@ -2305,7 +2305,7 @@
       "Confidence radius calibrated via candidate-wise empirical P90 (C4)"
     ],
     "negative_evidence": [],
-    "caution": "Locality-level centroid; uncertainty radius ~731 m.",
+    "caution": "Locality-level centroid; uncertainty radius ~726 m.",
     "provenance": {
       "fit_scope": "benchmark_train",
       "evaluation_scope": "train_all",
@@ -2316,7 +2316,7 @@
       "calibration_method": "candidate_p90",
       "calibration_fallback_reason": "landmark_unresolved"
     },
-    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 731 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 726 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
   },
   {
     "address_id": "AD003034",
@@ -2326,12 +2326,12 @@
       1223.37,
       -516.9
     ],
-    "confidence_radius_m": 731.26,
+    "confidence_radius_m": 725.5,
     "calibration_tier": "STREET_RESOLVED",
-    "calibration_sample_count": 262,
+    "calibration_sample_count": 265,
     "calibration_fallback_level": "candidate_p90",
     "score": 4.5,
-    "score_margin": 0.7013,
+    "score_margin": 0.7017,
     "evidence_sources": [
       "spatial_neighbor_graph"
     ],
@@ -2352,7 +2352,7 @@
       "calibration_method": "candidate_p90",
       "calibration_fallback_reason": "landmark_unresolved"
     },
-    "explanation": "Prediction is STREET_RESOLVED with an estimated 731 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 726 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
   },
   {
     "address_id": "AD002994",
@@ -2362,12 +2362,12 @@
       -2018.6,
       -2173.4
     ],
-    "confidence_radius_m": 1195.16,
+    "confidence_radius_m": 1166.9,
     "calibration_tier": "STREET_RESOLVED",
-    "calibration_sample_count": 561,
+    "calibration_sample_count": 563,
     "calibration_fallback_level": "candidate_specific_geom",
     "score": 4.7759,
-    "score_margin": 1.0961,
+    "score_margin": 1.0963,
     "evidence_sources": [
       "physical_poi"
     ],
@@ -2391,7 +2391,7 @@
       "nearest_unmentioned_poi_id": "LM0080",
       "nearest_unmentioned_distance_m": 208.43
     },
-    "explanation": "Prediction is STREET_RESOLVED with an estimated 1195 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 1167 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
   },
   {
     "address_id": "AD001695",
@@ -2403,10 +2403,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 6.4638,
-    "score_margin": 2.9623,
+    "score": 6.4624,
+    "score_margin": 2.9609,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -2437,12 +2437,12 @@
       -1772.1,
       2191.4
     ],
-    "confidence_radius_m": 804.49,
+    "confidence_radius_m": 785.47,
     "calibration_tier": "STREET_RESOLVED",
-    "calibration_sample_count": 561,
+    "calibration_sample_count": 563,
     "calibration_fallback_level": "candidate_specific_geom",
     "score": 4.7545,
-    "score_margin": 1.0902,
+    "score_margin": 1.0904,
     "evidence_sources": [
       "physical_poi"
     ],
@@ -2466,7 +2466,7 @@
       "nearest_unmentioned_poi_id": "LM0085",
       "nearest_unmentioned_distance_m": 140.3
     },
-    "explanation": "Prediction is STREET_RESOLVED with an estimated 804 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 785 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
   },
   {
     "address_id": "AD002143",
@@ -2478,10 +2478,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 8.8924,
-    "score_margin": 4.1361,
+    "score": 8.8886,
+    "score_margin": 4.1323,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -2512,10 +2512,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 5.739,
-    "score_margin": 1.5689,
+    "score": 5.7383,
+    "score_margin": 1.5681,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -2547,12 +2547,12 @@
       -1260.2,
       -1505.9
     ],
-    "confidence_radius_m": 1653.77,
+    "confidence_radius_m": 1654.98,
     "calibration_tier": "BASELINE_FALLBACK",
-    "calibration_sample_count": 287,
+    "calibration_sample_count": 281,
     "calibration_fallback_level": "candidate_p90",
-    "score": 1.3307,
-    "score_margin": 1.3307,
+    "score": 1.3303,
+    "score_margin": 1.3303,
     "evidence_sources": [
       "commercial_baseline"
     ],
@@ -2572,7 +2572,7 @@
       "calibration_method": "candidate_p90",
       "calibration_fallback_reason": "landmark_unresolved"
     },
-    "explanation": "Prediction is BASELINE_FALLBACK with an estimated 1654 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location falls back to commercial baseline geocoding due to absence of verified field check-ins or street clusters."
+    "explanation": "Prediction is BASELINE_FALLBACK with an estimated 1655 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location falls back to commercial baseline geocoding due to absence of verified field check-ins or street clusters."
   },
   {
     "address_id": "AD000561",
@@ -2584,10 +2584,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 6.4833,
-    "score_margin": 5.1526,
+    "score": 6.4819,
+    "score_margin": 5.1516,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -2618,12 +2618,12 @@
       1492.29,
       -2151.1
     ],
-    "confidence_radius_m": 731.26,
+    "confidence_radius_m": 725.5,
     "calibration_tier": "STREET_RESOLVED",
-    "calibration_sample_count": 262,
+    "calibration_sample_count": 265,
     "calibration_fallback_level": "candidate_p90",
-    "score": 4.7021,
-    "score_margin": 1.0231,
+    "score": 4.7018,
+    "score_margin": 1.023,
     "evidence_sources": [
       "spatial_neighbor_graph"
     ],
@@ -2644,7 +2644,7 @@
       "calibration_method": "candidate_p90",
       "calibration_fallback_reason": "landmark_unresolved"
     },
-    "explanation": "Prediction is STREET_RESOLVED with an estimated 731 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 726 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
   },
   {
     "address_id": "AD000774",
@@ -2656,10 +2656,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 7.2822,
-    "score_margin": 1.095,
+    "score": 7.28,
+    "score_margin": 1.0945,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -2690,7 +2690,7 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
     "score": 5.0,
     "score_margin": 0.2431,
@@ -2722,12 +2722,12 @@
       -1885.4,
       2441.1
     ],
-    "confidence_radius_m": 609.14,
+    "confidence_radius_m": 602.56,
     "calibration_tier": "LOCALITY_BOUNDED",
-    "calibration_sample_count": 318,
+    "calibration_sample_count": 319,
     "calibration_fallback_level": "candidate_p90",
-    "score": 3.5431,
-    "score_margin": 0.7124,
+    "score": 3.543,
+    "score_margin": 0.7127,
     "evidence_sources": [
       "locality_centroid"
     ],
@@ -2736,7 +2736,7 @@
       "Confidence radius calibrated via candidate-wise empirical P90 (C5)"
     ],
     "negative_evidence": [],
-    "caution": "Locality-level centroid; uncertainty radius ~609 m.",
+    "caution": "Locality-level centroid; uncertainty radius ~603 m.",
     "provenance": {
       "fit_scope": "benchmark_train",
       "evaluation_scope": "train_all",
@@ -2747,7 +2747,7 @@
       "calibration_method": "candidate_p90",
       "calibration_fallback_reason": "landmark_unresolved"
     },
-    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 609 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location represents the locality centroid for neighborhood 'Kalyana Nagar' as direct visits were unavailable."
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 603 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location represents the locality centroid for neighborhood 'Kalyana Nagar' as direct visits were unavailable."
   },
   {
     "address_id": "AD001526",
@@ -2759,10 +2759,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 5.8189,
-    "score_margin": 1.0574,
+    "score": 5.8181,
+    "score_margin": 1.0566,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -2793,10 +2793,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 8.0796,
-    "score_margin": 3.0932,
+    "score": 8.0765,
+    "score_margin": 3.0904,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -2827,9 +2827,9 @@
       1193.71,
       -1121.34
     ],
-    "confidence_radius_m": 731.26,
+    "confidence_radius_m": 725.5,
     "calibration_tier": "STREET_RESOLVED",
-    "calibration_sample_count": 262,
+    "calibration_sample_count": 265,
     "calibration_fallback_level": "candidate_p90",
     "score": 4.5,
     "score_margin": 0.9472,
@@ -2853,7 +2853,7 @@
       "calibration_method": "candidate_p90",
       "calibration_fallback_reason": "landmark_unresolved"
     },
-    "explanation": "Prediction is STREET_RESOLVED with an estimated 731 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 726 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
   },
   {
     "address_id": "AD001832",
@@ -2865,10 +2865,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 7.0622,
-    "score_margin": 1.6528,
+    "score": 7.0601,
+    "score_margin": 1.6519,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -2899,12 +2899,12 @@
       665.2,
       -3094.2
     ],
-    "confidence_radius_m": 609.14,
+    "confidence_radius_m": 602.56,
     "calibration_tier": "LOCALITY_BOUNDED",
-    "calibration_sample_count": 318,
+    "calibration_sample_count": 319,
     "calibration_fallback_level": "candidate_p90",
-    "score": 3.6277,
-    "score_margin": 0.797,
+    "score": 3.6276,
+    "score_margin": 0.7973,
     "evidence_sources": [
       "locality_centroid"
     ],
@@ -2913,7 +2913,7 @@
       "Confidence radius calibrated via candidate-wise empirical P90 (C5)"
     ],
     "negative_evidence": [],
-    "caution": "Locality-level centroid; uncertainty radius ~609 m.",
+    "caution": "Locality-level centroid; uncertainty radius ~603 m.",
     "provenance": {
       "fit_scope": "benchmark_train",
       "evaluation_scope": "train_all",
@@ -2924,7 +2924,7 @@
       "calibration_method": "candidate_p90",
       "calibration_fallback_reason": "landmark_unresolved"
     },
-    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 609 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location represents the locality centroid for neighborhood 'Gandhi Nagar' as direct visits were unavailable."
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 603 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location represents the locality centroid for neighborhood 'Gandhi Nagar' as direct visits were unavailable."
   },
   {
     "address_id": "AD000800",
@@ -2934,9 +2934,9 @@
       1037.8,
       -475.3
     ],
-    "confidence_radius_m": 731.26,
+    "confidence_radius_m": 725.5,
     "calibration_tier": "LOCALITY_BOUNDED",
-    "calibration_sample_count": 262,
+    "calibration_sample_count": 265,
     "calibration_fallback_level": "candidate_p90",
     "score": 4.5,
     "score_margin": 1.0,
@@ -2949,7 +2949,7 @@
       "Confidence radius calibrated via candidate-wise empirical P90 (C4)"
     ],
     "negative_evidence": [],
-    "caution": "Locality-level centroid; uncertainty radius ~731 m.",
+    "caution": "Locality-level centroid; uncertainty radius ~726 m.",
     "provenance": {
       "fit_scope": "benchmark_train",
       "evaluation_scope": "train_all",
@@ -2960,7 +2960,7 @@
       "calibration_method": "candidate_p90",
       "calibration_fallback_reason": "landmark_unresolved"
     },
-    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 731 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 726 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
   },
   {
     "address_id": "AD000224",
@@ -2970,12 +2970,12 @@
       1482.8,
       285.8
     ],
-    "confidence_radius_m": 1653.77,
+    "confidence_radius_m": 1654.98,
     "calibration_tier": "STREET_RESOLVED",
-    "calibration_sample_count": 287,
+    "calibration_sample_count": 281,
     "calibration_fallback_level": "candidate_p90",
-    "score": 4.5807,
-    "score_margin": 1.0807,
+    "score": 4.5803,
+    "score_margin": 1.0803,
     "evidence_sources": [
       "commercial_baseline"
     ],
@@ -2996,7 +2996,7 @@
       "calibration_method": "candidate_p90",
       "calibration_fallback_reason": "landmark_unresolved"
     },
-    "explanation": "Prediction is STREET_RESOLVED with an estimated 1654 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 1655 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
   },
   {
     "address_id": "AD001469",
@@ -3008,10 +3008,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 8.6104,
-    "score_margin": 4.0889,
+    "score": 8.6068,
+    "score_margin": 4.0853,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -3042,10 +3042,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 6.5234,
-    "score_margin": 3.0218,
+    "score": 6.5219,
+    "score_margin": 3.0203,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -3074,12 +3074,12 @@
       603.1,
       -747.9
     ],
-    "confidence_radius_m": 1829.46,
+    "confidence_radius_m": 1786.2,
     "calibration_tier": "STREET_RESOLVED",
-    "calibration_sample_count": 561,
+    "calibration_sample_count": 563,
     "calibration_fallback_level": "candidate_specific_geom",
     "score": 4.7501,
-    "score_margin": 1.0408,
+    "score_margin": 1.0411,
     "evidence_sources": [
       "physical_poi"
     ],
@@ -3103,7 +3103,7 @@
       "nearest_unmentioned_poi_id": "LM0286",
       "nearest_unmentioned_distance_m": 319.05
     },
-    "explanation": "Prediction is STREET_RESOLVED with an estimated 1829 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 1786 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
   },
   {
     "address_id": "AD001743",
@@ -3115,10 +3115,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 7.8285,
-    "score_margin": 3.2623,
+    "score": 7.8257,
+    "score_margin": 3.2596,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -3149,10 +3149,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 5.8486,
-    "score_margin": 0.9529,
+    "score": 5.8479,
+    "score_margin": 0.9525,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -3186,10 +3186,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 6.7993,
-    "score_margin": 3.6867,
+    "score": 6.7977,
+    "score_margin": 3.6847,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -3220,12 +3220,12 @@
       -2446.2,
       1613.2
     ],
-    "confidence_radius_m": 609.14,
+    "confidence_radius_m": 602.56,
     "calibration_tier": "LOCALITY_BOUNDED",
-    "calibration_sample_count": 318,
+    "calibration_sample_count": 319,
     "calibration_fallback_level": "candidate_p90",
-    "score": 3.6582,
-    "score_margin": 0.8275,
+    "score": 3.658,
+    "score_margin": 0.8277,
     "evidence_sources": [
       "locality_centroid"
     ],
@@ -3234,7 +3234,7 @@
       "Confidence radius calibrated via candidate-wise empirical P90 (C5)"
     ],
     "negative_evidence": [],
-    "caution": "Locality-level centroid; uncertainty radius ~609 m.",
+    "caution": "Locality-level centroid; uncertainty radius ~603 m.",
     "provenance": {
       "fit_scope": "benchmark_train",
       "evaluation_scope": "train_all",
@@ -3245,7 +3245,7 @@
       "calibration_method": "candidate_p90",
       "calibration_fallback_reason": "landmark_unresolved"
     },
-    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 609 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location represents the locality centroid for neighborhood 'Railway Colony' as direct visits were unavailable."
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 603 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location represents the locality centroid for neighborhood 'Railway Colony' as direct visits were unavailable."
   },
   {
     "address_id": "AD000656",
@@ -3255,12 +3255,12 @@
       2499.2,
       994.1
     ],
-    "confidence_radius_m": 609.14,
+    "confidence_radius_m": 602.56,
     "calibration_tier": "LOCALITY_BOUNDED",
-    "calibration_sample_count": 318,
+    "calibration_sample_count": 319,
     "calibration_fallback_level": "candidate_p90",
-    "score": 3.7347,
-    "score_margin": 0.904,
+    "score": 3.7344,
+    "score_margin": 0.9041,
     "evidence_sources": [
       "locality_centroid"
     ],
@@ -3271,7 +3271,7 @@
     "negative_evidence": [
       "Previous field visit reported address as not traceable"
     ],
-    "caution": "Previous field search reported address as not traceable. Locality-level centroid; uncertainty radius ~609 m.",
+    "caution": "Previous field search reported address as not traceable. Locality-level centroid; uncertainty radius ~603 m.",
     "provenance": {
       "fit_scope": "benchmark_train",
       "evaluation_scope": "train_all",
@@ -3282,7 +3282,7 @@
       "calibration_method": "candidate_p90",
       "calibration_fallback_reason": "landmark_unresolved"
     },
-    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 609 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location represents the locality centroid for neighborhood 'Vidya Nagar' as direct visits were unavailable."
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 603 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location represents the locality centroid for neighborhood 'Vidya Nagar' as direct visits were unavailable."
   },
   {
     "address_id": "AD001512",
@@ -3292,11 +3292,11 @@
       -764.5,
       -471.1
     ],
-    "confidence_radius_m": 1428.42,
+    "confidence_radius_m": 1394.64,
     "calibration_tier": "STREET_RESOLVED",
-    "calibration_sample_count": 561,
+    "calibration_sample_count": 563,
     "calibration_fallback_level": "candidate_specific_geom",
-    "score": 4.9018,
+    "score": 4.9016,
     "score_margin": 0.2663,
     "evidence_sources": [
       "physical_poi"
@@ -3321,7 +3321,7 @@
       "nearest_unmentioned_poi_id": "LM0239",
       "nearest_unmentioned_distance_m": 249.11
     },
-    "explanation": "Prediction is STREET_RESOLVED with an estimated 1428 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 1395 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
   },
   {
     "address_id": "AD001009",
@@ -3333,10 +3333,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 6.0163,
-    "score_margin": 4.6856,
+    "score": 6.0153,
+    "score_margin": 4.685,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -3365,12 +3365,12 @@
       126.5,
       1694.7
     ],
-    "confidence_radius_m": 1468.68,
+    "confidence_radius_m": 1433.94,
     "calibration_tier": "STREET_RESOLVED",
-    "calibration_sample_count": 561,
+    "calibration_sample_count": 563,
     "calibration_fallback_level": "candidate_specific_geom",
-    "score": 4.8869,
-    "score_margin": 1.3769,
+    "score": 4.8867,
+    "score_margin": 1.3768,
     "evidence_sources": [
       "physical_poi"
     ],
@@ -3394,7 +3394,7 @@
       "nearest_unmentioned_poi_id": "LM0208",
       "nearest_unmentioned_distance_m": 256.13
     },
-    "explanation": "Prediction is STREET_RESOLVED with an estimated 1469 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 1434 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
   },
   {
     "address_id": "AD001519",
@@ -3404,12 +3404,12 @@
       1155.3,
       -3613.0
     ],
-    "confidence_radius_m": 609.14,
+    "confidence_radius_m": 602.56,
     "calibration_tier": "LOCALITY_BOUNDED",
-    "calibration_sample_count": 318,
+    "calibration_sample_count": 319,
     "calibration_fallback_level": "candidate_p90",
     "score": 3.5226,
-    "score_margin": 0.6919,
+    "score_margin": 0.6923,
     "evidence_sources": [
       "locality_centroid"
     ],
@@ -3418,7 +3418,7 @@
       "Confidence radius calibrated via candidate-wise empirical P90 (C5)"
     ],
     "negative_evidence": [],
-    "caution": "Locality-level centroid; uncertainty radius ~609 m.",
+    "caution": "Locality-level centroid; uncertainty radius ~603 m.",
     "provenance": {
       "fit_scope": "benchmark_train",
       "evaluation_scope": "train_all",
@@ -3429,7 +3429,7 @@
       "calibration_method": "candidate_p90",
       "calibration_fallback_reason": "landmark_unresolved"
     },
-    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 609 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location represents the locality centroid for neighborhood 'Unity Nagar' as direct visits were unavailable."
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 603 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location represents the locality centroid for neighborhood 'Unity Nagar' as direct visits were unavailable."
   },
   {
     "address_id": "AD001164",
@@ -3439,11 +3439,11 @@
       -764.5,
       -471.1
     ],
-    "confidence_radius_m": 1428.42,
+    "confidence_radius_m": 1394.64,
     "calibration_tier": "STREET_RESOLVED",
-    "calibration_sample_count": 561,
+    "calibration_sample_count": 563,
     "calibration_fallback_level": "candidate_specific_geom",
-    "score": 4.927,
+    "score": 4.9267,
     "score_margin": 1.1603,
     "evidence_sources": [
       "physical_poi"
@@ -3468,7 +3468,7 @@
       "nearest_unmentioned_poi_id": "LM0239",
       "nearest_unmentioned_distance_m": 249.11
     },
-    "explanation": "Prediction is STREET_RESOLVED with an estimated 1428 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 1395 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
   },
   {
     "address_id": "AD001791",
@@ -3478,11 +3478,11 @@
       -2672.6,
       1243.4
     ],
-    "confidence_radius_m": 2134.06,
+    "confidence_radius_m": 2083.59,
     "calibration_tier": "STREET_RESOLVED",
-    "calibration_sample_count": 561,
+    "calibration_sample_count": 563,
     "calibration_fallback_level": "candidate_specific_geom",
-    "score": 4.9113,
+    "score": 4.9112,
     "score_margin": 1.3246,
     "evidence_sources": [
       "physical_poi"
@@ -3507,7 +3507,7 @@
       "nearest_unmentioned_poi_id": "LM0008",
       "nearest_unmentioned_distance_m": 372.17
     },
-    "explanation": "Prediction is STREET_RESOLVED with an estimated 2134 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 2084 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
   },
   {
     "address_id": "AD001249",
@@ -3517,12 +3517,12 @@
       731.9,
       -1039.8
     ],
-    "confidence_radius_m": 158.26,
+    "confidence_radius_m": 154.52,
     "calibration_tier": "STREET_RESOLVED",
-    "calibration_sample_count": 561,
+    "calibration_sample_count": 563,
     "calibration_fallback_level": "candidate_specific_geom",
-    "score": 5.0245,
-    "score_margin": 0.524,
+    "score": 5.0242,
+    "score_margin": 0.5237,
     "evidence_sources": [
       "physical_poi"
     ],
@@ -3546,7 +3546,7 @@
       "nearest_unmentioned_poi_id": "LM0284",
       "nearest_unmentioned_distance_m": 27.6
     },
-    "explanation": "Prediction is STREET_RESOLVED with an estimated 158 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 155 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
   },
   {
     "address_id": "AD001382",
@@ -3558,10 +3558,10 @@
     ],
     "confidence_radius_m": 35.0,
     "calibration_tier": "DOORSTEP_VERIFIED",
-    "calibration_sample_count": 2965,
+    "calibration_sample_count": 2974,
     "calibration_fallback_level": "direct_doorstep",
-    "score": 6.2759,
-    "score_margin": 1.4414,
+    "score": 6.2745,
+    "score_margin": 1.4401,
     "evidence_sources": [
       "direct_visit_medoid"
     ],
@@ -3590,12 +3590,12 @@
       802.2,
       -3288.8
     ],
-    "confidence_radius_m": 204.84,
+    "confidence_radius_m": 203.48,
     "calibration_tier": "LOCALITY_BOUNDED",
-    "calibration_sample_count": 15,
+    "calibration_sample_count": 16,
     "calibration_fallback_level": "candidate_specific_geom",
-    "score": 4.821,
-    "score_margin": 0.7762,
+    "score": 4.8208,
+    "score_margin": 0.7752,
     "evidence_sources": [
       "spatial_neighbor_graph"
     ],
@@ -3608,7 +3608,7 @@
       "Neighbor reported borrower shifted from address",
       "Previous field visit reported address as not traceable"
     ],
-    "caution": "Field evidence indicates borrower may have shifted from address. Previous field search reported address as not traceable. Locality-level centroid; uncertainty radius ~205 m.",
+    "caution": "Field evidence indicates borrower may have shifted from address. Previous field search reported address as not traceable. Locality-level centroid; uncertainty radius ~203 m.",
     "provenance": {
       "fit_scope": "benchmark_train",
       "evaluation_scope": "eval_validation",
@@ -3622,6 +3622,6 @@
       "nearest_unmentioned_poi_id": "LM0028",
       "nearest_unmentioned_distance_m": 216.45
     },
-    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 205 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 203 m empirical P90 uncertainty radius (calibration fallback: candidate_specific_geom). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
   }
 ]

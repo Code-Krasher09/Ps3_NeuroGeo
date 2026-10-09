@@ -7,12 +7,12 @@
   "scv_reserved_for_calibration": true,
   "scv_provenance_description": "leakage-safe SCV residuals reserved for empirical calibration",
   "graph_statistics": {
-    "total_nodes": 682,
-    "total_edges": 679,
+    "total_nodes": 687,
+    "total_edges": 684,
     "town_nodes": 3,
     "locality_nodes": 36,
-    "qualified_streets_with_centroids": 551,
-    "total_visited_neighbor_accounts": 830,
+    "qualified_streets_with_centroids": 556,
+    "total_visited_neighbor_accounts": 837,
     "structural_invariant_nodes_start_with_t": true,
     "zero_cross_locality_hub_collisions": true
   },
@@ -28,14 +28,14 @@
   },
   "simulated_cold_start_validation": {
     "episodes_evaluated": 1477,
-    "c4_available_count": 542,
-    "c4_available_rate": 0.36696005416384564,
-    "c4_median_error_m": 147.65,
+    "c4_available_count": 546,
+    "c4_available_rate": 0.3696682464454976,
+    "c4_median_error_m": 147.16500000000002,
     "c4_p90_error_m": 700.84,
     "c4_max_error_m": 7643.43,
-    "baseline_median_error_m": 285.97,
-    "baseline_p90_error_m": 566.797,
-    "error_reduction_lift_pct": 48.36871000454593,
+    "baseline_median_error_m": 284.475,
+    "baseline_p90_error_m": 566.3050000000001,
+    "error_reduction_lift_pct": 48.26786185077775,
     "benchmark_visited_subset": {
       "count": 16,
       "c4_median_error_vs_surveyed_m": 139.875,
@@ -47,10 +47,10 @@
     "min_visited_per_street_threshold": 5,
     "official_loso_unit": "distinct visited accounts (account_id)",
     "qualified_streets_evaluated": 17,
-    "held_out_accounts_count": 102,
-    "held_out_addresses_count": 102,
-    "evaluated_episodes_count": 102,
-    "evaluated_medoid_episodes_count": 96,
+    "held_out_accounts_count": 103,
+    "held_out_addresses_count": 103,
+    "evaluated_episodes_count": 103,
+    "evaluated_medoid_episodes_count": 97,
     "c4_available_rate": 0.0,
     "locality_centroid_fallback_median_error_m": 316.18,
     "locality_centroid_fallback_p90_error_m": 437.9,
@@ -64,5 +64,5 @@
     "reports/metrics/loso_results.csv",
     "reports/metrics/phase3_spatial_graph_summary.json"
   ],
-  "execution_time_seconds": 6.23
+  "execution_time_seconds": 7.93
 }

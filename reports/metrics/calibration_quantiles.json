@@ -12,32 +12,32 @@
     "DOORSTEP_VERIFIED": {
       "tier": "DOORSTEP_VERIFIED",
       "unique_episode_count": 1428,
-      "residual_count": 2965,
-      "sample_count": 2965,
+      "residual_count": 2974,
+      "sample_count": 2974,
       "quantile": 0.9,
-      "radius_m": 642.18,
+      "radius_m": 640.71,
       "source_scope": "scv_leave_one_out",
       "fallback_level": "global_p90",
       "evidence_family": "all"
     },
     "STREET_RESOLVED": {
       "tier": "STREET_RESOLVED",
-      "unique_episode_count": 279,
-      "residual_count": 279,
-      "sample_count": 279,
+      "unique_episode_count": 280,
+      "residual_count": 280,
+      "sample_count": 280,
       "quantile": 0.9,
-      "radius_m": 615.93,
+      "radius_m": 614.31,
       "source_scope": "scv_leave_one_out",
       "fallback_level": "tier_direct",
       "evidence_family": "cold_start"
     },
     "LOCALITY_BOUNDED": {
       "tier": "LOCALITY_BOUNDED",
-      "unique_episode_count": 1258,
-      "residual_count": 1258,
-      "sample_count": 1258,
+      "unique_episode_count": 1266,
+      "residual_count": 1266,
+      "sample_count": 1266,
       "quantile": 0.9,
-      "radius_m": 559.95,
+      "radius_m": 559.49,
       "source_scope": "scv_leave_one_out",
       "fallback_level": "tier_direct",
       "evidence_family": "cold_start"
@@ -57,8 +57,8 @@
   "candidates": {
     "C1": {
       "candidate_type": "C1",
-      "sample_count": 287,
-      "radius_m": 1653.77,
+      "sample_count": 281,
+      "radius_m": 1654.98,
       "quantile": 0.9,
       "fallback_level": "candidate_p90"
     },
@@ -72,40 +72,40 @@
     },
     "C3": {
       "candidate_type": "C3",
-      "sample_count": 561,
-      "radius_m": 432.03,
+      "sample_count": 563,
+      "radius_m": 431.52,
       "quantile": 0.9,
       "fallback_level": "candidate_p90"
     },
     "C4": {
       "candidate_type": "C4",
-      "sample_count": 262,
-      "radius_m": 731.26,
+      "sample_count": 265,
+      "radius_m": 725.5,
       "quantile": 0.9,
       "fallback_level": "candidate_p90"
     },
     "C5": {
       "candidate_type": "C5",
-      "sample_count": 318,
-      "radius_m": 609.14,
+      "sample_count": 319,
+      "radius_m": 602.56,
       "quantile": 0.9,
       "fallback_level": "candidate_p90"
     }
   },
   "landmark_geometry": {
     "target_quantile": 0.9,
-    "sample_count": 586,
-    "pooled_quantile_factor": 5.0358,
+    "sample_count": 589,
+    "pooled_quantile_factor": 5.0234,
     "candidate_quantile_factors": {
-      "C1": 5.0358,
-      "C3": 5.7341,
-      "C4": 0.929,
-      "C5": 5.0358
+      "C1": 5.0234,
+      "C3": 5.5985,
+      "C4": 0.9228,
+      "C5": 5.0234
     },
     "candidate_sample_counts": {
       "C1": 10,
-      "C3": 561,
-      "C4": 15,
+      "C3": 563,
+      "C4": 16,
       "C5": 0
     },
     "collocation_distance_threshold_m": 5.0,
@@ -116,8 +116,8 @@
   "localities": {
     "T1-L03": {
       "locality_id": "T1-L03",
-      "sample_count": 37,
-      "radius_m": 444.85,
+      "sample_count": 38,
+      "radius_m": 440.61,
       "quantile": 0.9
     },
     "T1-L09": {
@@ -140,8 +140,8 @@
     },
     "T2-L08": {
       "locality_id": "T2-L08",
-      "sample_count": 70,
-      "radius_m": 424.15,
+      "sample_count": 71,
+      "radius_m": 421.98,
       "quantile": 0.9
     },
     "T2-L03": {
@@ -152,14 +152,14 @@
     },
     "T1-L07": {
       "locality_id": "T1-L07",
-      "sample_count": 24,
-      "radius_m": 429.65,
+      "sample_count": 25,
+      "radius_m": 428.33,
       "quantile": 0.9
     },
     "T3-L06": {
       "locality_id": "T3-L06",
-      "sample_count": 67,
-      "radius_m": 2026.55,
+      "sample_count": 68,
+      "radius_m": 1996.87,
       "quantile": 0.9
     },
     "T1-L01": {
@@ -200,14 +200,14 @@
     },
     "T1-L06": {
       "locality_id": "T1-L06",
-      "sample_count": 20,
-      "radius_m": 1336.78,
+      "sample_count": 21,
+      "radius_m": 1333.22,
       "quantile": 0.9
     },
     "T1-L04": {
       "locality_id": "T1-L04",
-      "sample_count": 83,
-      "radius_m": 375.79,
+      "sample_count": 85,
+      "radius_m": 375.6,
       "quantile": 0.9
     },
     "T2-L06": {
@@ -242,8 +242,8 @@
     },
     "T3-L07": {
       "locality_id": "T3-L07",
-      "sample_count": 39,
-      "radius_m": 410.04,
+      "sample_count": 40,
+      "radius_m": 406.6,
       "quantile": 0.9
     },
     "T1-L08": {

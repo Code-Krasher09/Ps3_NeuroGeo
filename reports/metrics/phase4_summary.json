@@ -1,5 +1,5 @@
 {
-  "execution_timestamp_utc": "2026-10-09T17:20:36Z",
+  "execution_timestamp_utc": "2026-10-09T18:29:09Z",
   "phase": 4,
   "phase_description": "Candidate Generation, Deterministic Linear Reranking & Empirical Quantile Calibration",
   "provenance": {
@@ -26,41 +26,41 @@
   },
   "reranker_weights": {
     "w_text": 5.0,
-    "w_visit": 4.2454,
+    "w_visit": 4.2412,
     "w_neigh": 1.5,
-    "w_base": 0.3307,
-    "w_neg": 1.0276
+    "w_base": 0.3303,
+    "w_neg": 1.0264
   },
   "calibration_tiers": {
     "DOORSTEP_VERIFIED": {
       "tier": "DOORSTEP_VERIFIED",
       "unique_episode_count": 1428,
-      "residual_count": 2965,
-      "sample_count": 2965,
+      "residual_count": 2974,
+      "sample_count": 2974,
       "quantile": 0.9,
-      "radius_m": 642.18,
+      "radius_m": 640.71,
       "source_scope": "scv_leave_one_out",
       "fallback_level": "global_p90",
       "evidence_family": "all"
     },
     "STREET_RESOLVED": {
       "tier": "STREET_RESOLVED",
-      "unique_episode_count": 279,
-      "residual_count": 279,
-      "sample_count": 279,
+      "unique_episode_count": 280,
+      "residual_count": 280,
+      "sample_count": 280,
       "quantile": 0.9,
-      "radius_m": 615.93,
+      "radius_m": 614.31,
       "source_scope": "scv_leave_one_out",
       "fallback_level": "tier_direct",
       "evidence_family": "cold_start"
     },
     "LOCALITY_BOUNDED": {
       "tier": "LOCALITY_BOUNDED",
-      "unique_episode_count": 1258,
-      "residual_count": 1258,
-      "sample_count": 1258,
+      "unique_episode_count": 1266,
+      "residual_count": 1266,
+      "sample_count": 1266,
       "quantile": 0.9,
-      "radius_m": 559.95,
+      "radius_m": 559.49,
       "source_scope": "scv_leave_one_out",
       "fallback_level": "tier_direct",
       "evidence_family": "cold_start"
@@ -249,5 +249,5 @@
     "calibration_quantiles_json": "reports/metrics/calibration_quantiles.json",
     "phase4_ablation_csv": "reports/metrics/phase4_ablation.csv"
   },
-  "elapsed_seconds": 9.02
+  "elapsed_seconds": 4.61
 }
