@@ -1,0 +1,280 @@
+{
+  "diagnostic_name": "Candidate-wise P90 vs Evidence-Tier Calibration Diagnostic",
+  "timestamp_utc": "2026-10-09T16:48:13Z",
+  "target_quantile": 0.9,
+  "sample_size": 1428,
+  "account_count": 1295,
+  "folds_count": 5,
+  "validation_strategy": "5-Fold Grouped Cross-Validation by account_id",
+  "benchmark_addresses_excluded_count": 100,
+  "aggregate_comparison": {
+    "tier_coverage_pct": 89.85,
+    "cand_coverage_pct": 89.43,
+    "coverage_difference_pct": -0.42,
+    "tier_median_radius_m": 457.86,
+    "cand_median_radius_m": 622.3,
+    "median_radius_difference_m": 164.44,
+    "tier_p90_radius_m": 1882.92,
+    "cand_p90_radius_m": 1655.03,
+    "p90_radius_difference_m": -227.89,
+    "predictions_with_material_change_15m": 1318,
+    "predictions_with_material_change_50m": 686,
+    "material_change_rate_pct": 92.3
+  },
+  "per_candidate_statistics": {
+    "C1": {
+      "candidate_type": "C1",
+      "is_estimable": true,
+      "sample_size": 256,
+      "distinct_addresses": 256,
+      "distinct_accounts": 253,
+      "error_median_m": 257.33,
+      "error_p75_m": 1190.53,
+      "error_p90_m": 1687.03,
+      "error_p95_m": 1985.82,
+      "error_max_m": 5839.84,
+      "tier_coverage_pct": 92.58,
+      "cand_coverage_pct": 89.06,
+      "tier_median_radius_m": 1882.92,
+      "cand_median_radius_m": 1655.03,
+      "tier_p90_radius_m": 1987.4,
+      "cand_p90_radius_m": 1857.8,
+      "cand_specific_rate_pct": 100.0,
+      "tier_fallback_rate_pct": 0.0
+    },
+    "C2": {
+      "candidate_type": "C2",
+      "is_estimable": false,
+      "sample_size": 0,
+      "distinct_addresses": 0,
+      "distinct_accounts": 0,
+      "explanation": "Not estimable under SCV protocol: target doorstep visits are masked out by design to simulate cold start, so C2 direct medoid is never available during leave-one-out evaluation."
+    },
+    "C3": {
+      "candidate_type": "C3",
+      "is_estimable": true,
+      "sample_size": 573,
+      "distinct_addresses": 573,
+      "distinct_accounts": 550,
+      "error_median_m": 214.01,
+      "error_p75_m": 310.65,
+      "error_p90_m": 433.66,
+      "error_p95_m": 706.85,
+      "error_max_m": 7255.26,
+      "tier_coverage_pct": 91.45,
+      "cand_coverage_pct": 89.7,
+      "tier_median_radius_m": 451.67,
+      "cand_median_radius_m": 432.64,
+      "tier_p90_radius_m": 457.86,
+      "cand_p90_radius_m": 437.09,
+      "cand_specific_rate_pct": 100.0,
+      "tier_fallback_rate_pct": 0.0
+    },
+    "C4": {
+      "candidate_type": "C4",
+      "is_estimable": true,
+      "sample_size": 281,
+      "distinct_addresses": 281,
+      "distinct_accounts": 273,
+      "error_median_m": 160.52,
+      "error_p75_m": 369.27,
+      "error_p90_m": 713.98,
+      "error_p95_m": 2155.87,
+      "error_max_m": 7643.43,
+      "tier_coverage_pct": 83.63,
+      "cand_coverage_pct": 89.32,
+      "tier_median_radius_m": 457.86,
+      "cand_median_radius_m": 705.98,
+      "tier_p90_radius_m": 860.94,
+      "cand_p90_radius_m": 788.99,
+      "cand_specific_rate_pct": 100.0,
+      "tier_fallback_rate_pct": 0.0
+    },
+    "C5": {
+      "candidate_type": "C5",
+      "is_estimable": true,
+      "sample_size": 318,
+      "distinct_addresses": 318,
+      "distinct_accounts": 311,
+      "error_median_m": 336.89,
+      "error_p75_m": 448.09,
+      "error_p90_m": 609.14,
+      "error_p95_m": 1490.37,
+      "error_max_m": 7015.7,
+      "tier_coverage_pct": 90.25,
+      "cand_coverage_pct": 89.31,
+      "tier_median_radius_m": 698.12,
+      "cand_median_radius_m": 622.3,
+      "tier_p90_radius_m": 860.94,
+      "cand_p90_radius_m": 687.7,
+      "cand_specific_rate_pct": 100.0,
+      "tier_fallback_rate_pct": 0.0
+    }
+  },
+  "fold_level_metrics": [
+    {
+      "fold_idx": 0,
+      "train_sample_size": 1142,
+      "val_sample_size": 286,
+      "val_accounts": 259,
+      "tier_coverage_pct": 91.96,
+      "cand_coverage_pct": 91.26,
+      "tier_median_radius_m": 457.86,
+      "cand_median_radius_m": 687.7,
+      "tier_p90_radius_m": 860.94,
+      "cand_p90_radius_m": 1654.99,
+      "tier_fitted_radii": {
+        "STREET_RESOLVED": 457.86,
+        "LOCALITY_BOUNDED": 860.94,
+        "BASELINE_FALLBACK": 1908.97,
+        "DOORSTEP_VERIFIED": 1151.79
+      },
+      "cand_fitted_radii": {
+        "C1": 1654.99,
+        "C2": 1151.79,
+        "C3": 437.09,
+        "C4": 763.53,
+        "C5": 687.7
+      },
+      "cand_train_counts": {
+        "C1": 210,
+        "C2": 0,
+        "C3": 453,
+        "C4": 223,
+        "C5": 256
+      }
+    },
+    {
+      "fold_idx": 1,
+      "train_sample_size": 1142,
+      "val_sample_size": 286,
+      "val_accounts": 259,
+      "tier_coverage_pct": 89.86,
+      "cand_coverage_pct": 89.16,
+      "tier_median_radius_m": 457.85,
+      "cand_median_radius_m": 577.42,
+      "tier_p90_radius_m": 1290.52,
+      "cand_p90_radius_m": 1653.38,
+      "tier_fitted_radii": {
+        "STREET_RESOLVED": 457.85,
+        "LOCALITY_BOUNDED": 698.12,
+        "BASELINE_FALLBACK": 1882.92,
+        "DOORSTEP_VERIFIED": 1092.25
+      },
+      "cand_fitted_radii": {
+        "C1": 1653.38,
+        "C2": 1092.25,
+        "C3": 434.82,
+        "C4": 788.99,
+        "C5": 577.42
+      },
+      "cand_train_counts": {
+        "C1": 209,
+        "C2": 0,
+        "C3": 459,
+        "C4": 219,
+        "C5": 255
+      }
+    },
+    {
+      "fold_idx": 2,
+      "train_sample_size": 1142,
+      "val_sample_size": 286,
+      "val_accounts": 259,
+      "tier_coverage_pct": 91.61,
+      "cand_coverage_pct": 91.26,
+      "tier_median_radius_m": 451.67,
+      "cand_median_radius_m": 657.11,
+      "tier_p90_radius_m": 730.04,
+      "cand_p90_radius_m": 1857.8,
+      "tier_fitted_radii": {
+        "STREET_RESOLVED": 451.67,
+        "LOCALITY_BOUNDED": 730.04,
+        "BASELINE_FALLBACK": 1987.4,
+        "DOORSTEP_VERIFIED": 1096.2
+      },
+      "cand_fitted_radii": {
+        "C1": 1857.8,
+        "C2": 1096.2,
+        "C3": 431.17,
+        "C4": 705.98,
+        "C5": 657.11
+      },
+      "cand_train_counts": {
+        "C1": 202,
+        "C2": 0,
+        "C3": 469,
+        "C4": 225,
+        "C5": 246
+      }
+    },
+    {
+      "fold_idx": 3,
+      "train_sample_size": 1143,
+      "val_sample_size": 285,
+      "val_accounts": 259,
+      "tier_coverage_pct": 87.37,
+      "cand_coverage_pct": 87.02,
+      "tier_median_radius_m": 449.94,
+      "cand_median_radius_m": 576.48,
+      "tier_p90_radius_m": 1932.43,
+      "cand_p90_radius_m": 1663.27,
+      "tier_fitted_radii": {
+        "STREET_RESOLVED": 449.94,
+        "LOCALITY_BOUNDED": 601.55,
+        "BASELINE_FALLBACK": 1932.43,
+        "DOORSTEP_VERIFIED": 1081.68
+      },
+      "cand_fitted_radii": {
+        "C1": 1663.27,
+        "C2": 1081.68,
+        "C3": 432.64,
+        "C4": 674.43,
+        "C5": 576.48
+      },
+      "cand_train_counts": {
+        "C1": 200,
+        "C2": 0,
+        "C3": 448,
+        "C4": 236,
+        "C5": 259
+      }
+    },
+    {
+      "fold_idx": 4,
+      "train_sample_size": 1143,
+      "val_sample_size": 285,
+      "val_accounts": 259,
+      "tier_coverage_pct": 88.42,
+      "cand_coverage_pct": 88.42,
+      "tier_median_radius_m": 443.69,
+      "cand_median_radius_m": 622.3,
+      "tier_p90_radius_m": 1949.49,
+      "cand_p90_radius_m": 1655.03,
+      "tier_fitted_radii": {
+        "STREET_RESOLVED": 443.69,
+        "LOCALITY_BOUNDED": 661.96,
+        "BASELINE_FALLBACK": 1949.49,
+        "DOORSTEP_VERIFIED": 1019.01
+      },
+      "cand_fitted_radii": {
+        "C1": 1655.03,
+        "C2": 1019.01,
+        "C3": 431.52,
+        "C4": 700.84,
+        "C5": 622.3
+      },
+      "cand_train_counts": {
+        "C1": 203,
+        "C2": 0,
+        "C3": 463,
+        "C4": 221,
+        "C5": 256
+      }
+    }
+  ],
+  "c2_protocol_status": {
+    "is_estimable_in_scv": false,
+    "reason": "SCV hides target direct doorstep visits to simulate cold start. In production, C2 is strictly assigned DOORSTEP_VERIFIED with direct-visit evidence."
+  }
+}

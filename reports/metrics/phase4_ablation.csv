@@ -4,5 +4,5 @@ M1,Baseline + Raw Direct Visit Check-ins (Unweighted),100/100,266.36,1114.0,7174
 M2,Baseline + Integrity-Weighted Doorstep Medoids (C2),100/100,125.94,629.57,7174.56,250.46,26.24,294.41,362.87,653.48,204.44,25.64,145.4
 M3,Baseline + Doorstep Medoids + NLP/POI Anchor (C3),100/100,83.29,608.55,7174.56,293.11,26.24,294.41,212.28,621.2,123.41,25.64,127.38
 M4,Baseline + Medoids + POI + Spatial Graph Centroid (C4),100/100,59.23,500.72,7174.56,317.16,21.1,294.41,178.04,607.14,60.81,21.1,127.38
-M5,Learned Deterministic Linear Reranker (w_neg=0),100/100,61.26,574.29,7174.56,315.14,21.1,294.41,235.4,588.32,100.52,21.1,127.38
-M6,Full Deterministic Reranker + Negative Search Penalty,100/100,61.26,574.29,7174.56,315.14,21.1,294.41,235.4,588.32,100.52,21.1,127.38
+M5,Learned Deterministic Linear Reranker (w_neg=0),100/100,60.81,490.86,7174.56,315.59,21.1,294.41,178.04,495.48,69.33,21.1,127.38
+M6,Full Deterministic Reranker + Negative Search Penalty,100/100,60.81,490.86,7174.56,315.59,21.1,294.41,178.04,495.48,69.33,21.1,127.38

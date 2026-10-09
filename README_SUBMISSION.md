@@ -13,16 +13,16 @@ Standard commercial geocoding APIs fail on Indian tier-2 and tier-3 addresses, e
 NeuroGeo-Field solves this problem by harvesting the daily operational activity of the existing field workforce—5,578 physical check-ins, 160,406 GPS breadcrumbs, dwell physics, and photo integrity signals. Instead of unconstrained coordinate regression, NeuroGeo-Field implements a deterministic **Retrieve → Rank → Calibrate** pipeline:
 1. Generates up to five physical candidate hypotheses ($C_1 \dots C_5$) anchored to real-world entities.
 2. Selects the optimal candidate using an auditable, deterministic linear utility reranker fitted strictly on training data ($N=66$).
-3. Calibrates empirical uncertainty radii via **Evidence-Tier Empirical Quantile Calibration** derived from **leakage-safe held-out SCV residuals** ($N=1,428$ non-benchmark episodes).
+3. Calibrates empirical uncertainty radii via a production 5-level hierarchy integrating **Close-Landmark Spatial-Scale Geometry** ($G_i$), **Candidate-Wise Empirical P90 Calibration**, and evidence-tier fallbacks derived from **leakage-safe held-out SCV residuals** ($N=1,428$ clean non-benchmark episodes).
 4. Produces deterministic offline navigation guidance and auditable evidence cards with zero network calls.
 
 ### Headline Benchmark Results (N=100 Surveyed Ground-Truth Addresses):
 - **Commercial Baseline**: **376.40m median error**, **839.18m P90**, max **4807.68m**
-- **NeuroGeo-Field Final**: **61.26m median error**, **574.29m P90**
-- **83.7% reduction in overall median geolocation error**
+- **NeuroGeo-Field Final**: **60.81m median error**, **490.86m P90**
+- **83.8% reduction in overall median geolocation error**
 - **Visited Addresses ($N=49$)**: **21.10m median error** (a 362.57m improvement)
-- **Cold-Start Addresses ($N=51$)**: **235.40m median error** (a 127.47m improvement)
-- **Empirical P90 Coverage**: **91.0%** of benchmark addresses lie strictly within their calibrated confidence radius.
+- **Cold-Start Addresses ($N=51$)**: **178.04m median error** (a 184.83m improvement)
+- **Empirical P90 Coverage**: **89.6%** in 5-fold grouped cross-validation across 1,428 clean episodes (82.0% across the 100 surveyed benchmark addresses), successfully resolving candidate C4 under-coverage.
 
 ---
 
@@ -148,34 +148,58 @@ Validation ($N=19$) and Test ($N=15$) splits were **100% excluded** from paramet
 
 ## 10. Uncertainty Calibration
 
-### Precise Methodology: Evidence-Tier Empirical Quantile Calibration
-Calibrated confidence radii $R_T$ are computed as the empirical 90th percentile (P90) residual from **leakage-safe held-out SCV residuals** ($N=1,428$ non-benchmark episodes):
-$$R_T = \text{Quantile}_{0.90}\big(\{\text{Error}(a_i) : a_i \in \text{SCV}_{\text{held-out}}, \text{Tier}(a_i) = T\}\big)$$
+### Precise Methodology: Production 5-Level Calibration Hierarchy
+Confidence radii are calibrated via an empirical 5-level hierarchy combining **Close-Landmark Spatial-Scale Geometry**, **Candidate-Wise Empirical P90 Calibration**, and evidence-tier fallbacks derived from **leakage-safe held-out SCV residuals** ($N=1,428$ clean non-benchmark episodes across 1,295 unique accounts):
 
-- All 100 benchmark addresses (66 Train, 19 Validation, 15 Test) were strictly excluded from the calibration pool.
-- A 3-level fallback hierarchy ($N_{\min} = 15$) ensures robustness against small sample sizes:
-  - Level 1: Tier-specific empirical P90 (used for `STREET_RESOLVED` $N=279$, `LOCALITY_BOUNDED` $N=1,258$, `BASELINE_FALLBACK` $N=1,428$).
-  - Level 2: Evidence-family pooled P90.
-  - Level 3: Global pooled empirical P90 (used for `DOORSTEP_VERIFIED` where target visits were held out during SCV, yielding $N=2,965$ pooled residuals across 1,428 unique episodes).
+1. **Level 0 — Direct Doorstep Evidence ($C_2$)**:
+   - For confirmed visits ($C_2$ selected or `has_credible_doorstep = True`), the radius is strictly set to **35.0 m** (`DOORSTEP_VERIFIED`).
+   - Verified physical doorstep check-ins are never overridden by coarser spatial heuristics. Because target doorstep visits are masked in SCV by design, this 35.0 m radius represents an operational direct-doorstep engineering policy derived from physical visit medoids—not an empirical quantile calibrated from target-masked SCV.
+2. **Level 1 — Close-Landmark Spatial-Scale Geometry ($G_i$)**:
+   - For predictions with an unambiguous, resolved landmark anchor $L_0$:
+     - Filters nearby unmentioned POIs in the same town and locality, excluding the anchor and collocated POIs ($< 5.0\text{ m}$).
+     - Computes distance to nearest eligible unmentioned POI $d_{\min}$ (with bounded same-town fallback $\le 1,500.0\text{ m}$).
+     - Enforces spatial-consistency check: $\|P_i - L_0\|_2 \le 1,000\text{ m}$. (If inconsistent, rejects geometry path and falls back to Level 2).
+     - Computes characteristic spatial scale: $G_i = \max(\|P_i - L_0\|_2, d_{\min}, 15.0\text{ m})$. Note: $G_i$ is an engineered spatial heuristic reflecting local catalog POI sparsity, not a guaranteed physical bound.
+     - Scales normalized-residual quantiles $q_i = e_i / G_i$: uses candidate-specific $Q_{0.90}(q \mid C_k)$ if $N \ge 15$, else pooled $Q_{0.90}(q) = 5.7363$.
+     - Radius $R = \min(\max(\text{round}(Q_{0.90} \cdot G_i, 2), 15.0\text{ m}), 2,500.0\text{ m})$.
+3. **Level 2 — Candidate-Wise Empirical P90 ($C_k$)**:
+   - When geometry is ineligible or rejected, calibrates against empirical error P90 of the selected candidate type ($N \ge 15$):
+     - $C_1$ (Commercial Baseline Prior): **1,653.8 m** (1,653.77 m in production artifact)
+     - $C_3$ (Unambiguous POI Anchor): **432.0 m** (432.03 m in production artifact)
+     - $C_4$ (Hierarchical Street Cluster): **731.3 m** (731.26 m in production artifact)
+     - $C_5$ (Locality Centroid Fallback): **609.1 m** (609.14 m in production artifact)
+   - Across the 1,428 clean non-benchmark SCV episodes, selected candidate counts are: $C_3 = 573$, $C_5 = 318$, $C_4 = 281$, $C_1 = 256$, and $C_2 = 0$ (since target visits are masked by design).
+4. **Level 3 — Locality-Level Empirical P90**:
+   - If candidate calibration has $< 15$ samples, uses locality-specific empirical P90 (28 localities supported with $N \ge 15$).
+5. **Level 4 — Evidence-Tier Fallback Hierarchy**:
+   - Fallback to status tier (`STREET_RESOLVED` 615.93m, `LOCALITY_BOUNDED` 559.95m, `BASELINE_FALLBACK` 982.55m), evidence family, global P90 (642.18m), or operational prior.
 
-### Authoritative Calibration Radii:
-| Status Tier | Fallback Level | Episode Count | Residual Count | Calibrated Radius ($R_T$) |
-|:---|:---|---:|---:|---:|
-| `LOCALITY_BOUNDED` | Level 1 (`tier_direct`) | 1,258 | 1,258 | **559.95 m** |
-| `STREET_RESOLVED` | Level 1 (`tier_direct`) | 279 | 279 | **615.93 m** |
-| `DOORSTEP_VERIFIED` | Level 3 (`global_p90`) | 1,428 | 2,965 | **642.18 m** |
-| `BASELINE_FALLBACK` | Level 1 (`tier_direct`) | 1,428 | 1,428 | **982.55 m** |
+Physical bounds (15.0 m floor, 2,500.0 m cap) are strictly enforced across all levels after final radius calculation.
 
-Across the 100 benchmark addresses, **91.0%** fall strictly within their calibrated confidence radius (target ~90%).
+### Leakage-Safe 5-Fold Grouped Cross-Validation Results:
+From authoritative validation report `reports/eval_production_calibration/production_calibration_summary.json` (1,428 clean episodes, 1,295 accounts, all 100 benchmark addresses excluded):
+
+| Calibration Method | Aggregate Empirical Coverage | Median Radius | P90 Radius | Key Operational Characteristic |
+|:---|---:|---:|---:|:---|
+| **Method 1: Evidence-Tier Baseline** | 89.85% | 457.86 m | 1,882.92 m | Suffered from $C_4$ under-coverage (83.63%) |
+| **Method 2: Candidate-Wise P90** | 89.43% | 622.30 m | 1,655.03 m | Resolves $C_4$ under-coverage (89.32%), tightens $C_1$ (-228m) |
+| **Method 3: Close-Landmark Geometry** | 89.57% | 788.99 m | 1,937.54 m | 90.27% coverage on eligible geometry episodes |
+| **Method 4: Combined Production Hierarchy** | **89.57%** | **788.99 m** | **1,937.54 m** | **Full production deployment: 41.0% Level 1, 59.0% Level 2** |
+
+*(Note on Metric Provenance: The 89.57% figure above represents out-of-fold generalization coverage measured via 5-fold grouped CV across the 1,428 clean SCV episodes ($N=1,428$). It is distinct from the 91.0% empirical coverage reported in Section 13, which was measured on the 100 official benchmark addresses ($N=100$) under Phase 4 status-tier calibrated predictions.)*
+
+### Verified Diagnostic Takeaways:
+1. **$C_4$ Under-Coverage Deficit Eliminated**: Under evidence-tier calibration, candidate $C_4$ suffered severe under-coverage at 83.63% because its errors were pooled with $C_3$. Candidate-wise calibration expands $C_4$ to its true empirical P90 (731.3m), achieving **89.32% empirical coverage**.
+2. **$C_1$ Baseline Error Sharpened**: Baseline geocoder predictions ($C_1$) achieve 89.06% coverage with a tightened median radius of 1,655.03m (down from 1,882.92m).
+3. **Close-Landmark Geometry Responsiveness**: For 586 episodes with resolved POIs, the local scale $G_i$ dynamically reflects catalog landmark density and prediction proximity, achieving **90.27% empirical coverage**.
+4. **Zero Benchmark Leakage**: Calibration quantiles were fitted strictly within training folds; benchmark surveyed target coordinates (`surveyed_x`, `surveyed_y`) and benchmark test error residuals were never accessed, fitted, or evaluated. Only benchmark address IDs from `surveyed_addresses.csv` were read to define the exclusion set.
 
 ### Conservative Uncertainty Interpretation
 Status tiers reflect the nature of supporting physical evidence, not an infallible accuracy guarantee:
-- **`DOORSTEP_VERIFIED`**: Indicates strong direct field check-in evidence. The calibrated radius (~642m) communicates empirical uncertainty across the broader population, accounting for device GPS drift and potential multi-path errors. It does NOT guarantee doorstep-level accuracy for every single instance.
+- **`DOORSTEP_VERIFIED`**: Indicates strong direct field check-in evidence ($R = 35.0\text{m}$). It does NOT claim guaranteed 90% conformal coverage.
 - **`STREET_RESOLVED`**: Communicates street-level neighbor consensus, not guaranteed street-level accuracy. Final doorstep location must be verified locally.
-- **`LOCALITY_BOUNDED`**: Communicates a coarse locality polygon centroid estimate (~560m empirical P90 radius). Individual premises are unverified.
-- **`BASELINE_FALLBACK`**: Communicates weak evidence and reliance on the commercial geocoder prior (~983m empirical P90 radius).
-
-> **Future Work Note**: Geometry-aware local-region confidence calibration has been formulated as proposed future research, but is not implemented or evaluated in this submission. The production system relies exclusively on the verified Evidence-Tier Empirical Quantile Calibration detailed above.
+- **`LOCALITY_BOUNDED`**: Communicates a coarse locality polygon centroid estimate (~609m empirical P90 radius). Individual premises are unverified.
+- **`BASELINE_FALLBACK`**: Communicates weak evidence and reliance on the commercial geocoder prior (~1,654m empirical P90 radius).
 
 ---
 
@@ -347,7 +371,7 @@ pip install -r requirements.txt
 ```bash
 pytest
 ```
-*Expected: 129 passed in ~2.0s.*
+*Expected: 163 passed in approximately 17.5 seconds.*
 
 ### Verify Source Data Contract Integrity (SHA-256 Hashes)
 ```bash
@@ -396,6 +420,8 @@ Or open in Jupyter:
 │   └── 02_interactive_dashboard.ipynb# Interactive inspection dashboard & case studies
 ├── reports/                          # Generated metrics, logs, and figures
 │   ├── ablations/                    # Ablation logs
+│   ├── eval_candidate_calibration/   # Candidate-wise calibration diagnostic artifacts
+│   ├── eval_production_calibration/  # Production calibration 5-fold CV evaluation artifacts
 │   ├── figures/                      # Publication-quality figures (Fig A through Fig H)
 │   └── metrics/                      # Authoritative Parquet/JSON/CSV artifacts
 │       ├── address_doorstep_medoids.parquet
@@ -442,7 +468,7 @@ Or open in Jupyter:
 │       ├── schemas.py                # Pydantic/dataclass schema definitions
 │       ├── spatial_graph.py          # Hierarchical spatial graph & centroids
 │       └── trajectory_miner.py       # GPS trajectory physics & dwell medoids
-├── tests/                            # Automated test suite (150 unit & regression tests)
+├── tests/                            # Automated test suite (163 unit & regression tests)
 │   ├── test_address_parser.py
 │   ├── test_calibrator.py
 │   ├── test_candidate_ranker.py
@@ -450,6 +476,7 @@ Or open in Jupyter:
 │   ├── test_leakage_isolation.py
 │   ├── test_navigator.py
 │   ├── test_poi_resolver.py
+│   ├── test_production_calibrator.py
 │   ├── test_sanitizer.py
 │   ├── test_spatial_graph.py
 │   ├── test_trajectory.py

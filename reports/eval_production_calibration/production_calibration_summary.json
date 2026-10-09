@@ -1,0 +1,248 @@
+{
+  "evaluation_name": "NeuroGeo PS3 Production Calibration Validation",
+  "timestamp_utc": "2026-10-09T17:15:43Z",
+  "target_quantile": 0.9,
+  "sample_size": 1428,
+  "account_count": 1295,
+  "folds_count": 5,
+  "validation_strategy": "5-Fold Grouped Cross-Validation by account_id",
+  "benchmark_addresses_excluded_count": 100,
+  "aggregate_coverage": {
+    "m1_tier_coverage_pct": 89.85,
+    "m2_cand_coverage_pct": 89.43,
+    "m3_geom_coverage_pct": 89.57,
+    "m4_prod_coverage_pct": 89.57
+  },
+  "aggregate_median_radius_m": {
+    "m1_tier_median_radius_m": 457.86,
+    "m2_cand_median_radius_m": 622.3,
+    "m3_geom_median_radius_m": 788.99,
+    "m4_prod_median_radius_m": 788.99
+  },
+  "aggregate_p90_radius_m": {
+    "m1_tier_p90_radius_m": 1882.92,
+    "m2_cand_p90_radius_m": 1655.03,
+    "m3_geom_p90_radius_m": 1937.54,
+    "m4_prod_p90_radius_m": 1937.54
+  },
+  "production_method_activation_counts": {
+    "candidate_p90": 842,
+    "landmark_geometry": 586
+  },
+  "production_method_activation_rates_pct": {
+    "candidate_p90": 58.96,
+    "landmark_geometry": 41.04
+  },
+  "production_fallback_reasons": {
+    "landmark_unresolved": 738,
+    "no_fallback": 586,
+    "landmark_ambiguous": 104
+  },
+  "eligible_geometry_paired_comparison": {
+    "sample_size": 586,
+    "distinct_accounts": 563,
+    "m1_tier_coverage_pct": 91.64,
+    "m2_cand_coverage_pct": 89.93,
+    "m3_geom_coverage_pct": 90.27,
+    "m4_prod_coverage_pct": 90.27,
+    "m1_tier_median_radius_m": 451.67,
+    "m2_cand_median_radius_m": 432.64,
+    "m3_geom_median_radius_m": 1213.83,
+    "m4_prod_median_radius_m": 1213.82,
+    "m1_tier_p90_radius_m": 457.86,
+    "m2_cand_p90_radius_m": 437.09,
+    "m3_geom_p90_radius_m": 2500.0,
+    "m4_prod_p90_radius_m": 2500.0
+  },
+  "per_candidate_statistics": {
+    "C1": {
+      "candidate_type": "C1",
+      "is_estimable": true,
+      "sample_size": 256,
+      "distinct_addresses": 256,
+      "distinct_accounts": 253,
+      "error_median_m": 257.33,
+      "error_p90_m": 1687.03,
+      "m1_tier_coverage_pct": 92.58,
+      "m2_cand_coverage_pct": 89.06,
+      "m4_prod_coverage_pct": 89.06,
+      "m1_tier_median_radius_m": 1882.92,
+      "m4_prod_median_radius_m": 1655.03,
+      "m1_tier_p90_radius_m": 1987.4,
+      "m4_prod_p90_radius_m": 1857.8,
+      "method_breakdown": {
+        "candidate_p90": 246,
+        "landmark_geometry": 10
+      }
+    },
+    "C2": {
+      "candidate_type": "C2",
+      "is_estimable": false,
+      "sample_size": 0,
+      "explanation": "Not estimable under SCV protocol: target doorstep visits are masked out by design to simulate cold start."
+    },
+    "C3": {
+      "candidate_type": "C3",
+      "is_estimable": true,
+      "sample_size": 573,
+      "distinct_addresses": 573,
+      "distinct_accounts": 550,
+      "error_median_m": 214.01,
+      "error_p90_m": 433.66,
+      "m1_tier_coverage_pct": 91.45,
+      "m2_cand_coverage_pct": 89.7,
+      "m4_prod_coverage_pct": 90.05,
+      "m1_tier_median_radius_m": 451.67,
+      "m4_prod_median_radius_m": 1204.07,
+      "m1_tier_p90_radius_m": 457.86,
+      "m4_prod_p90_radius_m": 2500.0,
+      "method_breakdown": {
+        "landmark_geometry": 573
+      }
+    },
+    "C4": {
+      "candidate_type": "C4",
+      "is_estimable": true,
+      "sample_size": 281,
+      "distinct_addresses": 281,
+      "distinct_accounts": 273,
+      "error_median_m": 160.52,
+      "error_p90_m": 713.98,
+      "m1_tier_coverage_pct": 83.63,
+      "m2_cand_coverage_pct": 89.32,
+      "m4_prod_coverage_pct": 89.32,
+      "m1_tier_median_radius_m": 457.86,
+      "m4_prod_median_radius_m": 705.98,
+      "m1_tier_p90_radius_m": 860.94,
+      "m4_prod_p90_radius_m": 788.99,
+      "method_breakdown": {
+        "candidate_p90": 278,
+        "landmark_geometry": 3
+      }
+    },
+    "C5": {
+      "candidate_type": "C5",
+      "is_estimable": true,
+      "sample_size": 318,
+      "distinct_addresses": 318,
+      "distinct_accounts": 311,
+      "error_median_m": 336.89,
+      "error_p90_m": 609.14,
+      "m1_tier_coverage_pct": 90.25,
+      "m2_cand_coverage_pct": 89.31,
+      "m4_prod_coverage_pct": 89.31,
+      "m1_tier_median_radius_m": 698.12,
+      "m4_prod_median_radius_m": 622.3,
+      "m1_tier_p90_radius_m": 860.94,
+      "m4_prod_p90_radius_m": 687.7,
+      "method_breakdown": {
+        "candidate_p90": 318
+      }
+    }
+  },
+  "fold_level_metrics": [
+    {
+      "fold_idx": 0,
+      "train_sample_size": 1142,
+      "val_sample_size": 286,
+      "val_accounts": 259,
+      "m1_tier_coverage_pct": 91.96,
+      "m2_cand_coverage_pct": 91.26,
+      "m3_geom_coverage_pct": 89.86,
+      "m4_prod_coverage_pct": 89.86,
+      "m1_tier_median_radius_m": 457.86,
+      "m2_cand_median_radius_m": 687.7,
+      "m3_geom_median_radius_m": 763.53,
+      "m4_prod_median_radius_m": 763.53,
+      "m1_tier_p90_radius_m": 860.94,
+      "m2_cand_p90_radius_m": 1654.99,
+      "m3_geom_p90_radius_m": 1654.99,
+      "m4_prod_p90_radius_m": 1654.99
+    },
+    {
+      "fold_idx": 1,
+      "train_sample_size": 1142,
+      "val_sample_size": 286,
+      "val_accounts": 259,
+      "m1_tier_coverage_pct": 89.86,
+      "m2_cand_coverage_pct": 89.16,
+      "m3_geom_coverage_pct": 90.21,
+      "m4_prod_coverage_pct": 90.21,
+      "m1_tier_median_radius_m": 457.85,
+      "m2_cand_median_radius_m": 577.42,
+      "m3_geom_median_radius_m": 788.99,
+      "m4_prod_median_radius_m": 788.99,
+      "m1_tier_p90_radius_m": 1290.52,
+      "m2_cand_p90_radius_m": 1653.38,
+      "m3_geom_p90_radius_m": 2264.21,
+      "m4_prod_p90_radius_m": 2264.21
+    },
+    {
+      "fold_idx": 2,
+      "train_sample_size": 1142,
+      "val_sample_size": 286,
+      "val_accounts": 259,
+      "m1_tier_coverage_pct": 91.61,
+      "m2_cand_coverage_pct": 91.26,
+      "m3_geom_coverage_pct": 94.06,
+      "m4_prod_coverage_pct": 94.06,
+      "m1_tier_median_radius_m": 451.67,
+      "m2_cand_median_radius_m": 657.11,
+      "m3_geom_median_radius_m": 763.17,
+      "m4_prod_median_radius_m": 763.17,
+      "m1_tier_p90_radius_m": 730.04,
+      "m2_cand_p90_radius_m": 1857.8,
+      "m3_geom_p90_radius_m": 2171.76,
+      "m4_prod_p90_radius_m": 2171.76
+    },
+    {
+      "fold_idx": 3,
+      "train_sample_size": 1143,
+      "val_sample_size": 285,
+      "val_accounts": 259,
+      "m1_tier_coverage_pct": 87.37,
+      "m2_cand_coverage_pct": 87.02,
+      "m3_geom_coverage_pct": 85.26,
+      "m4_prod_coverage_pct": 85.26,
+      "m1_tier_median_radius_m": 449.94,
+      "m2_cand_median_radius_m": 576.48,
+      "m3_geom_median_radius_m": 674.43,
+      "m4_prod_median_radius_m": 674.43,
+      "m1_tier_p90_radius_m": 1932.43,
+      "m2_cand_p90_radius_m": 1663.27,
+      "m3_geom_p90_radius_m": 1679.87,
+      "m4_prod_p90_radius_m": 1679.86
+    },
+    {
+      "fold_idx": 4,
+      "train_sample_size": 1143,
+      "val_sample_size": 285,
+      "val_accounts": 259,
+      "m1_tier_coverage_pct": 88.42,
+      "m2_cand_coverage_pct": 88.42,
+      "m3_geom_coverage_pct": 88.42,
+      "m4_prod_coverage_pct": 88.42,
+      "m1_tier_median_radius_m": 443.69,
+      "m2_cand_median_radius_m": 622.3,
+      "m3_geom_median_radius_m": 700.84,
+      "m4_prod_median_radius_m": 700.84,
+      "m1_tier_p90_radius_m": 1949.49,
+      "m2_cand_p90_radius_m": 1655.03,
+      "m3_geom_p90_radius_m": 1771.8,
+      "m4_prod_p90_radius_m": 1771.79
+    }
+  ],
+  "fold_variability": {
+    "m4_coverage_mean_pct": 89.56,
+    "m4_coverage_std_pct": 2.85,
+    "m4_coverage_min_pct": 85.26,
+    "m4_coverage_max_pct": 94.06,
+    "m4_median_radius_mean_m": 738.19,
+    "m4_median_radius_std_m": 43.14
+  },
+  "c2_direct_doorstep_status": {
+    "is_estimable_in_scv": false,
+    "doorstep_verified_operational_radius_m": 35.0,
+    "explanation": "Target doorstep visits are masked in SCV by design. In production, C2 is strictly DOORSTEP_VERIFIED (35.0m)."
+  }
+}

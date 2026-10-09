@@ -129,6 +129,28 @@ class Phase4Prediction:
     calibration_fallback_level: str
     fit_scope: str
     evaluation_scope: str
+    calibration_method: str = "evidence_tier"
+    geometry_scale_m: Optional[float] = None
+    primary_landmark_poi_id: Optional[str] = None
+    nearest_unmentioned_poi_id: Optional[str] = None
+    nearest_unmentioned_distance_m: Optional[float] = None
+    calibration_fallback_reason: Optional[str] = None
+
+
+@dataclass(frozen=True)
+class CalibrationResult:
+    """Atomic calibrated confidence-radius result with complete provenance."""
+    radius_m: float
+    confidence_level: float
+    calibration_method: str   # 'direct_doorstep', 'landmark_geometry', 'candidate_p90', 'locality_empirical', 'evidence_tier'
+    calibration_tier: str     # status tier name e.g. 'DOORSTEP_VERIFIED', 'STREET_RESOLVED', etc.
+    fallback_level: str       # e.g. 'direct_doorstep', 'candidate_specific_geom', 'pooled_geom', 'candidate_p90', 'locality_specific', 'tier_direct', 'global_p90', 'operational_prior'
+    sample_count: int
+    geometry_scale_m: Optional[float] = None
+    primary_landmark_poi_id: Optional[str] = None
+    nearest_unmentioned_poi_id: Optional[str] = None
+    nearest_unmentioned_distance_m: Optional[float] = None
+    fallback_reason: Optional[str] = None
 
 
 @dataclass(frozen=True)

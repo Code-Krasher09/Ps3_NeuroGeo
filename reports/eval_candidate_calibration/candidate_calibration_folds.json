@@ -1,0 +1,162 @@
+[
+  {
+    "fold_idx": 0,
+    "train_sample_size": 1142,
+    "val_sample_size": 286,
+    "val_accounts": 259,
+    "tier_coverage_pct": 91.96,
+    "cand_coverage_pct": 91.26,
+    "tier_median_radius_m": 457.86,
+    "cand_median_radius_m": 687.7,
+    "tier_p90_radius_m": 860.94,
+    "cand_p90_radius_m": 1654.99,
+    "tier_fitted_radii": {
+      "STREET_RESOLVED": 457.86,
+      "LOCALITY_BOUNDED": 860.94,
+      "BASELINE_FALLBACK": 1908.97,
+      "DOORSTEP_VERIFIED": 1151.79
+    },
+    "cand_fitted_radii": {
+      "C1": 1654.99,
+      "C2": 1151.79,
+      "C3": 437.09,
+      "C4": 763.53,
+      "C5": 687.7
+    },
+    "cand_train_counts": {
+      "C1": 210,
+      "C2": 0,
+      "C3": 453,
+      "C4": 223,
+      "C5": 256
+    }
+  },
+  {
+    "fold_idx": 1,
+    "train_sample_size": 1142,
+    "val_sample_size": 286,
+    "val_accounts": 259,
+    "tier_coverage_pct": 89.86,
+    "cand_coverage_pct": 89.16,
+    "tier_median_radius_m": 457.85,
+    "cand_median_radius_m": 577.42,
+    "tier_p90_radius_m": 1290.52,
+    "cand_p90_radius_m": 1653.38,
+    "tier_fitted_radii": {
+      "STREET_RESOLVED": 457.85,
+      "LOCALITY_BOUNDED": 698.12,
+      "BASELINE_FALLBACK": 1882.92,
+      "DOORSTEP_VERIFIED": 1092.25
+    },
+    "cand_fitted_radii": {
+      "C1": 1653.38,
+      "C2": 1092.25,
+      "C3": 434.82,
+      "C4": 788.99,
+      "C5": 577.42
+    },
+    "cand_train_counts": {
+      "C1": 209,
+      "C2": 0,
+      "C3": 459,
+      "C4": 219,
+      "C5": 255
+    }
+  },
+  {
+    "fold_idx": 2,
+    "train_sample_size": 1142,
+    "val_sample_size": 286,
+    "val_accounts": 259,
+    "tier_coverage_pct": 91.61,
+    "cand_coverage_pct": 91.26,
+    "tier_median_radius_m": 451.67,
+    "cand_median_radius_m": 657.11,
+    "tier_p90_radius_m": 730.04,
+    "cand_p90_radius_m": 1857.8,
+    "tier_fitted_radii": {
+      "STREET_RESOLVED": 451.67,
+      "LOCALITY_BOUNDED": 730.04,
+      "BASELINE_FALLBACK": 1987.4,
+      "DOORSTEP_VERIFIED": 1096.2
+    },
+    "cand_fitted_radii": {
+      "C1": 1857.8,
+      "C2": 1096.2,
+      "C3": 431.17,
+      "C4": 705.98,
+      "C5": 657.11
+    },
+    "cand_train_counts": {
+      "C1": 202,
+      "C2": 0,
+      "C3": 469,
+      "C4": 225,
+      "C5": 246
+    }
+  },
+  {
+    "fold_idx": 3,
+    "train_sample_size": 1143,
+    "val_sample_size": 285,
+    "val_accounts": 259,
+    "tier_coverage_pct": 87.37,
+    "cand_coverage_pct": 87.02,
+    "tier_median_radius_m": 449.94,
+    "cand_median_radius_m": 576.48,
+    "tier_p90_radius_m": 1932.43,
+    "cand_p90_radius_m": 1663.27,
+    "tier_fitted_radii": {
+      "STREET_RESOLVED": 449.94,
+      "LOCALITY_BOUNDED": 601.55,
+      "BASELINE_FALLBACK": 1932.43,
+      "DOORSTEP_VERIFIED": 1081.68
+    },
+    "cand_fitted_radii": {
+      "C1": 1663.27,
+      "C2": 1081.68,
+      "C3": 432.64,
+      "C4": 674.43,
+      "C5": 576.48
+    },
+    "cand_train_counts": {
+      "C1": 200,
+      "C2": 0,
+      "C3": 448,
+      "C4": 236,
+      "C5": 259
+    }
+  },
+  {
+    "fold_idx": 4,
+    "train_sample_size": 1143,
+    "val_sample_size": 285,
+    "val_accounts": 259,
+    "tier_coverage_pct": 88.42,
+    "cand_coverage_pct": 88.42,
+    "tier_median_radius_m": 443.69,
+    "cand_median_radius_m": 622.3,
+    "tier_p90_radius_m": 1949.49,
+    "cand_p90_radius_m": 1655.03,
+    "tier_fitted_radii": {
+      "STREET_RESOLVED": 443.69,
+      "LOCALITY_BOUNDED": 661.96,
+      "BASELINE_FALLBACK": 1949.49,
+      "DOORSTEP_VERIFIED": 1019.01
+    },
+    "cand_fitted_radii": {
+      "C1": 1655.03,
+      "C2": 1019.01,
+      "C3": 431.52,
+      "C4": 700.84,
+      "C5": 622.3
+    },
+    "cand_train_counts": {
+      "C1": 203,
+      "C2": 0,
+      "C3": 463,
+      "C4": 221,
+      "C5": 256
+    }
+  }
+]

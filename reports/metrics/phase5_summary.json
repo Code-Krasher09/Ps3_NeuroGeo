@@ -1,5 +1,5 @@
 {
-  "execution_timestamp_utc": "2026-10-08T17:06:24Z",
+  "execution_timestamp_utc": "2026-10-09T17:21:25Z",
   "phase": 5,
   "phase_description": "Offline Deterministic Navigator & Auditable Evidence Cards",
   "provenance": {
@@ -20,15 +20,15 @@
     "negative_field_warnings": 25
   },
   "status_tier_counts": {
-    "LOCALITY_BOUNDED": 30,
+    "LOCALITY_BOUNDED": 15,
     "DOORSTEP_VERIFIED": 45,
-    "STREET_RESOLVED": 19,
+    "STREET_RESOLVED": 34,
     "BASELINE_FALLBACK": 6
   },
   "navigation_mode_counts": {
-    "LOCALITY": 30,
+    "LOCALITY": 15,
     "DOORSTEP": 45,
-    "STREET": 19,
+    "STREET": 34,
     "BASELINE": 6
   },
   "sample_navigation_instruction": {
@@ -40,11 +40,11 @@
     "bearing_deg": 19.6,
     "direction": "North",
     "within_confidence_radius": false,
-    "confidence_radius_m": 559.95,
+    "confidence_radius_m": 609.14,
     "status_tier": "LOCALITY_BOUNDED",
     "navigation_mode": "LOCALITY",
-    "instruction": "Proceed north for approximately 2943 m toward the locality estimate. Exact premises are uncertain within the estimated empirical P90 radius (~560 m).",
-    "caution": "Coarse locality centroid; premises are unverified and may lie anywhere within the ~560 m neighborhood.",
+    "instruction": "Proceed north for approximately 2943 m toward the locality estimate. Exact premises are uncertain within the estimated empirical P90 radius (~609 m).",
+    "caution": "Coarse locality centroid; premises are unverified and may lie anywhere within the ~609 m neighborhood.",
     "address_id": "AD000527",
     "scenario_name": "town_origin"
   },
@@ -56,29 +56,32 @@
       986.3,
       2772.6
     ],
-    "confidence_radius_m": 559.95,
+    "confidence_radius_m": 609.14,
     "calibration_tier": "LOCALITY_BOUNDED",
-    "calibration_sample_count": 1258,
-    "calibration_fallback_level": "tier_direct",
-    "score": 3.5003,
-    "score_margin": 0.9003,
+    "calibration_sample_count": 318,
+    "calibration_fallback_level": "candidate_p90",
+    "score": 3.501,
+    "score_margin": 0.6703,
     "evidence_sources": [
       "locality_centroid"
     ],
     "positive_evidence": [
-      "Locality polygon centroid from parsed address entity"
+      "Locality polygon centroid from parsed address entity",
+      "Confidence radius calibrated via candidate-wise empirical P90 (C5)"
     ],
     "negative_evidence": [],
-    "caution": "Locality-level centroid; uncertainty radius ~560 m.",
+    "caution": "Locality-level centroid; uncertainty radius ~609 m.",
     "provenance": {
       "fit_scope": "benchmark_train",
       "evaluation_scope": "eval_test",
       "calibration_source": "reports/metrics/calibration_quantiles.json",
       "calibration_scope": "scv_leave_one_out",
       "offline_mode": true,
-      "external_network_accessed": false
+      "external_network_accessed": false,
+      "calibration_method": "candidate_p90",
+      "calibration_fallback_reason": "landmark_unresolved"
     },
-    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 560 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location represents the locality centroid for neighborhood 'Azad Mohalla' as direct visits were unavailable."
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 609 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location represents the locality centroid for neighborhood 'Azad Mohalla' as direct visits were unavailable."
   },
-  "elapsed_seconds": 0.54
+  "elapsed_seconds": 1.4
 }

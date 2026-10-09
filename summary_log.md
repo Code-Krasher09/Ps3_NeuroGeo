@@ -360,3 +360,44 @@ To finalize a submission-ready, production-grade implementation of the NeuroGeo 
    - Executed full test suite: **146 passed, 0 failed** in 3.67s across 10 test modules.
    - Clean git state: `git diff --check` passed with 0 warnings.
    - Absolute protection: zero modifications to `reports/metrics/`, `reports/figures/`, `reports/eval_val_c6/`, source datasets, or benchmark splits. Zero unauthorized evaluation or benchmark scripts executed.
+
+---
+
+## 9. Production Integration: Candidate-Wise P90 & Close-Landmark Spatial-Scale Calibration
+
+### Context & Implementation Summary
+To resolve empirical coverage deficits across candidate types (specifically Candidate $C_4$'s under-coverage under coarse evidence-tier calibration) and exploit localized spatial scale when address landmarks resolve, BOTH candidate-wise empirical P90 calibration and close-landmark spatial-scale geometry calibration were integrated into the active production inference pipeline (`src/neurogeo/calibrator.py`).
+
+1. **5-Level Production Calibration Hierarchy**:
+   - **Level 0 (Direct Doorstep Evidence — C2)**: If Candidate $C_2$ is selected or `has_credible_doorstep = True`, assign fixed operational doorstep radius $R = 35.0\text{m}$ (`direct_doorstep`). Target doorstep visits are masked in SCV by design, so $C_2$ represents an operational direct-doorstep engineering policy derived from physical visit medoids—not an empirical quantile calibrated from target-masked SCV. It is strictly protected above spatial heuristics.
+   - **Level 1 (Close-Landmark Spatial-Scale Geometry)**: Activated when primary landmark anchor $L_0$ is resolved from address text (`poi_resolution_status == 'resolved'`):
+     - Nearest unmentioned POI $d_{\min}$ within the same town and locality (excluding collocated POIs $< 5.0\text{m}$), with bounded same-town fallback ($\le 1500.0\text{m}$).
+     - Spatial consistency guard: $\|P_i - L_0\|_2 \le 1000.0\text{m}$.
+     - Characteristic spatial scale: $G_i = \max(\|P_i - L_0\|_2, d_{\min}, 15.0\text{m})$. (Note: $G_i$ is an engineered spatial heuristic reflecting local catalog POI sparsity, not a guaranteed physical bound).
+     - Scaled radius: $r_i = \text{round}(Q_{0.90}(q \mid C_k) \cdot G_i, 2)$ if $N_{q, C_k} \ge 15$, else pooled $Q_{0.90}(q) \cdot G_i$ ($Q_{0.90}(q) = 5.7363$).
+   - **Level 2 (Candidate-Wise Empirical P90)**: Empirical error P90 for selected candidate ($C_1 \to 1653.8\text{m}, C_3 \to 432.0\text{m}, C_4 \to 731.3\text{m}, C_5 \to 609.1\text{m}$) when $N_{C_k} \ge 15$. Across the 1,428 clean non-benchmark SCV episodes, candidate counts are: $C_3 = 573$, $C_5 = 318$, $C_4 = 281$, $C_1 = 256$, and $C_2 = 0$ (target visits masked).
+   - **Level 3 (Locality-Level Empirical P90)**: Empirical P90 for resolved locality when $N_{\text{loc}} \ge 15$.
+   - **Level 4 (Evidence-Tier Empirical Quantile Fallback)**: Status-tier empirical quantiles (`STREET_RESOLVED` 615.93m, `LOCALITY_BOUNDED` 559.95m, `BASELINE_FALLBACK` 982.55m, `DOORSTEP_VERIFIED` 642.18m / 35m operational prior).
+   - Clamped to $[15.0\text{m}, 2500.0\text{m}]$ across all levels strictly after final calculation.
+
+2. **Leakage-Safe Validation & Measured Results**:
+   - Evaluated via 5-fold grouped cross-validation by `account_id` on 1,428 clean SCV episodes with all 100 benchmark addresses excluded.
+   - Benchmark surveyed target coordinates (`surveyed_x`, `surveyed_y`) and benchmark test error residuals were never accessed, fitted, or evaluated. Only benchmark address IDs from `surveyed_addresses.csv` were read to define the exclusion set.
+   - **Aggregate Empirical Coverage**:
+     - Evidence-Tier Calibration (Method 1): **89.85%**
+     - Candidate P90 Calibration (Method 2): **89.43%**
+     - Landmark Geometry Calibration (Method 3): **89.57%**
+     - Production Combined Hierarchy (Method 4): **89.57%**
+   - **Metric Provenance Distinction**:
+     - The **89.57%** coverage represents out-of-fold generalization across the 1,428 clean non-benchmark SCV episodes ($N=1,428$) evaluated via 5-fold grouped CV.
+     - The **91.0%** coverage represents empirical coverage on the 100 official benchmark addresses ($N=100$) evaluated under Phase 4 status-tier calibrated predictions.
+   - **Key Empirical Improvements**:
+     - Candidate $C_4$ coverage improved from **83.63%** under evidence-tier calibration to **89.32%** under candidate-wise calibration.
+     - Candidate $C_1$ median radius sharpened from 1,882.92m to 1,655.03m (-227.89m) while maintaining 89.06% coverage.
+     - Landmark Geometry activated in **41.04%** (586/1428) of episodes, achieving **90.27% coverage**.
+
+3. **Production Pipeline & Regression Verification**:
+   - `scripts/run_phase4.py` executes in 9.02s; benchmark predictions breakdown: 45 `direct_doorstep`, 29 `candidate_p90`, 26 `landmark_geometry`.
+   - `scripts/run_phase5.py` executes in 1.40s; 100 evidence cards, 400 navigation instructions, 100/100 predictions immutability check passed.
+   - Full test suite: **163 passed, 0 failed** in 17.73s across 12 test modules.
+

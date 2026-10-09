@@ -54,6 +54,235 @@
       "evidence_family": "cold_start"
     }
   },
+  "candidates": {
+    "C1": {
+      "candidate_type": "C1",
+      "sample_count": 287,
+      "radius_m": 1653.77,
+      "quantile": 0.9,
+      "fallback_level": "candidate_p90"
+    },
+    "C2": {
+      "candidate_type": "C2",
+      "sample_count": 0,
+      "radius_m": 35.0,
+      "quantile": 0.9,
+      "fallback_level": "direct_doorstep",
+      "explanation": "Target doorstep visits masked in SCV; direct doorstep operational evidence."
+    },
+    "C3": {
+      "candidate_type": "C3",
+      "sample_count": 561,
+      "radius_m": 432.03,
+      "quantile": 0.9,
+      "fallback_level": "candidate_p90"
+    },
+    "C4": {
+      "candidate_type": "C4",
+      "sample_count": 262,
+      "radius_m": 731.26,
+      "quantile": 0.9,
+      "fallback_level": "candidate_p90"
+    },
+    "C5": {
+      "candidate_type": "C5",
+      "sample_count": 318,
+      "radius_m": 609.14,
+      "quantile": 0.9,
+      "fallback_level": "candidate_p90"
+    }
+  },
+  "landmark_geometry": {
+    "target_quantile": 0.9,
+    "sample_count": 586,
+    "pooled_quantile_factor": 5.0358,
+    "candidate_quantile_factors": {
+      "C1": 5.0358,
+      "C3": 5.7341,
+      "C4": 0.929,
+      "C5": 5.0358
+    },
+    "candidate_sample_counts": {
+      "C1": 10,
+      "C3": 561,
+      "C4": 15,
+      "C5": 0
+    },
+    "collocation_distance_threshold_m": 5.0,
+    "landmark_spatial_consistency_radius_m": 1000.0,
+    "town_poi_fallback_radius_m": 1500.0,
+    "min_scale_floor_m": 15.0
+  },
+  "localities": {
+    "T1-L03": {
+      "locality_id": "T1-L03",
+      "sample_count": 37,
+      "radius_m": 444.85,
+      "quantile": 0.9
+    },
+    "T1-L09": {
+      "locality_id": "T1-L09",
+      "sample_count": 18,
+      "radius_m": 492.32,
+      "quantile": 0.9
+    },
+    "T1-L11": {
+      "locality_id": "T1-L11",
+      "sample_count": 132,
+      "radius_m": 452.82,
+      "quantile": 0.9
+    },
+    "T2-L09": {
+      "locality_id": "T2-L09",
+      "sample_count": 23,
+      "radius_m": 371.1,
+      "quantile": 0.9
+    },
+    "T2-L08": {
+      "locality_id": "T2-L08",
+      "sample_count": 70,
+      "radius_m": 424.15,
+      "quantile": 0.9
+    },
+    "T2-L03": {
+      "locality_id": "T2-L03",
+      "sample_count": 17,
+      "radius_m": 293.83,
+      "quantile": 0.9
+    },
+    "T1-L07": {
+      "locality_id": "T1-L07",
+      "sample_count": 24,
+      "radius_m": 429.65,
+      "quantile": 0.9
+    },
+    "T3-L06": {
+      "locality_id": "T3-L06",
+      "sample_count": 67,
+      "radius_m": 2026.55,
+      "quantile": 0.9
+    },
+    "T1-L01": {
+      "locality_id": "T1-L01",
+      "sample_count": 30,
+      "radius_m": 445.02,
+      "quantile": 0.9
+    },
+    "T3-L10": {
+      "locality_id": "T3-L10",
+      "sample_count": 45,
+      "radius_m": 1752.17,
+      "quantile": 0.9
+    },
+    "T2-L11": {
+      "locality_id": "T2-L11",
+      "sample_count": 105,
+      "radius_m": 419.04,
+      "quantile": 0.9
+    },
+    "T1-L02": {
+      "locality_id": "T1-L02",
+      "sample_count": 25,
+      "radius_m": 577.5,
+      "quantile": 0.9
+    },
+    "T1-L12": {
+      "locality_id": "T1-L12",
+      "sample_count": 16,
+      "radius_m": 476.81,
+      "quantile": 0.9
+    },
+    "T3-L05": {
+      "locality_id": "T3-L05",
+      "sample_count": 64,
+      "radius_m": 669.72,
+      "quantile": 0.9
+    },
+    "T1-L06": {
+      "locality_id": "T1-L06",
+      "sample_count": 20,
+      "radius_m": 1336.78,
+      "quantile": 0.9
+    },
+    "T1-L04": {
+      "locality_id": "T1-L04",
+      "sample_count": 83,
+      "radius_m": 375.79,
+      "quantile": 0.9
+    },
+    "T2-L06": {
+      "locality_id": "T2-L06",
+      "sample_count": 39,
+      "radius_m": 444.18,
+      "quantile": 0.9
+    },
+    "T2-L01": {
+      "locality_id": "T2-L01",
+      "sample_count": 34,
+      "radius_m": 903.11,
+      "quantile": 0.9
+    },
+    "T3-L08": {
+      "locality_id": "T3-L08",
+      "sample_count": 68,
+      "radius_m": 594.68,
+      "quantile": 0.9
+    },
+    "T3-L03": {
+      "locality_id": "T3-L03",
+      "sample_count": 32,
+      "radius_m": 493.45,
+      "quantile": 0.9
+    },
+    "T2-L10": {
+      "locality_id": "T2-L10",
+      "sample_count": 44,
+      "radius_m": 517.77,
+      "quantile": 0.9
+    },
+    "T3-L07": {
+      "locality_id": "T3-L07",
+      "sample_count": 39,
+      "radius_m": 410.04,
+      "quantile": 0.9
+    },
+    "T1-L08": {
+      "locality_id": "T1-L08",
+      "sample_count": 38,
+      "radius_m": 381.54,
+      "quantile": 0.9
+    },
+    "T3-L01": {
+      "locality_id": "T3-L01",
+      "sample_count": 24,
+      "radius_m": 1500.32,
+      "quantile": 0.9
+    },
+    "T3-L02": {
+      "locality_id": "T3-L02",
+      "sample_count": 27,
+      "radius_m": 2500.0,
+      "quantile": 0.9
+    },
+    "T2-L02": {
+      "locality_id": "T2-L02",
+      "sample_count": 32,
+      "radius_m": 423.72,
+      "quantile": 0.9
+    },
+    "T2-L05": {
+      "locality_id": "T2-L05",
+      "sample_count": 20,
+      "radius_m": 423.36,
+      "quantile": 0.9
+    },
+    "T3-L11": {
+      "locality_id": "T3-L11",
+      "sample_count": 36,
+      "radius_m": 568.77,
+      "quantile": 0.9
+    }
+  },
   "fallback_counts": {
     "tier_direct": 3,
     "evidence_family": 0,

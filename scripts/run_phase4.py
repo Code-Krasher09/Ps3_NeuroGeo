@@ -243,6 +243,10 @@ def main() -> None:
         min_samples=15,
         target_quantile=0.90,
         fit_scope="calibration_oof",
+        df_parsed=df_addr_ent,
+        df_baseline=df_base,
+        df_pois=df_pois,
+        reranker_weights=fitted_weights,
     )
 
     print("  * Calibration Provenance & Benchmark Split Isolation:")
@@ -256,6 +260,13 @@ def main() -> None:
             f"(Episodes={t_data['unique_episode_count']:4d}, Residuals={t_data['residual_count']:4d}, "
             f"fallback={t_data['fallback_level']}, family={t_data.get('evidence_family')})"
         )
+    if "candidates" in cal_summary and cal_summary["candidates"]:
+        print("  * Candidate-wise Empirical P90 Radii:")
+        for c_k, c_v in cal_summary["candidates"].items():
+            print(f"      {c_k}: R = {c_v['radius_m']:6.2f}m (N={c_v['sample_count']}, fallback={c_v['fallback_level']})")
+    if "landmark_geometry" in cal_summary and cal_summary["landmark_geometry"]:
+        g_info = cal_summary["landmark_geometry"]
+        print(f"  * Close-Landmark Geometry: Pooled factor = {g_info.get('pooled_quantile_factor')} (N={g_info.get('sample_count')})")
     print(f"  * Fallback distribution: {cal_summary['fallback_counts']}")
 
     # Export calibration_quantiles.json
@@ -348,8 +359,22 @@ def main() -> None:
             baseline_precision=b_prec,
         )
 
-        # Calibration
-        rad_m, conf_level, fb_level, sample_cnt = calibrate_prediction(status_tier, cal_summary)
+        # Production hierarchical calibration
+        cal_res = calibrate_prediction(
+            status_tier=status_tier,
+            calibration_dict=cal_summary,
+            selected_candidate_type=selected.candidate_type,
+            predicted_coord=(selected.x, selected.y),
+            parsed_entity=row.to_dict(),
+            df_pois=df_pois,
+            df_localities=df_localities,
+            has_credible_doorstep=has_cred,
+            return_result_object=True,
+        )
+        rad_m = cal_res.radius_m
+        conf_level = cal_res.confidence_level
+        fb_level = cal_res.fallback_level
+        sample_cnt = cal_res.sample_count
 
         # Error vs ground truth surveyed coordinate
         err_m = compute_euclidean_distance(selected.x, selected.y, sx, sy)
@@ -372,11 +397,17 @@ def main() -> None:
             "runner_up_score": round(runner_up.total_score if runner_up else 0.0, 4),
             "score_margin": round(margin, 4),
             "evidence_sources": ",".join(selected.agreed_sources),
-            "calibration_tier": status_tier.value,
+            "calibration_tier": cal_res.calibration_tier,
             "calibration_sample_count": sample_cnt,
             "calibration_fallback_level": fb_level,
             "fit_scope": fit_scope,
             "evaluation_scope": eval_scope,
+            "calibration_method": cal_res.calibration_method,
+            "geometry_scale_m": cal_res.geometry_scale_m,
+            "primary_landmark_poi_id": cal_res.primary_landmark_poi_id,
+            "nearest_unmentioned_poi_id": cal_res.nearest_unmentioned_poi_id,
+            "nearest_unmentioned_distance_m": cal_res.nearest_unmentioned_distance_m,
+            "calibration_fallback_reason": cal_res.fallback_reason,
             # Ground truth verification fields (evaluation only)
             "is_surveyed_benchmark": True,
             "split": split,

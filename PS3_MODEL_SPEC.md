@@ -155,43 +155,27 @@ $$\hat{\mathbf{X}} = \arg\max_{C_k \in \mathcal{C}(a)} \text{Score}(C_k)$$
 
 ## 7. Empirical Quantile Uncertainty Calibration
 
-The confidence radius $R$ is calibrated to target approximately 90% empirical coverage on held-out data:
+The confidence radius $R$ is calibrated via a 5-level hierarchy combining Candidate-Wise Empirical P90 and Close-Landmark Spatial-Scale Geometry, targeting approximately 90% empirical coverage on held-out clean SCV episodes:
 
-1. **Evidence Strata Classification**:
-   - **Tier 1 (`DOORSTEP_VERIFIED`)**: Target address has $\ge 1$ visit with $I(v) \ge 0.70$ and $w_{\text{outcome}} \ge 0.85$. (Initial target $R \le 35\text{m}$).
-   - **Tier 2 (`STREET_RESOLVED`)**: Cold-start address; Candidate $C_4$ selected with $\ge 2$ supporting neighbor accounts, or $C_3$ anchored to resolved landmark. (Initial target $R \le 85\text{m}$).
-   - **Tier 3 (`LOCALITY_BOUNDED`)**: Cold-start address; Candidate $C_5$ (Locality Centroid) selected. (Initial target $R \le 250\text{m}$).
-   - **Tier 4 (`BASELINE_FALLBACK`)**: Commercial baseline geocoder selected with low precision (`locality` or `pincode`). (Initial target $R > 400\text{m}$).
+1. **Production Calibration Hierarchy**:
+   - **Level 0 (Direct Doorstep Evidence)**: Confirmed check-in evidence ($C_2$ selected or credible doorstep). Strictly $R = 35.0\text{ m}$ (`DOORSTEP_VERIFIED`). Because target doorstep visits are masked in SCV by design, this 35.0 m radius represents an operational direct-doorstep engineering policy derived from physical visit medoids—not an empirical quantile calibrated from target-masked SCV. It is strictly protected above spatial heuristics.
+   - **Level 1 (Close-Landmark Spatial-Scale Geometry)**: When an unambiguous landmark $L_0$ is resolved:
+     - Retrieves eligible unmentioned catalog POIs in the same town/locality (excluding collocated POIs $< 5.0\text{ m}$, with bounded same-town fallback $\le 1,500.0\text{ m}$).
+     - Finds nearest eligible unmentioned POI distance $d_{\min}$.
+     - Enforces spatial consistency: $\|P_i - L_0\|_2 \le 1,000\text{ m}$.
+     - Computes characteristic spatial scale: $G_i = \max(\|P_i - L_0\|_2, d_{\min}, 15.0\text{ m})$. (Note: $G_i$ is an engineered spatial heuristic reflecting local catalog POI sparsity, not a guaranteed physical bound).
+     - Calibrates normalized residuals $q_i = e_i / G_i$: $R = \min(\max(\text{round}(Q_{0.90}(q) \cdot G_i, 2), 15.0\text{ m}), 2,500.0\text{ m})$.
+   - **Level 2 (Candidate-Wise Empirical P90)**: When geometry is ineligible or rejected, uses empirical error P90 of selected candidate ($C_1 \to 1,653.8\text{m}, C_3 \to 432.0\text{m}, C_4 \to 731.3\text{m}, C_5 \to 609.1\text{m}$) if $N \ge 15$. Across the 1,428 clean non-benchmark SCV episodes, candidate counts are $C_3 = 573$, $C_5 = 318$, $C_4 = 281$, $C_1 = 256$, and $C_2 = 0$ (target visits masked).
+   - **Level 3 (Locality-Level Empirical P90)**: Locality-specific empirical P90 if candidate sample count $< 15$ and locality has $\ge 15$ clean episodes.
+   - **Level 4 (Evidence-Tier Empirical Quantile Fallback)**: Fallback hierarchy on status tiers (`STREET_RESOLVED` 615.93m, `LOCALITY_BOUNDED` 559.95m, `BASELINE_FALLBACK` 982.55m), evidence family, or global P90 (642.18m).
 
-2. **Calibration Sample Isolation**:
-   - Calibration radii $R_T$ are estimated from out-of-fold calibration episodes generated during Simulated Cold-Start Validation (SCV) across $N = 1,477$ visited accounts, strictly disjoint from reranker weight fitting.
-   - The 19 benchmark validation addresses independently verify empirical coverage rather than simultaneously fitting reranker weights and estimating quantiles.
+2. **Calibration Sample Isolation & Zero Leakage**:
+   - Evaluated via 5-fold grouped cross-validation by `account_id` across $N = 1,428$ clean visited accounts (achieving **89.57% aggregate coverage**), strictly disjoint from reranker weight fitting.
+   - All 100 official benchmark addresses (66 Train, 19 Validation, 15 Test) are completely excluded from calibration fitting ($\text{calibration} \cap \text{benchmark} = \emptyset$).
+   - Surveyed benchmark target coordinates (`surveyed_x`, `surveyed_y`) and benchmark test error residuals were never accessed, fitted, or evaluated. Only benchmark address IDs from `surveyed_addresses.csv` were read to define the exclusion set.
 
-3. **Sample-Size Fallback Hierarchy**:
-   To prevent degenerate quantiles on tiers with small sample sizes ($N_T < N_{\text{min}} = 15$):
-   ```python
-   def get_calibrated_radius(tier: str, residuals_by_tier: dict, N_min: int = 15) -> float:
-       # Level 1: Tier-specific empirical P90
-       if len(residuals_by_tier.get(tier, [])) >= N_min:
-           return float(np.quantile(residuals_by_tier[tier], 0.90))
-       
-       # Level 2: Evidence-Family pooled P90 (Visited Family: T1 vs Cold-Start Family: T2, T3, T4)
-       family = "visited" if tier == "DOORSTEP_VERIFIED" else "cold_start"
-       family_residuals = [r for t, res in residuals_by_tier.items() 
-                           if ("visited" if t == "DOORSTEP_VERIFIED" else "cold_start") == family 
-                           for r in res]
-       if len(family_residuals) >= N_min:
-           return float(np.quantile(family_residuals, 0.90))
-       
-       # Level 3: Global pooled empirical P90
-       global_residuals = [r for res in residuals_by_tier.values() for r in res]
-       return float(np.quantile(global_residuals, 0.90))
-   ```
-
-4. **Coverage Target & Production Method**:
-   Assign $R_a = \text{get\_calibrated\_radius}(\text{Tier}(a))$. The implemented production method is **Evidence-Tier Empirical Quantile Calibration**, targeting approximately 90% empirical coverage on held-out data.
-
-> **Future Research Reservation**: Geometry-aware local-region confidence calibration has been formulated as proposed future research, but is not implemented or evaluated in this submission. The production engine relies strictly on the evidence-tier empirical quantile calibration specified above.
+3. **Physical Bounds**:
+   Physical bounds [15.0 m floor, 2,500.0 m cap] are strictly enforced across all levels after final radius calculation.
 
 ---
 

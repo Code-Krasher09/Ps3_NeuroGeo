@@ -56,7 +56,9 @@ We explicitly reject continuous coordinate regression with neural networks ($(x,
                            ▼
 ┌────────────────────────────────────────────────────────┐
 │ 4. Uncertainty Calibration & Operational Outputs       │
-│    • Evidence-tier empirical quantile radius R         │
+│    • 5-level hierarchical empirical quantile radius R  │
+│      (C2 doorstep, landmark scale, candidate P90,      │
+│       locality P90, evidence-tier fallback)            │
 │    • Prediction status assignment                      │
 │    • Deterministic offline turn directions             │
 │    • Machine-readable evidence card                    │
@@ -143,4 +145,4 @@ Every prediction returns an atomic schema containing:
 2. **No Neural Graph Networks (GNNs)**: Graph knowledge transfer uses sparse bipartite adjacency propagation (NetworkX / SciPy); neural message passing is out of scope.
 3. **No Unconstrained Online Learning**: The spatial knowledge base updates in versioned, integrity-gated batch cycles, never mutating production coordinates on single raw check-ins.
 4. **No Generative LLM Navigation**: Navigation text is synthesized via deterministic templates to guarantee sub-millisecond offline execution and zero hallucinations.
-5. **No Speculative Local-Region Calibration**: Geometry-aware local-region confidence calibration is designated as proposed future research. The production engine relies strictly on empirical evidence-tier quantile calibration derived from held-out SCV residuals.
+5. **Empirically Calibrated Production Hierarchy**: The production calibration engine integrates candidate-specific empirical P90 bounds and close-landmark spatial-scale geometry ($G_i = \max(\|P_i - L_0\|_2, d_{\min}, 15.0\text{m})$) with multi-level fallbacks (locality P90, evidence-tier empirical quantiles), rigorously evaluated via 5-fold grouped CV on 1,428 held-out SCV episodes (achieving 89.57% aggregate coverage). Benchmark surveyed target coordinates and test error residuals were never accessed, fitted, or evaluated. Target doorstep evidence (C2) remains strictly preserved at 35m as an operational direct-doorstep engineering policy.

@@ -227,6 +227,14 @@ class ModelConfig:
     # Calibration parameters
     target_coverage: float = 0.90
     min_tier_samples: int = 15
+    enable_candidate_wise_calibration: bool = True
+    enable_landmark_geometry_calibration: bool = True
+    collocation_distance_threshold_m: float = 5.0
+    landmark_spatial_consistency_radius_m: float = 1000.0
+    town_poi_fallback_radius_m: float = 1500.0
+    min_calibration_radius_floor_m: float = 15.0
+    max_calibration_radius_cap_m: float = 2500.0
+    min_calibration_samples: int = 15
 
     # Random seed
     random_seed: int = 42

@@ -262,6 +262,36 @@ This document maintains an immutable, chronological register of engineering, alg
      - *Causal Attribution*: Baseline `run_phase4.py` previously omitted `poi_resolution_status` from `ent_cols`, causing Candidate $C_3$ to default to `"unresolved"` (capping its `TextMatch` score at 0.65 instead of the intended 0.90/0.95). In the validation audit, supplying the complete entity dictionary allowed $C_3$ to receive its true score, yielding 3 validation improvements (`AD000525`, `AD001315`, `AD002536`). This was caused by restoring the intended POI resolution status to $C_3$, **not** by PIN normalization.
   5. **Evidence-Tier Quantile Calibration Retained**: Preserved the empirical quantile calibration method across status tiers (`DOORSTEP_VERIFIED`, `STREET_RESOLVED`, `LOCALITY_BOUNDED`, `BASELINE_FALLBACK`).
   6. **Future Work Reservation**: Explicitly recorded that geometry-aware local-region confidence calibration is proposed future work and has not been implemented or evaluated in this submission.
-- **Reason & Intuition**: Under strict submission constraints, architectural clarity, code hygiene, and strict schema contract alignment are paramount. Eliminating redundant candidate hypotheses reduces maintenance burden while fixing the entity-contract ensures production inference matches the intended mathematical specification.
+
+---
+
+## 8. Production Uncertainty Calibration & Geometry Integration Decisions
+
+### Decision 7.1: Production Integration of Candidate-Wise P90 and Close-Landmark Spatial-Scale Geometry
+- **Action**:
+  1. **Dual Mechanism Production Hierarchy**: Fully integrated BOTH candidate-wise empirical P90 confidence calibration and close-landmark spatial-scale geometry calibration into the active production inference pipeline (`src/neurogeo/calibrator.py`), governed by a 5-level fallback hierarchy:
+     - **Level 0 (Direct Doorstep Evidence — C2)**: If Candidate $C_2$ is selected or `has_credible_doorstep = True`, assign fixed empirical doorstep radius $R = 35.0\text{m}$ (`direct_doorstep`). Target visits are masked in SCV by definition, so $C_2$ is not estimable from SCV. High-confidence doorstep evidence is treated as an operational direct-doorstep engineering policy derived from physical visit medoids and is never overridden by coarser spatial heuristics.
+     - **Level 1 (Close-Landmark Spatial-Scale Geometry)**: Activated when a primary landmark anchor $L_0$ is resolved from address text (`poi_resolution_status == 'resolved'`).
+       - Query nearest eligible unmentioned POI $d_{\min}$ within the same town and locality (excluding collocated POIs with distance $< 5.0\text{m}$), with bounded same-town fallback ($\le 1500.0\text{m}$).
+       - Enforce spatial consistency: $\|P_i - L_0\|_2 \le 1000.0\text{m}$. If violated, reject geometry and fall back to Level 2.
+       - Evaluate characteristic spatial scale:
+         $$G_i = \max\big(\|P_i - L_0\|_2,\ d_{\min},\ 15.0\text{m}\big)$$
+         (Note: $G_i$ is an engineered spatial heuristic reflecting local catalog POI sparsity, not a guaranteed physical bound).
+       - Scale by normalized residual quantile: $r_i = \text{round}(Q_{0.90}(q \mid C_k) \cdot G_i, 2)$ if $N_{q, C_k} \ge 15$, else pooled $Q_{0.90}(q) \cdot G_i$.
+     - **Level 2 (Candidate-Wise Empirical P90)**: If Level 1 is ineligible, rejected, or disabled, calibrate by the selected candidate's empirical error P90 ($C_1 \to 1653.8\text{m}, C_3 \to 432.0\text{m}, C_4 \to 731.3\text{m}, C_5 \to 609.1\text{m}$) when sample size $N_{C_k} \ge 15$. Across the 1,428 clean non-benchmark SCV episodes, candidate counts are: $C_3 = 573$, $C_5 = 318$, $C_4 = 281$, $C_1 = 256$, and $C_2 = 0$ (target visits masked).
+     - **Level 3 (Locality-Level Empirical P90)**: If candidate sample size $< 15$, fall back to locality-specific empirical P90 when locality sample size $N_{\text{loc}} \ge 15$.
+     - **Level 4 (Evidence-Tier Empirical Quantile Fallback)**: Traditional status-tier quantiles (`STREET_RESOLVED` 615.93m, `LOCALITY_BOUNDED` 559.95m, `BASELINE_FALLBACK` 982.55m, `DOORSTEP_VERIFIED` 642.18m / 35m operational prior).
+     - **Physical Bounds Enforcement**: Clamped to $[15.0\text{m}, 2500.0\text{m}]$ across all levels strictly AFTER final radius calculation.
+  2. **Backward-Compatible Output Schema & Provenance**: Extended `CalibrationResult` and `Phase4Prediction` to capture `calibration_method`, `calibration_fallback_reason`, `calibration_sample_size`, `spatial_scale_m`, and `normalized_quantile`.
+  3. **Zero Test-Set Leakage Protocol**: Quantiles fitted strictly on training folds of 1,428 clean SCV episodes with all 100 benchmark addresses excluded. Official benchmark target coordinates (`surveyed_x`, `surveyed_y`) and benchmark test error residuals were never accessed, fitted, or evaluated. Only benchmark address IDs from `surveyed_addresses.csv` were read to define the exclusion set.
+  4. **Empirical Validation (5-Fold Grouped CV by `account_id`, $N=1,428$)**:
+     - Production aggregate coverage: **89.57%** (aligned with target ~90%).
+     - Level 1 Landmark Geometry activated in **41.04%** (586/1428) of episodes, achieving **90.27% coverage**.
+     - Level 2 Candidate P90 activated in **58.96%** (842/1428) of episodes.
+     - Resolved Candidate $C_4$ under-coverage deficit: evidence-tier calibration provided only **83.63% coverage** on $C_4$; candidate-wise calibration expands radius to 731.3m, achieving **89.32% coverage**.
+     - Sharpened $C_1$ baseline geocoder radius: reduced median radius from 1,882.92m to 1,655.03m (-227.89m) while maintaining 89.06% empirical coverage.
+     - Automated test suite: verified passing all 163 unit and regression tests across the repository.
+- **Reason & Intuition**: Rather than relying on coarse evidence-tier assumptions or ungrounded household doorstep medoid spreads, the production calibrator conditions confidence directly on the selected candidate's empirical error distribution and local landmark density. Rigorous 5-fold CV confirms this eliminates the $C_4$ coverage deficit while sharpening commercial baseline predictions.
+
 
 

@@ -18,6 +18,7 @@ Design Principles:
 from enum import Enum
 import math
 from typing import Any, Dict, List, Optional, Tuple, Union
+import pandas as pd
 
 from neurogeo.schemas import (
     EvidenceCard,
@@ -466,6 +467,22 @@ def build_evidence_card(
 
     caution = " ".join(cautions) if cautions else None
 
+    # Calibration provenance and evidence
+    cal_method = _extract_attr(prediction, "calibration_method", None)
+    geom_scale = _extract_attr(prediction, "geometry_scale_m", None)
+    pri_poi = _extract_attr(prediction, "primary_landmark_poi_id", None)
+    near_poi = _extract_attr(prediction, "nearest_unmentioned_poi_id", None)
+    near_dist = _extract_attr(prediction, "nearest_unmentioned_distance_m", None)
+    cal_fb_reason = _extract_attr(prediction, "calibration_fallback_reason", None)
+
+    if cal_method == "landmark_geometry":
+        scale_txt = f" ({float(geom_scale):.1f} m)" if geom_scale is not None and pd.notna(geom_scale) else ""
+        positive_evidence.append(f"Confidence radius calibrated via close-landmark spatial scale{scale_txt}")
+    elif cal_method == "candidate_p90":
+        positive_evidence.append(f"Confidence radius calibrated via candidate-wise empirical P90 ({selected_candidate})")
+    elif cal_method == "locality_empirical":
+        positive_evidence.append("Confidence radius calibrated via locality-level empirical P90")
+
     # Provenance block
     provenance = {
         "fit_scope": fit_scope,
@@ -475,6 +492,18 @@ def build_evidence_card(
         "offline_mode": True,
         "external_network_accessed": False,
     }
+    if cal_method is not None:
+        provenance["calibration_method"] = str(cal_method)
+    if geom_scale is not None and pd.notna(geom_scale):
+        provenance["geometry_scale_m"] = round(float(geom_scale), 2)
+    if pri_poi is not None and pd.notna(pri_poi):
+        provenance["primary_landmark_poi_id"] = str(pri_poi)
+    if near_poi is not None and pd.notna(near_poi):
+        provenance["nearest_unmentioned_poi_id"] = str(near_poi)
+    if near_dist is not None and pd.notna(near_dist):
+        provenance["nearest_unmentioned_distance_m"] = round(float(near_dist), 2)
+    if cal_fb_reason is not None and pd.notna(cal_fb_reason):
+        provenance["calibration_fallback_reason"] = str(cal_fb_reason)
 
     explanation = explain_prediction(prediction, evidence_context=ctx)
 
