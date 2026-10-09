@@ -20,10 +20,13 @@ PHASE 3: Spatial Graph & Cold-Start Propagation
    │  └── Hierarchical street graph, simulated SCV & LOSO validation engines
    ▼
 PHASE 4: Candidate Reranker & Quantile Calibrator
-   │  └── 5-candidate generation, linear utility scorer, evidence-tier quantile radii
+   │  └── 6-candidate generation (incl. C6 Bayesian), linear utility scorer, evidence-tier quantile radii
    ▼
 PHASE 5: Packaging, Demo Notebook & Executive Deck
-      └── Reproducible master notebook, interactive visual dashboard, presentation slides
+   │  └── Reproducible master notebook, interactive visual dashboard, presentation slides
+   ▼
+PHASE 6: Production & Integration (CreditNirvana UI/API)
+      └── MuRIL NER parser, OSM Snapping, Feedback Loop, Next.js Dashboard
 ```
 
 ---
@@ -67,6 +70,7 @@ PHASE 5: Packaging, Demo Notebook & Executive Deck
   - Structural Invariant: POI Resolver must yield **0 duplicate POIs per type** when scoped by resolved `locality_id`.
   - Resolution Quality: Report distribution of entity resolution status (`resolved`, `unresolved`, `ambiguous`); benchmark address POI match rate evaluated against annotated landmark ground truth.
   - Multilingual addresses in Kannada (T1) and Devanagari (T2) must normalize without Unicode encoding errors.
+  - **MuRIL NER Integration**: Replace rule-based logic with a deep learning MuRIL Transformer pipeline.
 - **Acceptance Criteria**: Addresses with explicit landmarks (*"Bus Stop hattira"*, *"nr Medical Store"*) successfully anchor to unique `poi_id`s within 500m of locality centroid.
 
 ---
@@ -85,13 +89,13 @@ PHASE 5: Packaging, Demo Notebook & Executive Deck
 ---
 
 ### Phase 4: Candidate Reranker & Quantile Calibrator (`src/candidate_ranker.py`, `src/calibrator.py`, `src/navigator.py`)
-- **Objective**: Generate 5 spatial candidates (C1–C5), score them via linear utility, calibrate confidence radius $R$ via evidence-tier empirical quantiles, and synthesize turn directions.
+- **Objective**: Generate 6 spatial candidates (C1–C6, including Bayesian Grid Fallback), score them via linear utility, calibrate confidence radius $R$ via evidence-tier empirical quantiles, and synthesize turn directions.
 - **Inputs**: `parsed_addresses.parquet`, `street_centroids.parquet`, `visit_features.parquet`, `baseline_geocodes.csv`.
 - **Outputs**: Full NeuroGeo-Field predictions (`predictions_benchmark.json`).
 - **Tests & Assertions**:
   - Every predicted coordinate must satisfy the coordinate sanity bound ($\|(\hat{x}, \hat{y})\|_2 \le \text{approx\_radius\_m} + 200\text{m}$).
   - Calibration parameters derived from out-of-fold SCV residuals with sample-size fallback hierarchy ($N_{\min}=15$); verified to achieve $\ge 88\%$ empirical coverage on the 19 validation benchmark addresses.
-  - Offline navigation strings must be deterministic and non-empty for all addresses.
+  - Offline navigation strings must be deterministic, non-empty for all addresses, and snapped to OSM road segments.
 - **Acceptance Criteria**: Overall median distance error on 100 surveyed addresses beats the commercial baseline by $\ge 80\%$ (target $< 50\text{m}$ overall, $< 25\text{m}$ visited).
 
 ---
@@ -106,6 +110,16 @@ PHASE 5: Packaging, Demo Notebook & Executive Deck
      - 🔵 NeuroGeo-Field prediction pin & calibrated confidence circle
      - 🟢 True surveyed doorstep
   3. `README_SUBMISSION.md`: Executive summary, ablation table (Models 0–7), error taxonomy report, and operational field ROI analysis.
+
+---
+
+### Phase 6: Production Integrations (CreditNirvana Backend/Frontend)
+- **Objective**: Wrap the final engine into FastAPI and a Next.js Dashboard.
+- **Deliverables**:
+  1. `/api/candidates`: FastAPI endpoint serving predicted location and alternatives.
+  2. `/api/snap_to_osm`: FastAPI endpoint for OSRM route snapping.
+  3. `/api/feedback`: FastAPI endpoint processing address decay signals.
+  4. Next.js Dashboard `page.tsx` rendering evidence cards, map overlays, and operational override buttons.
 
 ---
 

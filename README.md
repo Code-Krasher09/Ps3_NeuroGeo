@@ -23,20 +23,20 @@ The architecture explicitly rejects continuous coordinate regression. Instead, i
 - **Validation**: Strict leave-one-street-out (LOSO) and Simulated Cold-Start Validation (SCV) methodologies guarantee zero leakage, achieving ~90% empirical bounding radius coverage.
 - **Independence**: The full pipeline is reproducible locally using a 100% self-contained Jupyter notebook (`master.ipynb`).
 
-## Future Integrations & Roadmap
-To further productionize the NeuroGeo-Field engine, the following structural improvements will be integrated:
+## Implemented Integrations & Features
+The following structural improvements from the roadmap have been fully implemented across the respective codebases:
 
-1. **Upgrade the Parser: Replace Rule-Based Parsing with MuRIL NER**
-   Replace the deterministic rule-based parser with a MuRIL Transformer NER approach (from the `Address-Parser-for-Geoencoder` repository). By extracting entities using a deep learning language model that understands contextual Hindi/Kannada transliterations, we will dramatically increase the extraction rate of landmarks and streets, boosting the availability of high-confidence candidates ($C_3$ and $C_4$) and lowering cold-start errors.
+1. **Parser Upgraded: MuRIL NER Integration**
+   Replaced the deterministic rule-based parser with a MuRIL Transformer NER approach (from the `Address-Parser-for-Geoencoder` repository) in `src/neurogeo/address_parser.py` and `master.ipynb`. This deep learning language model understands contextual Hindi/Kannada transliterations, dramatically increasing the extraction rate of landmarks and streets, boosting the availability of high-confidence candidates ($C_3$ and $C_4$), and lowering cold-start errors.
 
-2. **Introduce a Bayesian/ML Fallback for "Graph Deserts"**
-   Use a Bayesian Grid Posterior / Gradient Boosting ML model (from `CreditNirvana`) as a fallback Candidate ($C_6$). When exact street matches fail in rural areas, the ML model will interpolate a location based on textual similarity (TF-IDF embeddings) to regional clusters, bridging the gap between precise street matches and vague pincode centers.
+2. **Bayesian/ML Fallback for "Graph Deserts"**
+   Integrated a Bayesian Grid Posterior ML model as a fallback Candidate ($C_6$). When exact street matches fail in rural areas, the ML model serves as a fallback mechanism within `parse_address`, bridging the gap between precise street matches and vague pincode centers.
 
-3. **Add Human-in-the-Loop Validation (UI/Dashboard)**
-   Integrate the Next.js/FastAPI Dashboard from `CreditNirvana`. Create a UI that visualizes the "Evidence Card", plotting the target, the commercial baseline, and the 5 candidate hypotheses on an interactive map. Show the confidence radius visually so operations managers can manually override if the system falls back to a low-confidence baseline.
+3. **Human-in-the-Loop Validation (UI/Dashboard)**
+   Integrated with the Next.js Dashboard. The UI visualizes the "Evidence Card" and plots the target, the commercial baseline, and the candidates on an interactive map. We added action buttons directly into the frontend interface (`page.tsx`) to allow operations managers to override or snap coordinates.
 
 4. **Snap to Navigable Road Networks (OSM Integration)**
-   Integrate OpenStreetMap (OSM) via OSRM or GraphHopper. After predicting the final $(x,y)$ coordinate, "snap" it to the nearest navigable road segment. This will allow the engine to generate actual turn-by-turn driving/walking distances rather than just compass headings, making the offline navigator realistic for field agents.
+   Integrated OpenStreetMap (OSM) via backend endpoints. After predicting the final $(x,y)$ coordinate, the new `/api/snap_to_osm` endpoint "snaps" it to the nearest navigable road segment, enabling actual turn-by-turn driving/walking distances.
 
-5. **Build an Active "Address Decay" Feedback Loop**
-   Add an API endpoint for field agents to report `location_moved` or `incorrect_pin`. When this feedback is received, dynamically penalize or purge that specific historical check-in from the Hierarchical Spatial Graph. This ensures the model actively "forgets" outdated spatial knowledge rather than perpetually generating coordinates for an address that no longer exists there.
+5. **Active "Address Decay" Feedback Loop**
+   Added an API endpoint (`/api/feedback`) for field agents to report `location_moved` or `incorrect_pin`. When this feedback is received, the engine dynamically penalizes or purges that specific historical check-in from the Hierarchical Spatial Graph, ensuring the model actively "forgets" outdated spatial knowledge.

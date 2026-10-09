@@ -29,7 +29,7 @@ We explicitly reject continuous coordinate regression with neural networks ($(x,
 │ 1. Address Understanding & Entity Resolution          │
 │    • Script normalization (Kannada / Devanagari)       │
 │    • Postal PIN parsing & assisted disambiguation      │
-│    • Locality, Street, Landmark, Preposition NER       │
+│    • MuRIL NER (Locality, Street, Landmark)            │
 │    • Locality-bounded POI disambiguation               │
 └──────────────────────────┬─────────────────────────────┘
                            │
@@ -41,6 +41,7 @@ We explicitly reject continuous coordinate regression with neural networks ($(x,
 │    C3: POI Anchor Coordinate (with relational cues)    │
 │    C4: Hierarchically Scoped Neighbor Street Cluster   │
 │    C5: Locality Centroid Fallback                      │
+│    C6: Bayesian/ML Grid Fallback                       │
 └──────────────────────────┬─────────────────────────────┘
                            │
                            ▼
@@ -60,7 +61,7 @@ We explicitly reject continuous coordinate regression with neural networks ($(x,
 │      (C2 doorstep, landmark scale, candidate P90,      │
 │       locality P90, evidence-tier fallback)            │
 │    • Prediction status assignment                      │
-│    • Deterministic offline turn directions             │
+│    • Deterministic offline turn directions (OSM Snapped)│
 │    • Machine-readable evidence card                    │
 └────────────────────────────────────────────────────────┘
 ```
@@ -73,7 +74,7 @@ Empirical audit confirms that **52.6% of addresses (1,640 of 3,117) have NEVER b
 
 ```mermaid
 flowchart TD
-    Addr[Address Text] --> Parser[Script-Aware Address Parser]
+    Addr[Address Text] --> Parser[MuRIL NER Address Parser]
     Parser --> POIRes[Locality-Bounded POI Resolver]
     POIRes --> Branch{"Historical Visits Exist?"}
 
@@ -92,13 +93,15 @@ flowchart TD
 
     Baseline[baseline_geocodes.csv] --> C1[Candidate C1: Commercial Baseline]
     Localities[localities.csv] --> C5[Candidate C5: Locality Centroid]
+    Graph --> C6[Candidate C6: Bayesian/ML Grid Fallback]
 
-    C1 & C2 & C3 & C4 & C5 --> Reranker[Candidate Scorer & Reranker]
+    C1 & C2 & C3 & C4 & C5 & C6 --> Reranker[Candidate Scorer & Reranker]
     Reranker --> BestPin[Predicted Pin x_hat, y_hat]
     BestPin --> Calibrator[Empirical Quantile Calibrator]
     Calibrator --> OutRadius[Calibrated Radius R]
     Parser & POIRes & BestPin --> NavGen[Deterministic Navigation Synthesizer]
-    NavGen --> OutDirections[Offline Turn Guidance]
+    NavGen --> OSMSnap[OSM Snapping]
+    OSMSnap --> OutDirections[Offline Turn Guidance]
     Reranker & Sanitizer --> OutCard[Explainability Evidence Card]
 ```
 
