@@ -1,0 +1,141 @@
+{
+  "benchmark_dataset": "surveyed_addresses.csv",
+  "benchmark_count": 100,
+  "metric_description": "2D Euclidean distance error in Cartesian meters between commercial geocoder and ground truth",
+  "overall": {
+    "count": 100,
+    "median_error_m": 376.3977525506533,
+    "p90_error_m": 839.1808492658729,
+    "max_error_m": 4807.6834026379065,
+    "min_error_m": 21.882641522448694,
+    "mean_error_m": 532.674973831758,
+    "p25_error_m": 170.79044704659702,
+    "p75_error_m": 539.4186026286554
+  },
+  "by_split": {
+    "train": {
+      "count": 66,
+      "median_error_m": 380.75584241560955,
+      "p90_error_m": 745.5896653346301,
+      "max_error_m": 2201.7186309789904,
+      "min_error_m": 21.882641522448694,
+      "mean_error_m": 461.57732535770606,
+      "p25_error_m": 215.0473487685269,
+      "p75_error_m": 531.7324797179446
+    },
+    "validation": {
+      "count": 19,
+      "median_error_m": 193.62554067064596,
+      "p90_error_m": 804.4502209135239,
+      "max_error_m": 2810.8024227967358,
+      "min_error_m": 25.640007800310944,
+      "mean_error_m": 446.21558921888305,
+      "p25_error_m": 116.76747352385132,
+      "p75_error_m": 409.2368788199045
+    },
+    "test": {
+      "count": 15,
+      "median_error_m": 455.4846320129802,
+      "p90_error_m": 2845.183629774717,
+      "max_error_m": 4807.6834026379065,
+      "min_error_m": 39.997124896672254,
+      "mean_error_m": 955.0198476272282,
+      "p25_error_m": 185.74533071021813,
+      "p75_error_m": 627.4516446487795
+    },
+    "val": {
+      "count": 19,
+      "median_error_m": 193.62554067064596,
+      "p90_error_m": 804.4502209135239,
+      "max_error_m": 2810.8024227967358,
+      "min_error_m": 25.640007800310944,
+      "mean_error_m": 446.21558921888305,
+      "p25_error_m": 116.76747352385132,
+      "p75_error_m": 409.2368788199045
+    }
+  },
+  "by_visited_status": {
+    "visited": {
+      "count": 49,
+      "median_error_m": 383.67069213063417,
+      "p90_error_m": 1769.6001656734322,
+      "max_error_m": 3710.345440791194,
+      "min_error_m": 40.91210089936744,
+      "mean_error_m": 617.8241176746023,
+      "p25_error_m": 202.20553899436086,
+      "p75_error_m": 517.0007833649771
+    },
+    "unvisited_cold_start": {
+      "count": 51,
+      "median_error_m": 362.86826810841427,
+      "p90_error_m": 653.4779644333848,
+      "max_error_m": 4807.6834026379065,
+      "min_error_m": 21.882641522448694,
+      "mean_error_m": 450.86501210039773,
+      "p25_error_m": 157.18338036678801,
+      "p75_error_m": 545.8585012092569
+    }
+  },
+  "by_precision": {
+    "locality": {
+      "count": 73,
+      "median_error_m": 385.8977196097434,
+      "p90_error_m": 626.5039814561368,
+      "max_error_m": 1838.1571341971828,
+      "min_error_m": 21.882641522448694,
+      "mean_error_m": 439.3394409713557,
+      "p25_error_m": 253.01422884889297,
+      "p75_error_m": 504.4866797052228
+    },
+    "pincode": {
+      "count": 10,
+      "median_error_m": 1375.8230433990489,
+      "p90_error_m": 3820.079236975865,
+      "max_error_m": 4807.6834026379065,
+      "min_error_m": 697.3060877405271,
+      "mean_error_m": 1956.551184590613,
+      "p25_error_m": 840.7743579366968,
+      "p75_error_m": 2658.5314748422993
+    },
+    "rooftop": {
+      "count": 1,
+      "median_error_m": 25.640007800310944,
+      "p90_error_m": 25.640007800310944,
+      "max_error_m": 25.640007800310944,
+      "min_error_m": 25.640007800310944,
+      "mean_error_m": 25.640007800310944,
+      "p25_error_m": 25.640007800310944,
+      "p75_error_m": 25.640007800310944
+    },
+    "street": {
+      "count": 16,
+      "median_error_m": 108.59165265228853,
+      "p90_error_m": 166.29114522160972,
+      "max_error_m": 170.89160307048428,
+      "min_error_m": 24.583734460004106,
+      "mean_error_m": 100.2853961600243,
+      "p25_error_m": 59.14440855256235,
+      "p75_error_m": 129.5882881986199
+    }
+  },
+  "data_sources": {
+    "surveyed_addresses": "data/ps3_geocoder/surveyed_addresses.csv",
+    "baseline_geocodes": "data/ps3_geocoder/baseline_geocodes.csv",
+    "addresses": "data/shared/addresses.csv",
+    "splits": "data/shared/splits.csv",
+    "field_visits": "data/shared/field_visits.csv"
+  },
+  "reproducibility": {
+    "split_counts": {
+      "train": 66,
+      "validation": 19,
+      "test": 15
+    },
+    "tolerance_check": {
+      "expected_median_m": 376.4,
+      "tolerance_m": 0.5,
+      "actual_median_m": 376.4,
+      "reproduction_verified": true
+    }
+  }
+}

@@ -1,0 +1,7 @@
+lender_id,lender_name,lender_type,kyc_address_format
+L01,Lender A,Private bank,kyc_mixed
+L02,Lender B,NBFC,kyc_upper
+L03,Lender C,Fintech NBFC,app_free_text
+L04,Lender D,NBFC-MFI,kyc_mixed
+L05,Lender E,NBFC (MSME),kyc_upper
+L06,Lender F,Small finance bank,app_free_text

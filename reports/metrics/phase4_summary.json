@@ -1,0 +1,253 @@
+{
+  "execution_timestamp_utc": "2026-10-08T16:12:01Z",
+  "phase": 4,
+  "phase_description": "Candidate Generation, Deterministic Linear Reranking & Empirical Quantile Calibration",
+  "provenance": {
+    "reranker_weights_fit_scope": "benchmark_train",
+    "calibration_fit_scope": "calibration_oof",
+    "prediction_fit_scope": "benchmark_train",
+    "test_split_untouched": true,
+    "test_split_size": 15,
+    "validation_split_size": 19,
+    "train_split_size": 66,
+    "total_scv_visited_address_episodes": 1477,
+    "retained_calibration_episodes": 1428,
+    "disjoint_from_reranker_train": true,
+    "disjoint_from_val": true,
+    "disjoint_from_test": true,
+    "candidate_availability_policy": "Test addresses are excluded from candidate selection tuning, candidate-prior fitting, reranker fitting, and calibration estimation. Candidate availability is measured during the final untouched evaluation for reporting, but no test truth is used to alter availability rules."
+  },
+  "candidate_availability_on_benchmark": {
+    "C1": 100,
+    "C2": 45,
+    "C3": 46,
+    "C4": 26,
+    "C5": 89
+  },
+  "reranker_weights": {
+    "w_text": 5.0,
+    "w_visit": 3.6926,
+    "w_neigh": 1.5,
+    "w_base": 0.1,
+    "w_neg": 1.5427
+  },
+  "calibration_tiers": {
+    "DOORSTEP_VERIFIED": {
+      "tier": "DOORSTEP_VERIFIED",
+      "unique_episode_count": 1428,
+      "residual_count": 2965,
+      "sample_count": 2965,
+      "quantile": 0.9,
+      "radius_m": 642.18,
+      "source_scope": "scv_leave_one_out",
+      "fallback_level": "global_p90",
+      "evidence_family": "all"
+    },
+    "STREET_RESOLVED": {
+      "tier": "STREET_RESOLVED",
+      "unique_episode_count": 279,
+      "residual_count": 279,
+      "sample_count": 279,
+      "quantile": 0.9,
+      "radius_m": 615.93,
+      "source_scope": "scv_leave_one_out",
+      "fallback_level": "tier_direct",
+      "evidence_family": "cold_start"
+    },
+    "LOCALITY_BOUNDED": {
+      "tier": "LOCALITY_BOUNDED",
+      "unique_episode_count": 1258,
+      "residual_count": 1258,
+      "sample_count": 1258,
+      "quantile": 0.9,
+      "radius_m": 559.95,
+      "source_scope": "scv_leave_one_out",
+      "fallback_level": "tier_direct",
+      "evidence_family": "cold_start"
+    },
+    "BASELINE_FALLBACK": {
+      "tier": "BASELINE_FALLBACK",
+      "unique_episode_count": 1428,
+      "residual_count": 1428,
+      "sample_count": 1428,
+      "quantile": 0.9,
+      "radius_m": 982.55,
+      "source_scope": "scv_leave_one_out",
+      "fallback_level": "tier_direct",
+      "evidence_family": "cold_start"
+    }
+  },
+  "calibration_fallback_counts": {
+    "tier_direct": 3,
+    "evidence_family": 0,
+    "global_p90": 1,
+    "operational_prior": 0
+  },
+  "ablation_ladder": [
+    {
+      "stage": "M0",
+      "description": "Commercial Baseline Only (C1)",
+      "candidate_availability": "100/100",
+      "overall_median_error_m": 376.4,
+      "overall_p90_error_m": 839.18,
+      "overall_max_error_m": 4807.68,
+      "improvement_vs_baseline_m": 0.0,
+      "visited_median_error_m": 383.67,
+      "visited_p90_error_m": 1769.6,
+      "cold_start_median_error_m": 362.87,
+      "cold_start_p90_error_m": 653.48,
+      "train_median_error_m": 380.76,
+      "val_median_error_m": 193.63,
+      "test_median_error_m": 455.48
+    },
+    {
+      "stage": "M1",
+      "description": "Baseline + Raw Direct Visit Check-ins (Unweighted)",
+      "candidate_availability": "100/100",
+      "overall_median_error_m": 266.36,
+      "overall_p90_error_m": 1114.0,
+      "overall_max_error_m": 7174.56,
+      "improvement_vs_baseline_m": 110.03,
+      "visited_median_error_m": 128.39,
+      "visited_p90_error_m": 1583.37,
+      "cold_start_median_error_m": 362.87,
+      "cold_start_p90_error_m": 653.48,
+      "train_median_error_m": 339.88,
+      "val_median_error_m": 61.31,
+      "test_median_error_m": 154.29
+    },
+    {
+      "stage": "M2",
+      "description": "Baseline + Integrity-Weighted Doorstep Medoids (C2)",
+      "candidate_availability": "100/100",
+      "overall_median_error_m": 125.94,
+      "overall_p90_error_m": 629.57,
+      "overall_max_error_m": 7174.56,
+      "improvement_vs_baseline_m": 250.46,
+      "visited_median_error_m": 26.24,
+      "visited_p90_error_m": 294.41,
+      "cold_start_median_error_m": 362.87,
+      "cold_start_p90_error_m": 653.48,
+      "train_median_error_m": 204.44,
+      "val_median_error_m": 25.64,
+      "test_median_error_m": 145.4
+    },
+    {
+      "stage": "M3",
+      "description": "Baseline + Doorstep Medoids + NLP/POI Anchor (C3)",
+      "candidate_availability": "100/100",
+      "overall_median_error_m": 83.29,
+      "overall_p90_error_m": 608.55,
+      "overall_max_error_m": 7174.56,
+      "improvement_vs_baseline_m": 293.11,
+      "visited_median_error_m": 26.24,
+      "visited_p90_error_m": 294.41,
+      "cold_start_median_error_m": 212.28,
+      "cold_start_p90_error_m": 621.2,
+      "train_median_error_m": 123.41,
+      "val_median_error_m": 25.64,
+      "test_median_error_m": 127.38
+    },
+    {
+      "stage": "M4",
+      "description": "Baseline + Medoids + POI + Spatial Graph Centroid (C4)",
+      "candidate_availability": "100/100",
+      "overall_median_error_m": 59.23,
+      "overall_p90_error_m": 500.72,
+      "overall_max_error_m": 7174.56,
+      "improvement_vs_baseline_m": 317.16,
+      "visited_median_error_m": 21.1,
+      "visited_p90_error_m": 294.41,
+      "cold_start_median_error_m": 178.04,
+      "cold_start_p90_error_m": 607.14,
+      "train_median_error_m": 60.81,
+      "val_median_error_m": 21.1,
+      "test_median_error_m": 127.38
+    },
+    {
+      "stage": "M5",
+      "description": "Learned Deterministic Linear Reranker (w_neg=0)",
+      "candidate_availability": "100/100",
+      "overall_median_error_m": 61.26,
+      "overall_p90_error_m": 574.29,
+      "overall_max_error_m": 7174.56,
+      "improvement_vs_baseline_m": 315.14,
+      "visited_median_error_m": 21.1,
+      "visited_p90_error_m": 294.41,
+      "cold_start_median_error_m": 235.4,
+      "cold_start_p90_error_m": 588.32,
+      "train_median_error_m": 100.52,
+      "val_median_error_m": 21.1,
+      "test_median_error_m": 127.38
+    },
+    {
+      "stage": "M6",
+      "description": "Full Deterministic Reranker + Negative Search Penalty",
+      "candidate_availability": "100/100",
+      "overall_median_error_m": 61.26,
+      "overall_p90_error_m": 574.29,
+      "overall_max_error_m": 7174.56,
+      "improvement_vs_baseline_m": 315.14,
+      "visited_median_error_m": 21.1,
+      "visited_p90_error_m": 294.41,
+      "cold_start_median_error_m": 235.4,
+      "cold_start_p90_error_m": 588.32,
+      "train_median_error_m": 100.52,
+      "val_median_error_m": 21.1,
+      "test_median_error_m": 127.38
+    }
+  ],
+  "metrics_summary": {
+    "all_benchmark": {
+      "sample_size": 100,
+      "baseline_median_m": 376.4,
+      "phase4_median_m": 61.26,
+      "baseline_p90_m": 839.18,
+      "phase4_p90_m": 574.29,
+      "improvement_m": 315.14,
+      "empirical_coverage": 0.91
+    },
+    "visited_segment": {
+      "sample_size": 49,
+      "baseline_median_m": 383.67,
+      "phase4_median_m": 21.1,
+      "baseline_p90_m": 1769.6,
+      "phase4_p90_m": 294.41,
+      "improvement_m": 362.57,
+      "empirical_coverage": 0.9184
+    },
+    "cold_start_segment": {
+      "sample_size": 51,
+      "baseline_median_m": 362.87,
+      "phase4_median_m": 235.4,
+      "baseline_p90_m": 653.48,
+      "phase4_p90_m": 588.32,
+      "improvement_m": 127.47,
+      "empirical_coverage": 0.902
+    },
+    "splits": {
+      "train_n66": {
+        "baseline_median_m": 380.76,
+        "phase4_median_m": 100.52
+      },
+      "val_n19": {
+        "baseline_median_m": 193.63,
+        "phase4_median_m": 21.1,
+        "empirical_coverage": 0.9474
+      },
+      "test_n15": {
+        "baseline_median_m": 455.48,
+        "phase4_median_m": 127.38,
+        "empirical_coverage": 0.8
+      }
+    }
+  },
+  "artifact_locations": {
+    "candidate_scores_parquet": "reports/metrics/candidate_scores.parquet",
+    "phase4_predictions_csv": "reports/metrics/phase4_predictions.csv",
+    "reranker_weights_json": "reports/metrics/reranker_weights.json",
+    "calibration_quantiles_json": "reports/metrics/calibration_quantiles.json",
+    "phase4_ablation_csv": "reports/metrics/phase4_ablation.csv"
+  },
+  "elapsed_seconds": 2.27
+}

@@ -1,0 +1,14 @@
+{
+  "phase": 2,
+  "artifact": "poi_resolution_summary",
+  "total_pois_catalog": 240,
+  "total_localities_catalog": 36,
+  "zero_duplicate_locality_invariant": true,
+  "max_poi_per_type_within_locality": 1,
+  "resolution_statistics": {
+    "resolved": 1204,
+    "ambiguous": 210,
+    "unresolved": 1466
+  },
+  "spatial_offset_policy": "NO_DISPLACEMENT_APPLIED (C3 = physical POI catalog coordinate)"
+}

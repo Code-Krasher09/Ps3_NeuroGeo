@@ -1,0 +1,48 @@
+{
+  "phase": 2,
+  "description": "Multilingual Script-Aware Address Parser & Locality-Bounded POI Resolver",
+  "total_addresses": 3117,
+  "in_scope_addresses": 2880,
+  "out_of_territory_addresses": 237,
+  "multilingual_addresses_count": 1340,
+  "script_distribution": {
+    "latin": 2855,
+    "mixed": 262
+  },
+  "locality_resolution": {
+    "resolved_count": 2557,
+    "resolved_percentage": 88.78,
+    "target_percentage": 65.0,
+    "ambiguous_count": 0,
+    "unresolved_count": 323,
+    "status": "PASS"
+  },
+  "street_extraction": {
+    "extracted_count": 2251,
+    "extracted_percentage": 78.16,
+    "target_percentage": 55.0,
+    "status": "PASS"
+  },
+  "landmark_poi_resolution": {
+    "landmarks_detected_count": 1896,
+    "landmarks_detected_percentage": 65.83,
+    "poi_resolved_count": 1204,
+    "poi_resolved_percentage": 41.81,
+    "poi_ambiguous_count": 210,
+    "poi_ambiguous_percentage": 7.29,
+    "poi_unresolved_count": 1466,
+    "poi_unresolved_percentage": 50.9,
+    "zero_duplicate_invariant": "VERIFIED (max duplicates per locality = 0)"
+  },
+  "relational_phrases": {
+    "total_detected": 2010,
+    "percentage": 69.79,
+    "breakdown": {
+      "near": 1447,
+      "opposite": 276,
+      "behind": 199,
+      "beside": 88
+    }
+  },
+  "execution_time_seconds": 7.53
+}

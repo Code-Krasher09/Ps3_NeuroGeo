@@ -1,0 +1,63 @@
+{
+  "fit_scope": "calibration_oof",
+  "evaluation_scope": "scv_leave_one_out",
+  "source_data_scope": "reports/metrics/scv_results.csv (1,477 SCV visited-address episodes)",
+  "target_quantile": 0.9,
+  "min_tier_samples": 15,
+  "total_scv_calibration_records": 1428,
+  "total_scv_episodes": 1428,
+  "excluded_benchmark_address_count": 100,
+  "excluded_test_account_count": 100,
+  "tiers": {
+    "DOORSTEP_VERIFIED": {
+      "tier": "DOORSTEP_VERIFIED",
+      "unique_episode_count": 1428,
+      "residual_count": 2965,
+      "sample_count": 2965,
+      "quantile": 0.9,
+      "radius_m": 642.18,
+      "source_scope": "scv_leave_one_out",
+      "fallback_level": "global_p90",
+      "evidence_family": "all"
+    },
+    "STREET_RESOLVED": {
+      "tier": "STREET_RESOLVED",
+      "unique_episode_count": 279,
+      "residual_count": 279,
+      "sample_count": 279,
+      "quantile": 0.9,
+      "radius_m": 615.93,
+      "source_scope": "scv_leave_one_out",
+      "fallback_level": "tier_direct",
+      "evidence_family": "cold_start"
+    },
+    "LOCALITY_BOUNDED": {
+      "tier": "LOCALITY_BOUNDED",
+      "unique_episode_count": 1258,
+      "residual_count": 1258,
+      "sample_count": 1258,
+      "quantile": 0.9,
+      "radius_m": 559.95,
+      "source_scope": "scv_leave_one_out",
+      "fallback_level": "tier_direct",
+      "evidence_family": "cold_start"
+    },
+    "BASELINE_FALLBACK": {
+      "tier": "BASELINE_FALLBACK",
+      "unique_episode_count": 1428,
+      "residual_count": 1428,
+      "sample_count": 1428,
+      "quantile": 0.9,
+      "radius_m": 982.55,
+      "source_scope": "scv_leave_one_out",
+      "fallback_level": "tier_direct",
+      "evidence_family": "cold_start"
+    }
+  },
+  "fallback_counts": {
+    "tier_direct": 3,
+    "evidence_family": 0,
+    "global_p90": 1,
+    "operational_prior": 0
+  }
+}

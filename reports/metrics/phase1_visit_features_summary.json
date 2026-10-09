@@ -1,0 +1,51 @@
+{
+  "phase": 1,
+  "phase_name": "Operational Visit Sanitizer & Trajectory Miner",
+  "timestamp_seconds": 60.68,
+  "dataset_statistics": {
+    "total_visits": 5578,
+    "unique_addresses_visited": 1477,
+    "total_gps_breadcrumbs": 160406,
+    "unique_visits_with_gps": 5578
+  },
+  "integrity_distributions": {
+    "mean_integrity_score": 0.8931,
+    "median_integrity_score": 0.9867,
+    "high_integrity_visits_count": 4897,
+    "compromised_visits_count": 162,
+    "duplicate_photo_groups_count": 172
+  },
+  "evidence_distributions": {
+    "credible_doorstep_count": 3400,
+    "shifted_borrower_count": 455,
+    "untraceable_search_count": 1400,
+    "outcome_counts": {
+      "address_not_traceable": 1400,
+      "locked_premises": 1249,
+      "met_borrower": 1114,
+      "met_family": 1062,
+      "neighbour_says_shifted": 455,
+      "no_such_person": 206,
+      "cash_collected": 92
+    }
+  },
+  "trajectory_distributions": {
+    "mean_tortuosity": 3.352,
+    "median_tortuosity": 2.05,
+    "guarded_trajectories_count": 326,
+    "mean_radius_of_gyration_m": 348.18
+  },
+  "model_1_benchmark_milestone": {
+    "visited_benchmark_count": 49,
+    "commercial_baseline_median_m": 383.67,
+    "model_1_medoid_median_m": 21.1,
+    "model_1_medoid_p90_m": 383.91,
+    "median_error_reduction_pct": 94.5,
+    "milestone_passed": true
+  },
+  "artifacts_generated": {
+    "summary_json": "reports/metrics/phase1_visit_features_summary.json",
+    "visit_features_parquet": "reports/metrics/visit_features.parquet",
+    "address_doorstep_medoids_parquet": "reports/metrics/address_doorstep_medoids.parquet"
+  }
+}

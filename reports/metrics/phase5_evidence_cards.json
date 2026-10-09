@@ -1,0 +1,3326 @@
+[
+  {
+    "address_id": "AD000527",
+    "status_tier": "LOCALITY_BOUNDED",
+    "selected_candidate": "C5",
+    "predicted_coordinates": [
+      986.3,
+      2772.6
+    ],
+    "confidence_radius_m": 559.95,
+    "calibration_tier": "LOCALITY_BOUNDED",
+    "calibration_sample_count": 1258,
+    "calibration_fallback_level": "tier_direct",
+    "score": 3.5003,
+    "score_margin": 0.9003,
+    "evidence_sources": [
+      "locality_centroid"
+    ],
+    "positive_evidence": [
+      "Locality polygon centroid from parsed address entity"
+    ],
+    "negative_evidence": [],
+    "caution": "Locality-level centroid; uncertainty radius ~560 m.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "eval_test",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 560 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location represents the locality centroid for neighborhood 'Azad Mohalla' as direct visits were unavailable."
+  },
+  {
+    "address_id": "AD000251",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      -1498.6,
+      569.8
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 6.3812,
+    "score_margin": 2.8506,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [
+      "Previous field visit reported address as not traceable"
+    ],
+    "caution": "Previous field search reported address as not traceable.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD002159",
+    "status_tier": "STREET_RESOLVED",
+    "selected_candidate": "C4",
+    "predicted_coordinates": [
+      -409.93,
+      3213.59
+    ],
+    "confidence_radius_m": 615.93,
+    "calibration_tier": "STREET_RESOLVED",
+    "calibration_sample_count": 279,
+    "calibration_fallback_level": "tier_direct",
+    "score": 4.5003,
+    "score_margin": 0.9325,
+    "evidence_sources": [
+      "spatial_neighbor_graph"
+    ],
+    "positive_evidence": [
+      "Hierarchical street graph neighbor consensus",
+      "Supported by verified street neighbor accounts"
+    ],
+    "negative_evidence": [],
+    "caution": "Street-level estimate; final doorstep must be verified locally.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "eval_test",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 616 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+  },
+  {
+    "address_id": "AD002501",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      632.7,
+      3037.8
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 5.5724,
+    "score_margin": 2.0683,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [],
+    "caution": null,
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "eval_test",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD001340",
+    "status_tier": "STREET_RESOLVED",
+    "selected_candidate": "C4",
+    "predicted_coordinates": [
+      908.44,
+      2662.91
+    ],
+    "confidence_radius_m": 615.93,
+    "calibration_tier": "STREET_RESOLVED",
+    "calibration_sample_count": 279,
+    "calibration_fallback_level": "tier_direct",
+    "score": 4.523,
+    "score_margin": 0.9978,
+    "evidence_sources": [
+      "spatial_neighbor_graph"
+    ],
+    "positive_evidence": [
+      "Hierarchical street graph neighbor consensus",
+      "Supported by verified street neighbor accounts"
+    ],
+    "negative_evidence": [],
+    "caution": "Street-level estimate; final doorstep must be verified locally.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 616 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+  },
+  {
+    "address_id": "AD003071",
+    "status_tier": "STREET_RESOLVED",
+    "selected_candidate": "C1",
+    "predicted_coordinates": [
+      -668.5,
+      -3901.1
+    ],
+    "confidence_radius_m": 615.93,
+    "calibration_tier": "STREET_RESOLVED",
+    "calibration_sample_count": 279,
+    "calibration_fallback_level": "tier_direct",
+    "score": 4.35,
+    "score_margin": 4.35,
+    "evidence_sources": [
+      "commercial_baseline"
+    ],
+    "positive_evidence": [
+      "Hierarchical street graph neighbor consensus",
+      "Supported by verified street neighbor accounts"
+    ],
+    "negative_evidence": [],
+    "caution": "Street-level estimate; final doorstep must be verified locally.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 616 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+  },
+  {
+    "address_id": "AD000322",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      3019.2,
+      -2449.0
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 6.069,
+    "score_margin": 1.4956,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [],
+    "caution": null,
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD001909",
+    "status_tier": "BASELINE_FALLBACK",
+    "selected_candidate": "C1",
+    "predicted_coordinates": [
+      -2068.5,
+      1404.2
+    ],
+    "confidence_radius_m": 982.55,
+    "calibration_tier": "BASELINE_FALLBACK",
+    "calibration_sample_count": 1428,
+    "calibration_fallback_level": "tier_direct",
+    "score": 1.1,
+    "score_margin": 1.1,
+    "evidence_sources": [
+      "commercial_baseline"
+    ],
+    "positive_evidence": [
+      "Commercial baseline geocoder coordinate prior"
+    ],
+    "negative_evidence": [],
+    "caution": "Unverified commercial baseline fallback with low confidence.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "eval_test",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is BASELINE_FALLBACK with an estimated 983 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location falls back to commercial baseline geocoding due to absence of verified field check-ins or street clusters."
+  },
+  {
+    "address_id": "AD001987",
+    "status_tier": "BASELINE_FALLBACK",
+    "selected_candidate": "C1",
+    "predicted_coordinates": [
+      1517.4,
+      -1353.2
+    ],
+    "confidence_radius_m": 982.55,
+    "calibration_tier": "BASELINE_FALLBACK",
+    "calibration_sample_count": 1428,
+    "calibration_fallback_level": "tier_direct",
+    "score": 1.1,
+    "score_margin": 1.1,
+    "evidence_sources": [
+      "commercial_baseline"
+    ],
+    "positive_evidence": [
+      "Commercial baseline geocoder coordinate prior"
+    ],
+    "negative_evidence": [],
+    "caution": "Unverified commercial baseline fallback with low confidence.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is BASELINE_FALLBACK with an estimated 983 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location falls back to commercial baseline geocoding due to absence of verified field check-ins or street clusters."
+  },
+  {
+    "address_id": "AD002707",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      2477.3,
+      -2353.3
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 7.0882,
+    "score_margin": 5.9882,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [],
+    "caution": null,
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD000831",
+    "status_tier": "STREET_RESOLVED",
+    "selected_candidate": "C1",
+    "predicted_coordinates": [
+      -1522.9,
+      552.2
+    ],
+    "confidence_radius_m": 615.93,
+    "calibration_tier": "STREET_RESOLVED",
+    "calibration_sample_count": 279,
+    "calibration_fallback_level": "tier_direct",
+    "score": 4.35,
+    "score_margin": 0.8468,
+    "evidence_sources": [
+      "commercial_baseline"
+    ],
+    "positive_evidence": [
+      "Hierarchical street graph neighbor consensus",
+      "Supported by verified street neighbor accounts"
+    ],
+    "negative_evidence": [],
+    "caution": "Street-level estimate; final doorstep must be verified locally.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "eval_test",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 616 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+  },
+  {
+    "address_id": "AD002740",
+    "status_tier": "LOCALITY_BOUNDED",
+    "selected_candidate": "C5",
+    "predicted_coordinates": [
+      -2863.9,
+      1096.5
+    ],
+    "confidence_radius_m": 559.95,
+    "calibration_tier": "LOCALITY_BOUNDED",
+    "calibration_sample_count": 1258,
+    "calibration_fallback_level": "tier_direct",
+    "score": 3.5087,
+    "score_margin": 0.9087,
+    "evidence_sources": [
+      "locality_centroid"
+    ],
+    "positive_evidence": [
+      "Locality polygon centroid from parsed address entity"
+    ],
+    "negative_evidence": [],
+    "caution": "Locality-level centroid; uncertainty radius ~560 m.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 560 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location represents the locality centroid for neighborhood 'Vinayaka Nagar' as direct visits were unavailable."
+  },
+  {
+    "address_id": "AD000683",
+    "status_tier": "LOCALITY_BOUNDED",
+    "selected_candidate": "C5",
+    "predicted_coordinates": [
+      290.7,
+      2335.2
+    ],
+    "confidence_radius_m": 559.95,
+    "calibration_tier": "LOCALITY_BOUNDED",
+    "calibration_sample_count": 1258,
+    "calibration_fallback_level": "tier_direct",
+    "score": 3.5169,
+    "score_margin": 0.9169,
+    "evidence_sources": [
+      "locality_centroid"
+    ],
+    "positive_evidence": [
+      "Locality polygon centroid from parsed address entity"
+    ],
+    "negative_evidence": [],
+    "caution": "Locality-level centroid; uncertainty radius ~560 m.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 560 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location represents the locality centroid for neighborhood 'Anjaneya Badavane' as direct visits were unavailable."
+  },
+  {
+    "address_id": "AD003078",
+    "status_tier": "LOCALITY_BOUNDED",
+    "selected_candidate": "C5",
+    "predicted_coordinates": [
+      3029.6,
+      575.7
+    ],
+    "confidence_radius_m": 559.95,
+    "calibration_tier": "LOCALITY_BOUNDED",
+    "calibration_sample_count": 1258,
+    "calibration_fallback_level": "tier_direct",
+    "score": 3.5559,
+    "score_margin": 0.0442,
+    "evidence_sources": [
+      "locality_centroid"
+    ],
+    "positive_evidence": [
+      "Locality polygon centroid from parsed address entity"
+    ],
+    "negative_evidence": [],
+    "caution": "Locality-level centroid; uncertainty radius ~560 m.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 560 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location represents the locality centroid for neighborhood 'Nehru Colony' as direct visits were unavailable."
+  },
+  {
+    "address_id": "AD002284",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      729.1,
+      -41.5
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 6.2394,
+    "score_margin": 1.8894,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [],
+    "caution": null,
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "eval_validation",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD000141",
+    "status_tier": "BASELINE_FALLBACK",
+    "selected_candidate": "C1",
+    "predicted_coordinates": [
+      1537.3,
+      -1398.4
+    ],
+    "confidence_radius_m": 982.55,
+    "calibration_tier": "BASELINE_FALLBACK",
+    "calibration_sample_count": 1428,
+    "calibration_fallback_level": "tier_direct",
+    "score": 1.1,
+    "score_margin": 1.1,
+    "evidence_sources": [
+      "commercial_baseline"
+    ],
+    "positive_evidence": [
+      "Commercial baseline geocoder coordinate prior"
+    ],
+    "negative_evidence": [
+      "Previous field visit reported address as not traceable"
+    ],
+    "caution": "Previous field search reported address as not traceable. Unverified commercial baseline fallback with low confidence.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is BASELINE_FALLBACK with an estimated 983 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location falls back to commercial baseline geocoding due to absence of verified field check-ins or street clusters."
+  },
+  {
+    "address_id": "AD002889",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      3975.4,
+      142.1
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 5.4937,
+    "score_margin": 1.6108,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [
+      "Previous field visit reported address as not traceable",
+      "Neighbor reported borrower shifted from address"
+    ],
+    "caution": "Previous field search reported address as not traceable. Field evidence indicates borrower may have shifted from address.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "eval_test",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD001784",
+    "status_tier": "LOCALITY_BOUNDED",
+    "selected_candidate": "C5",
+    "predicted_coordinates": [
+      2308.9,
+      1849.5
+    ],
+    "confidence_radius_m": 559.95,
+    "calibration_tier": "LOCALITY_BOUNDED",
+    "calibration_sample_count": 1258,
+    "calibration_fallback_level": "tier_direct",
+    "score": 3.5479,
+    "score_margin": 0.0462,
+    "evidence_sources": [
+      "locality_centroid"
+    ],
+    "positive_evidence": [
+      "Locality polygon centroid from parsed address entity"
+    ],
+    "negative_evidence": [],
+    "caution": "Locality-level centroid; uncertainty radius ~560 m.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 560 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location represents the locality centroid for neighborhood 'Ram Nagar' as direct visits were unavailable."
+  },
+  {
+    "address_id": "AD002279",
+    "status_tier": "STREET_RESOLVED",
+    "selected_candidate": "C1",
+    "predicted_coordinates": [
+      -649.6,
+      -1534.5
+    ],
+    "confidence_radius_m": 615.93,
+    "calibration_tier": "STREET_RESOLVED",
+    "calibration_sample_count": 279,
+    "calibration_fallback_level": "tier_direct",
+    "score": 4.35,
+    "score_margin": 0.8392,
+    "evidence_sources": [
+      "commercial_baseline"
+    ],
+    "positive_evidence": [
+      "Hierarchical street graph neighbor consensus",
+      "Supported by verified street neighbor accounts"
+    ],
+    "negative_evidence": [],
+    "caution": "Street-level estimate; final doorstep must be verified locally.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 616 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+  },
+  {
+    "address_id": "AD000962",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      2674.5,
+      251.2
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 6.3958,
+    "score_margin": 2.8625,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [
+      "Previous field visit reported address as not traceable"
+    ],
+    "caution": "Previous field search reported address as not traceable.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "eval_validation",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD002422",
+    "status_tier": "LOCALITY_BOUNDED",
+    "selected_candidate": "C5",
+    "predicted_coordinates": [
+      1155.3,
+      -3613.0
+    ],
+    "confidence_radius_m": 559.95,
+    "calibration_tier": "LOCALITY_BOUNDED",
+    "calibration_sample_count": 1258,
+    "calibration_fallback_level": "tier_direct",
+    "score": 3.5082,
+    "score_margin": 0.0082,
+    "evidence_sources": [
+      "locality_centroid"
+    ],
+    "positive_evidence": [
+      "Locality polygon centroid from parsed address entity"
+    ],
+    "negative_evidence": [],
+    "caution": "Locality-level centroid; uncertainty radius ~560 m.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 560 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location represents the locality centroid for neighborhood 'Unity Nagar' as direct visits were unavailable."
+  },
+  {
+    "address_id": "AD002555",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      2271.6,
+      -1213.4
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 7.8597,
+    "score_margin": 4.2909,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [],
+    "caution": null,
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD001311",
+    "status_tier": "LOCALITY_BOUNDED",
+    "selected_candidate": "C5",
+    "predicted_coordinates": [
+      -2863.9,
+      1096.5
+    ],
+    "confidence_radius_m": 559.95,
+    "calibration_tier": "LOCALITY_BOUNDED",
+    "calibration_sample_count": 1258,
+    "calibration_fallback_level": "tier_direct",
+    "score": 3.5061,
+    "score_margin": 0.0061,
+    "evidence_sources": [
+      "locality_centroid"
+    ],
+    "positive_evidence": [
+      "Locality polygon centroid from parsed address entity"
+    ],
+    "negative_evidence": [],
+    "caution": "Locality-level centroid; uncertainty radius ~560 m.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 560 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location represents the locality centroid for neighborhood 'Vinayaka Nagar' as direct visits were unavailable."
+  },
+  {
+    "address_id": "AD000236",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      2638.8,
+      -1993.3
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 5.8841,
+    "score_margin": 1.3628,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [],
+    "caution": null,
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD002262",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      2618.5,
+      -1660.4
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 8.0387,
+    "score_margin": 3.5387,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [
+      "Previous field visit reported address as not traceable"
+    ],
+    "caution": "Previous field search reported address as not traceable.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "eval_validation",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD000627",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      -637.2,
+      -3804.2
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 5.5982,
+    "score_margin": 3.5952,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [
+      "Previous field visit reported address as not traceable"
+    ],
+    "caution": "Previous field search reported address as not traceable.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD000170",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      -3693.3,
+      -790.0
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 5.07,
+    "score_margin": 1.5339,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [
+      "Previous field visit reported address as not traceable"
+    ],
+    "caution": "Previous field search reported address as not traceable.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD001478",
+    "status_tier": "LOCALITY_BOUNDED",
+    "selected_candidate": "C5",
+    "predicted_coordinates": [
+      -200.6,
+      1476.5
+    ],
+    "confidence_radius_m": 559.95,
+    "calibration_tier": "LOCALITY_BOUNDED",
+    "calibration_sample_count": 1258,
+    "calibration_fallback_level": "tier_direct",
+    "score": 3.5564,
+    "score_margin": 0.0564,
+    "evidence_sources": [
+      "locality_centroid"
+    ],
+    "positive_evidence": [
+      "Locality polygon centroid from parsed address entity"
+    ],
+    "negative_evidence": [],
+    "caution": "Locality-level centroid; uncertainty radius ~560 m.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 560 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location represents the locality centroid for neighborhood 'Tilak Nagar' as direct visits were unavailable."
+  },
+  {
+    "address_id": "AD002868",
+    "status_tier": "LOCALITY_BOUNDED",
+    "selected_candidate": "C5",
+    "predicted_coordinates": [
+      -598.6,
+      -1329.8
+    ],
+    "confidence_radius_m": 559.95,
+    "calibration_tier": "LOCALITY_BOUNDED",
+    "calibration_sample_count": 1258,
+    "calibration_fallback_level": "tier_direct",
+    "score": 3.5674,
+    "score_margin": 0.0674,
+    "evidence_sources": [
+      "locality_centroid"
+    ],
+    "positive_evidence": [
+      "Locality polygon centroid from parsed address entity"
+    ],
+    "negative_evidence": [],
+    "caution": "Locality-level centroid; uncertainty radius ~560 m.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "eval_test",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 560 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location represents the locality centroid for neighborhood 'Hosa Badavane' as direct visits were unavailable."
+  },
+  {
+    "address_id": "AD001963",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      -316.7,
+      -734.8
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 8.2292,
+    "score_margin": 3.7292,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [],
+    "caution": null,
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "eval_validation",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD002693",
+    "status_tier": "LOCALITY_BOUNDED",
+    "selected_candidate": "C4",
+    "predicted_coordinates": [
+      -343.8,
+      -129.3
+    ],
+    "confidence_radius_m": 559.95,
+    "calibration_tier": "LOCALITY_BOUNDED",
+    "calibration_sample_count": 1258,
+    "calibration_fallback_level": "tier_direct",
+    "score": 4.5,
+    "score_margin": 0.9897,
+    "evidence_sources": [
+      "spatial_neighbor_graph"
+    ],
+    "positive_evidence": [
+      "Hierarchical street graph neighbor consensus",
+      "Supported by verified street neighbor accounts"
+    ],
+    "negative_evidence": [],
+    "caution": "Locality-level centroid; uncertainty radius ~560 m.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 560 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+  },
+  {
+    "address_id": "AD000071",
+    "status_tier": "STREET_RESOLVED",
+    "selected_candidate": "C1",
+    "predicted_coordinates": [
+      858.3,
+      -3936.9
+    ],
+    "confidence_radius_m": 615.93,
+    "calibration_tier": "STREET_RESOLVED",
+    "calibration_sample_count": 279,
+    "calibration_fallback_level": "tier_direct",
+    "score": 4.35,
+    "score_margin": 0.7994,
+    "evidence_sources": [
+      "commercial_baseline"
+    ],
+    "positive_evidence": [
+      "Hierarchical street graph neighbor consensus",
+      "Supported by verified street neighbor accounts"
+    ],
+    "negative_evidence": [],
+    "caution": "Street-level estimate; final doorstep must be verified locally.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 616 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+  },
+  {
+    "address_id": "AD001711",
+    "status_tier": "LOCALITY_BOUNDED",
+    "selected_candidate": "C5",
+    "predicted_coordinates": [
+      665.2,
+      -3094.2
+    ],
+    "confidence_radius_m": 559.95,
+    "calibration_tier": "LOCALITY_BOUNDED",
+    "calibration_sample_count": 1258,
+    "calibration_fallback_level": "tier_direct",
+    "score": 3.5429,
+    "score_margin": 0.9429,
+    "evidence_sources": [
+      "locality_centroid"
+    ],
+    "positive_evidence": [
+      "Locality polygon centroid from parsed address entity"
+    ],
+    "negative_evidence": [],
+    "caution": "Locality-level centroid; uncertainty radius ~560 m.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 560 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location represents the locality centroid for neighborhood 'Gandhi Nagar' as direct visits were unavailable."
+  },
+  {
+    "address_id": "AD001315",
+    "status_tier": "LOCALITY_BOUNDED",
+    "selected_candidate": "C5",
+    "predicted_coordinates": [
+      -2863.9,
+      1096.5
+    ],
+    "confidence_radius_m": 559.95,
+    "calibration_tier": "LOCALITY_BOUNDED",
+    "calibration_sample_count": 1258,
+    "calibration_fallback_level": "tier_direct",
+    "score": 3.5042,
+    "score_margin": 0.0042,
+    "evidence_sources": [
+      "locality_centroid"
+    ],
+    "positive_evidence": [
+      "Locality polygon centroid from parsed address entity"
+    ],
+    "negative_evidence": [],
+    "caution": "Locality-level centroid; uncertainty radius ~560 m.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "eval_validation",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 560 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location represents the locality centroid for neighborhood 'Vinayaka Nagar' as direct visits were unavailable."
+  },
+  {
+    "address_id": "AD003113",
+    "status_tier": "STREET_RESOLVED",
+    "selected_candidate": "C3",
+    "predicted_coordinates": [
+      -1122.4,
+      327.5
+    ],
+    "confidence_radius_m": 615.93,
+    "calibration_tier": "STREET_RESOLVED",
+    "calibration_sample_count": 279,
+    "calibration_fallback_level": "tier_direct",
+    "score": 3.5857,
+    "score_margin": 0.0627,
+    "evidence_sources": [
+      "physical_poi"
+    ],
+    "positive_evidence": [
+      "Hierarchical street graph neighbor consensus",
+      "Supported by verified street neighbor accounts"
+    ],
+    "negative_evidence": [],
+    "caution": "Street-level estimate; final doorstep must be verified locally.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "eval_test",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 616 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+  },
+  {
+    "address_id": "AD001802",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      3259.6,
+      -1714.1
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 7.7111,
+    "score_margin": 3.3596,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [],
+    "caution": null,
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "eval_validation",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD001734",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      -2890.8,
+      1442.0
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 7.5317,
+    "score_margin": 3.0297,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [
+      "Previous field visit reported address as not traceable"
+    ],
+    "caution": "Previous field search reported address as not traceable.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "eval_validation",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD001799",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      3187.7,
+      -2186.0
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 6.7452,
+    "score_margin": 2.2452,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [
+      "Previous field visit reported address as not traceable"
+    ],
+    "caution": "Previous field search reported address as not traceable.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD002230",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      3397.6,
+      -1817.8
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 8.4289,
+    "score_margin": 4.9245,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [],
+    "caution": null,
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD000830",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      2531.8,
+      613.7
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 6.2909,
+    "score_margin": 2.7816,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [
+      "Previous field visit reported address as not traceable"
+    ],
+    "caution": "Previous field search reported address as not traceable.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD001146",
+    "status_tier": "BASELINE_FALLBACK",
+    "selected_candidate": "C1",
+    "predicted_coordinates": [
+      260.2,
+      -163.8
+    ],
+    "confidence_radius_m": 982.55,
+    "calibration_tier": "BASELINE_FALLBACK",
+    "calibration_sample_count": 1428,
+    "calibration_fallback_level": "tier_direct",
+    "score": 1.1,
+    "score_margin": 1.1,
+    "evidence_sources": [
+      "commercial_baseline"
+    ],
+    "positive_evidence": [
+      "Commercial baseline geocoder coordinate prior"
+    ],
+    "negative_evidence": [
+      "Previous field visit reported address as not traceable"
+    ],
+    "caution": "Previous field search reported address as not traceable. Unverified commercial baseline fallback with low confidence.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "eval_test",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is BASELINE_FALLBACK with an estimated 983 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location falls back to commercial baseline geocoding due to absence of verified field check-ins or street clusters."
+  },
+  {
+    "address_id": "AD001586",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      1559.2,
+      -1849.4
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 6.9937,
+    "score_margin": 2.482,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [],
+    "caution": null,
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "eval_validation",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD002440",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      1122.6,
+      -1815.9
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 7.2902,
+    "score_margin": 6.1902,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [
+      "Previous field visit reported address as not traceable"
+    ],
+    "caution": "Previous field search reported address as not traceable.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD000217",
+    "status_tier": "STREET_RESOLVED",
+    "selected_candidate": "C3",
+    "predicted_coordinates": [
+      1097.3,
+      2655.1
+    ],
+    "confidence_radius_m": 615.93,
+    "calibration_tier": "STREET_RESOLVED",
+    "calibration_sample_count": 279,
+    "calibration_fallback_level": "tier_direct",
+    "score": 3.5381,
+    "score_margin": 0.0288,
+    "evidence_sources": [
+      "physical_poi"
+    ],
+    "positive_evidence": [
+      "Hierarchical street graph neighbor consensus",
+      "Supported by verified street neighbor accounts"
+    ],
+    "negative_evidence": [],
+    "caution": "Street-level estimate; final doorstep must be verified locally.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 616 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+  },
+  {
+    "address_id": "AD001971",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      2812.7,
+      -1268.6
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 6.2703,
+    "score_margin": 2.7681,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [
+      "Previous field visit reported address as not traceable"
+    ],
+    "caution": "Previous field search reported address as not traceable.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD002536",
+    "status_tier": "STREET_RESOLVED",
+    "selected_candidate": "C1",
+    "predicted_coordinates": [
+      2843.3,
+      705.2
+    ],
+    "confidence_radius_m": 615.93,
+    "calibration_tier": "STREET_RESOLVED",
+    "calibration_sample_count": 279,
+    "calibration_fallback_level": "tier_direct",
+    "score": 4.35,
+    "score_margin": 0.7626,
+    "evidence_sources": [
+      "commercial_baseline"
+    ],
+    "positive_evidence": [
+      "Hierarchical street graph neighbor consensus",
+      "Supported by verified street neighbor accounts"
+    ],
+    "negative_evidence": [],
+    "caution": "Street-level estimate; final doorstep must be verified locally.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "eval_validation",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 616 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+  },
+  {
+    "address_id": "AD000525",
+    "status_tier": "LOCALITY_BOUNDED",
+    "selected_candidate": "C5",
+    "predicted_coordinates": [
+      -722.6,
+      -522.8
+    ],
+    "confidence_radius_m": 559.95,
+    "calibration_tier": "LOCALITY_BOUNDED",
+    "calibration_sample_count": 1258,
+    "calibration_fallback_level": "tier_direct",
+    "score": 3.5655,
+    "score_margin": 0.0041,
+    "evidence_sources": [
+      "locality_centroid"
+    ],
+    "positive_evidence": [
+      "Locality polygon centroid from parsed address entity"
+    ],
+    "negative_evidence": [],
+    "caution": "Locality-level centroid; uncertainty radius ~560 m.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "eval_validation",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 560 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location represents the locality centroid for neighborhood 'HMT Colony' as direct visits were unavailable."
+  },
+  {
+    "address_id": "AD001128",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      847.1,
+      -1370.4
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 6.0328,
+    "score_margin": 2.4366,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [
+      "Previous field visit reported address as not traceable"
+    ],
+    "caution": "Previous field search reported address as not traceable.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD002920",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      2745.4,
+      -2558.5
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 6.9582,
+    "score_margin": 3.3965,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [],
+    "caution": null,
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "eval_test",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD000875",
+    "status_tier": "LOCALITY_BOUNDED",
+    "selected_candidate": "C5",
+    "predicted_coordinates": [
+      3653.7,
+      367.3
+    ],
+    "confidence_radius_m": 559.95,
+    "calibration_tier": "LOCALITY_BOUNDED",
+    "calibration_sample_count": 1258,
+    "calibration_fallback_level": "tier_direct",
+    "score": 3.5019,
+    "score_margin": 0.9019,
+    "evidence_sources": [
+      "locality_centroid"
+    ],
+    "positive_evidence": [
+      "Locality polygon centroid from parsed address entity"
+    ],
+    "negative_evidence": [],
+    "caution": "Locality-level centroid; uncertainty radius ~560 m.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 560 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location represents the locality centroid for neighborhood 'Lakeview Phase 2' as direct visits were unavailable."
+  },
+  {
+    "address_id": "AD001999",
+    "status_tier": "BASELINE_FALLBACK",
+    "selected_candidate": "C1",
+    "predicted_coordinates": [
+      -2221.9,
+      1115.3
+    ],
+    "confidence_radius_m": 982.55,
+    "calibration_tier": "BASELINE_FALLBACK",
+    "calibration_sample_count": 1428,
+    "calibration_fallback_level": "tier_direct",
+    "score": 1.1,
+    "score_margin": 1.1,
+    "evidence_sources": [
+      "commercial_baseline"
+    ],
+    "positive_evidence": [
+      "Commercial baseline geocoder coordinate prior"
+    ],
+    "negative_evidence": [],
+    "caution": "Unverified commercial baseline fallback with low confidence.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is BASELINE_FALLBACK with an estimated 983 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location falls back to commercial baseline geocoding due to absence of verified field check-ins or street clusters."
+  },
+  {
+    "address_id": "AD000815",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      2971.4,
+      -2366.0
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 6.0655,
+    "score_margin": 1.7155,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [],
+    "caution": null,
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD000572",
+    "status_tier": "LOCALITY_BOUNDED",
+    "selected_candidate": "C5",
+    "predicted_coordinates": [
+      -1112.2,
+      -1888.2
+    ],
+    "confidence_radius_m": 559.95,
+    "calibration_tier": "LOCALITY_BOUNDED",
+    "calibration_sample_count": 1258,
+    "calibration_fallback_level": "tier_direct",
+    "score": 3.5371,
+    "score_margin": 0.9371,
+    "evidence_sources": [
+      "locality_centroid"
+    ],
+    "positive_evidence": [
+      "Locality polygon centroid from parsed address entity"
+    ],
+    "negative_evidence": [],
+    "caution": "Locality-level centroid; uncertainty radius ~560 m.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 560 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location represents the locality centroid for neighborhood 'Defence Colony' as direct visits were unavailable."
+  },
+  {
+    "address_id": "AD002260",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      1602.9,
+      -1230.7
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 6.134,
+    "score_margin": 2.6255,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [],
+    "caution": null,
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "eval_test",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD001811",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      906.2,
+      3087.7
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 6.9988,
+    "score_margin": 1.6754,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [
+      "Previous field visit reported address as not traceable"
+    ],
+    "caution": "Previous field search reported address as not traceable.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD000574",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      -67.0,
+      -3856.9
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 6.2266,
+    "score_margin": 1.7266,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [],
+    "caution": null,
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD000804",
+    "status_tier": "STREET_RESOLVED",
+    "selected_candidate": "C1",
+    "predicted_coordinates": [
+      -2333.0,
+      -3.2
+    ],
+    "confidence_radius_m": 615.93,
+    "calibration_tier": "STREET_RESOLVED",
+    "calibration_sample_count": 279,
+    "calibration_fallback_level": "tier_direct",
+    "score": 4.35,
+    "score_margin": 0.8499,
+    "evidence_sources": [
+      "commercial_baseline"
+    ],
+    "positive_evidence": [
+      "Hierarchical street graph neighbor consensus",
+      "Supported by verified street neighbor accounts"
+    ],
+    "negative_evidence": [],
+    "caution": "Street-level estimate; final doorstep must be verified locally.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 616 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+  },
+  {
+    "address_id": "AD001900",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      683.3,
+      -2710.7
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 5.7633,
+    "score_margin": 2.8295,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [
+      "Previous field visit reported address as not traceable",
+      "Neighbor reported borrower shifted from address"
+    ],
+    "caution": "Previous field search reported address as not traceable. Field evidence indicates borrower may have shifted from address.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD001786",
+    "status_tier": "LOCALITY_BOUNDED",
+    "selected_candidate": "C5",
+    "predicted_coordinates": [
+      -3766.2,
+      -883.9
+    ],
+    "confidence_radius_m": 559.95,
+    "calibration_tier": "LOCALITY_BOUNDED",
+    "calibration_sample_count": 1258,
+    "calibration_fallback_level": "tier_direct",
+    "score": 3.5253,
+    "score_margin": 0.9253,
+    "evidence_sources": [
+      "locality_centroid"
+    ],
+    "positive_evidence": [
+      "Locality polygon centroid from parsed address entity"
+    ],
+    "negative_evidence": [],
+    "caution": "Locality-level centroid; uncertainty radius ~560 m.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 560 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location represents the locality centroid for neighborhood 'Green Park Layout' as direct visits were unavailable."
+  },
+  {
+    "address_id": "AD000681",
+    "status_tier": "STREET_RESOLVED",
+    "selected_candidate": "C1",
+    "predicted_coordinates": [
+      185.2,
+      1825.7
+    ],
+    "confidence_radius_m": 615.93,
+    "calibration_tier": "STREET_RESOLVED",
+    "calibration_sample_count": 279,
+    "calibration_fallback_level": "tier_direct",
+    "score": 5.1,
+    "score_margin": 1.6,
+    "evidence_sources": [
+      "commercial_baseline"
+    ],
+    "positive_evidence": [
+      "Hierarchical street graph neighbor consensus",
+      "Supported by verified street neighbor accounts"
+    ],
+    "negative_evidence": [],
+    "caution": "Street-level estimate; final doorstep must be verified locally.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "eval_validation",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 616 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+  },
+  {
+    "address_id": "AD002660",
+    "status_tier": "LOCALITY_BOUNDED",
+    "selected_candidate": "C5",
+    "predicted_coordinates": [
+      -2195.4,
+      -2378.6
+    ],
+    "confidence_radius_m": 559.95,
+    "calibration_tier": "LOCALITY_BOUNDED",
+    "calibration_sample_count": 1258,
+    "calibration_fallback_level": "tier_direct",
+    "score": 3.5659,
+    "score_margin": 0.0205,
+    "evidence_sources": [
+      "locality_centroid"
+    ],
+    "positive_evidence": [
+      "Locality polygon centroid from parsed address entity"
+    ],
+    "negative_evidence": [],
+    "caution": "Locality-level centroid; uncertainty radius ~560 m.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 560 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location represents the locality centroid for neighborhood 'Shanthi Nagar' as direct visits were unavailable."
+  },
+  {
+    "address_id": "AD001129",
+    "status_tier": "STREET_RESOLVED",
+    "selected_candidate": "C1",
+    "predicted_coordinates": [
+      -707.4,
+      3230.6
+    ],
+    "confidence_radius_m": 615.93,
+    "calibration_tier": "STREET_RESOLVED",
+    "calibration_sample_count": 279,
+    "calibration_fallback_level": "tier_direct",
+    "score": 4.35,
+    "score_margin": 0.8463,
+    "evidence_sources": [
+      "commercial_baseline"
+    ],
+    "positive_evidence": [
+      "Hierarchical street graph neighbor consensus",
+      "Supported by verified street neighbor accounts"
+    ],
+    "negative_evidence": [],
+    "caution": "Street-level estimate; final doorstep must be verified locally.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 616 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+  },
+  {
+    "address_id": "AD000605",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      -2596.7,
+      -457.9
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 6.2189,
+    "score_margin": 1.6548,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [],
+    "caution": null,
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD002300",
+    "status_tier": "LOCALITY_BOUNDED",
+    "selected_candidate": "C4",
+    "predicted_coordinates": [
+      3136.2,
+      572.7
+    ],
+    "confidence_radius_m": 559.95,
+    "calibration_tier": "LOCALITY_BOUNDED",
+    "calibration_sample_count": 1258,
+    "calibration_fallback_level": "tier_direct",
+    "score": 4.5287,
+    "score_margin": 0.9588,
+    "evidence_sources": [
+      "spatial_neighbor_graph"
+    ],
+    "positive_evidence": [
+      "Hierarchical street graph neighbor consensus",
+      "Supported by verified street neighbor accounts"
+    ],
+    "negative_evidence": [],
+    "caution": "Locality-level centroid; uncertainty radius ~560 m.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 560 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+  },
+  {
+    "address_id": "AD003034",
+    "status_tier": "STREET_RESOLVED",
+    "selected_candidate": "C4",
+    "predicted_coordinates": [
+      1223.37,
+      -516.9
+    ],
+    "confidence_radius_m": 615.93,
+    "calibration_tier": "STREET_RESOLVED",
+    "calibration_sample_count": 279,
+    "calibration_fallback_level": "tier_direct",
+    "score": 4.5,
+    "score_margin": 0.9097,
+    "evidence_sources": [
+      "spatial_neighbor_graph"
+    ],
+    "positive_evidence": [
+      "Hierarchical street graph neighbor consensus",
+      "Supported by verified street neighbor accounts"
+    ],
+    "negative_evidence": [],
+    "caution": "Street-level estimate; final doorstep must be verified locally.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 616 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+  },
+  {
+    "address_id": "AD002994",
+    "status_tier": "LOCALITY_BOUNDED",
+    "selected_candidate": "C5",
+    "predicted_coordinates": [
+      -2195.4,
+      -2378.6
+    ],
+    "confidence_radius_m": 559.95,
+    "calibration_tier": "LOCALITY_BOUNDED",
+    "calibration_sample_count": 1258,
+    "calibration_fallback_level": "tier_direct",
+    "score": 3.5544,
+    "score_margin": 0.0466,
+    "evidence_sources": [
+      "locality_centroid"
+    ],
+    "positive_evidence": [
+      "Locality polygon centroid from parsed address entity"
+    ],
+    "negative_evidence": [],
+    "caution": "Locality-level centroid; uncertainty radius ~560 m.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 560 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location represents the locality centroid for neighborhood 'Shanthi Nagar' as direct visits were unavailable."
+  },
+  {
+    "address_id": "AD001695",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      2370.8,
+      -2109.3
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 6.2732,
+    "score_margin": 2.7728,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [
+      "Previous field visit reported address as not traceable"
+    ],
+    "caution": "Previous field search reported address as not traceable.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD002721",
+    "status_tier": "LOCALITY_BOUNDED",
+    "selected_candidate": "C5",
+    "predicted_coordinates": [
+      -1885.4,
+      2441.1
+    ],
+    "confidence_radius_m": 559.95,
+    "calibration_tier": "LOCALITY_BOUNDED",
+    "calibration_sample_count": 1258,
+    "calibration_fallback_level": "tier_direct",
+    "score": 3.5497,
+    "score_margin": 0.0483,
+    "evidence_sources": [
+      "locality_centroid"
+    ],
+    "positive_evidence": [
+      "Locality polygon centroid from parsed address entity"
+    ],
+    "negative_evidence": [],
+    "caution": "Locality-level centroid; uncertainty radius ~560 m.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "eval_test",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 560 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location represents the locality centroid for neighborhood 'Kalyana Nagar' as direct visits were unavailable."
+  },
+  {
+    "address_id": "AD002143",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      -2611.4,
+      1351.4
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 8.3854,
+    "score_margin": 3.7859,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [],
+    "caution": null,
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD001574",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      3875.9,
+      125.9
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 5.2714,
+    "score_margin": 1.5381,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [
+      "Neighbor reported borrower shifted from address",
+      "Previous field visit reported address as not traceable"
+    ],
+    "caution": "Field evidence indicates borrower may have shifted from address. Previous field search reported address as not traceable.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD002295",
+    "status_tier": "BASELINE_FALLBACK",
+    "selected_candidate": "C1",
+    "predicted_coordinates": [
+      -1260.2,
+      -1505.9
+    ],
+    "confidence_radius_m": 982.55,
+    "calibration_tier": "BASELINE_FALLBACK",
+    "calibration_sample_count": 1428,
+    "calibration_fallback_level": "tier_direct",
+    "score": 1.1,
+    "score_margin": 1.1,
+    "evidence_sources": [
+      "commercial_baseline"
+    ],
+    "positive_evidence": [
+      "Commercial baseline geocoder coordinate prior"
+    ],
+    "negative_evidence": [],
+    "caution": "Unverified commercial baseline fallback with low confidence.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is BASELINE_FALLBACK with an estimated 983 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location falls back to commercial baseline geocoding due to absence of verified field check-ins or street clusters."
+  },
+  {
+    "address_id": "AD000561",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      -637.1,
+      -3108.0
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 6.2902,
+    "score_margin": 5.1902,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [
+      "Previous field visit reported address as not traceable"
+    ],
+    "caution": "Previous field search reported address as not traceable.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "eval_validation",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD002854",
+    "status_tier": "STREET_RESOLVED",
+    "selected_candidate": "C4",
+    "predicted_coordinates": [
+      1492.29,
+      -2151.1
+    ],
+    "confidence_radius_m": 615.93,
+    "calibration_tier": "STREET_RESOLVED",
+    "calibration_sample_count": 279,
+    "calibration_fallback_level": "tier_direct",
+    "score": 4.5611,
+    "score_margin": 1.007,
+    "evidence_sources": [
+      "spatial_neighbor_graph"
+    ],
+    "positive_evidence": [
+      "Hierarchical street graph neighbor consensus",
+      "Supported by verified street neighbor accounts"
+    ],
+    "negative_evidence": [],
+    "caution": "Street-level estimate; final doorstep must be verified locally.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "eval_test",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 616 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+  },
+  {
+    "address_id": "AD000774",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      -2653.3,
+      1741.0
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 6.9391,
+    "score_margin": 1.0444,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [],
+    "caution": null,
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "eval_validation",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD000291",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      -3716.3,
+      -769.4
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 5.0,
+    "score_margin": 1.4979,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [],
+    "caution": null,
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "eval_validation",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD003096",
+    "status_tier": "LOCALITY_BOUNDED",
+    "selected_candidate": "C5",
+    "predicted_coordinates": [
+      -1885.4,
+      2441.1
+    ],
+    "confidence_radius_m": 559.95,
+    "calibration_tier": "LOCALITY_BOUNDED",
+    "calibration_sample_count": 1258,
+    "calibration_fallback_level": "tier_direct",
+    "score": 3.513,
+    "score_margin": 0.913,
+    "evidence_sources": [
+      "locality_centroid"
+    ],
+    "positive_evidence": [
+      "Locality polygon centroid from parsed address entity"
+    ],
+    "negative_evidence": [],
+    "caution": "Locality-level centroid; uncertainty radius ~560 m.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 560 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location represents the locality centroid for neighborhood 'Kalyana Nagar' as direct visits were unavailable."
+  },
+  {
+    "address_id": "AD001526",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      1007.8,
+      -2813.1
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 5.7121,
+    "score_margin": 2.1701,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [],
+    "caution": null,
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD002068",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      -2063.1,
+      1511.4
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 7.6781,
+    "score_margin": 4.1066,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [
+      "Previous field visit reported address as not traceable"
+    ],
+    "caution": "Previous field search reported address as not traceable.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD002410",
+    "status_tier": "STREET_RESOLVED",
+    "selected_candidate": "C4",
+    "predicted_coordinates": [
+      1193.71,
+      -1121.34
+    ],
+    "confidence_radius_m": 615.93,
+    "calibration_tier": "STREET_RESOLVED",
+    "calibration_sample_count": 279,
+    "calibration_fallback_level": "tier_direct",
+    "score": 4.5,
+    "score_margin": 0.984,
+    "evidence_sources": [
+      "spatial_neighbor_graph"
+    ],
+    "positive_evidence": [
+      "Hierarchical street graph neighbor consensus",
+      "Supported by verified street neighbor accounts"
+    ],
+    "negative_evidence": [],
+    "caution": "Street-level estimate; final doorstep must be verified locally.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 616 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+  },
+  {
+    "address_id": "AD001832",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      4063.3,
+      136.3
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 6.6642,
+    "score_margin": 1.5934,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [
+      "Previous field visit reported address as not traceable"
+    ],
+    "caution": "Previous field search reported address as not traceable.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD001533",
+    "status_tier": "LOCALITY_BOUNDED",
+    "selected_candidate": "C5",
+    "predicted_coordinates": [
+      665.2,
+      -3094.2
+    ],
+    "confidence_radius_m": 559.95,
+    "calibration_tier": "LOCALITY_BOUNDED",
+    "calibration_sample_count": 1258,
+    "calibration_fallback_level": "tier_direct",
+    "score": 3.5386,
+    "score_margin": 0.9386,
+    "evidence_sources": [
+      "locality_centroid"
+    ],
+    "positive_evidence": [
+      "Locality polygon centroid from parsed address entity"
+    ],
+    "negative_evidence": [],
+    "caution": "Locality-level centroid; uncertainty radius ~560 m.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 560 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location represents the locality centroid for neighborhood 'Gandhi Nagar' as direct visits were unavailable."
+  },
+  {
+    "address_id": "AD000800",
+    "status_tier": "LOCALITY_BOUNDED",
+    "selected_candidate": "C4",
+    "predicted_coordinates": [
+      1037.8,
+      -475.3
+    ],
+    "confidence_radius_m": 559.95,
+    "calibration_tier": "LOCALITY_BOUNDED",
+    "calibration_sample_count": 1258,
+    "calibration_fallback_level": "tier_direct",
+    "score": 4.5,
+    "score_margin": 1.0,
+    "evidence_sources": [
+      "spatial_neighbor_graph"
+    ],
+    "positive_evidence": [
+      "Hierarchical street graph neighbor consensus",
+      "Supported by verified street neighbor accounts"
+    ],
+    "negative_evidence": [],
+    "caution": "Locality-level centroid; uncertainty radius ~560 m.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 560 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+  },
+  {
+    "address_id": "AD000224",
+    "status_tier": "STREET_RESOLVED",
+    "selected_candidate": "C1",
+    "predicted_coordinates": [
+      1482.8,
+      285.8
+    ],
+    "confidence_radius_m": 615.93,
+    "calibration_tier": "STREET_RESOLVED",
+    "calibration_sample_count": 279,
+    "calibration_fallback_level": "tier_direct",
+    "score": 4.35,
+    "score_margin": 0.85,
+    "evidence_sources": [
+      "commercial_baseline"
+    ],
+    "positive_evidence": [
+      "Hierarchical street graph neighbor consensus",
+      "Supported by verified street neighbor accounts"
+    ],
+    "negative_evidence": [],
+    "caution": "Street-level estimate; final doorstep must be verified locally.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 616 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+  },
+  {
+    "address_id": "AD001469",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      -2617.8,
+      1438.0
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 8.1222,
+    "score_margin": 3.6097,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [],
+    "caution": null,
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD000267",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      2468.3,
+      -1135.3
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 6.324,
+    "score_margin": 2.8235,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [],
+    "caution": null,
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "eval_validation",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD002739",
+    "status_tier": "LOCALITY_BOUNDED",
+    "selected_candidate": "C5",
+    "predicted_coordinates": [
+      929.4,
+      -822.2
+    ],
+    "confidence_radius_m": 559.95,
+    "calibration_tier": "LOCALITY_BOUNDED",
+    "calibration_sample_count": 1258,
+    "calibration_fallback_level": "tier_direct",
+    "score": 3.5633,
+    "score_margin": 0.0633,
+    "evidence_sources": [
+      "locality_centroid"
+    ],
+    "positive_evidence": [
+      "Locality polygon centroid from parsed address entity"
+    ],
+    "negative_evidence": [],
+    "caution": "Locality-level centroid; uncertainty radius ~560 m.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 560 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location represents the locality centroid for neighborhood 'Teachers Colony' as direct visits were unavailable."
+  },
+  {
+    "address_id": "AD001743",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      1259.2,
+      2794.3
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 7.4601,
+    "score_margin": 2.9401,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [],
+    "caution": null,
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD001078",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      2958.9,
+      -2058.1
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 5.1608,
+    "score_margin": 0.9071,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [
+      "Previous field visit reported address as not traceable",
+      "Neighbor reported borrower shifted from address"
+    ],
+    "caution": "Previous field search reported address as not traceable. Field evidence indicates borrower may have shifted from address.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD000328",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      307.2,
+      -2880.3
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 5.8957,
+    "score_margin": 3.0056,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [
+      "Neighbor reported borrower shifted from address"
+    ],
+    "caution": "Field evidence indicates borrower may have shifted from address.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "eval_validation",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD001536",
+    "status_tier": "LOCALITY_BOUNDED",
+    "selected_candidate": "C5",
+    "predicted_coordinates": [
+      -2446.2,
+      1613.2
+    ],
+    "confidence_radius_m": 559.95,
+    "calibration_tier": "LOCALITY_BOUNDED",
+    "calibration_sample_count": 1258,
+    "calibration_fallback_level": "tier_direct",
+    "score": 3.5478,
+    "score_margin": 0.9478,
+    "evidence_sources": [
+      "locality_centroid"
+    ],
+    "positive_evidence": [
+      "Locality polygon centroid from parsed address entity"
+    ],
+    "negative_evidence": [],
+    "caution": "Locality-level centroid; uncertainty radius ~560 m.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 560 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location represents the locality centroid for neighborhood 'Railway Colony' as direct visits were unavailable."
+  },
+  {
+    "address_id": "AD000656",
+    "status_tier": "LOCALITY_BOUNDED",
+    "selected_candidate": "C5",
+    "predicted_coordinates": [
+      2499.2,
+      994.1
+    ],
+    "confidence_radius_m": 559.95,
+    "calibration_tier": "LOCALITY_BOUNDED",
+    "calibration_sample_count": 1258,
+    "calibration_fallback_level": "tier_direct",
+    "score": 3.571,
+    "score_margin": 0.971,
+    "evidence_sources": [
+      "locality_centroid"
+    ],
+    "positive_evidence": [
+      "Locality polygon centroid from parsed address entity"
+    ],
+    "negative_evidence": [
+      "Previous field visit reported address as not traceable"
+    ],
+    "caution": "Previous field search reported address as not traceable. Locality-level centroid; uncertainty radius ~560 m.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 560 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location represents the locality centroid for neighborhood 'Vidya Nagar' as direct visits were unavailable."
+  },
+  {
+    "address_id": "AD001512",
+    "status_tier": "STREET_RESOLVED",
+    "selected_candidate": "C4",
+    "predicted_coordinates": [
+      -775.53,
+      -402.78
+    ],
+    "confidence_radius_m": 615.93,
+    "calibration_tier": "STREET_RESOLVED",
+    "calibration_sample_count": 279,
+    "calibration_fallback_level": "tier_direct",
+    "score": 4.541,
+    "score_margin": 0.9951,
+    "evidence_sources": [
+      "spatial_neighbor_graph"
+    ],
+    "positive_evidence": [
+      "Hierarchical street graph neighbor consensus",
+      "Supported by verified street neighbor accounts"
+    ],
+    "negative_evidence": [],
+    "caution": "Street-level estimate; final doorstep must be verified locally.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "eval_test",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 616 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+  },
+  {
+    "address_id": "AD001009",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      1639.0,
+      -2308.5
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 5.884,
+    "score_margin": 4.784,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [],
+    "caution": null,
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "eval_test",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD002826",
+    "status_tier": "STREET_RESOLVED",
+    "selected_candidate": "C3",
+    "predicted_coordinates": [
+      126.5,
+      1694.7
+    ],
+    "confidence_radius_m": 615.93,
+    "calibration_tier": "STREET_RESOLVED",
+    "calibration_sample_count": 279,
+    "calibration_fallback_level": "tier_direct",
+    "score": 3.5414,
+    "score_margin": 0.0384,
+    "evidence_sources": [
+      "physical_poi"
+    ],
+    "positive_evidence": [
+      "Hierarchical street graph neighbor consensus",
+      "Supported by verified street neighbor accounts"
+    ],
+    "negative_evidence": [],
+    "caution": "Street-level estimate; final doorstep must be verified locally.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 616 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+  },
+  {
+    "address_id": "AD001519",
+    "status_tier": "LOCALITY_BOUNDED",
+    "selected_candidate": "C5",
+    "predicted_coordinates": [
+      1155.3,
+      -3613.0
+    ],
+    "confidence_radius_m": 559.95,
+    "calibration_tier": "LOCALITY_BOUNDED",
+    "calibration_sample_count": 1258,
+    "calibration_fallback_level": "tier_direct",
+    "score": 3.5068,
+    "score_margin": 0.9068,
+    "evidence_sources": [
+      "locality_centroid"
+    ],
+    "positive_evidence": [
+      "Locality polygon centroid from parsed address entity"
+    ],
+    "negative_evidence": [],
+    "caution": "Locality-level centroid; uncertainty radius ~560 m.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 560 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location represents the locality centroid for neighborhood 'Unity Nagar' as direct visits were unavailable."
+  },
+  {
+    "address_id": "AD001164",
+    "status_tier": "LOCALITY_BOUNDED",
+    "selected_candidate": "C5",
+    "predicted_coordinates": [
+      -722.6,
+      -522.8
+    ],
+    "confidence_radius_m": 559.95,
+    "calibration_tier": "LOCALITY_BOUNDED",
+    "calibration_sample_count": 1258,
+    "calibration_fallback_level": "tier_direct",
+    "score": 3.5806,
+    "score_margin": 0.0271,
+    "evidence_sources": [
+      "locality_centroid"
+    ],
+    "positive_evidence": [
+      "Locality polygon centroid from parsed address entity"
+    ],
+    "negative_evidence": [],
+    "caution": "Locality-level centroid; uncertainty radius ~560 m.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 560 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location represents the locality centroid for neighborhood 'HMT Colony' as direct visits were unavailable."
+  },
+  {
+    "address_id": "AD001791",
+    "status_tier": "STREET_RESOLVED",
+    "selected_candidate": "C3",
+    "predicted_coordinates": [
+      -2672.6,
+      1243.4
+    ],
+    "confidence_radius_m": 615.93,
+    "calibration_tier": "STREET_RESOLVED",
+    "calibration_sample_count": 279,
+    "calibration_fallback_level": "tier_direct",
+    "score": 3.5488,
+    "score_margin": 0.0226,
+    "evidence_sources": [
+      "physical_poi"
+    ],
+    "positive_evidence": [
+      "Hierarchical street graph neighbor consensus",
+      "Supported by verified street neighbor accounts"
+    ],
+    "negative_evidence": [],
+    "caution": "Street-level estimate; final doorstep must be verified locally.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "eval_validation",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is STREET_RESOLVED with an estimated 616 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+  },
+  {
+    "address_id": "AD001249",
+    "status_tier": "LOCALITY_BOUNDED",
+    "selected_candidate": "C4",
+    "predicted_coordinates": [
+      847.1,
+      -1370.4
+    ],
+    "confidence_radius_m": 559.95,
+    "calibration_tier": "LOCALITY_BOUNDED",
+    "calibration_sample_count": 1258,
+    "calibration_fallback_level": "tier_direct",
+    "score": 4.5002,
+    "score_margin": 0.9172,
+    "evidence_sources": [
+      "spatial_neighbor_graph"
+    ],
+    "positive_evidence": [
+      "Hierarchical street graph neighbor consensus",
+      "Supported by verified street neighbor accounts"
+    ],
+    "negative_evidence": [],
+    "caution": "Locality-level centroid; uncertainty radius ~560 m.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "train_all",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 560 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+  },
+  {
+    "address_id": "AD001382",
+    "status_tier": "DOORSTEP_VERIFIED",
+    "selected_candidate": "C2",
+    "predicted_coordinates": [
+      -447.3,
+      -3356.9
+    ],
+    "confidence_radius_m": 642.18,
+    "calibration_tier": "DOORSTEP_VERIFIED",
+    "calibration_sample_count": 2965,
+    "calibration_fallback_level": "global_p90",
+    "score": 5.9678,
+    "score_margin": 2.4423,
+    "evidence_sources": [
+      "direct_visit_medoid"
+    ],
+    "positive_evidence": [
+      "Direct high-integrity field visits confirmed at doorstep",
+      "Sanitized doorstep medoid kernel"
+    ],
+    "negative_evidence": [],
+    "caution": null,
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "eval_validation",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is DOORSTEP_VERIFIED with an estimated 642 m empirical P90 uncertainty radius (calibration fallback: global_p90). The location is anchored to a verified doorstep medoid derived from direct high-integrity field visits."
+  },
+  {
+    "address_id": "AD001012",
+    "status_tier": "LOCALITY_BOUNDED",
+    "selected_candidate": "C4",
+    "predicted_coordinates": [
+      802.2,
+      -3288.8
+    ],
+    "confidence_radius_m": 559.95,
+    "calibration_tier": "LOCALITY_BOUNDED",
+    "calibration_sample_count": 1258,
+    "calibration_fallback_level": "tier_direct",
+    "score": 4.036,
+    "score_margin": 1.1862,
+    "evidence_sources": [
+      "spatial_neighbor_graph"
+    ],
+    "positive_evidence": [
+      "Hierarchical street graph neighbor consensus",
+      "Supported by verified street neighbor accounts"
+    ],
+    "negative_evidence": [
+      "Neighbor reported borrower shifted from address",
+      "Previous field visit reported address as not traceable"
+    ],
+    "caution": "Field evidence indicates borrower may have shifted from address. Previous field search reported address as not traceable. Locality-level centroid; uncertainty radius ~560 m.",
+    "provenance": {
+      "fit_scope": "benchmark_train",
+      "evaluation_scope": "eval_validation",
+      "calibration_source": "reports/metrics/calibration_quantiles.json",
+      "calibration_scope": "scv_leave_one_out",
+      "offline_mode": true,
+      "external_network_accessed": false
+    },
+    "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 560 m empirical P90 uncertainty radius (calibration fallback: tier_direct). The location is anchored to a hierarchical spatial graph neighbor consensus from verified visits on the same street segment."
+  }
+]

@@ -1,0 +1,34 @@
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# Python Cache & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Testing & Type Checking
+.pytest_cache/
+.mypy_cache/
+ruff_cache/
+.coverage
+htmlcov/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Data & Serialized Artifacts
+*.parquet
+*.pkl
+*.joblib
+*.feather
+
+# Environment & Secrets
+.env
+.env.*
+
+# OS Metadata
+.DS_Store
+Thumbs.db
