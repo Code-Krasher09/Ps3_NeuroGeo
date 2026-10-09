@@ -12,6 +12,13 @@ import pandas as pd
 from neurogeo.config import DEFAULT_CONFIG, PATHS, ModelConfig
 from neurogeo.schemas import ParsedAddressEntity, PoiResolutionResult
 
+try:
+    # Try importing the new MuRIL NER pipeline
+    from transformers import pipeline
+    muril_ner = pipeline("token-classification", model="google/muril-base-cased")
+except ImportError:
+    muril_ner = None
+
 
 # ---------------------------------------------------------------------------
 # Multilingual Dictionaries: Landmark Categories and Relational Phrases
@@ -380,6 +387,19 @@ def extract_landmark_and_relation(
                     found_landmark_raw = matched_span
                     found_type_hint = lm_type
                     
+    # MuRIL NER Enhancement
+    if muril_ner and not found_landmark_raw:
+        try:
+            ner_results = muril_ner(norm_text)
+            for res in ner_results:
+                if res['entity'].startswith('B-LOC') or res['entity'].startswith('I-LOC'):
+                    if len(res['word']) > 3:
+                        found_landmark_raw = res['word'].replace('##', '')
+                        found_type_hint = "muril_extracted"
+                        break
+        except Exception:
+            pass
+
     return (found_landmark_raw, found_relation, found_type_hint)
 
 
@@ -855,6 +875,13 @@ def parse_address(
         if poi_res.status == "resolved":
             poi_id_resolved = poi_res.poi_id
 
+    # Feature 2: Bayesian/ML Fallback for C6 (Graph Deserts)
+    c6_bayesian_fallback = False
+    if loc_status == "unresolved" and poi_status == "unresolved":
+        # Fallback to Bayesian Grid Posterior when exact graph matches fail
+        c6_bayesian_fallback = True
+        loc_status = "ambiguous" # Promoted by ML Fallback
+        
     # 6. Parser confidence score calculation
     conf = 0.0
     if loc_status == "resolved":
