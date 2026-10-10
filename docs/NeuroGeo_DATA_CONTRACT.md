@@ -1,4 +1,4 @@
-# PS3 Data Contract & Schema Specification
+# NeuroGeo Data Contract & Schema Specification
 *Document 2 of 5: Source Data Contracts, Empirical Audit & Schemas*
 *Status: FROZEN (Data Contract Level)*
 
@@ -8,7 +8,7 @@
 
 The system ingests 8 primary CSV tables. All spatial coordinates are **metric Cartesian coordinates in meters** centered at $(0, 0)$ for each town:
 
-> **External Reference Tables Note**: `accounts.csv` and `agents.csv` are external/shared reference tables across the broader competition directory (used for multi-problem borrower metadata and agent roster lookups) and are not part of the 8 core PS3 geocoder datasets. The 8 primary geocoder tables specified below constitute the complete self-contained spatial and operational domain for NeuroGeo-Field.
+> **External Reference Tables Note**: `accounts.csv` and `agents.csv` are external/shared reference tables across the broader competition directory (used for multi-problem borrower metadata and agent roster lookups) and are not part of the 8 core NeuroGeo geocoder datasets. The 8 primary geocoder tables specified below constitute the complete self-contained spatial and operational domain for NeuroGeo-Field.
 
 ```mermaid
 erDiagram

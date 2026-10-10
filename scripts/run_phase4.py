@@ -1,7 +1,7 @@
 """Phase 4 Runner: Candidate Generation/Reranking & Leakage-Safe Empirical Quantile Calibration.
 
-Authority: PS3_FINAL_ARCHITECTURE.md, PS3_MODEL_SPEC.md, PS3_EVALUATION_AND_LEAKAGE_CONTRACT.md,
-and PS3_IMPLEMENTATION_PLAN.md Phase 4.
+Authority: NEUROGEO_FINAL_ARCHITECTURE.md, NEUROGEO_MODEL_SPEC.md, NEUROGEO_EVALUATION_AND_LEAKAGE_CONTRACT.md,
+and NEUROGEO_IMPLEMENTATION_PLAN.md Phase 4.
 """
 
 from dataclasses import replace

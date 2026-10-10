@@ -13,8 +13,8 @@
     "resolved_count": 2576,
     "resolved_percentage": 89.44,
     "target_percentage": 65.0,
-    "ambiguous_count": 0,
-    "unresolved_count": 304,
+    "ambiguous_count": 103,
+    "unresolved_count": 201,
     "status": "PASS"
   },
   "street_extraction": {
@@ -44,5 +44,5 @@
       "beside": 88
     }
   },
-  "execution_time_seconds": 4.01
+  "execution_time_seconds": 70.2
 }

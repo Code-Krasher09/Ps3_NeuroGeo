@@ -1,7 +1,7 @@
 """Offline Deterministic Navigator and Auditable Evidence Card Generator.
 
-Authority: PS3_FINAL_ARCHITECTURE.md Section 4, PS3_MODEL_SPEC.md Section 8,
-and PS3_EVALUATION_AND_LEAKAGE_CONTRACT.md.
+Authority: NEUROGEO_FINAL_ARCHITECTURE.md Section 4, NEUROGEO_MODEL_SPEC.md Section 8,
+and NEUROGEO_EVALUATION_AND_LEAKAGE_CONTRACT.md.
 
 Design Principles:
 - Purely offline operation: zero network calls, zero external routing APIs, zero LLMs.
@@ -209,7 +209,7 @@ def navigate(
 ) -> NavigationInstruction:
     """Generate deterministic, uncertainty-aware offline navigation instructions.
     
-    Authority: PS3_FINAL_ARCHITECTURE.md Section 4 and PS3_MODEL_SPEC.md Section 8.
+    Authority: NEUROGEO_FINAL_ARCHITECTURE.md Section 4 and NEUROGEO_MODEL_SPEC.md Section 8.
     
     Guarantees:
     - Pure offline computation.

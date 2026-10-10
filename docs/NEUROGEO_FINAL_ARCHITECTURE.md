@@ -1,4 +1,4 @@
-# PS3 Final Architecture Specification: NeuroGeo-Field
+# NeuroGeo Final Architecture Specification: NeuroGeo-Field
 *Document 1 of 5: System Architecture & Design Authority*
 *Status: FROZEN (Architecture Level)*
 

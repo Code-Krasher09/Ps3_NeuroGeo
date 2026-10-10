@@ -1,0 +1,557 @@
+town_id,locality_id,street_normalized,street_key,centroid_x,centroid_y,total_weight,contributing_addresses_count,member_address_ids,fit_scope
+T1,T1-L01,"10th cross, 6th main","T1::T1-L01::10th cross, 6th main",-2692.4,1469.7,1.43,1,AD000497,production_all
+T1,T1-L01,"11th cross, 3rd main","T1::T1-L01::11th cross, 3rd main",-3045.8,1320.6,1.667,1,AD002468,production_all
+T1,T1-L01,"12th cross, 6th main","T1::T1-L01::12th cross, 6th main",-2714.8,1734.5,0.5045,1,AD001160,production_all
+T1,T1-L01,"12th cross, 8th main","T1::T1-L01::12th cross, 8th main",-2603.5,1717.8,2.4745,1,AD001154,production_all
+T1,T1-L01,"14th cross, 3rd main","T1::T1-L01::14th cross, 3rd main",-3112.5,1541.0,1.972,1,AD001790,production_all
+T1,T1-L01,"1st cross, 2nd main","T1::T1-L01::1st cross, 2nd main",-3008.2,700.2,1.4408,1,AD001945,production_all
+T1,T1-L01,"2nd cross, 2nd main","T1::T1-L01::2nd cross, 2nd main",-2989.3,807.4,3.3678,1,AD001042,production_all
+T1,T1-L01,"2nd cross, 4th main","T1::T1-L01::2nd cross, 4th main",-2772.96,822.33,3.5057,2,"AD001200,AD002641",production_all
+T1,T1-L01,"3rd cross, 6th main","T1::T1-L01::3rd cross, 6th main",-2608.7,979.2,1.6118,1,AD002281,production_all
+T1,T1-L01,"4th cross, 4th main","T1::T1-L01::4th cross, 4th main",-2845.3,994.41,0.9488,2,"AD000307,AD002378",production_all
+T1,T1-L01,"4th cross, 7th main","T1::T1-L01::4th cross, 7th main",-2599.0,1069.1,1.1825,1,AD001043,production_all
+T1,T1-L01,"5th cross, 4th main","T1::T1-L01::5th cross, 4th main",-2864.7,1000.0,5.0912,1,AD000238,production_all
+T1,T1-L01,"5th cross, 8th main","T1::T1-L01::5th cross, 8th main",-2461.3,1200.5,4.5422,1,AD000047,production_all
+T1,T1-L01,"6th cross, 8th main","T1::T1-L01::6th cross, 8th main",-2436.6,1276.8,5.2243,1,AD001314,production_all
+T1,T1-L01,"7th cross, 6th main","T1::T1-L01::7th cross, 6th main",-2677.9,1240.5,0.3971,1,AD000513,production_all
+T1,T1-L01,"9th cross, 7th main","T1::T1-L01::9th cross, 7th main",-2691.2,1426.5,0.6759,1,AD001836,production_all
+T1,T1-L02,"10th cross, 6th main","T1::T1-L02::10th cross, 6th main",-603.4,-2923.5,1.5088,1,AD001651,production_all
+T1,T1-L02,"11th cross, 4th main","T1::T1-L02::11th cross, 4th main",683.3,-2710.7,2.2941,1,AD001900,production_all
+T1,T1-L02,"11th cross, 8th main","T1::T1-L02::11th cross, 8th main",-442.6,-2771.0,0.7086,1,AD001361,production_all
+T1,T1-L02,"122nd cross, 1st main","T1::T1-L02::122nd cross, 1st main",-1418.4,-2700.3,0.5279,1,AD002015,production_all
+T1,T1-L02,"12th cross, 6th main","T1::T1-L02::12th cross, 6th main",-940.0,-2940.1,0.6101,1,AD001677,production_all
+T1,T1-L02,"1st cross, 2nd main","T1::T1-L02::1st cross, 2nd main",-1282.3,-3534.8,0.6603,1,AD001546,production_all
+T1,T1-L02,"1st cross, 5th main","T1::T1-L02::1st cross, 5th main",-1062.3,-3495.7,0.9156,1,AD002046,production_all
+T1,T1-L02,"1st cross, 6th main","T1::T1-L02::1st cross, 6th main",-826.0,-3516.2,2.1521,1,AD002814,production_all
+T1,T1-L02,1st main,T1::T1-L02::1st main,-1473.2,-3141.8,1.1161,1,AD001742,production_all
+T1,T1-L02,"3rd cross, 8th main","T1::T1-L02::3rd cross, 8th main",835.0,-2924.7,0.6003,1,AD000040,production_all
+T1,T1-L02,"4th cross, 6th main","T1::T1-L02::4th cross, 6th main",-894.9,-3286.7,0.4768,1,AD000467,production_all
+T1,T1-L02,"4th cross, 7th main","T1::T1-L02::4th cross, 7th main",-781.8,-3321.3,3.7859,1,AD001130,production_all
+T1,T1-L02,"6th cross, 1st main","T1::T1-L02::6th cross, 1st main",356.0,-3098.1,0.6748,1,AD002265,production_all
+T1,T1-L02,"6th cross, 6th main","T1::T1-L02::6th cross, 6th main",-841.8,-3218.5,1.3007,1,AD002142,production_all
+T1,T1-L02,"6th cross, 7th main","T1::T1-L02::6th cross, 7th main",-842.8,-3180.2,0.1992,1,AD001789,production_all
+T1,T1-L02,"7th cross, 3rd main","T1::T1-L02::7th cross, 3rd main",-1137.4,-3087.3,1.5451,1,AD000530,production_all
+T1,T1-L02,"7th cross, 4th main","T1::T1-L02::7th cross, 4th main",-1095.8,-3061.3,1.8841,1,AD003010,production_all
+T1,T1-L02,"7th cross, 7th main","T1::T1-L02::7th cross, 7th main",-707.9,-3068.0,1.8648,1,AD001239,production_all
+T1,T1-L02,"8th cross, 6th main","T1::T1-L02::8th cross, 6th main",-865.18,-3073.42,3.9648,2,"AD001298,AD002217",production_all
+T1,T1-L02,"8th cross, 7th main","T1::T1-L02::8th cross, 7th main",-808.5,-3198.0,0.6203,1,AD001626,production_all
+T1,T1-L03,"11th cross, 1st main","T1::T1-L03::11th cross, 1st main",667.5,87.7,2.7105,1,AD000809,production_all
+T1,T1-L03,"11th cross, 2nd main","T1::T1-L03::11th cross, 2nd main",823.7,159.2,0.5684,1,AD002727,production_all
+T1,T1-L03,"11th cross, 6th main","T1::T1-L03::11th cross, 6th main",1212.1,201.9,0.5321,1,AD002706,production_all
+T1,T1-L03,"11th cross, 8th main","T1::T1-L03::11th cross, 8th main",1387.0,260.8,1.7968,1,AD002875,production_all
+T1,T1-L03,"12th cross, 4th main","T1::T1-L03::12th cross, 4th main",932.9,197.4,0.7366,1,AD001653,production_all
+T1,T1-L03,"1st cross, 5th main","T1::T1-L03::1st cross, 5th main",1481.3,-684.1,0.4267,1,AD000635,production_all
+T1,T1-L03,"3rd cross, 2nd main","T1::T1-L03::3rd cross, 2nd main",895.5,-469.7,0.4093,1,AD002765,production_all
+T1,T1-L03,"3rd cross, 3rd main","T1::T1-L03::3rd cross, 3rd main",1037.8,-475.3,1.4846,1,AD000260,production_all
+T1,T1-L03,"4th cross, 3rd main","T1::T1-L03::4th cross, 3rd main",1130.29,-104.35,4.2818,2,"AD000201,AD002067",production_all
+T1,T1-L03,"4th cross, 4th main","T1::T1-L03::4th cross, 4th main",1167.0,-343.9,0.669,1,AD001530,production_all
+T1,T1-L03,"4th cross, 6th main","T1::T1-L03::4th cross, 6th main",1365.3,-304.6,1.3132,1,AD001187,production_all
+T1,T1-L03,4th main,T1::T1-L03::4th main,1011.8,237.3,1.1968,1,AD003100,production_all
+T1,T1-L03,"5th cross, 1st main","T1::T1-L03::5th cross, 1st main",760.6,-342.2,2.3333,1,AD002060,production_all
+T1,T1-L03,"5th cross, 3rd main","T1::T1-L03::5th cross, 3rd main",1028.6,-322.5,0.6157,1,AD002129,production_all
+T1,T1-L03,"5th cross, 5th main","T1::T1-L03::5th cross, 5th main",1211.1,-251.7,0.6028,1,AD002125,production_all
+T1,T1-L03,"5th cross, 6th main","T1::T1-L03::5th cross, 6th main",1320.39,-216.88,3.6036,2,"AD001088,AD001240",production_all
+T1,T1-L03,"6th cross, 2nd main","T1::T1-L03::6th cross, 2nd main",890.9,-178.9,1.3287,1,AD003094,production_all
+T1,T1-L03,"6th cross, 5th main","T1::T1-L03::6th cross, 5th main",1202.19,-182.57,6.3746,3,"AD000001,AD000066,AD002606",production_all
+T1,T1-L03,"7th cross, 1st main","T1::T1-L03::7th cross, 1st main",731.9,-224.8,2.0124,1,AD003041,production_all
+T1,T1-L04,"10th cross, 4th main","T1::T1-L04::10th cross, 4th main",680.5,-2771.65,3.1725,2,"AD001323,AD002802",production_all
+T1,T1-L04,"10th cross, 5th main","T1::T1-L04::10th cross, 5th main",715.9,-2724.8,0.8386,1,AD000469,production_all
+T1,T1-L04,"10th cross, 6th main","T1::T1-L04::10th cross, 6th main",915.4,-2853.2,1.8182,1,AD000904,production_all
+T1,T1-L04,"10th cross, 7th main","T1::T1-L04::10th cross, 7th main",991.1,-2735.6,0.4026,1,AD000281,production_all
+T1,T1-L04,"11th cross, 1st main","T1::T1-L04::11th cross, 1st main",293.9,-2746.9,0.948,1,AD002993,production_all
+T1,T1-L04,"11th cross, 5th main","T1::T1-L04::11th cross, 5th main",748.86,-2695.89,6.8934,3,"AD002154,AD002180,AD002922",production_all
+T1,T1-L04,"12th cross, 3rd main","T1::T1-L04::12th cross, 3rd main",551.2,-2632.6,0.5584,1,AD001414,production_all
+T1,T1-L04,"12th cross, 4th main","T1::T1-L04::12th cross, 4th main",654.09,-2620.19,2.4974,3,"AD000782,AD001201,AD001355",production_all
+T1,T1-L04,"12th cross, 5th main","T1::T1-L04::12th cross, 5th main",852.31,-2533.38,2.0025,2,"AD000135,AD000783",production_all
+T1,T1-L04,"1st cross, 1st main","T1::T1-L04::1st cross, 1st main",441.7,-3485.3,2.3241,1,AD002171,production_all
+T1,T1-L04,"1st cross, 2nd main","T1::T1-L04::1st cross, 2nd main",524.4,-3479.7,2.9602,1,AD002624,production_all
+T1,T1-L04,"1st cross, 6th main","T1::T1-L04::1st cross, 6th main",939.4,-3438.0,0.8065,1,AD002502,production_all
+T1,T1-L04,"2nd cross, 2nd main","T1::T1-L04::2nd cross, 2nd main",518.3,-3402.9,0.9026,1,AD000923,production_all
+T1,T1-L04,"2nd cross, 6th main","T1::T1-L04::2nd cross, 6th main",930.79,-3354.31,8.2644,2,"AD000608,AD001462",production_all
+T1,T1-L04,"2nd cross, 8th main","T1::T1-L04::2nd cross, 8th main",1206.61,-3368.9,1.4729,2,"AD000898,AD001993",production_all
+T1,T1-L04,3rd cross,T1::T1-L04::3rd cross,409.3,-3322.0,3.5513,1,AD000286,production_all
+T1,T1-L04,"3rd cross, 2nd main","T1::T1-L04::3rd cross, 2nd main",739.8,-3457.8,1.2447,1,AD002764,production_all
+T1,T1-L04,"3rd cross, 4th main","T1::T1-L04::3rd cross, 4th main",849.3,-3448.1,0.7918,1,AD002987,production_all
+T1,T1-L04,"3rd cross, 5th main","T1::T1-L04::3rd cross, 5th main",802.2,-3288.8,2.9482,1,AD001083,production_all
+T1,T1-L04,"4th cross, 1st main","T1::T1-L04::4th cross, 1st main",335.6,-3250.1,3.0429,1,AD001991,production_all
+T1,T1-L04,"4th cross, 4th main","T1::T1-L04::4th cross, 4th main",719.68,-3231.14,6.1386,3,"AD000369,AD000739,AD001596",production_all
+T1,T1-L04,"4th cross, 8th main","T1::T1-L04::4th cross, 8th main",1174.88,-3170.96,9.0178,3,"AD000810,AD002711,AD002928",production_all
+T1,T1-L04,"5th cross, 4th main","T1::T1-L04::5th cross, 4th main",745.8,-3140.7,0.9183,1,AD002825,production_all
+T1,T1-L04,"5th cross, 5th main","T1::T1-L04::5th cross, 5th main",840.28,-3080.49,5.0015,2,"AD002116,AD002621",production_all
+T1,T1-L04,"5th cross, 7th main","T1::T1-L04::5th cross, 7th main",1013.4,-3127.3,1.9144,1,AD002090,production_all
+T1,T1-L04,"5th cross, 8th main","T1::T1-L04::5th cross, 8th main",1395.9,-2921.4,0.7205,1,AD002151,production_all
+T1,T1-L04,"6th cross, 1st main","T1::T1-L04::6th cross, 1st main",409.0,-3158.9,1.3143,1,AD001307,production_all
+T1,T1-L04,"6th cross, 3rd main","T1::T1-L04::6th cross, 3rd main",607.36,-3084.06,8.4699,2,"AD000062,AD000138",production_all
+T1,T1-L04,"6th cross, 7th main","T1::T1-L04::6th cross, 7th main",1020.5,-3064.4,1.9835,1,AD003102,production_all
+T1,T1-L04,"7th cross, 2nd main","T1::T1-L04::7th cross, 2nd main",378.0,-3003.1,0.4325,1,AD002189,production_all
+T1,T1-L04,"7th cross, 3rd main","T1::T1-L04::7th cross, 3rd main",525.4,-2991.2,0.7598,1,AD001629,production_all
+T1,T1-L04,"7th cross, 4th main","T1::T1-L04::7th cross, 4th main",712.47,-3008.45,2.2226,2,"AD001223,AD001882",production_all
+T1,T1-L04,"7th cross, 5th main","T1::T1-L04::7th cross, 5th main",797.65,-2962.19,5.739,2,"AD000971,AD002061",production_all
+T1,T1-L04,"7th cross, 6th main","T1::T1-L04::7th cross, 6th main",982.2,-2913.5,1.4807,1,AD003090,production_all
+T1,T1-L04,"8th cross, 3rd main","T1::T1-L04::8th cross, 3rd main",612.2,-2898.5,2.2941,1,AD002270,production_all
+T1,T1-L04,"8th cross, 4th main","T1::T1-L04::8th cross, 4th main",696.5,-2940.3,0.6666,1,AD002548,production_all
+T1,T1-L04,"8th cross, 6th main","T1::T1-L04::8th cross, 6th main",920.8,-2888.5,4.1992,1,AD001753,production_all
+T1,T1-L04,"8th cross, 8th main","T1::T1-L04::8th cross, 8th main",1140.57,-2865.47,6.7547,2,"AD001057,AD002858",production_all
+T1,T1-L04,"9th cross, 1st main","T1::T1-L04::9th cross, 1st main",307.2,-2880.3,1.7428,1,AD000328,production_all
+T1,T1-L04,"9th cross, 2nd main","T1::T1-L04::9th cross, 2nd main",537.44,-2926.46,3.1186,2,"AD000822,AD002393",production_all
+T1,T1-L04,"9th cross, 3rd main","T1::T1-L04::9th cross, 3rd main",564.0,-2846.3,1.7271,1,AD001879,production_all
+T1,T1-L04,"9th cross, 4th main","T1::T1-L04::9th cross, 4th main",693.0,-2829.0,3.5061,1,AD001972,production_all
+T1,T1-L05,"11th cross, 5th main","T1::T1-L05::11th cross, 5th main",-1336.8,603.5,2.4608,1,AD001788,production_all
+T1,T1-L05,"12th cross, 8th main","T1::T1-L05::12th cross, 8th main",-1053.9,932.7,0.2644,1,AD002792,production_all
+T1,T1-L05,"1st cross, 3rd main","T1::T1-L05::1st cross, 3rd main",-590.4,-1779.8,0.4148,1,AD002914,production_all
+T1,T1-L05,"1st cross, 8th main","T1::T1-L05::1st cross, 8th main",-661.1,221.1,1.2687,1,AD002353,production_all
+T1,T1-L05,"2nd cross, 2nd main","T1::T1-L05::2nd cross, 2nd main",-1249.1,11.5,1.8272,1,AD002967,production_all
+T1,T1-L05,2nd main,T1::T1-L05::2nd main,-1243.8,57.2,0.5557,1,AD002762,production_all
+T1,T1-L05,"3rd cross, 4th main","T1::T1-L05::3rd cross, 4th main",-1067.8,173.3,0.7772,1,AD002813,production_all
+T1,T1-L05,"7th cross, 3rd main","T1::T1-L05::7th cross, 3rd main",-1365.3,538.5,0.5871,1,AD001393,production_all
+T1,T1-L05,"9th cross, 5th main","T1::T1-L05::9th cross, 5th main",-1498.6,569.8,1.3431,1,AD000251,production_all
+T1,T1-L06,"11th cross, 2nd main","T1::T1-L06::11th cross, 2nd main",1737.7,-649.3,0.4169,1,AD003011,production_all
+T1,T1-L06,"11th cross, 8th main","T1::T1-L06::11th cross, 8th main",2379.6,-621.7,1.3977,1,AD002841,production_all
+T1,T1-L06,"12th cross, 1st main","T1::T1-L06::12th cross, 1st main",1605.9,-543.8,0.6058,1,AD001633,production_all
+T1,T1-L06,"13th cross, 2nd main","T1::T1-L06::13th cross, 2nd main",2668.7,-1779.4,1.4088,1,AD002247,production_all
+T1,T1-L06,"1st cross, 4th main","T1::T1-L06::1st cross, 4th main",1990.1,-1376.6,1.3527,1,AD002110,production_all
+T1,T1-L06,"2nd cross, 8th main","T1::T1-L06::2nd cross, 8th main",2407.4,-1305.2,0.6936,1,AD000638,production_all
+T1,T1-L06,"3rd cross, 1st main","T1::T1-L06::3rd cross, 1st main",1602.9,-1230.7,0.6347,1,AD002260,production_all
+T1,T1-L06,"4th cross, 3rd main","T1::T1-L06::4th cross, 3rd main",2403.9,-2167.4,1.399,1,AD002558,production_all
+T1,T1-L06,5th main,T1::T1-L06::5th main,2708.2,-2620.4,2.5831,1,AD000363,production_all
+T1,T1-L06,"6th cross, 1st main","T1::T1-L06::6th cross, 1st main",1594.5,-1005.6,0.5638,1,AD002807,production_all
+T1,T1-L06,"7th cross, 4th main","T1::T1-L06::7th cross, 4th main",1975.6,-911.1,0.4021,1,AD000740,production_all
+T1,T1-L06,"8th cross, 3rd main","T1::T1-L06::8th cross, 3rd main",910.7,-92.7,1.2264,1,AD002062,production_all
+T1,T1-L07,"10th cross, 3rd main","T1::T1-L07::10th cross, 3rd main",140.0,2571.7,0.5283,1,AD002861,production_all
+T1,T1-L07,"11th cross, 2nd main","T1::T1-L07::11th cross, 2nd main",69.8,2611.7,0.6394,1,AD002687,production_all
+T1,T1-L07,"11th cross, 3rd main","T1::T1-L07::11th cross, 3rd main",211.8,2554.7,0.9487,1,AD000231,production_all
+T1,T1-L07,"11th cross, 5th main","T1::T1-L07::11th cross, 5th main",420.7,2672.3,0.6137,1,AD000586,production_all
+T1,T1-L07,"11th cross, 6th main","T1::T1-L07::11th cross, 6th main",503.03,2877.13,1.1727,2,"AD001849,AD002569",production_all
+T1,T1-L07,"12th cross, 1st main","T1::T1-L07::12th cross, 1st main",-46.1,2664.5,0.4587,1,AD002352,production_all
+T1,T1-L07,"12th cross, 5th main","T1::T1-L07::12th cross, 5th main",363.87,2795.45,1.9405,2,"AD000285,AD001191",production_all
+T1,T1-L07,"12th cross, 7th main","T1::T1-L07::12th cross, 7th main",571.0,2844.7,2.7605,1,AD001630,production_all
+T1,T1-L07,"1st cross, 1st main","T1::T1-L07::1st cross, 1st main",127.4,1822.5,0.6895,1,AD001258,production_all
+T1,T1-L07,"2nd cross, 2nd main","T1::T1-L07::2nd cross, 2nd main",257.5,1981.0,2.1418,1,AD001539,production_all
+T1,T1-L07,"5th cross, 6th main","T1::T1-L07::5th cross, 6th main",598.0,2292.4,2.8226,1,AD001145,production_all
+T1,T1-L07,"6th cross, 3rd main","T1::T1-L07::6th cross, 3rd main",209.9,2274.6,1.0558,1,AD002196,production_all
+T1,T1-L07,"6th cross, 5th main","T1::T1-L07::6th cross, 5th main",489.7,2356.2,0.7766,1,AD000895,production_all
+T1,T1-L07,"6th cross, 6th main","T1::T1-L07::6th cross, 6th main",652.6,2369.8,0.6639,1,AD001389,production_all
+T1,T1-L07,"6th cross, 7th main","T1::T1-L07::6th cross, 7th main",638.9,2386.8,1.7471,1,AD000018,production_all
+T1,T1-L07,"9th cross, 4th main","T1::T1-L07::9th cross, 4th main",312.1,2546.9,0.989,1,AD001108,production_all
+T1,T1-L08,"11th cross, 5th main","T1::T1-L08::11th cross, 5th main",2454.3,1193.0,1.0598,1,AD001616,production_all
+T1,T1-L08,"12th cross, 3rd main","T1::T1-L08::12th cross, 3rd main",2319.9,1438.9,1.561,1,AD001257,production_all
+T1,T1-L08,"12th cross, 6th main","T1::T1-L08::12th cross, 6th main",2657.77,1457.14,5.6317,4,"AD000970,AD001045,AD002029,AD002231",production_all
+T1,T1-L08,"1st cross, 1st main","T1::T1-L08::1st cross, 1st main",2115.4,636.4,1.6719,1,AD000517,production_all
+T1,T1-L08,"1st cross, 2nd main","T1::T1-L08::1st cross, 2nd main",2252.6,615.2,3.7568,1,AD000669,production_all
+T1,T1-L08,"1st cross, 4th main","T1::T1-L08::1st cross, 4th main",2449.6,633.3,3.0289,1,AD003016,production_all
+T1,T1-L08,"2nd cross, 4th main","T1::T1-L08::2nd cross, 4th main",2531.8,613.7,1.1517,1,AD000830,production_all
+T1,T1-L08,"3rd cross, 1st main","T1::T1-L08::3rd cross, 1st main",2101.2,761.6,3.8482,1,AD002367,production_all
+T1,T1-L08,"4th cross, 1st main","T1::T1-L08::4th cross, 1st main",2155.6,890.5,1.1712,1,AD002744,production_all
+T1,T1-L08,"5th cross, 3rd main","T1::T1-L08::5th cross, 3rd main",2361.59,925.45,2.2425,2,"AD000255,AD002403",production_all
+T1,T1-L08,"5th cross, 4th main","T1::T1-L08::5th cross, 4th main",2520.6,902.4,1.5092,1,AD001207,production_all
+T1,T1-L08,"5th cross, 5th main","T1::T1-L08::5th cross, 5th main",2552.7,912.2,0.6862,1,AD000441,production_all
+T1,T1-L08,"5th cross, 6th main","T1::T1-L08::5th cross, 6th main",2663.48,967.66,6.7697,2,"AD001096,AD001408",production_all
+T1,T1-L08,"6th cross, 1st main","T1::T1-L08::6th cross, 1st main",2174.9,1002.3,2.236,1,AD000969,production_all
+T1,T1-L08,7th cross,T1::T1-L08::7th cross,2690.3,1062.0,0.5977,1,AD000761,production_all
+T1,T1-L08,"7th cross, 3rd main","T1::T1-L08::7th cross, 3rd main",2355.8,1088.0,0.6151,1,AD000696,production_all
+T1,T1-L08,"8th cross, 8th main","T1::T1-L08::8th cross, 8th main",2827.6,1123.3,0.8505,1,AD000987,production_all
+T1,T1-L08,"9th cross, 2nd main","T1::T1-L08::9th cross, 2nd main",2198.1,936.3,0.5704,1,AD002305,production_all
+T1,T1-L08,"9th cross, 6th main","T1::T1-L08::9th cross, 6th main",2746.5,1165.7,0.7815,1,AD001570,production_all
+T1,T1-L09,"10th cross, 6th main","T1::T1-L09::10th cross, 6th main",-2042.2,-2073.2,1.273,1,AD000477,production_all
+T1,T1-L09,"11th cross, 5th main","T1::T1-L09::11th cross, 5th main",-2042.0,-2085.1,0.4311,1,AD001420,production_all
+T1,T1-L09,"12th cross, 3rd main","T1::T1-L09::12th cross, 3rd main",-2449.8,-2068.9,0.7749,1,AD000002,production_all
+T1,T1-L09,"12th cross, 4th main","T1::T1-L09::12th cross, 4th main",-2383.5,-2026.4,2.8801,1,AD002317,production_all
+T1,T1-L09,"1st cross, 4th main","T1::T1-L09::1st cross, 4th main",-2019.8,-2742.0,0.7727,1,AD001732,production_all
+T1,T1-L09,"3rd cross, 3rd main","T1::T1-L09::3rd cross, 3rd main",-1642.89,-2717.89,3.1339,3,"AD000172,AD000180,AD001335",production_all
+T1,T1-L09,4th main,T1::T1-L09::4th main,-2375.0,-2090.4,0.4092,1,AD001267,production_all
+T1,T1-L09,"5th cross, 1st main","T1::T1-L09::5th cross, 1st main",-2470.0,-2648.2,2.0685,1,AD000359,production_all
+T1,T1-L09,"5th cross, 5th main","T1::T1-L09::5th cross, 5th main",-2051.8,-2466.5,0.6146,1,AD002184,production_all
+T1,T1-L09,"6th cross, 5th main","T1::T1-L09::6th cross, 5th main",-2132.8,-2396.2,0.4379,1,AD002571,production_all
+T1,T1-L10,"11th cross, 6th main","T1::T1-L10::11th cross, 6th main",-2781.5,1580.8,0.6457,1,AD002510,production_all
+T1,T1-L10,6th cross,T1::T1-L10::6th cross,-1529.8,2321.4,1.2335,1,AD001837,production_all
+T1,T1-L11,"10th cross, 2nd main","T1::T1-L11::10th cross, 2nd main",2628.63,-1856.54,5.0494,2,"AD000589,AD002457",production_all
+T1,T1-L11,"10th cross, 3rd main","T1::T1-L11::10th cross, 3rd main",2826.87,-1992.23,1.9009,2,"AD002245,AD002766",production_all
+T1,T1-L11,"10th cross, 6th main","T1::T1-L11::10th cross, 6th main",3025.4,-2191.6,4.3203,1,AD001746,production_all
+T1,T1-L11,"10th cross, 8th main","T1::T1-L11::10th cross, 8th main",3258.02,-2232.99,3.1226,3,"AD000169,AD000322,AD000832",production_all
+T1,T1-L11,"11th cross, 2nd main","T1::T1-L11::11th cross, 2nd main",2720.45,-1811.36,8.3345,2,"AD001336,AD001581",production_all
+T1,T1-L11,"11th cross, 3rd main","T1::T1-L11::11th cross, 3rd main",2808.36,-1792.23,5.1534,3,"AD000030,AD000309,AD000719",production_all
+T1,T1-L11,"11th cross, 5th main","T1::T1-L11::11th cross, 5th main",2966.6,-1909.7,4.4498,1,AD000602,production_all
+T1,T1-L11,"11th cross, 6th main","T1::T1-L11::11th cross, 6th main",3053.1,-1949.7,3.2621,1,AD002404,production_all
+T1,T1-L11,"11th cross, 7th main","T1::T1-L11::11th cross, 7th main",3205.68,-1950.97,5.9392,2,"AD000129,AD001034",production_all
+T1,T1-L11,"11th cross, 8th main","T1::T1-L11::11th cross, 8th main",3282.66,-2114.59,4.1928,2,"AD001799,AD003085",production_all
+T1,T1-L11,"12th cross, 1st main","T1::T1-L11::12th cross, 1st main",2608.07,-1661.01,7.5495,2,"AD000524,AD001416",production_all
+T1,T1-L11,"12th cross, 2nd main","T1::T1-L11::12th cross, 2nd main",2718.0,-1711.9,0.7012,1,AD002681,production_all
+T1,T1-L11,"12th cross, 3rd main","T1::T1-L11::12th cross, 3rd main",2866.0,-1819.5,1.4652,1,AD002806,production_all
+T1,T1-L11,"12th cross, 4th main","T1::T1-L11::12th cross, 4th main",2900.47,-1825.33,5.7456,3,"AD000630,AD001271,AD002414",production_all
+T1,T1-L11,"12th cross, 6th main","T1::T1-L11::12th cross, 6th main",3118.6,-1932.9,2.3803,1,AD000955,production_all
+T1,T1-L11,"1st cross, 1st main","T1::T1-L11::1st cross, 1st main",2344.3,-2445.1,2.3025,1,AD001649,production_all
+T1,T1-L11,"1st cross, 3rd main","T1::T1-L11::1st cross, 3rd main",2483.7,-2499.3,2.9695,1,AD000622,production_all
+T1,T1-L11,"1st cross, 5th main","T1::T1-L11::1st cross, 5th main",2745.4,-2558.5,1.2554,1,AD002920,production_all
+T1,T1-L11,"1st cross, 8th main","T1::T1-L11::1st cross, 8th main",2946.4,-2681.5,2.9779,1,AD000903,production_all
+T1,T1-L11,"2nd cross, 1st main","T1::T1-L11::2nd cross, 1st main",2265.3,-2342.6,2.6818,1,AD000667,production_all
+T1,T1-L11,"2nd cross, 3rd main","T1::T1-L11::2nd cross, 3rd main",2480.4,-2430.5,3.0955,1,AD001821,production_all
+T1,T1-L11,"2nd cross, 4th main","T1::T1-L11::2nd cross, 4th main",2566.3,-2436.0,1.8535,1,AD000203,production_all
+T1,T1-L11,"2nd cross, 7th main","T1::T1-L11::2nd cross, 7th main",2942.0,-2578.6,1.0428,1,AD002505,production_all
+T1,T1-L11,2nd main,T1::T1-L11::2nd main,2682.4,-1874.2,2.5051,1,AD000114,production_all
+T1,T1-L11,"3rd cross, 1st main","T1::T1-L11::3rd cross, 1st main",2358.8,-2342.8,1.1915,1,AD002124,production_all
+T1,T1-L11,"3rd cross, 2nd main","T1::T1-L11::3rd cross, 2nd main",2451.54,-2337.53,6.6948,3,"AD002246,AD002307,AD002709",production_all
+T1,T1-L11,"3rd cross, 5th main","T1::T1-L11::3rd cross, 5th main",2720.12,-2470.9,4.9274,2,"AD001433,AD002039",production_all
+T1,T1-L11,"3rd cross, 7th main","T1::T1-L11::3rd cross, 7th main",2909.8,-2551.3,2.8115,1,AD000867,production_all
+T1,T1-L11,4th cross,T1::T1-L11::4th cross,2308.8,-2143.2,1.8768,1,AD001273,production_all
+T1,T1-L11,"4th cross, 1st main","T1::T1-L11::4th cross, 1st main",2672.5,-2098.5,0.5109,1,AD001048,production_all
+T1,T1-L11,"4th cross, 2nd main","T1::T1-L11::4th cross, 2nd main",2452.72,-2262.25,8.7509,3,"AD000658,AD001702,AD002808",production_all
+T1,T1-L11,"4th cross, 3rd main","T1::T1-L11::4th cross, 3rd main",2607.9,-2315.8,4.0846,1,AD002673,production_all
+T1,T1-L11,"4th cross, 4th main","T1::T1-L11::4th cross, 4th main",2701.5,-2383.6,3.1157,1,AD000735,production_all
+T1,T1-L11,"4th cross, 5th main","T1::T1-L11::4th cross, 5th main",2965.6,-2530.9,1.2648,1,AD001364,production_all
+T1,T1-L11,"4th cross, 7th main","T1::T1-L11::4th cross, 7th main",2993.4,-2509.88,3.421,2,"AD000563,AD001372",production_all
+T1,T1-L11,"4th cross, 8th main","T1::T1-L11::4th cross, 8th main",3126.16,-2522.65,5.865,2,"AD001509,AD001760",production_all
+T1,T1-L11,"5th cross, 1st main","T1::T1-L11::5th cross, 1st main",2388.44,-2148.95,5.6784,2,"AD000316,AD002757",production_all
+T1,T1-L11,"5th cross, 2nd main","T1::T1-L11::5th cross, 2nd main",2553.59,-2267.18,2.3636,2,"AD001800,AD002991",production_all
+T1,T1-L11,"5th cross, 3rd main","T1::T1-L11::5th cross, 3rd main",2586.5,-2237.1,4.5694,1,AD000475,production_all
+T1,T1-L11,"5th cross, 5th main","T1::T1-L11::5th cross, 5th main",1727.5,-322.54,4.4785,3,"AD000075,AD000259,AD002419",production_all
+T1,T1-L11,"5th cross, 6th main","T1::T1-L11::5th cross, 6th main",2902.6,-2381.2,3.3697,1,AD001775,production_all
+T1,T1-L11,"5th cross, 7th main","T1::T1-L11::5th cross, 7th main",3045.0,-2457.2,1.5883,1,AD002038,production_all
+T1,T1-L11,"5th cross, 8th main","T1::T1-L11::5th cross, 8th main",3148.6,-2466.4,0.3987,1,AD002021,production_all
+T1,T1-L11,"6th cross, 2nd main","T1::T1-L11::6th cross, 2nd main",2527.7,-2131.0,2.2166,1,AD000314,production_all
+T1,T1-L11,"6th cross, 3rd main","T1::T1-L11::6th cross, 3rd main",2656.6,-2168.5,2.3817,1,AD001554,production_all
+T1,T1-L11,"6th cross, 4th main","T1::T1-L11::6th cross, 4th main",2715.7,-2250.2,1.7522,1,AD003099,production_all
+T1,T1-L11,"6th cross, 5th main","T1::T1-L11::6th cross, 5th main",2835.58,-2276.34,6.9383,2,"AD000733,AD001105",production_all
+T1,T1-L11,"6th cross, 7th main","T1::T1-L11::6th cross, 7th main",3065.6,-2374.5,3.7964,1,AD000360,production_all
+T1,T1-L11,6th main,T1::T1-L11::6th main,2903.1,-2454.9,2.5045,1,AD003026,production_all
+T1,T1-L11,7th cross,T1::T1-L11::7th cross,2900.2,-2205.0,4.8193,1,AD002911,production_all
+T1,T1-L11,"7th cross, 2nd main","T1::T1-L11::7th cross, 2nd main",2650.5,-2041.7,0.7359,1,AD001960,production_all
+T1,T1-L11,"7th cross, 5th main","T1::T1-L11::7th cross, 5th main",2856.6,-2187.3,0.7476,1,AD002479,production_all
+T1,T1-L11,"7th cross, 7th main","T1::T1-L11::7th cross, 7th main",3089.63,-2199.46,2.9125,2,"AD000257,AD000813",production_all
+T1,T1-L11,"8th cross, 2nd main","T1::T1-L11::8th cross, 2nd main",2586.14,-1961.03,3.5978,2,"AD000236,AD002925",production_all
+T1,T1-L11,"8th cross, 4th main","T1::T1-L11::8th cross, 4th main",2816.87,-2089.61,5.7939,2,"AD000100,AD000529",production_all
+T1,T1-L11,"8th cross, 5th main","T1::T1-L11::8th cross, 5th main",3036.8,-2120.7,1.422,1,AD001567,production_all
+T1,T1-L11,8th main,T1::T1-L11::8th main,3289.1,-2185.5,0.6417,1,AD003053,production_all
+T1,T1-L11,"9th cross, 1st main","T1::T1-L11::9th cross, 1st main",2533.3,-1888.0,0.7818,1,AD001074,production_all
+T1,T1-L11,"9th cross, 2nd main","T1::T1-L11::9th cross, 2nd main",2624.62,-1936.78,4.8341,2,"AD001174,AD001324",production_all
+T1,T1-L11,"9th cross, 4th main","T1::T1-L11::9th cross, 4th main",2850.56,-2012.94,6.0825,2,"AD001186,AD002306",production_all
+T1,T1-L11,"9th cross, 5th main","T1::T1-L11::9th cross, 5th main",3040.7,-1964.9,2.0921,1,AD001354,production_all
+T1,T1-L11,"9th cross, 7th main","T1::T1-L11::9th cross, 7th main",3158.4,-2197.5,0.7826,1,AD000641,production_all
+T1,T1-L12,"10th cross, 7th main","T1::T1-L12::10th cross, 7th main",-376.7,-953.5,1.9947,1,AD000738,production_all
+T1,T1-L12,"11th cross, 3rd main","T1::T1-L12::11th cross, 3rd main",-743.8,-958.2,2.4235,1,AD002494,production_all
+T1,T1-L12,"12th cross, 1st main","T1::T1-L12::12th cross, 1st main",-1046.4,-1002.5,2.339,1,AD002812,production_all
+T1,T1-L12,"3rd cross, 1st main","T1::T1-L12::3rd cross, 1st main",-750.6,-1707.7,0.7428,1,AD002801,production_all
+T1,T1-L12,"4th cross, 5th main","T1::T1-L12::4th cross, 5th main",-352.4,-1405.2,0.7046,1,AD000803,production_all
+T1,T1-L12,"5th cross, 2nd main","T1::T1-L12::5th cross, 2nd main",-755.7,-1529.2,2.0053,1,AD002996,production_all
+T1,T1-L12,"6th cross, 1st main","T1::T1-L12::6th cross, 1st main",-847.5,-1401.2,3.2624,1,AD001738,production_all
+T1,T1-L12,"7th cross, 6th main","T1::T1-L12::7th cross, 6th main",-412.2,-1176.3,0.5947,1,AD001110,production_all
+T1,T1-L12,9th cross,T1::T1-L12::9th cross,-628.0,-1274.5,0.7095,1,AD000041,production_all
+T2,T2-L01,gali 1,T2::T2-L01::gali 1,676.33,-3499.32,4.2432,4,"AD000364,AD001866,AD002401,AD002613",production_all
+T2,T2-L01,"gali 10, ward 1","T2::T2-L01::gali 10, ward 1",812.67,-2672.8,1.3798,2,"AD000176,AD001575",production_all
+T2,T2-L01,gali 3,T2::T2-L01::gali 3,655.65,-3284.1,5.4342,2,"AD000355,AD002634",production_all
+T2,T2-L01,"gali 3, ward 1","T2::T2-L01::gali 3, ward 1",859.9,-3302.3,0.7632,1,AD001425,production_all
+T2,T2-L01,gali 4,T2::T2-L01::gali 4,1031.5,-3112.6,1.5832,1,AD002458,production_all
+T2,T2-L01,gali 5,T2::T2-L01::gali 5,353.0,-3230.0,2.9437,1,AD001055,production_all
+T2,T2-L01,"gali 5, ward 1","T2::T2-L01::gali 5, ward 1",521.33,-3255.63,1.2894,2,"AD000685,AD002702",production_all
+T2,T2-L01,gali 6,T2::T2-L01::gali 6,283.28,-3143.57,3.3858,2,"AD000953,AD001494",production_all
+T2,T2-L01,gali 7,T2::T2-L01::gali 7,949.6,-2926.4,2.9339,1,AD001794,production_all
+T2,T2-L01,gali 8,T2::T2-L01::gali 8,659.3,-2899.7,2.0198,1,AD001493,production_all
+T2,T2-L01,"gali 8, ward 11","T2::T2-L01::gali 8, ward 11",1566.5,-1884.0,2.5763,1,AD002663,production_all
+T2,T2-L02,gali 1,T2::T2-L02::gali 1,1453.9,-464.1,1.8483,1,AD000220,production_all
+T2,T2-L02,gali 10,T2::T2-L02::gali 10,1043.9,239.1,1.3128,1,AD002089,production_all
+T2,T2-L02,"gali 10, ward 2","T2::T2-L02::gali 10, ward 2",1368.3,219.3,1.3482,1,AD003106,production_all
+T2,T2-L02,gali 11,T2::T2-L02::gali 11,1115.5,212.5,3.2153,1,AD002123,production_all
+T2,T2-L02,"gali 11, ward 2","T2::T2-L02::gali 11, ward 2",1018.2,333.6,4.5998,1,AD002357,production_all
+T2,T2-L02,gali 12,T2::T2-L02::gali 12,1274.84,378.27,5.4024,2,"AD001152,AD001577",production_all
+T2,T2-L02,"gali 2, ward 2","T2::T2-L02::gali 2, ward 2",1006.2,-350.2,1.212,1,AD002488,production_all
+T2,T2-L02,gali 3,T2::T2-L02::gali 3,877.1,-287.1,3.2257,1,AD002197,production_all
+T2,T2-L02,"gali 3, ward 2","T2::T2-L02::gali 3, ward 2",812.2,-240.4,1.8366,1,AD001136,production_all
+T2,T2-L02,gali 4,T2::T2-L02::gali 4,655.6,95.2,0.6276,1,AD000358,production_all
+T2,T2-L02,gali 5,T2::T2-L02::gali 5,844.21,-109.18,0.9581,2,"AD001279,AD002741",production_all
+T2,T2-L02,gali 6,T2::T2-L02::gali 6,729.1,-41.5,0.6716,1,AD002284,production_all
+T2,T2-L02,"gali 7, ward 2","T2::T2-L02::gali 7, ward 2",1373.7,4.8,2.4335,1,AD000980,production_all
+T2,T2-L02,"gali 8, ward 2","T2::T2-L02::gali 8, ward 2",761.5,107.4,0.6803,1,AD000886,production_all
+T2,T2-L02,gali 9,T2::T2-L02::gali 9,1308.54,156.32,4.8402,2,"AD000386,AD002541",production_all
+T2,T2-L02,ward 2,T2::T2-L02::ward 2,1050.19,13.79,2.6413,2,"AD000799,AD000868",production_all
+T2,T2-L03,gali 10,T2::T2-L03::gali 10,-702.24,3304.79,1.8635,2,"AD000151,AD000991",production_all
+T2,T2-L03,gali 12,T2::T2-L03::gali 12,-409.93,3213.6,8.2552,2,"AD001662,AD002112",production_all
+T2,T2-L03,gali 2,T2::T2-L03::gali 2,-565.7,2542.2,0.9314,1,AD000039,production_all
+T2,T2-L03,gali 6,T2::T2-L03::gali 6,-884.2,2954.2,4.1196,1,AD001135,production_all
+T2,T2-L04,gali 4,T2::T2-L04::gali 4,2674.5,251.2,0.8134,1,AD000962,production_all
+T2,T2-L04,gali 5,T2::T2-L04::gali 5,2021.5,1946.3,1.3813,1,AD000918,production_all
+T2,T2-L05,gali 1,T2::T2-L05::gali 1,-1282.8,-3078.7,0.5057,1,AD001969,production_all
+T2,T2-L05,"gali 4, ward 5","T2::T2-L05::gali 4, ward 5",-1340.8,-2845.6,4.6858,1,AD001447,production_all
+T2,T2-L05,gali 5,T2::T2-L05::gali 5,-1630.32,-2896.49,7.6927,3,"AD001488,AD001591,AD001647",production_all
+T2,T2-L05,gali 9,T2::T2-L05::gali 9,-1620.03,-2514.15,4.1759,3,"AD000400,AD000660,AD002131",production_all
+T2,T2-L05,ward 5,T2::T2-L05::ward 5,-1887.3,-2910.8,0.5285,1,AD001157,production_all
+T2,T2-L06,gali 1,T2::T2-L06::gali 1,2921.0,104.9,0.9845,1,AD002043,production_all
+T2,T2-L06,gali 11,T2::T2-L06::gali 11,2826.39,845.32,6.9833,4,"AD000686,AD001237,AD001726,AD002474",production_all
+T2,T2-L06,gali 2,T2::T2-L06::gali 2,3254.0,284.6,2.3804,1,AD002872,production_all
+T2,T2-L06,"gali 2, ward 6","T2::T2-L06::gali 2, ward 6",2675.7,246.0,1.6051,1,AD002261,production_all
+T2,T2-L06,gali 3,T2::T2-L06::gali 3,3082.2,450.0,3.9055,1,AD002751,production_all
+T2,T2-L06,"gali 3, ward 6","T2::T2-L06::gali 3, ward 6",2981.56,275.14,3.0429,2,"AD001523,AD002568",production_all
+T2,T2-L06,gali 5,T2::T2-L06::gali 5,3393.4,553.8,2.8025,1,AD002583,production_all
+T2,T2-L06,gali 6,T2::T2-L06::gali 6,3136.2,572.7,1.224,1,AD000759,production_all
+T2,T2-L06,"gali 7, ward 6","T2::T2-L06::gali 7, ward 6",3311.4,640.9,0.9461,1,AD003014,production_all
+T2,T2-L06,gali 8,T2::T2-L06::gali 8,3018.7,678.9,6.5989,3,"AD001338,AD002213,AD002633",production_all
+T2,T2-L06,"gali 8, ward 6","T2::T2-L06::gali 8, ward 6",2949.1,651.6,0.6845,1,AD000181,production_all
+T2,T2-L06,gali 9,T2::T2-L06::gali 9,2990.9,775.8,1.9025,1,AD001712,production_all
+T2,T2-L06,ward 6,T2::T2-L06::ward 6,2873.93,475.67,4.9716,4,"AD000166,AD000613,AD001929,AD002560",production_all
+T2,T2-L07,gali 3,T2::T2-L07::gali 3,1193.1,1046.1,1.1758,1,AD000710,production_all
+T2,T2-L07,gali 4,T2::T2-L07::gali 4,925.7,2486.1,2.3253,1,AD000792,production_all
+T2,T2-L07,"gali 8, ward 7","T2::T2-L07::gali 8, ward 7",846.2,1312.2,0.6016,1,AD000842,production_all
+T2,T2-L07,gali 9,T2::T2-L07::gali 9,1057.1,1088.71,4.0163,2,"AD000147,AD002531",production_all
+T2,T2-L07,"gali 9, ward 7","T2::T2-L07::gali 9, ward 7",983.0,1451.1,0.8037,1,AD000076,production_all
+T2,T2-L08,gali 1,T2::T2-L08::gali 1,776.75,2295.02,2.2213,2,"AD001026,AD001768",production_all
+T2,T2-L08,gali 10,T2::T2-L08::gali 10,1125.87,2858.56,3.5651,2,"AD001743,AD001923",production_all
+T2,T2-L08,"gali 10, ward 8","T2::T2-L08::gali 10, ward 8",731.32,3091.97,6.2634,2,"AD001589,AD001937",production_all
+T2,T2-L08,gali 11,T2::T2-L08::gali 11,956.7,3025.5,1.2712,1,AD000268,production_all
+T2,T2-L08,gali 12,T2::T2-L08::gali 12,800.7,3241.4,1.0123,1,AD000942,production_all
+T2,T2-L08,"gali 12, ward 8","T2::T2-L08::gali 12, ward 8",1016.9,3097.3,1.2283,1,AD001807,production_all
+T2,T2-L08,gali 2,T2::T2-L08::gali 2,910.4,2357.5,1.2224,1,AD000917,production_all
+T2,T2-L08,"gali 2, ward 8","T2::T2-L08::gali 2, ward 8",767.9,2403.6,2.7165,1,AD000016,production_all
+T2,T2-L08,gali 3,T2::T2-L08::gali 3,840.03,2422.36,2.8715,2,"AD002176,AD002264",production_all
+T2,T2-L08,"gali 3, ward 8","T2::T2-L08::gali 3, ward 8",562.2,2345.4,0.6186,1,AD001424,production_all
+T2,T2-L08,"gali 4, ward 8","T2::T2-L08::gali 4, ward 8",1016.9,2290.6,1.1089,1,AD001767,production_all
+T2,T2-L08,gali 5,T2::T2-L08::gali 5,993.7,2519.7,3.2672,1,AD000204,production_all
+T2,T2-L08,"gali 5, ward 8","T2::T2-L08::gali 5, ward 8",927.7,2564.5,0.7072,1,AD001158,production_all
+T2,T2-L08,gali 6,T2::T2-L08::gali 6,908.44,2662.91,5.4104,2,"AD000986,AD003019",production_all
+T2,T2-L08,"gali 6, ward 8","T2::T2-L08::gali 6, ward 8",958.5,2633.9,0.5189,1,AD001952,production_all
+T2,T2-L08,gali 7,T2::T2-L08::gali 7,816.07,2890.83,5.8697,2,"AD002499,AD002728",production_all
+T2,T2-L08,gali 8,T2::T2-L08::gali 8,1212.42,2796.64,1.8717,2,"AD001628,AD002798",production_all
+T2,T2-L08,"gali 9, ward 8","T2::T2-L08::gali 9, ward 8",1170.8,2770.1,0.7101,1,AD002487,production_all
+T2,T2-L08,ward 3,T2::T2-L08::ward 3,-757.6,2714.3,3.5859,1,AD002341,production_all
+T2,T2-L08,ward 8,T2::T2-L08::ward 8,845.37,2779.64,12.9386,5,"AD001430,AD002120,AD002339,AD002966,AD003060",production_all
+T2,T2-L09,gali 1,T2::T2-L09::gali 1,-777.4,-740.1,1.9016,1,AD001465,production_all
+T2,T2-L09,gali 11,T2::T2-L09::gali 11,-734.81,-36.45,2.9802,2,"AD000105,AD002842",production_all
+T2,T2-L09,gali 12,T2::T2-L09::gali 12,-343.8,-129.3,3.4499,1,AD000472,production_all
+T2,T2-L09,"gali 2, ward 9","T2::T2-L09::gali 2, ward 9",-626.33,-714.6,6.5599,2,"AD001963,AD002045",production_all
+T2,T2-L09,gali 3,T2::T2-L09::gali 3,-952.91,-684.65,1.3248,2,"AD002225,AD002749",production_all
+T2,T2-L09,gali 4,T2::T2-L09::gali 4,-318.5,-737.9,2.4073,1,AD001689,production_all
+T2,T2-L09,gali 5,T2::T2-L09::gali 5,-383.8,-622.1,4.7765,1,AD002027,production_all
+T2,T2-L09,"gali 5, ward 9","T2::T2-L09::gali 5, ward 9",-650.8,-551.0,3.6651,1,AD000012,production_all
+T2,T2-L09,gali 6,T2::T2-L09::gali 6,-419.6,-515.2,0.5308,1,AD002441,production_all
+T2,T2-L09,gali 8,T2::T2-L09::gali 8,-344.6,-385.0,1.2384,1,AD002489,production_all
+T2,T2-L09,gali 9,T2::T2-L09::gali 9,863.3,1144.3,0.4424,1,AD001003,production_all
+T2,T2-L09,ward 9,T2::T2-L09::ward 9,-346.6,-661.3,0.6542,1,AD002906,production_all
+T2,T2-L10,gali 1,T2::T2-L10::gali 1,2524.76,-1632.22,6.0892,2,"AD002126,AD002262",production_all
+T2,T2-L10,gali 10,T2::T2-L10::gali 10,2899.16,-1164.53,4.7926,2,"AD000420,AD002832",production_all
+T2,T2-L10,"gali 10, ward 10","T2::T2-L10::gali 10, ward 10",2534.6,-930.3,3.4054,1,AD002772,production_all
+T2,T2-L10,gali 11,T2::T2-L10::gali 11,2377.0,-769.6,0.4365,1,AD001805,production_all
+T2,T2-L10,gali 12,T2::T2-L10::gali 12,2484.84,-702.55,4.3024,2,"AD001944,AD002878",production_all
+T2,T2-L10,"gali 3, ward 10","T2::T2-L10::gali 3, ward 10",2661.6,-1596.4,3.7263,1,AD000768,production_all
+T2,T2-L10,gali 4,T2::T2-L10::gali 4,2293.1,-1317.5,1.2582,1,AD001549,production_all
+T2,T2-L10,"gali 4, ward 10","T2::T2-L10::gali 4, ward 10",2271.6,-1213.4,2.077,1,AD002555,production_all
+T2,T2-L10,gali 5,T2::T2-L10::gali 5,2583.19,-1427.56,1.8683,2,"AD000086,AD001214",production_all
+T2,T2-L10,gali 6,T2::T2-L10::gali 6,2723.03,-1346.49,17.2118,6,"AD000460,AD000992,AD001503,AD001683,AD001765,AD003077",production_all
+T2,T2-L10,gali 7,T2::T2-L10::gali 7,2661.79,-1286.41,3.5628,2,"AD000150,AD000675",production_all
+T2,T2-L10,"gali 7, ward 10","T2::T2-L10::gali 7, ward 10",2507.1,-1136.1,2.3382,1,AD000797,production_all
+T2,T2-L10,gali 8,T2::T2-L10::gali 8,2812.7,-1268.6,1.9285,1,AD001971,production_all
+T2,T2-L10,gali 9,T2::T2-L10::gali 9,2782.3,-1442.9,1.7175,1,AD003045,production_all
+T2,T2-L10,ward 10,T2::T2-L10::ward 10,2769.28,-1219.01,1.8543,2,"AD000385,AD002618",production_all
+T2,T2-L11,gali 1,T2::T2-L11::gali 1,1476.37,-2393.07,3.8026,3,"AD001528,AD001551,AD002263",production_all
+T2,T2-L11,"gali 1, ward 11","T2::T2-L11::gali 1, ward 11",1267.3,-2525.0,2.7857,1,AD003044,production_all
+T2,T2-L11,gali 10,T2::T2-L11::gali 10,1433.52,-1839.05,11.1883,4,"AD001586,AD002194,AD002294,AD002748",production_all
+T2,T2-L11,gali 11,T2::T2-L11::gali 11,1477.01,-1757.67,12.9825,5,"AD001397,AD001489,AD001954,AD002074,AD002650",production_all
+T2,T2-L11,"gali 11, ward 11","T2::T2-L11::gali 11, ward 11",1653.2,-1695.8,0.8879,1,AD000573,production_all
+T2,T2-L11,gali 12,T2::T2-L11::gali 12,1400.2,-1723.03,11.575,7,"AD000912,AD001124,AD001131,AD001673,AD002210,AD002976,AD003067",production_all
+T2,T2-L11,gali 14,T2::T2-L11::gali 14,1812.7,-1558.4,2.2578,1,AD000634,production_all
+T2,T2-L11,gali 2,T2::T2-L11::gali 2,1690.29,-2396.31,6.4359,6,"AD000841,AD000897,AD001652,AD001680,AD002136,AD002849",production_all
+T2,T2-L11,"gali 2, ward 11","T2::T2-L11::gali 2, ward 11",1566.4,-2400.1,3.0413,1,AD002521,production_all
+T2,T2-L11,gali 3,T2::T2-L11::gali 3,1666.12,-2293.07,6.9076,5,"AD000175,AD000921,AD001281,AD002118,AD002794",production_all
+T2,T2-L11,"gali 3, ward 11","T2::T2-L11::gali 3, ward 11",1482.83,-2337.24,4.7059,2,"AD002576,AD002688",production_all
+T2,T2-L11,gali 4,T2::T2-L11::gali 4,1658.6,-2230.51,10.8287,4,"AD001857,AD002574,AD002763,AD002870",production_all
+T2,T2-L11,"gali 4, ward 11","T2::T2-L11::gali 4, ward 11",1871.13,-2173.67,5.4125,2,"AD000223,AD002091",production_all
+T2,T2-L11,gali 5,T2::T2-L11::gali 5,1671.9,-2148.2,2.1044,1,AD002459,production_all
+T2,T2-L11,"gali 5, ward 11","T2::T2-L11::gali 5, ward 11",1954.8,-2123.0,1.2241,1,AD002277,production_all
+T2,T2-L11,gali 6,T2::T2-L11::gali 6,1681.49,-2127.14,7.3902,3,"AD001178,AD001713,AD002526",production_all
+T2,T2-L11,"gali 6, ward 11","T2::T2-L11::gali 6, ward 11",1306.66,-2095.5,5.7097,3,"AD000336,AD000412,AD002480",production_all
+T2,T2-L11,gali 7,T2::T2-L11::gali 7,1331.2,-2070.4,1.9952,1,AD001013,production_all
+T2,T2-L11,"gali 7, ward 11","T2::T2-L11::gali 7, ward 11",1567.45,-2015.47,3.4581,3,"AD000337,AD001245,AD002287",production_all
+T2,T2-L11,gali 8,T2::T2-L11::gali 8,1265.11,-1980.9,4.7317,3,"AD000964,AD002059,AD003002",production_all
+T2,T2-L11,"gali 8, ward 11","T2::T2-L11::gali 8, ward 11",1560.61,-1956.73,6.5712,3,"AD000338,AD001962,AD002820",production_all
+T2,T2-L11,gali 9,T2::T2-L11::gali 9,1587.96,-1754.9,11.5599,4,"AD000032,AD000192,AD001731,AD001741",production_all
+T2,T2-L11,"gali 9, ward 11","T2::T2-L11::gali 9, ward 11",1398.7,-1890.6,5.4826,1,AD001380,production_all
+T2,T2-L11,ward 11,T2::T2-L11::ward 11,1492.29,-2151.1,15.3966,7,"AD000173,AD000553,AD000866,AD001149,AD001694,AD002453,AD002821",production_all
+T2,T2-L12,gali 11,T2::T2-L12::gali 11,-309.3,1732.2,2.1727,1,AD000387,production_all
+T2,T2-L12,gali 5,T2::T2-L12::gali 5,-297.6,1227.1,0.6008,1,AD002671,production_all
+T3,T3-L01,"block a, 2nd road","T3::T3-L01::block a, 2nd road",-4180.6,-1064.5,1.0325,1,AD002251,production_all
+T3,T3-L01,"block a, 4th road","T3::T3-L01::block a, 4th road",-4073.5,-1011.5,1.2961,1,AD000216,production_all
+T3,T3-L01,"block b, 2nd road","T3::T3-L01::block b, 2nd road",-3966.5,-1155.9,0.2551,1,AD000133,production_all
+T3,T3-L01,"block b, 4th road","T3::T3-L01::block b, 4th road",-3966.5,-1075.6,0.6236,1,AD001798,production_all
+T3,T3-L01,"block b, 5th road","T3::T3-L01::block b, 5th road",-2660.8,-495.1,3.7957,1,AD002977,production_all
+T3,T3-L01,"block b, 6th road","T3::T3-L01::block b, 6th road",-3828.4,-1132.5,0.5533,1,AD000471,production_all
+T3,T3-L01,"block c, 4th road","T3::T3-L01::block c, 4th road",2318.0,-765.6,1.0817,1,AD001330,production_all
+T3,T3-L01,"block d, 1st road","T3::T3-L01::block d, 1st road",-4108.9,-675.7,0.5292,1,AD000279,production_all
+T3,T3-L01,"block d, 5th road","T3::T3-L01::block d, 5th road",-2978.2,-11.0,4.0433,1,AD001064,production_all
+T3,T3-L01,"block e, 3rd road","T3::T3-L01::block e, 3rd road",-3654.0,-777.0,1.109,1,AD001901,production_all
+T3,T3-L01,"block e, 4th road","T3::T3-L01::block e, 4th road",-3676.11,-717.67,1.71,2,"AD001091,AD001842",production_all
+T3,T3-L01,"block e, 5th road","T3::T3-L01::block e, 5th road",-2526.1,54.4,0.9624,1,AD001776,production_all
+T3,T3-L01,"block e, 6th road","T3::T3-L01::block e, 6th road",-2726.0,11.6,0.546,1,AD000852,production_all
+T3,T3-L01,"block f, 4th road","T3::T3-L01::block f, 4th road",2327.0,-778.9,0.0,1,AD000325,production_all
+T3,T3-L01,"block f, 6th road","T3::T3-L01::block f, 6th road",-3693.3,-790.0,1.0312,1,AD000170,production_all
+T3,T3-L02,"block a, 3rd road","T3::T3-L02::block a, 3rd road",-796.7,2868.7,3.1176,1,AD000741,production_all
+T3,T3-L02,"block b, 4th road","T3::T3-L02::block b, 4th road",1431.63,385.83,1.0146,2,"AD000177,AD002651",production_all
+T3,T3-L02,"block b, 5th road","T3::T3-L02::block b, 5th road",-435.2,2942.3,2.8339,1,AD002880,production_all
+T3,T3-L02,"block b, 6th road","T3::T3-L02::block b, 6th road",-463.2,2813.9,1.3703,2,"AD001535,AD002564",production_all
+T3,T3-L02,"block c, 1st road","T3::T3-L02::block c, 1st road",-1669.19,1247.72,1.1915,2,"AD000449,AD001054",production_all
+T3,T3-L02,"block c, 3rd road","T3::T3-L02::block c, 3rd road",-269.98,2838.54,1.1195,2,"AD001165,AD002852",production_all
+T3,T3-L02,"block c, 4th road","T3::T3-L02::block c, 4th road",-245.6,2878.9,0.7097,1,AD002519,production_all
+T3,T3-L02,"block d, 1st road","T3::T3-L02::block d, 1st road",-672.7,3200.6,2.6376,1,AD002675,production_all
+T3,T3-L02,"block d, 3rd road","T3::T3-L02::block d, 3rd road",-725.9,3281.9,2.8611,1,AD001521,production_all
+T3,T3-L02,"block d, 5th road","T3::T3-L02::block d, 5th road",-720.8,3385.8,2.7144,1,AD000808,production_all
+T3,T3-L02,"block e, 3rd road","T3::T3-L02::block e, 3rd road",-577.7,3294.5,0.7866,1,AD000606,production_all
+T3,T3-L02,"block f, 1st road","T3::T3-L02::block f, 1st road",-101.84,3075.54,1.6627,2,"AD000750,AD003105",production_all
+T3,T3-L02,"block f, 2nd road","T3::T3-L02::block f, 2nd road",-6.9,3267.9,0.7542,1,AD001621,production_all
+T3,T3-L02,"block f, 6th road","T3::T3-L02::block f, 6th road",-3731.2,-771.6,0.707,1,AD001565,production_all
+T3,T3-L03,4th road,T3::T3-L03::4th road,-1119.0,-317.8,0.7206,1,AD000427,production_all
+T3,T3-L03,"block a, 3rd road","T3::T3-L03::block a, 3rd road",-1004.7,-802.6,1.3383,1,AD002652,production_all
+T3,T3-L03,"block a, 4th road","T3::T3-L03::block a, 4th road",2349.37,-768.36,1.9462,2,"AD000190,AD002009",production_all
+T3,T3-L03,"block a, 6th road","T3::T3-L03::block a, 6th road",-1175.62,-610.11,4.8834,3,"AD000978,AD002667,AD002708",production_all
+T3,T3-L03,"block b, 1st road","T3::T3-L03::block b, 1st road",-801.85,-923.95,1.1486,2,"AD000348,AD002293",production_all
+T3,T3-L03,"block b, 5th road","T3::T3-L03::block b, 5th road",-756.1,-862.4,1.3131,1,AD000081,production_all
+T3,T3-L03,"block b, 6th road","T3::T3-L03::block b, 6th road",-714.2,-735.9,2.1175,1,AD001563,production_all
+T3,T3-L03,"block c, 2nd road","T3::T3-L03::block c, 2nd road",-3747.7,-786.6,0.6731,1,AD002395,production_all
+T3,T3-L03,"block c, 4th road","T3::T3-L03::block c, 4th road",-581.9,-859.2,1.2553,1,AD000856,production_all
+T3,T3-L03,"block c, 6th road","T3::T3-L03::block c, 6th road",-540.1,-769.4,2.6937,1,AD001268,production_all
+T3,T3-L03,block d,T3::T3-L03::block d,-909.1,-60.3,0.6378,1,AD002990,production_all
+T3,T3-L03,"block d, 1st road","T3::T3-L03::block d, 1st road",-1144.06,-471.36,1.3193,2,"AD001262,AD001343",production_all
+T3,T3-L03,"block d, 4th road","T3::T3-L03::block d, 4th road",-1095.7,-221.0,0.6333,1,AD001856,production_all
+T3,T3-L03,"block d, 6th road","T3::T3-L03::block d, 6th road",-938.9,-200.5,0.3818,1,AD001293,production_all
+T3,T3-L03,"block e, 2nd road","T3::T3-L03::block e, 2nd road",-629.9,-482.0,0.7836,1,AD002877,production_all
+T3,T3-L03,"block e, 3rd road","T3::T3-L03::block e, 3rd road",-775.53,-402.78,1.5145,2,"AD001247,AD002513",production_all
+T3,T3-L03,"block e, 5th road","T3::T3-L03::block e, 5th road",-661.6,-272.4,0.61,1,AD000775,production_all
+T3,T3-L03,"block f, 6th road","T3::T3-L03::block f, 6th road",-443.9,-296.8,2.5149,1,AD002254,production_all
+T3,T3-L03,"block f, 7th road","T3::T3-L03::block f, 7th road",-344.8,-432.1,3.3349,1,AD000099,production_all
+T3,T3-L04,"block c, 4th road","T3::T3-L04::block c, 4th road",-497.8,-2076.0,1.3051,1,AD001873,production_all
+T3,T3-L05,"block a, 1st road","T3::T3-L05::block a, 1st road",3546.19,45.74,3.215,2,"AD000645,AD002735",production_all
+T3,T3-L05,"block a, 2nd road","T3::T3-L05::block a, 2nd road",3604.97,-38.22,7.359,3,"AD000342,AD001176,AD001466",production_all
+T3,T3-L05,"block a, 3rd road","T3::T3-L05::block a, 3rd road",3532.09,3.93,9.5928,3,"AD001499,AD001845,AD002799",production_all
+T3,T3-L05,"block a, 4th road","T3::T3-L05::block a, 4th road",3628.5,77.5,0.6594,1,AD001441,production_all
+T3,T3-L05,"block a, 6th road","T3::T3-L05::block a, 6th road",3493.7,123.5,1.4831,1,AD001880,production_all
+T3,T3-L05,"block b, 1st road","T3::T3-L05::block b, 1st road",3875.9,125.9,1.0119,1,AD001574,production_all
+T3,T3-L05,"block b, 3rd road","T3::T3-L05::block b, 3rd road",3846.77,112.16,5.3586,3,"AD000060,AD001748,AD002986",production_all
+T3,T3-L05,"block b, 4th road","T3::T3-L05::block b, 4th road",3701.7,111.3,1.2077,1,AD000535,production_all
+T3,T3-L05,"block b, 5th road","T3::T3-L05::block b, 5th road",3809.35,187.98,4.1858,3,"AD000228,AD000556,AD002654",production_all
+T3,T3-L05,"block b, 6th road","T3::T3-L05::block b, 6th road",3761.8,220.1,3.0756,1,AD000850,production_all
+T3,T3-L05,"block c, 1st road","T3::T3-L05::block c, 1st road",4128.97,155.58,4.6428,3,"AD001524,AD002049,AD002889",production_all
+T3,T3-L05,"block c, 2nd road","T3::T3-L05::block c, 2nd road",4063.3,136.3,3.2425,1,AD001832,production_all
+T3,T3-L05,"block c, 5th road","T3::T3-L05::block c, 5th road",2344.1,-793.3,0.0,1,AD000650,production_all
+T3,T3-L05,"block c, 6th road","T3::T3-L05::block c, 6th road",3969.43,338.41,7.965,2,"AD000722,AD001352",production_all
+T3,T3-L05,"block d, 4th road","T3::T3-L05::block d, 4th road",-3716.3,-769.4,0.0,1,AD000291,production_all
+T3,T3-L05,"block d, 5th road","T3::T3-L05::block d, 5th road",3389.4,498.4,3.1963,1,AD001122,production_all
+T3,T3-L05,"block e, 2nd road","T3::T3-L05::block e, 2nd road",3282.45,418.26,8.5365,4,"AD000781,AD001977,AD002448,AD002676",production_all
+T3,T3-L05,"block e, 4th road","T3::T3-L05::block e, 4th road",3646.8,552.3,2.7472,1,AD001605,production_all
+T3,T3-L05,"block e, 5th road","T3::T3-L05::block e, 5th road",3743.3,657.4,1.5597,1,AD001121,production_all
+T3,T3-L05,"block e, 6th road","T3::T3-L05::block e, 6th road",3566.02,632.39,7.5969,3,"AD000303,AD001920,AD002096",production_all
+T3,T3-L05,"block f, 1st road","T3::T3-L05::block f, 1st road",3745.99,342.01,4.3052,2,"AD000107,AD002150",production_all
+T3,T3-L05,"block f, 2nd road","T3::T3-L05::block f, 2nd road",3868.16,533.41,3.8436,2,"AD002069,AD002981",production_all
+T3,T3-L05,"block f, 3rd road","T3::T3-L05::block f, 3rd road",3884.9,621.61,4.4381,3,"AD002138,AD002685,AD002968",production_all
+T3,T3-L05,"block f, 4th road","T3::T3-L05::block f, 4th road",3978.4,693.8,3.3566,1,AD001422,production_all
+T3,T3-L05,"block f, 5th road","T3::T3-L05::block f, 5th road",3920.2,708.2,1.3915,1,AD000043,production_all
+T3,T3-L05,"block f, 6th road","T3::T3-L05::block f, 6th road",4015.47,713.91,5.9244,4,"AD000142,AD000982,AD002336,AD003055",production_all
+T3,T3-L06,"block a, 1st road","T3::T3-L06::block a, 1st road",-2864.97,-658.55,3.8742,3,"AD001371,AD001934,AD002033",production_all
+T3,T3-L06,"block a, 2nd road","T3::T3-L06::block a, 2nd road",-3004.8,-622.0,0.5625,1,AD002528,production_all
+T3,T3-L06,"block a, 3rd road","T3::T3-L06::block a, 3rd road",-3739.0,-762.2,1.045,1,AD000288,production_all
+T3,T3-L06,"block a, 5th road","T3::T3-L06::block a, 5th road",-2837.86,-455.14,8.0919,2,"AD001458,AD001792",production_all
+T3,T3-L06,"block b, 2nd road","T3::T3-L06::block b, 2nd road",-2680.8,-627.4,0.6661,1,AD001171,production_all
+T3,T3-L06,"block b, 4th road","T3::T3-L06::block b, 4th road",-2581.84,-564.11,4.443,2,"AD001822,AD002233",production_all
+T3,T3-L06,"block b, 5th road","T3::T3-L06::block b, 5th road",-2651.3,-479.27,11.4245,6,"AD000605,AD000666,AD000727,AD000943,AD001384,AD001982",production_all
+T3,T3-L06,"block c, 2nd road","T3::T3-L06::block c, 2nd road",-2435.6,-620.9,4.7351,1,AD002509,production_all
+T3,T3-L06,"block c, 4th road","T3::T3-L06::block c, 4th road",-2368.75,-535.82,7.7888,4,"AD000137,AD000272,AD002333,AD002959",production_all
+T3,T3-L06,"block c, 6th road","T3::T3-L06::block c, 6th road",-2322.77,-429.55,5.7876,2,"AD002253,AD002546",production_all
+T3,T3-L06,"block d, 1st road","T3::T3-L06::block d, 1st road",-3032.72,-245.27,3.8449,2,"AD000950,AD002865",production_all
+T3,T3-L06,"block d, 2nd road","T3::T3-L06::block d, 2nd road",-3051.8,-203.1,1.1712,1,AD002956,production_all
+T3,T3-L06,"block d, 3rd road","T3::T3-L06::block d, 3rd road",-2849.7,-130.5,3.7098,1,AD000631,production_all
+T3,T3-L06,"block d, 4th road","T3::T3-L06::block d, 4th road",-3751.5,-781.0,0.9107,1,AD000159,production_all
+T3,T3-L06,"block d, 5th road","T3::T3-L06::block d, 5th road",-2914.66,91.54,1.1253,2,"AD000795,AD001331",production_all
+T3,T3-L06,"block d, 6th road","T3::T3-L06::block d, 6th road",-2968.41,2.13,10.7682,5,"AD000019,AD000023,AD000617,AD001891,AD002655",production_all
+T3,T3-L06,"block e, 3rd road","T3::T3-L06::block e, 3rd road",-2633.52,-130.8,10.4287,5,"AD000078,AD000197,AD000533,AD000981,AD002412",production_all
+T3,T3-L06,"block e, 4th road","T3::T3-L06::block e, 4th road",-2645.2,-93.4,4.4977,1,AD002566,production_all
+T3,T3-L06,"block e, 5th road","T3::T3-L06::block e, 5th road",-2627.51,-60.54,5.1686,3,"AD000465,AD001391,AD002415",production_all
+T3,T3-L06,"block f, 2nd road","T3::T3-L06::block f, 2nd road",-2243.74,-181.54,6.6213,3,"AD001080,AD001868,AD002590",production_all
+T3,T3-L06,"block f, 3rd road","T3::T3-L06::block f, 3rd road",-2342.4,-116.3,3.1479,1,AD000153,production_all
+T3,T3-L06,"block f, 4th road","T3::T3-L06::block f, 4th road",447.58,618.37,4.1217,4,"AD001754,AD001896,AD002829,AD002943",production_all
+T3,T3-L06,"block f, 5th road","T3::T3-L06::block f, 5th road",2333.4,-764.9,0.0,1,AD001908,production_all
+T3,T3-L06,"block f, 6th road","T3::T3-L06::block f, 6th road",-2473.4,-3.2,2.0698,1,AD002181,production_all
+T3,T3-L07,"block a, 2nd road","T3::T3-L07::block a, 2nd road",-2741.5,1290.4,1.5026,1,AD001687,production_all
+T3,T3-L07,"block a, 4th road","T3::T3-L07::block a, 4th road",-2862.32,1428.19,3.3621,2,"AD001734,AD002423",production_all
+T3,T3-L07,"block a, 5th road","T3::T3-L07::block a, 5th road",-2911.8,1541.5,0.3817,1,AD001990,production_all
+T3,T3-L07,"block b, 1st road","T3::T3-L07::block b, 1st road",-2490.9,1182.2,1.262,1,AD000954,production_all
+T3,T3-L07,"block b, 2nd road","T3::T3-L07::block b, 2nd road",-2480.2,1164.6,3.8059,1,AD002696,production_all
+T3,T3-L07,"block b, 5th road","T3::T3-L07::block b, 5th road",-2496.7,1355.3,2.1257,1,AD000098,production_all
+T3,T3-L07,"block b, 6th road","T3::T3-L07::block b, 6th road",-2613.76,1383.33,7.7254,2,"AD001469,AD002143",production_all
+T3,T3-L07,block c,T3::T3-L07::block c,-2280.6,1303.8,2.1425,1,AD002504,production_all
+T3,T3-L07,"block c, 1st road","T3::T3-L07::block c, 1st road",-2270.63,1159.0,1.5244,2,"AD001847,AD002617",production_all
+T3,T3-L07,"block c, 2nd road","T3::T3-L07::block c, 2nd road",-2212.5,1138.9,1.6635,1,AD000825,production_all
+T3,T3-L07,"block c, 3rd road","T3::T3-L07::block c, 3rd road",-2302.2,1223.9,1.374,1,AD001360,production_all
+T3,T3-L07,"block c, 5th road","T3::T3-L07::block c, 5th road",-2353.5,1311.1,0.5406,1,AD002229,production_all
+T3,T3-L07,"block d, 2nd road","T3::T3-L07::block d, 2nd road",-2644.7,1722.06,7.6958,3,"AD000324,AD000774,AD002989",production_all
+T3,T3-L07,"block d, 4th road","T3::T3-L07::block d, 4th road",-2585.2,1785.3,3.9209,1,AD001555,production_all
+T3,T3-L07,"block d, 6th road","T3::T3-L07::block d, 6th road",-2701.3,1925.4,1.3389,1,AD002964,production_all
+T3,T3-L07,"block e, 3rd road","T3::T3-L07::block e, 3rd road",-2397.3,1687.6,0.4025,1,AD002636,production_all
+T3,T3-L07,"block e, 4th road","T3::T3-L07::block e, 4th road",-2471.3,1762.0,1.4538,1,AD001094,production_all
+T3,T3-L07,"block e, 6th road","T3::T3-L07::block e, 6th road",-2465.93,1844.01,5.7967,3,"AD000323,AD001540,AD002656",production_all
+T3,T3-L07,"block f, 2nd road","T3::T3-L07::block f, 2nd road",-2051.9,1557.7,4.7115,1,AD000869,production_all
+T3,T3-L07,"block f, 3rd road","T3::T3-L07::block f, 3rd road",-2263.3,1647.0,2.2055,1,AD002903,production_all
+T3,T3-L07,"block f, 4th road","T3::T3-L07::block f, 4th road",-2257.7,1706.6,4.7442,1,AD001578,production_all
+T3,T3-L07,"block f, 5th road","T3::T3-L07::block f, 5th road",-2087.79,1703.47,5.8087,3,"AD000484,AD000508,AD001220",production_all
+T3,T3-L08,"block a, 1st road","T3::T3-L08::block a, 1st road",847.1,-1370.4,1.5324,1,AD001128,production_all
+T3,T3-L08,"block a, 3rd road","T3::T3-L08::block a, 3rd road",927.71,-1203.05,4.1948,3,"AD000079,AD002081,AD002901",production_all
+T3,T3-L08,"block a, 4th road","T3::T3-L08::block a, 4th road",719.5,-1491.5,0.575,1,AD001197,production_all
+T3,T3-L08,"block a, 5th road","T3::T3-L08::block a, 5th road",838.1,-1179.5,1.3945,2,"AD000426,AD001582",production_all
+T3,T3-L08,"block a, 6th road","T3::T3-L08::block a, 6th road",828.15,-1127.3,5.5113,2,"AD001040,AD002632",production_all
+T3,T3-L08,"block b, 1st road","T3::T3-L08::block b, 1st road",1193.71,-1121.34,6.5417,4,"AD000227,AD000744,AD001006,AD002562",production_all
+T3,T3-L08,"block b, 2nd road","T3::T3-L08::block b, 2nd road",1077.0,-1178.0,2.3941,1,AD000787,production_all
+T3,T3-L08,"block b, 5th road","T3::T3-L08::block b, 5th road",995.0,-1058.1,1.9642,1,AD001290,production_all
+T3,T3-L08,"block b, 6th road","T3::T3-L08::block b, 6th road",1091.61,-999.3,3.8394,3,"AD000639,AD001622,AD002258",production_all
+T3,T3-L08,"block c, 1st road","T3::T3-L08::block c, 1st road",1391.2,-1108.2,1.9753,1,AD001395,production_all
+T3,T3-L08,"block c, 4th road","T3::T3-L08::block c, 4th road",-3747.7,-773.5,0.8026,1,AD002481,production_all
+T3,T3-L08,"block c, 6th road","T3::T3-L08::block c, 6th road",1398.96,-918.41,1.931,2,"AD000671,AD001248",production_all
+T3,T3-L08,"block d, 2nd road","T3::T3-L08::block d, 2nd road",676.08,-930.44,1.1633,2,"AD001274,AD002398",production_all
+T3,T3-L08,"block d, 3rd road","T3::T3-L08::block d, 3rd road",607.97,-907.32,1.6827,3,"AD001434,AD002891,AD003086",production_all
+T3,T3-L08,"block d, 4th road","T3::T3-L08::block d, 4th road",701.36,-800.93,4.6969,4,"AD000913,AD001840,AD002157,AD002520",production_all
+T3,T3-L08,"block d, 6th road","T3::T3-L08::block d, 6th road",696.2,-706.97,3.2216,2,"AD000221,AD000596",production_all
+T3,T3-L08,"block e, 1st road","T3::T3-L08::block e, 1st road",976.0,-911.6,1.4664,1,AD002848,production_all
+T3,T3-L08,"block e, 2nd road","T3::T3-L08::block e, 2nd road",972.4,-773.54,8.1848,6,"AD000233,AD000948,AD001216,AD001291,AD001854,AD001995",production_all
+T3,T3-L08,"block e, 3rd road","T3::T3-L08::block e, 3rd road",906.59,-719.95,7.4425,2,"AD001053,AD002933",production_all
+T3,T3-L08,"block e, 4th road","T3::T3-L08::block e, 4th road",824.8,-711.4,1.1713,1,AD000771,production_all
+T3,T3-L08,"block f, 2nd road","T3::T3-L08::block f, 2nd road",1158.14,-578.16,6.0398,2,"AD000155,AD000526",production_all
+T3,T3-L08,"block f, 3rd road","T3::T3-L08::block f, 3rd road",1223.37,-516.9,1.0812,2,"AD000587,AD000801",production_all
+T3,T3-L08,"block f, 5th road","T3::T3-L08::block f, 5th road",1123.2,-490.0,1.3294,1,AD001890,production_all
+T3,T3-L08,"block f, 6th road","T3::T3-L08::block f, 6th road",1033.3,-467.36,6.9915,3,"AD000451,AD001618,AD002896",production_all
+T3,T3-L09,"block b, 2nd road","T3::T3-L09::block b, 2nd road",319.4,1329.5,0.5876,1,AD002547,production_all
+T3,T3-L09,"block c, 5th road","T3::T3-L09::block c, 5th road",668.0,1271.0,0.6652,1,AD001473,production_all
+T3,T3-L09,"block f, 3rd road","T3::T3-L09::block f, 3rd road",842.1,1616.3,1.6596,1,AD002731,production_all
+T3,T3-L10,"block a, 1st road","T3::T3-L10::block a, 1st road",3023.8,-1972.6,1.2381,1,AD002988,production_all
+T3,T3-L10,"block a, 2nd road","T3::T3-L10::block a, 2nd road",3086.2,-2423.8,1.6485,1,AD002380,production_all
+T3,T3-L10,"block a, 3rd road","T3::T3-L10::block a, 3rd road",3085.59,-2378.8,1.3655,2,"AD000885,AD002178",production_all
+T3,T3-L10,"block a, 4th road","T3::T3-L10::block a, 4th road",3087.5,-2326.08,5.3206,3,"AD001039,AD001272,AD002982",production_all
+T3,T3-L10,"block a, 5th road","T3::T3-L10::block a, 5th road",2971.4,-2366.0,2.4672,1,AD000815,production_all
+T3,T3-L10,"block b, 1st road","T3::T3-L10::block b, 1st road",3092.17,-2017.53,3.4212,2,"AD000870,AD002471",production_all
+T3,T3-L10,"block b, 5th road","T3::T3-L10::block b, 5th road",3246.1,-2236.8,0.6326,1,AD000705,production_all
+T3,T3-L10,"block c, 2nd road","T3::T3-L10::block c, 2nd road",3574.3,-2265.2,1.5396,1,AD000154,production_all
+T3,T3-L10,"block c, 5th road","T3::T3-L10::block c, 5th road",3496.62,-2160.07,2.194,2,"AD001886,AD001933",production_all
+T3,T3-L10,"block d, 1st road","T3::T3-L10::block d, 1st road",2962.15,-2054.79,5.0224,3,"AD001078,AD002298,AD002467",production_all
+T3,T3-L10,"block d, 3rd road","T3::T3-L10::block d, 3rd road",2324.9,-760.3,0.5868,1,AD001766,production_all
+T3,T3-L10,"block d, 5th road","T3::T3-L10::block d, 5th road",3174.3,-436.96,1.255,2,"AD002372,AD002551",production_all
+T3,T3-L10,"block d, 6th road","T3::T3-L10::block d, 6th road",2909.68,-1828.6,7.1112,2,"AD001481,AD002102",production_all
+T3,T3-L10,"block e, 2nd road","T3::T3-L10::block e, 2nd road",3110.29,-1950.08,4.8374,2,"AD000397,AD001116",production_all
+T3,T3-L10,"block e, 3rd road","T3::T3-L10::block e, 3rd road",3132.2,-1902.1,3.3716,1,AD002134,production_all
+T3,T3-L10,"block e, 5th road","T3::T3-L10::block e, 5th road",3076.2,-1817.2,2.0739,1,AD001779,production_all
+T3,T3-L10,"block e, 6th road","T3::T3-L10::block e, 6th road",3259.6,-1714.1,1.8771,1,AD001802,production_all
+T3,T3-L10,block f,T3::T3-L10::block f,3437.0,-1759.5,0.6147,1,AD001976,production_all
+T3,T3-L10,"block f, 2nd road","T3::T3-L10::block f, 2nd road",3605.28,-1808.62,4.6157,2,"AD001170,AD002321",production_all
+T3,T3-L10,"block f, 3rd road","T3::T3-L10::block f, 3rd road",3397.6,-1817.8,4.4935,1,AD002230,production_all
+T3,T3-L10,"block f, 4th road","T3::T3-L10::block f, 4th road",3446.1,-1746.3,3.036,1,AD002153,production_all
+T3,T3-L11,"block a, 1st road","T3::T3-L11::block a, 1st road",-819.1,-3858.6,2.7033,1,AD000607,production_all
+T3,T3-L11,"block a, 2nd road","T3::T3-L11::block a, 2nd road",-665.5,-3822.7,1.7019,1,AD003012,production_all
+T3,T3-L11,"block a, 3rd road","T3::T3-L11::block a, 3rd road",-637.2,-3804.2,0.3269,1,AD000627,production_all
+T3,T3-L11,"block a, 4th road","T3::T3-L11::block a, 4th road",-728.34,-3733.74,3.9428,2,"AD000446,AD002712",production_all
+T3,T3-L11,"block a, 5th road","T3::T3-L11::block a, 5th road",-629.0,-3692.5,4.0645,1,AD001520,production_all
+T3,T3-L11,"block b, 1st road","T3::T3-L11::block b, 1st road",-447.1,-3969.0,2.2555,1,AD002083,production_all
+T3,T3-L11,"block b, 4th road","T3::T3-L11::block b, 4th road",-345.6,-3806.0,1.0442,1,AD002916,production_all
+T3,T3-L11,"block b, 6th road","T3::T3-L11::block b, 6th road",-477.1,-3675.9,3.8028,1,AD000576,production_all
+T3,T3-L11,"block c, 2nd road","T3::T3-L11::block c, 2nd road",-165.2,-3913.07,3.5333,2,"AD001864,AD002164",production_all
+T3,T3-L11,"block c, 3rd road","T3::T3-L11::block c, 3rd road",2322.5,-755.9,0.7955,1,AD002070,production_all
+T3,T3-L11,"block c, 4th road","T3::T3-L11::block c, 4th road",1048.31,-2355.03,2.8536,3,"AD000574,AD002051,AD002416",production_all
+T3,T3-L11,"block d, 1st road","T3::T3-L11::block d, 1st road",-628.6,-3460.1,1.5065,1,AD002932,production_all
+T3,T3-L11,"block d, 2nd road","T3::T3-L11::block d, 2nd road",-636.3,-3371.2,0.6102,1,AD001396,production_all
+T3,T3-L11,"block e, 2nd road","T3::T3-L11::block e, 2nd road",-376.0,-3429.8,2.8117,1,AD002234,production_all
+T3,T3-L11,"block e, 3rd road","T3::T3-L11::block e, 3rd road",-519.1,-3402.1,0.5907,1,AD001432,production_all
+T3,T3-L11,"block e, 4th road","T3::T3-L11::block e, 4th road",-513.7,-3305.8,1.3053,1,AD002424,production_all
+T3,T3-L11,"block e, 5th road","T3::T3-L11::block e, 5th road",-364.6,-3305.7,1.1394,1,AD001138,production_all
+T3,T3-L11,"block f, 1st road","T3::T3-L11::block f, 1st road",-145.9,-3531.5,0.4747,1,AD001162,production_all
+T3,T3-L11,"block f, 3rd road","T3::T3-L11::block f, 3rd road",-70.38,-3387.33,5.2005,2,"AD000749,AD001620",production_all
+T3,T3-L11,"block f, 6th road","T3::T3-L11::block f, 6th road",-185.4,-3272.1,1.682,1,AD002188,production_all
+T3,T3-L12,"block b, 1st road","T3::T3-L12::block b, 1st road",-420.0,-3929.7,3.333,1,AD001472,production_all
+T3,T3-L12,"block b, 5th road","T3::T3-L12::block b, 5th road",-528.2,-3741.9,0.8219,1,AD001219,production_all

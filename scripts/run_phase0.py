@@ -1,6 +1,6 @@
 """Phase 0 Runner: Official Baseline Reproduction & Zero-Leakage Evaluation Harness.
 
-Authority: PS3_IMPLEMENTATION_PLAN.md Phase 0 and PS3_EVALUATION_AND_LEAKAGE_CONTRACT.md.
+Authority: NEUROGEO_IMPLEMENTATION_PLAN.md Phase 0 and NEUROGEO_EVALUATION_AND_LEAKAGE_CONTRACT.md.
 Usage:
     python scripts/run_phase0.py
 """

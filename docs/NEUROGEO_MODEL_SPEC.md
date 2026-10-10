@@ -1,4 +1,4 @@
-# PS3 Model Specification: Algorithmic & Mathematical Specifications
+# NeuroGeo Model Specification: Algorithmic & Mathematical Specifications
 *Document 4 of 5: Formula Families, Parameter Spaces & Algorithms*
 *Status: FROZEN (Model Specification Level)*
 

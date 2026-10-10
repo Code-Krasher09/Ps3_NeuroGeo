@@ -1,6 +1,6 @@
 """GPS trajectory physics, numerical guards, and doorstep dwell medoid mining.
 
-Authority: PS3_MODEL_SPEC.md Section 4, PS3_DATA_CONTRACT.md, and PS3_FINAL_ARCHITECTURE.md.
+Authority: NEUROGEO_MODEL_SPEC.md Section 4, NEUROGEO_DATA_CONTRACT.md, and NEUROGEO_FINAL_ARCHITECTURE.md.
 """
 
 from typing import Any, Dict, List, Optional, Tuple, Union

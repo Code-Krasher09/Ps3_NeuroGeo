@@ -1,0 +1,61 @@
+{
+  "weights": {
+    "w_text": 1.0,
+    "w_visit": 2.5,
+    "w_neigh": 1.5,
+    "w_base": 0.5,
+    "w_neg": 2.0
+  },
+  "tier_radii": {
+    "BASELINE_FALLBACK": 2072.3755118642393,
+    "DOORSTEP_VERIFIED": 657.5272435995535,
+    "LANDMARK_ANCHORED": 150.0,
+    "LOCALITY_FALLBACK": 685.9324596649208,
+    "STREET_RESOLVED": 955.5860176064318
+  },
+  "ablation": [
+    {
+      "stage": "M0",
+      "overall_median_error_m": 376.4,
+      "overall_p90_error_m": 839.18,
+      "improvement_vs_M0_m": 0.0
+    },
+    {
+      "stage": "M1",
+      "overall_median_error_m": 127.31,
+      "overall_p90_error_m": 657.86,
+      "improvement_vs_M0_m": 249.09
+    },
+    {
+      "stage": "M2",
+      "overall_median_error_m": 127.31,
+      "overall_p90_error_m": 657.86,
+      "improvement_vs_M0_m": 249.09
+    },
+    {
+      "stage": "M3",
+      "overall_median_error_m": 185.87,
+      "overall_p90_error_m": 3992.98,
+      "improvement_vs_M0_m": 190.53
+    },
+    {
+      "stage": "M4",
+      "overall_median_error_m": 175.92,
+      "overall_p90_error_m": 2584.66,
+      "improvement_vs_M0_m": 200.48
+    },
+    {
+      "stage": "M5",
+      "overall_median_error_m": 175.92,
+      "overall_p90_error_m": 2584.66,
+      "improvement_vs_M0_m": 200.48
+    },
+    {
+      "stage": "M6",
+      "overall_median_error_m": 266.36,
+      "overall_p90_error_m": 761.56,
+      "improvement_vs_M0_m": 110.03
+    }
+  ],
+  "elapsed_s": 0.17
+}

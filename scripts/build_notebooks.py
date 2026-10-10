@@ -1,6 +1,6 @@
 """Build reproducible, self-contained master pipeline and interactive demonstration notebooks.
 
-Authority: PS3_FINAL_ARCHITECTURE.md, PS3_MODEL_SPEC.md, and Phase 5 Packaging Specification.
+Authority: NEUROGEO_FINAL_ARCHITECTURE.md, NEUROGEO_MODEL_SPEC.md, and Phase 5 Packaging Specification.
 Outputs:
 - notebooks/01_master_pipeline.ipynb
 - notebooks/02_interactive_dashboard.ipynb

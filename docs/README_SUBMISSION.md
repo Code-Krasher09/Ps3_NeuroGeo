@@ -482,11 +482,11 @@ Or open in Jupyter:
 │   ├── test_trajectory.py
 │   └── test_validation_evaluator.py
 ├── Decisions.md                      # Chronological architectural decision register
-├── PS3_DATA_CONTRACT.md              # Frozen data contract
-├── PS3_EVALUATION_AND_LEAKAGE_CONTRACT.md # Frozen evaluation and leakage contract
-├── PS3_FINAL_ARCHITECTURE.md         # Frozen system architecture
-├── PS3_IMPLEMENTATION_PLAN.md        # Frozen implementation plan
-├── PS3_MODEL_SPEC.md                 # Frozen mathematical model specification
+├── NEUROGEO_DATA_CONTRACT.md              # Frozen data contract
+├── NEUROGEO_EVALUATION_AND_LEAKAGE_CONTRACT.md # Frozen evaluation and leakage contract
+├── NEUROGEO_FINAL_ARCHITECTURE.md         # Frozen system architecture
+├── NEUROGEO_IMPLEMENTATION_PLAN.md        # Frozen implementation plan
+├── NEUROGEO_MODEL_SPEC.md                 # Frozen mathematical model specification
 ├── README_SUBMISSION.md              # Primary judge-facing submission document
 ├── pytest.ini                        # Pytest configuration
 ├── requirements.txt                  # Python dependencies

@@ -1,7 +1,7 @@
 """Phase 3 Runner: Hierarchical Spatial Graph & Leakage-Safe Cold-Start Validation.
 
-Authority: PS3_FINAL_ARCHITECTURE.md Section 3, PS3_MODEL_SPEC.md Section 5,
-PS3_EVALUATION_AND_LEAKAGE_CONTRACT.md Section 3 & 5, and PS3_IMPLEMENTATION_PLAN.md Phase 3.
+Authority: NEUROGEO_FINAL_ARCHITECTURE.md Section 3, NEUROGEO_MODEL_SPEC.md Section 5,
+NEUROGEO_EVALUATION_AND_LEAKAGE_CONTRACT.md Section 3 & 5, and NEUROGEO_IMPLEMENTATION_PLAN.md Phase 3.
 """
 
 from typing import Any, Dict
@@ -211,7 +211,7 @@ def main() -> None:
             "zero_cross_locality_hub_collisions": True,
         },
         "loso_eligibility_empirical_audit": {
-            "frozen_definition": "Streets with >= 5 distinct visited accounts (PS3_EVALUATION_AND_LEAKAGE_CONTRACT.md Section 5)",
+            "frozen_definition": "Streets with >= 5 distinct visited accounts (NEUROGEO_EVALUATION_AND_LEAKAGE_CONTRACT.md Section 5)",
             "streets_with_ge5_all_portfolio_addresses": 52,
             "streets_with_ge5_visited_addresses": 13,
             "streets_with_ge5_credible_doorstep_addresses": 11,

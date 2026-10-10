@@ -1,6 +1,6 @@
 """Data contracts, intermediate dataclasses, and output schemas for NeuroGeo-Field.
 
-Authority: PS3_DATA_CONTRACT.md and PS3_FINAL_ARCHITECTURE.md.
+Authority: NEUROGEO_DATA_CONTRACT.md and NEUROGEO_FINAL_ARCHITECTURE.md.
 """
 
 from dataclasses import dataclass, field, asdict
@@ -9,7 +9,7 @@ from typing import Any, Dict, List, Optional, Tuple
 
 
 class PredictionStatus(str, Enum):
-    """Architecturally frozen status tiers defined in PS3_FINAL_ARCHITECTURE.md."""
+    """Architecturally frozen status tiers defined in NEUROGEO_FINAL_ARCHITECTURE.md."""
     DOORSTEP_VERIFIED = "DOORSTEP_VERIFIED"
     STREET_RESOLVED = "STREET_RESOLVED"
     LOCALITY_BOUNDED = "LOCALITY_BOUNDED"
@@ -91,7 +91,7 @@ class SanitizedVisitObservation:
 class SpatialCandidate:
     """Candidate coordinate hypothesis generated for evidence reranking.
     
-    Authority: PS3_FINAL_ARCHITECTURE.md and PS3_MODEL_SPEC.md.
+    Authority: NEUROGEO_FINAL_ARCHITECTURE.md and NEUROGEO_MODEL_SPEC.md.
     """
     candidate_id: str                # e.g., 'AD0001::C1', 'AD0001::C2', 'AD0001::C3', 'AD0001::C4', 'AD0001::C5'
     x: Optional[float]

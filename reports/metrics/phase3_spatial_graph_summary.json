@@ -17,7 +17,7 @@
     "zero_cross_locality_hub_collisions": true
   },
   "loso_eligibility_empirical_audit": {
-    "frozen_definition": "Streets with >= 5 distinct visited accounts (PS3_EVALUATION_AND_LEAKAGE_CONTRACT.md Section 5)",
+    "frozen_definition": "Streets with >= 5 distinct visited accounts (NEUROGEO_EVALUATION_AND_LEAKAGE_CONTRACT.md Section 5)",
     "streets_with_ge5_all_portfolio_addresses": 52,
     "streets_with_ge5_visited_addresses": 13,
     "streets_with_ge5_credible_doorstep_addresses": 11,
@@ -64,5 +64,5 @@
     "reports/metrics/loso_results.csv",
     "reports/metrics/phase3_spatial_graph_summary.json"
   ],
-  "execution_time_seconds": 6.85
+  "execution_time_seconds": 8.41
 }

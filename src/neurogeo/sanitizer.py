@@ -1,6 +1,6 @@
 """Operational visit sanitizer, integrity scoring, and spatial evidence extraction.
 
-Authority: PS3_MODEL_SPEC.md Sections 2 and 3, PS3_DATA_CONTRACT.md, and PS3_FINAL_ARCHITECTURE.md.
+Authority: NEUROGEO_MODEL_SPEC.md Sections 2 and 3, NEUROGEO_DATA_CONTRACT.md, and NEUROGEO_FINAL_ARCHITECTURE.md.
 """
 
 from typing import Any, Dict, List, Optional, Set, Union
@@ -10,7 +10,7 @@ import pandas as pd
 from neurogeo.config import DEFAULT_CONFIG, ModelConfig
 
 
-# Documented outcome weights from PS3_MODEL_SPEC.md Section 3
+# Documented outcome weights from NEUROGEO_MODEL_SPEC.md Section 3
 OUTCOME_WEIGHTS: Dict[str, float] = {
     "met_family": 1.00,
     "locked_premises": 0.95,

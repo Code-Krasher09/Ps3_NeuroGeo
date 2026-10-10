@@ -1,5 +1,5 @@
 {
-  "execution_timestamp_utc": "2026-10-09T18:40:20Z",
+  "execution_timestamp_utc": "2026-10-10T07:46:33Z",
   "phase": 4,
   "phase_description": "Candidate Generation, Deterministic Linear Reranking & Empirical Quantile Calibration",
   "provenance": {
@@ -249,5 +249,5 @@
     "calibration_quantiles_json": "reports/metrics/calibration_quantiles.json",
     "phase4_ablation_csv": "reports/metrics/phase4_ablation.csv"
   },
-  "elapsed_seconds": 4.01
+  "elapsed_seconds": 4.21
 }

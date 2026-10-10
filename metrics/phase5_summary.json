@@ -1,0 +1,14 @@
+{
+  "phase": 5,
+  "evidence_cards_generated": 2880,
+  "navigation_examples_generated": 8640,
+  "status_tier_distribution": {
+    "BASELINE_FALLBACK": 1851,
+    "DOORSTEP_VERIFIED": 789,
+    "STREET_RESOLVED": 144,
+    "LANDMARK_ANCHORED": 69,
+    "LOCALITY_FALLBACK": 27
+  },
+  "negative_evidence_addresses": 875,
+  "elapsed_s": 0.35
+}

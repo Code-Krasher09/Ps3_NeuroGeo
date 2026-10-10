@@ -1,4 +1,4 @@
-# PS3 Implementation Plan & Engineering Milestones
+# NeuroGeo Implementation Plan & Engineering Milestones
 *Document 5 of 5: Modular Build Plan, Test Assertions & Acceptance Criteria*
 *Status: FROZEN (Implementation Plan Level)*
 
@@ -150,11 +150,11 @@ d:/OpenIIT '26/
 │   ├── test_leakage_isolation.py
 │   ├── test_poi_disambiguation.py
 │   └── test_candidate_bounds.py
-├── PS3_FINAL_ARCHITECTURE.md            # Doc 1: Frozen Architecture
-├── PS3_DATA_CONTRACT.md                 # Doc 2: Frozen Data Schemas & Audit
-├── PS3_EVALUATION_AND_LEAKAGE_CONTRACT.md# Doc 3: Frozen Evaluation Contract
-├── PS3_MODEL_SPEC.md                    # Doc 4: Frozen Model Specs & Formulas
-└── PS3_IMPLEMENTATION_PLAN.md           # Doc 5: Frozen Implementation Plan
+├── NEUROGEO_FINAL_ARCHITECTURE.md            # Doc 1: Frozen Architecture
+├── NeuroGeo_DATA_CONTRACT.md                 # Doc 2: Frozen Data Schemas & Audit
+├── NEUROGEO_EVALUATION_AND_LEAKAGE_CONTRACT.md# Doc 3: Frozen Evaluation Contract
+├── NEUROGEO_MODEL_SPEC.md                    # Doc 4: Frozen Model Specs & Formulas
+└── NEUROGEO_IMPLEMENTATION_PLAN.md           # Doc 5: Frozen Implementation Plan
 ```
 
 ---

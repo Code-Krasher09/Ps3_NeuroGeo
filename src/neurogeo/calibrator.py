@@ -1,6 +1,6 @@
 """Evidence-Tier, Candidate-Wise, and Close-Landmark Geometry Calibration.
 
-Authority: PS3_FINAL_ARCHITECTURE.md, PS3_MODEL_SPEC.md, PS3_EVALUATION_AND_LEAKAGE_CONTRACT.md,
+Authority: NEUROGEO_FINAL_ARCHITECTURE.md, NEUROGEO_MODEL_SPEC.md, NEUROGEO_EVALUATION_AND_LEAKAGE_CONTRACT.md,
 and Prompt 30 (Candidate-wise P90 & Close-Landmark Spatial-Scale Geometry Integration).
 """
 
@@ -34,7 +34,7 @@ def assign_status_tier(
 ) -> PredictionStatus:
     """Deterministically assign prediction to one of 4 discrete prediction status tiers.
     
-    Authority: PS3_FINAL_ARCHITECTURE.md Section 4 and PS3_MODEL_SPEC.md Section 7:
+    Authority: NEUROGEO_FINAL_ARCHITECTURE.md Section 4 and NEUROGEO_MODEL_SPEC.md Section 7:
     - DOORSTEP_VERIFIED: Confirmed by direct high-integrity doorstep visits (C2 selected or credible doorstep).
     - STREET_RESOLVED: Cold-start address, Candidate C4 selected with >= 2 supporting neighbor accounts, or C3 anchored to resolved landmark.
     - LOCALITY_BOUNDED: Unvisited address, Candidate C5 (Locality Centroid) selected, or C4 with insufficient neighbors.
@@ -77,7 +77,7 @@ def get_calibrated_radius_with_fallback(
 ) -> Tuple[float, int, str]:
     """Compute calibrated empirical radius using frozen 4-level fallback hierarchy.
     
-    Authority: PS3_MODEL_SPEC.md Section 7 lines 158-176.
+    Authority: NEUROGEO_MODEL_SPEC.md Section 7 lines 158-176.
     
     Returns:
         (radius_m, sample_count, fallback_level)

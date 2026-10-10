@@ -1,6 +1,6 @@
 """Generate authoritative publication-quality figures A-H for NeuroGeo-Field packaging.
 
-Authority: PS3_FINAL_ARCHITECTURE.md, PS3_MODEL_SPEC.md, reports/metrics artifacts.
+Authority: NEUROGEO_FINAL_ARCHITECTURE.md, NEUROGEO_MODEL_SPEC.md, reports/metrics artifacts.
 """
 
 from pathlib import Path

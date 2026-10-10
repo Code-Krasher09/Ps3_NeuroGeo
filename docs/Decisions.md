@@ -136,7 +136,7 @@ This document maintains an immutable, chronological register of engineering, alg
 - **Reason & Intuition**: Declaring `train_all` on evaluation outputs masks the fact that evaluation must be out-of-fold. An evaluation output must explicitly declare that the target was masked during prediction, preserving full auditability.
 
 ### Decision 3.8: Empirical Resolution of the LOSO 54-vs-13-vs-17 Eligibility Discrepancy
-- **Action**: Formally audit the exact frozen contract definition of LOSO eligibility (`PS3_EVALUATION_AND_LEAKAGE_CONTRACT.md` Section 5: "streets with $\ge 5$ visited accounts") across all potential clustering dimensions in the empirical data:
+- **Action**: Formally audit the exact frozen contract definition of LOSO eligibility (`NEUROGEO_EVALUATION_AND_LEAKAGE_CONTRACT.md` Section 5: "streets with $\ge 5$ visited accounts") across all potential clustering dimensions in the empirical data:
   1. Canonical street keys with $\ge 5$ ALL portfolio addresses: **52**
   2. Canonical street keys with $\ge 5$ VISITED addresses: **13** (80 accounts)
   3. Canonical street keys with $\ge 5$ CREDIBLE DOORSTEP addresses: **11**

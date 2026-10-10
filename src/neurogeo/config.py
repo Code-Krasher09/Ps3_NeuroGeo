@@ -1,7 +1,7 @@
 """Configuration system for NeuroGeo-Field.
 
 Provides repository-relative path resolution and configurable hyperparameter specifications
-in accordance with PS3_FINAL_ARCHITECTURE.md and PS3_MODEL_SPEC.md.
+in accordance with NEUROGEO_FINAL_ARCHITECTURE.md and NEUROGEO_MODEL_SPEC.md.
 """
 
 from dataclasses import dataclass, field
@@ -11,10 +11,10 @@ import os
 
 
 def find_repo_root(start_path: Optional[Path] = None) -> Path:
-    """Find repository root by looking for PS3_FINAL_ARCHITECTURE.md or .git."""
+    """Find repository root by looking for NEUROGEO_FINAL_ARCHITECTURE.md or .git."""
     curr = (start_path or Path(__file__)).resolve()
     for parent in [curr] + list(curr.parents):
-        if (parent / "PS3_FINAL_ARCHITECTURE.md").exists() or (parent / "data").exists():
+        if (parent / "NEUROGEO_FINAL_ARCHITECTURE.md").exists() or (parent / "data").exists():
             return parent
     return Path(__file__).resolve().parent.parent.parent
 
@@ -31,7 +31,7 @@ class PathConfig:
         return Path(custom_data_root) if custom_data_root else self.repo_root / "data"
 
     @property
-    def ps3_data_dir(self) -> Path:
+    def neurogeo_data_dir(self) -> Path:
         return self.data_dir / "ps3_geocoder"
 
     @property
@@ -41,27 +41,27 @@ class PathConfig:
     # Core PS3 Input Tables
     @property
     def baseline_geocodes_csv(self) -> Path:
-        return self.ps3_data_dir / "baseline_geocodes.csv"
+        return self.neurogeo_data_dir / "baseline_geocodes.csv"
 
     @property
     def landmarks_poi_csv(self) -> Path:
-        return self.ps3_data_dir / "landmarks_poi.csv"
+        return self.neurogeo_data_dir / "landmarks_poi.csv"
 
     @property
     def localities_csv(self) -> Path:
-        return self.ps3_data_dir / "localities.csv"
+        return self.neurogeo_data_dir / "localities.csv"
 
     @property
     def surveyed_addresses_csv(self) -> Path:
-        return self.ps3_data_dir / "surveyed_addresses.csv"
+        return self.neurogeo_data_dir / "surveyed_addresses.csv"
 
     @property
     def towns_csv(self) -> Path:
-        return self.ps3_data_dir / "towns.csv"
+        return self.neurogeo_data_dir / "towns.csv"
 
     @property
     def visit_gps_points_csv(self) -> Path:
-        return self.ps3_data_dir / "visit_gps_points.csv"
+        return self.neurogeo_data_dir / "visit_gps_points.csv"
 
     # Core Shared Input Tables
     @property
@@ -187,7 +187,7 @@ class PathConfig:
 class ModelConfig:
     """Hyperparameter configuration separating frozen architecture from tunable parameters.
     
-    Formulas and initial values defined in PS3_MODEL_SPEC.md.
+    Formulas and initial values defined in NEUROGEO_MODEL_SPEC.md.
     """
     # Integrity parameters: I(v)
     lambda_photo: float = 1.0

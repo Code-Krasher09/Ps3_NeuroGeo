@@ -1,6 +1,6 @@
 """Phase 1 Runner: Operational Visit Sanitizer & Trajectory Miner.
 
-Authority: PS3_IMPLEMENTATION_PLAN.md Phase 1, PS3_MODEL_SPEC.md, and PS3_DATA_CONTRACT.md.
+Authority: NEUROGEO_IMPLEMENTATION_PLAN.md Phase 1, NEUROGEO_MODEL_SPEC.md, and NEUROGEO_DATA_CONTRACT.md.
 Usage:
     python scripts/run_phase1.py
 """

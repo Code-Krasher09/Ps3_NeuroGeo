@@ -1,7 +1,7 @@
 """Multilingual script-aware address parser and entity extractor.
 
-Authority: PS3_FINAL_ARCHITECTURE.md Section 2, PS3_DATA_CONTRACT.md Section 3,
-and PS3_IMPLEMENTATION_PLAN.md Phase 2.
+Authority: NEUROGEO_FINAL_ARCHITECTURE.md Section 2, NEUROGEO_DATA_CONTRACT.md Section 3,
+and NEUROGEO_IMPLEMENTATION_PLAN.md Phase 2.
 """
 
 from typing import Dict, List, Optional, Set, Tuple

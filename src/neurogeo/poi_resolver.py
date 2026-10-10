@@ -1,7 +1,7 @@
 """Locality-bounded POI resolver and landmark disambiguator.
 
-Authority: PS3_FINAL_ARCHITECTURE.md Section 2, PS3_DATA_CONTRACT.md Section 2 (Proof 1),
-and PS3_MODEL_SPEC.md Section 5 (Candidate C3).
+Authority: NEUROGEO_FINAL_ARCHITECTURE.md Section 2, NEUROGEO_DATA_CONTRACT.md Section 2 (Proof 1),
+and NEUROGEO_MODEL_SPEC.md Section 5 (Candidate C3).
 """
 
 from typing import Any, Dict, List, Optional, Set, Tuple

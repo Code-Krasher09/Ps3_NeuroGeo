@@ -1,0 +1,27 @@
+{
+  "submission_file": "C:\\Users\\kmzpa\\Desktop\\Open IIT Data\\external_repos\\Ps3_NeuroGeo\\submission_predictions.csv",
+  "predictions_count": 2880,
+  "benchmark_median_m": 266.36,
+  "benchmark_p90_m": 761.56,
+  "candidate_distribution": {
+    "C1": 1851,
+    "C2": 789,
+    "C4": 213,
+    "C5": 27
+  },
+  "tier_distribution": {
+    "BASELINE_FALLBACK": 1851,
+    "DOORSTEP_VERIFIED": 789,
+    "STREET_RESOLVED": 144,
+    "LANDMARK_ANCHORED": 69,
+    "LOCALITY_FALLBACK": 27
+  },
+  "phases_completed": [
+    "Phase0",
+    "Phase1",
+    "Phase2",
+    "Phase3",
+    "Phase4",
+    "Phase5"
+  ]
+}

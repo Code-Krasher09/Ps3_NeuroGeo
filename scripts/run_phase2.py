@@ -1,7 +1,7 @@
 """Phase 2 Runner: Multilingual Address Parser & Locality-Bounded POI Resolver.
 
-Authority: PS3_FINAL_ARCHITECTURE.md Section 2, PS3_DATA_CONTRACT.md Section 2 & 3,
-and PS3_IMPLEMENTATION_PLAN.md Phase 2.
+Authority: NEUROGEO_FINAL_ARCHITECTURE.md Section 2, NEUROGEO_DATA_CONTRACT.md Section 2 & 3,
+and NEUROGEO_IMPLEMENTATION_PLAN.md Phase 2.
 """
 
 from typing import Any, Dict

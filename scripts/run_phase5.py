@@ -1,7 +1,7 @@
 """Phase 5 Pipeline Runner: Offline Deterministic Navigator & Evidence Card Generator.
 
-Authority: PS3_FINAL_ARCHITECTURE.md Section 4, PS3_MODEL_SPEC.md Section 8,
-and PS3_EVALUATION_AND_LEAKAGE_CONTRACT.md.
+Authority: NEUROGEO_FINAL_ARCHITECTURE.md Section 4, NEUROGEO_MODEL_SPEC.md Section 8,
+and NEUROGEO_EVALUATION_AND_LEAKAGE_CONTRACT.md.
 
 Outputs:
 - reports/metrics/phase5_navigation_examples.csv

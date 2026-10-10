@@ -1,5 +1,5 @@
 {
-  "execution_timestamp_utc": "2026-10-09T18:40:22Z",
+  "execution_timestamp_utc": "2026-10-10T07:46:34Z",
   "phase": 5,
   "phase_description": "Offline Deterministic Navigator & Auditable Evidence Cards",
   "provenance": {
@@ -83,5 +83,5 @@
     },
     "explanation": "Prediction is LOCALITY_BOUNDED with an estimated 603 m empirical P90 uncertainty radius (calibration fallback: candidate_p90). The location represents the locality centroid for neighborhood 'Azad Mohalla' as direct visits were unavailable."
   },
-  "elapsed_seconds": 0.57
+  "elapsed_seconds": 0.62
 }

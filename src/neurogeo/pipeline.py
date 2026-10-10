@@ -1,6 +1,6 @@
 """End-to-end dual-path inference pipeline for NeuroGeo-Field.
 
-Authority: PS3_FINAL_ARCHITECTURE.md Section 3 and PS3_DATA_CONTRACT.md Section 3.
+Authority: NEUROGEO_FINAL_ARCHITECTURE.md Section 3 and NEUROGEO_DATA_CONTRACT.md Section 3.
 """
 
 from typing import Dict, List, Optional

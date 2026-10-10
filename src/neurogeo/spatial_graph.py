@@ -1,6 +1,6 @@
 """Hierarchical spatial graph, neighbor propagation, and SCV/LOSO validation engines.
 
-Authority: PS3_FINAL_ARCHITECTURE.md, PS3_MODEL_SPEC.md, and PS3_EVALUATION_AND_LEAKAGE_CONTRACT.md.
+Authority: NEUROGEO_FINAL_ARCHITECTURE.md, NEUROGEO_MODEL_SPEC.md, and NEUROGEO_EVALUATION_AND_LEAKAGE_CONTRACT.md.
 """
 
 from dataclasses import dataclass, field
@@ -214,7 +214,7 @@ def compute_scoped_neighbor_centroid(
 ) -> Optional[Dict[str, Any]]:
     """Compute Candidate C4 weighted neighbor centroid: sum(w_j * X_j) / sum(w_j).
     
-    Adheres strictly to PS3_MODEL_SPEC.md Section 5 and evaluation zero-leakage contract:
+    Adheres strictly to NEUROGEO_MODEL_SPEC.md Section 5 and evaluation zero-leakage contract:
     - Excludes target address A* and all target-derived visit observations.
     - Uses credible visited neighbors only (has_credible_doorstep == True).
     - Requires matching town_id, resolved locality_id, and normalized_street.

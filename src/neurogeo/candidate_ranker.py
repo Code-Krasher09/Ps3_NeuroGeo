@@ -1,6 +1,6 @@
 """Spatial candidate generation (C1-C5), coordinate deduplication, and linear utility reranker.
 
-Authority: PS3_FINAL_ARCHITECTURE.md, PS3_MODEL_SPEC.md, and PS3_EVALUATION_AND_LEAKAGE_CONTRACT.md.
+Authority: NEUROGEO_FINAL_ARCHITECTURE.md, NEUROGEO_MODEL_SPEC.md, and NEUROGEO_EVALUATION_AND_LEAKAGE_CONTRACT.md.
 """
 
 from dataclasses import replace
@@ -53,7 +53,7 @@ def generate_candidates(
     fit_scope: str = "production_all",
     is_held_out: bool = False,
 ) -> List[SpatialCandidate]:
-    """Generate spatial candidates (C1-C5) according to PS3_MODEL_SPEC.md.
+    """Generate spatial candidates (C1-C5) according to NEUROGEO_MODEL_SPEC.md.
     
     Zero coordinate fabrication: If evidence is missing, available = False and coordinates = None.
     Zero leakage: If is_held_out is True, C2 is strictly unavailable.
@@ -232,7 +232,7 @@ def deduplicate_candidates(
 ) -> List[SpatialCandidate]:
     """Deterministically deduplicate candidate coordinates within tolerance_m.
     
-    In accordance with PS3_MODEL_SPEC.md Section 5:
+    In accordance with NEUROGEO_MODEL_SPEC.md Section 5:
     - If two candidates resolve to effectively identical coordinates (dist <= tolerance_m),
       do NOT silently double-count evidence.
     - Keep candidate provenance explicit.
@@ -298,7 +298,7 @@ def extract_candidate_features(
 ) -> Dict[str, float]:
     """Extract deterministic, bounded, leakage-safe features for a single candidate.
     
-    Formula from PS3_MODEL_SPEC.md Section 6:
+    Formula from NEUROGEO_MODEL_SPEC.md Section 6:
     1. TextMatch in [0, 1]
     2. DirectEvidence in [0, 1]
     3. NeighborSupport in [0, 1]

@@ -1,6 +1,6 @@
 """Zero-leakage isolation boundary and provenance verification contracts.
 
-Authority: PS3_EVALUATION_AND_LEAKAGE_CONTRACT.md.
+Authority: NEUROGEO_EVALUATION_AND_LEAKAGE_CONTRACT.md.
 """
 
 from dataclasses import dataclass, field
@@ -25,7 +25,7 @@ VALID_FIT_SCOPE_PATTERNS = {
 class IsolationClosure:
     """Formal definition of Closure(A*): everything that must be purged when predicting A*.
     
-    In accordance with PS3_EVALUATION_AND_LEAKAGE_CONTRACT.md Section 2:
+    In accordance with NEUROGEO_EVALUATION_AND_LEAKAGE_CONTRACT.md Section 2:
     D_visible(A*) = D_full \\ Closure(A*)
     """
     target_address_id: str

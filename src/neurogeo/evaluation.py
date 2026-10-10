@@ -1,7 +1,7 @@
 
 """Official evaluation metrics, benchmark partitioning, and commercial baseline reproduction.
 
-Authority: PS3_EVALUATION_AND_LEAKAGE_CONTRACT.md and PS3_DATA_CONTRACT.md.
+Authority: NEUROGEO_EVALUATION_AND_LEAKAGE_CONTRACT.md and NEUROGEO_DATA_CONTRACT.md.
 """
 
 from dataclasses import asdict, dataclass

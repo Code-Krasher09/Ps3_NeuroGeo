@@ -1,4 +1,4 @@
-# PS3 Evaluation & Leakage Contract
+# NeuroGeo Evaluation & Leakage Contract
 *Document 3 of 5: Zero-Leakage Protocols, Validation Splits & Evaluation Framework*
 *Status: FROZEN (Evaluation Contract Level)*
 
