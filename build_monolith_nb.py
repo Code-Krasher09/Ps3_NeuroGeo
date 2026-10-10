@@ -23,9 +23,7 @@ def code(src):
 # ===========================================================================
 # Header
 # ===========================================================================
-md("""# NeuroGeo-Field · Monolithic Submission
-**Fully self-contained** — no imports from `src/neurogeo/*`.  
-All phases implemented with pure **Pandas** and **NumPy** vectorised operations.
+md("""# NeuroGeo-Field
 
 | Phase | Description |
 |-------|-------------|
