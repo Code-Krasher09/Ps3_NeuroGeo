@@ -1080,6 +1080,60 @@ print(f"✓ Submission  : {sub_path.name}")
 print("\\nPIPELINE COMPLETE.")
 """)
 
+c_viz_md = nbf.v4.new_markdown_cell("""\
+# Phase 6: Pipeline Visualizations
+Summary charts illustrating benchmark error distributions, cumulative coverage, and output tier breakdowns.
+""")
+
+c_viz = nbf.v4.new_code_cell("""\
+import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
+
+# Suppress annoying warnings
+import warnings
+warnings.filterwarnings("ignore", category=RuntimeWarning)
+
+sns.set_theme(style="whitegrid", palette="muted")
+fig, axes = plt.subplots(1, 3, figsize=(20, 6))
+
+# 1. Error Comparison: Commercial Baseline vs NeuroGeo-Field
+if "C1_x" in df_abl.columns and "C1_y" in df_abl.columns:
+    baseline_error = eucl_dist(df_abl["C1_x"], df_abl["C1_y"], df_abl["surveyed_x"], df_abl["surveyed_y"])
+    valid_mask = (df_eval["error_m"] > 0) & (baseline_error > 0)
+    
+    sns.kdeplot(np.log10(baseline_error[valid_mask]), ax=axes[0], label="Commercial Baseline", fill=True, color="gray", alpha=0.3)
+    sns.kdeplot(np.log10(df_eval["error_m"][valid_mask]), ax=axes[0], label="NeuroGeo (M6)", fill=True, color="teal", alpha=0.5)
+    axes[0].set_title("Location Error Distribution (Log10 m)", fontsize=13)
+    axes[0].set_xlabel("Log10(Error in meters)")
+    axes[0].set_ylabel("Density")
+    axes[0].legend()
+else:
+    axes[0].text(0.5, 0.5, "Baseline data not available", ha="center", va="center")
+    axes[0].axis("off")
+
+# 2. Cumulative Coverage Curve (NeuroGeo)
+errors_sorted = np.sort(df_eval["error_m"].dropna())
+p_ranks = np.arange(1, len(errors_sorted) + 1) / len(errors_sorted)
+axes[1].plot(errors_sorted, p_ranks, color="teal", linewidth=2)
+axes[1].axvline(all_m["median"], color="teal", linestyle="--", label=f"Median: {all_m['median']:.1f}m")
+axes[1].axvline(all_m["p90"], color="orange", linestyle="--", label=f"P90: {all_m['p90']:.1f}m")
+axes[1].set_xlim(0, max(1000, all_m["p90"] * 1.5))
+axes[1].set_title("Cumulative Error Distribution (NeuroGeo)", fontsize=13)
+axes[1].set_xlabel("Error threshold (meters)")
+axes[1].set_ylabel("Fraction of Addresses")
+axes[1].legend()
+
+# 3. Status Tier Distribution
+status_counts = df_sub["status_tier"].value_counts()
+axes[2].pie(status_counts, labels=status_counts.index, autopct='%1.1f%%', 
+            colors=sns.color_palette("pastel")[0:len(status_counts)], startangle=90)
+axes[2].set_title("Status Tier Distribution (Portfolio)", fontsize=13)
+
+plt.tight_layout()
+plt.show()
+""")
+CELLS.extend([c_viz_md, c_viz])
 
 # ===========================================================================
 # Write notebook
