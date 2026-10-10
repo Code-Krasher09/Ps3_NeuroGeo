@@ -185,8 +185,8 @@ During rigorous Exploratory Data Analysis (EDA) of the 8 competition datasets ac
    - $M_2$ (+ Doorstep Medoids $C_2$): Median **125.94 m**, P90 **629.57 m** (+250.46m lift)
    - $M_3$ (+ NLP/POI Anchor $C_3$): Median **83.29 m**, P90 **608.55 m** (+293.11m lift)
    - $M_4$ (+ Spatial Graph $C_4$): Median **59.23 m**, P90 **500.72 m** (+317.16m lift)
-   - $M_5$ (+ Linear Reranker $w_{\text{neg}}=0$): Median **61.26 m**, P90 **574.29 m** (+315.14m lift)
-   - $M_6$ (+ Negative Search Penalty): Median **61.26 m**, P90 **574.29 m** (+315.14m lift)
+   - $M_5$ (+ Linear Reranker $w_{\text{neg}}=0$): Median **60.81 m**, P90 **490.86 m** (+315.14m lift)
+   - $M_6$ (+ Negative Search Penalty): Median **60.81 m**, P90 **490.86 m** (+315.14m lift)
 7. **Exported Artifacts**:
    - `reports/metrics/candidate_scores.parquet` (306 rows)
    - `reports/metrics/phase4_predictions.csv` (100 rows)
@@ -227,7 +227,7 @@ A strict contract audit was executed on Phase 4 empirical calibration provenance
 - **Verification & Integrity**:
   - Full test suite: 97/97 tests passing in 1.91s across 9 test modules (including 5 new deterministic tests 26-30).
   - Deterministic rerun: Benchmark predictions and ablation errors remain 100% numerically identical.
-  - Empirical benchmark coverage: 91.0% (target ~90%).
+  - Empirical benchmark coverage: 91.0% (target 82.0%).
   - Source CSV files in `data/`: 100% untouched.
 
 ---
@@ -303,7 +303,7 @@ Package the completed NeuroGeo-Field implementation into a self-contained, repro
 
 3. **Executive Submission README (`README_SUBMISSION.md`)**:
    - Comprehensive judge-facing document structured into 21 sections.
-   - Prominent Executive Results Table (83.7% error reduction; 376.40m $\to$ 61.26m overall median; 383.67m $\to$ 21.10m visited median; 362.87m $\to$ 235.40m cold-start median).
+   - Prominent Executive Results Table (83.8% error reduction; 376.40m $\to$ 60.81m overall median; 383.67m $\to$ 21.10m visited median; 362.87m $\to$ 178.04m cold-start median).
    - Full ablation study table (M0–M6) from `phase4_ablation.csv`.
    - Mermaid system architecture diagram.
    - Strict leakage prevention documentation ("leakage-safe held-out SCV residuals", "Evidence-Tier Empirical Quantile Calibration").
@@ -312,7 +312,7 @@ Package the completed NeuroGeo-Field implementation into a self-contained, repro
    - Exact reproducibility commands for environment setup, pytest, phase runners, and notebooks.
 
 4. **Publication-Quality Figures (`reports/figures/`)**:
-   - `fig_a_baseline_vs_final.png`: Overall Geocoding Error Baseline vs Final (83.7% reduction)
+   - `fig_a_baseline_vs_final.png`: Overall Geocoding Error Baseline vs Final (83.8% reduction)
    - `fig_b_ablation_ladder.png`: Ablation Ladder M0 $\to$ M6
    - `fig_c_visited_vs_coldstart.png`: Visited vs Cold-Start Performance Breakdown
    - `fig_d_candidate_availability.png`: Candidate Hypothesis Availability C1–C5

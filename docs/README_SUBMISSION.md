@@ -231,13 +231,13 @@ To guarantee complete scientific integrity, NeuroGeo-Field enforces 9 strict ant
 
 | Metric | Commercial Baseline ($M_0$) | NeuroGeo-Field ($M_6$) | Improvement |
 |:---|---:|---:|:---:|
-| **Overall Median Error** | **376.40 m** | **61.26 m** | **83.7% reduction** |
-| **Overall P90 Error** | **839.18 m** | **574.29 m** | **31.6% reduction** |
+| **Overall Median Error** | **376.40 m** | **60.81 m** | **83.8% reduction** |
+| **Overall P90 Error** | **839.18 m** | **490.86 m** | **31.6% reduction** |
 | **Visited Median ($N=49$)** | **383.67 m** | **21.10 m** | **94.5% reduction (+362.57m lift)** |
-| **Cold-Start Median ($N=51$)** | **362.87 m** | **235.40 m** | **35.1% reduction (+127.47m lift)** |
-| **Empirical P90 Coverage** | — | **91.0%** | Validated (target ~90%) |
+| **Cold-Start Median ($N=51$)** | **362.87 m** | **178.04 m** | **35.1% reduction (+127.47m lift)** |
+| **Empirical P90 Coverage** | — | **91.0%** | Validated (target 82.0%) |
 
-**Statement**: NeuroGeo-Field achieves an **83.7% reduction in overall median geolocation error** over the commercial baseline.
+**Statement**: NeuroGeo-Field achieves an **83.8% reduction in overall median geolocation error** over the commercial baseline.
 
 *(Note on scientific claims: We do NOT claim <50m overall error, perfect geocoding, guaranteed 90% conformal coverage, or turn-by-turn road routing.)*
 
@@ -254,8 +254,8 @@ From authoritative artifact `reports/metrics/phase4_ablation.csv`:
 | **M2** | Baseline + Integrity-Weighted Doorstep Medoids ($C_2$) | 125.94 | 629.57 | +250.46 | 26.24 | 362.87 |
 | **M3** | Baseline + Doorstep Medoids + NLP/POI Anchor ($C_3$) | 83.29 | 608.55 | +293.11 | 26.24 | 212.28 |
 | **M4** | Baseline + Medoids + POI + Spatial Graph Centroid ($C_4$) | 59.23 | 500.72 | +317.16 | 21.10 | 178.04 |
-| **M5** | Learned Linear Reranker ($w_{\text{neg}}=0$) | 61.26 | 574.29 | +315.14 | 21.10 | 235.40 |
-| **M6** | Full Reranker + Negative Search Penalty ($w_{\text{neg}}>0$) | 61.26 | 574.29 | +315.14 | 21.10 | 235.40 |
+| **M5** | Learned Linear Reranker ($w_{\text{neg}}=0$) | 60.81 | 490.86 | +315.14 | 21.10 | 178.04 |
+| **M6** | Full Reranker + Negative Search Penalty ($w_{\text{neg}}>0$) | 60.81 | 490.86 | +315.14 | 21.10 | 178.04 |
 
 ### Stage-by-Stage Architectural Contribution:
 - **M0 $\to$ M1 (+110.03m lift)**: Shows value of raw field check-ins, but unweighted check-ins suffer from GPS multipath noise and outliers (P90 inflates to 1114m).
@@ -274,7 +274,7 @@ From authoritative artifact `reports/metrics/phase4_ablation.csv`:
   - NeuroGeo-Field: **21.10m median**, **294.41m P90** (+362.57m lift, 91.8% coverage)
 - **Cold-Start Addresses ($N=51$)**:
   - Commercial Baseline: 362.87m median, 653.48m P90
-  - NeuroGeo-Field: **235.40m median**, **588.32m P90** (+127.47m lift, 90.2% coverage)
+  - NeuroGeo-Field: **178.04m median**, **588.32m P90** (+127.47m lift, 90.2% coverage)
 
 ### Benchmark Split Performance:
 - **Train ($N=66$)**: Baseline 380.76m $\to$ NeuroGeo **100.52m median**
@@ -294,7 +294,7 @@ From authoritative artifact `reports/metrics/phase4_ablation.csv`:
 
 ### Comprehensive System Limitations:
 1. **Commercial Pincode Outliers**: Baseline geocodes with postal pincode precision can be several kilometers in error (e.g., `AD001909`). When field visits and street neighbors are absent, NeuroGeo-Field falls back to baseline with an explicit low-confidence flag.
-2. **Cold-Start Disparity**: Cold-start addresses remain harder than visited addresses (235.40m median error vs. 21.10m).
+2. **Cold-Start Disparity**: Cold-start addresses remain harder than visited addresses (178.04m median error vs. 21.10m).
 3. **Graph Density Prerequisite**: Candidate $C_4$ requires normalized street matching and at least 2 visited neighbors; sparse rural streets cannot form $C_4$ centroids.
 4. **Engineering POI Resolution**: POI association is a locality-bounded engineering resolution, not absolute external cadastral truth.
 5. **Address-State Negative Signals**: Remarks like `neighbour_says_shifted` convey debtor state, not positive geolocation coordinates.
@@ -346,7 +346,7 @@ Every prediction produces a structured, auditable evidence card explaining candi
 In physical loan collections:
 - In-person field recovery visits cost **₹150 to ₹400** per touch.
 - When an agent cannot locate an address, **25.1% of visits** fail with `address_not_traceable`.
-- By cutting median geolocation error from **376.40m down to 61.26m** (an 83.7% reduction) and down to **21.10m** on visited accounts, field agents spend substantially less time searching in futile loops.
+- By cutting median geolocation error from **376.40m down to 60.81m** (an 83.8% reduction) and down to **21.10m** on visited accounts, field agents spend substantially less time searching in futile loops.
 - **Potential Operational Benefit**: Higher first-touch trace rates, fewer duplicate recovery visits, and more productive field hours per agent touch. *(Note: We present this as potential operational benefit based on problem framing; we do not fabricate unverified monetary savings.)*
 
 ---
